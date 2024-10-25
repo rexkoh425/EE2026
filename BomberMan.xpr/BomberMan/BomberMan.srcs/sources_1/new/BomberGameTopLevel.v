@@ -22,6 +22,7 @@
 
 module BomberGameTopLevel(
     input clk , 
+    input[15:0] SW,
     input btnU , btnD , btnL , btnR , btnC ,
     output[7:0] JC , 
     output[15:0] led ,
@@ -33,6 +34,7 @@ module BomberGameTopLevel(
     wire frame_begin ,sending_pixels , sample_pixel;
     wire[12:0] pixel_index;
     wire[15:0] pixel_data;
+    wire start_game;
     var_clock clock_6p25MHZ(clk , 32'd7 , clk6p25m);
     
     assign led[15:1] = 15'b0;
@@ -55,7 +57,8 @@ module BomberGameTopLevel(
         .pixel_index(pixel_index), .pixel_data(pixel_data) ,
         .DebouncedBtnC(DebouncedBtnC) ,
         .led(led[0]),
-        .player1_isReviving(player1_isReviving)
+        .player1_isReviving(player1_isReviving),
+        .start_game(start_game)
     );
     //////////////////////////////////////////////////////////////////////////
     
@@ -73,6 +76,8 @@ module BomberGameTopLevel(
         .player1_isReviving(player1_isReviving),
         .an(an),
         .seg(seg),
-        .dp(dp)
+        .SW(SW),
+        .dp(dp) ,
+        .start_game(start_game)
     );     
 endmodule

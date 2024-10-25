@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Fri Oct 25 11:08:42 2024
+| Date             : Fri Oct 25 14:19:14 2024
 | Host             : tendra running 64-bit major release  (build 9200)
 | Command          : report_power -file BomberGameTopLevel_power_routed.rpt -pb BomberGameTopLevel_power_summary_routed.pb -rpx BomberGameTopLevel_power_routed.rpx
 | Design           : BomberGameTopLevel
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 0.114        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.043        |
+| Dynamic (W)              | 0.042        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.4         |
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.004 |     7653 |       --- |             --- |
-|   LUT as Logic |     0.003 |     4939 |     20800 |           23.75 |
+| Slice Logic    |     0.004 |     7629 |       --- |             --- |
+|   LUT as Logic |     0.003 |     4938 |     20800 |           23.74 |
 |   CARRY4       |    <0.001 |      638 |      8150 |            7.83 |
-|   Register     |    <0.001 |      824 |     41600 |            1.98 |
+|   Register     |    <0.001 |      826 |     41600 |            1.99 |
 |   BUFG         |    <0.001 |        3 |        32 |            9.38 |
-|   F7/F8 Muxes  |    <0.001 |       54 |     32600 |            0.17 |
+|   F7/F8 Muxes  |    <0.001 |       51 |     32600 |            0.16 |
 |   Others       |     0.000 |       55 |       --- |             --- |
-| Signals        |     0.003 |     5285 |       --- |             --- |
-| I/O            |     0.035 |       42 |       106 |           39.62 |
+| Signals        |     0.003 |     5281 |       --- |             --- |
+| I/O            |     0.034 |       43 |       106 |           40.57 |
 | Static Power   |     0.072 |          |           |                 |
 | Total          |     0.114 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.017 |       0.008 |      0.010 |
+| Vccint    |       1.000 |     0.018 |       0.008 |      0.010 |
 | Vccaux    |       1.800 |     0.014 |       0.001 |      0.013 |
 | Vcco33    |       3.300 |     0.011 |       0.010 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -142,7 +142,7 @@ Table of Contents
 +-------------------------------------+-----------+
 | Name                                | Power (W) |
 +-------------------------------------+-----------+
-| BomberGameTopLevel                  |     0.043 |
+| BomberGameTopLevel                  |     0.042 |
 |   DebounceC                         |    <0.001 |
 |     clock_1khz                      |    <0.001 |
 |     counter                         |    <0.001 |
@@ -161,7 +161,7 @@ Table of Contents
 |       mod_inst[0].BombDrop          |     0.000 |
 |       mod_inst[1].BombDrop          |     0.000 |
 |     ColourControl                   |    <0.001 |
-|       Player1                       |    <0.001 |
+|       Player1                       |     0.000 |
 |         counter                     |     0.000 |
 |       player_blink                  |    <0.001 |
 |     ConcreteBlock                   |     0.000 |

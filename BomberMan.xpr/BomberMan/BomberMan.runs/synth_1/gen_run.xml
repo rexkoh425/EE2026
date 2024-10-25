@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1729825500">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1729836647">
   <File Type="PA-TCL" Name="BomberGameTopLevel.tcl"/>
   <File Type="REPORTS-TCL" Name="BomberGameTopLevel_reports.tcl"/>
   <File Type="RDS-RDS" Name="BomberGameTopLevel.vds"/>
@@ -233,6 +233,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/archive_project_summary.txt"/>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="BomberGameTopLevel"/>

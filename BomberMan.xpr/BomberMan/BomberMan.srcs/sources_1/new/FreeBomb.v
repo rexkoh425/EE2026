@@ -24,6 +24,7 @@ module FreeBomb #(parameter[6:0] Maxbombcount = 5)(
     input clk6p25m ,
     input [Maxbombcount-1 : 0]ActiveBombs,
     input DebouncedBtnC , 
+    input start_game,
     input player1_isReviving,
     output reg[7:0] FreeBomb = Maxbombcount - 1,
     output reg edge_registered = 0
@@ -34,7 +35,7 @@ module FreeBomb #(parameter[6:0] Maxbombcount = 5)(
     
     always @(posedge clk6p25m)
     begin
-        if(DebouncedBtnC == 1 & ~player1_isReviving)
+        if(DebouncedBtnC == 1 & ~player1_isReviving & start_game)
         begin
             edge_registered <= 1;
         end

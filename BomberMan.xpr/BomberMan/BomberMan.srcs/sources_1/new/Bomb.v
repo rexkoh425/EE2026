@@ -26,6 +26,7 @@ module Bomb(
     input[6:0] Player1Block ,
     input DebouncedBtnC ,
     input player1_isReviving,
+    input start_game,
     output reg bomb = 1'b0 ,
     output ExplosionAnimations ,
     output player1_die
@@ -72,7 +73,8 @@ module Bomb(
         .ActiveBombs(ActiveBombs) ,
         .FreeBomb(FreeBomb) , .DebouncedBtnC(DebouncedBtnC) , 
         .edge_registered(edge_registered),
-        .player1_isReviving(player1_isReviving)
+        .player1_isReviving(player1_isReviving),
+        .start_game(start_game)
     );
     
     genvar j;

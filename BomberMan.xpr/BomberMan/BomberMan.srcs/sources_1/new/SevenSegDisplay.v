@@ -22,10 +22,12 @@
 
 module SevenSegDisplay(
     input clk6p25m,
+    input[15:0] SW,
     input player1_isReviving,
     output reg[3:0] an = 4'b1111,
     output reg[6:0] seg = 7'b111_1111,
-    output reg dp = 1'b1
+    output reg dp = 1'b1 ,
+    output reg start_game = 0
 );      
     wire clk1hz;
     wire clk200hz;
@@ -38,9 +40,21 @@ module SevenSegDisplay(
     parameter[5:0] game_seconds = 0;
     reg[15:0] total_seconds = game_mins*60 + game_seconds;
     reg[3:0] durations [0 : 3];
+    
+    always @ (posedge clk6p25m)
+    begin
+        if(SW[1])
+        begin
+            start_game <= 1;
+        end
+    end
+    
     always @ (posedge clk1hz)
     begin
-        total_seconds <= total_seconds - 1;
+        if(start_game)
+        begin
+            total_seconds <= total_seconds - 1;
+        end
         durations[3] <= (total_seconds / 600);
         durations[2] <= (total_seconds / 60) % 10;
         durations[1] <= (total_seconds % 60) / 10;
@@ -71,7 +85,7 @@ module SevenSegDisplay(
             3 : seg <= 7'b0110000;
             4 : seg <= 7'b0011001;
             5 : seg <= 7'b0010010;
-            6 : seg <= 7'b000_0011;
+            6 : seg <= 7'b000_0010;
             7 : seg <= 7'b111_1000;
             8 : seg <= 7'b000_0000;
             9 : seg <= 7'b001_1000;
