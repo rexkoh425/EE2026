@@ -24,6 +24,7 @@ module PixelDataControl(
     input clk6p25m , 
     input player1_die,
     input CenterBlock , walls , player1 , bomb , ExplosionAnimations,
+    input start_game ,
     output reg[15:0] pixel_data = 16'b0 ,
     output player1_isReviving
 );
@@ -36,11 +37,10 @@ module PixelDataControl(
    wire[15:0] BROWN = 16'hA52A;
    wire[15:0] ORANGE = 16'hFCA0;
    
-   
    wire PlayerBlinkClk;
    var_clock player_blink(clk6p25m , 32'd624999 , PlayerBlinkClk);
    wire player1_status;
-
+   
    AnimateDeath Player1(
        .clk6p25m(clk6p25m), .PlayerBlinkClk(PlayerBlinkClk),
        .player(player1),
@@ -51,7 +51,12 @@ module PixelDataControl(
    
    always @(posedge clk6p25m)
    begin
-       if(CenterBlock)
+       
+       if(~start_game)
+       begin
+           pixel_data <= WHITE;
+       end
+       else if(CenterBlock)
        begin
            pixel_data <= DARK_GREY;
        end
@@ -65,6 +70,6 @@ module PixelDataControl(
            pixel_data <= RED;
        else
            pixel_data <= BLACK;
-           
+       
    end
 endmodule

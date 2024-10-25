@@ -25,6 +25,7 @@ module PixelControl(
     input btnU , btnD , btnL , btnR , btnC ,
     input DebouncedBtnC ,
     input [12:0] pixel_index ,
+    input start_game,
     output[15:0] pixel_data ,
     output led,
     output player1_isReviving
@@ -32,9 +33,9 @@ module PixelControl(
     
     wire CenterBlock , walls;
     
-    ConcreteBlocks ConcreteBlock(
-       .pixel_index(pixel_index) ,
-       .walls(walls) , .CenterBlock(CenterBlock)
+   ConcreteBlocks ConcreteBlock(
+      .pixel_index(pixel_index) ,
+      .walls(walls) , .CenterBlock(CenterBlock)
    );
    
    wire player1;
@@ -49,7 +50,8 @@ module PixelControl(
        .PlayerMinX(Player1MinX) , .PlayerMaxX(Player1MaxX) ,
        .PlayerMinY(Player1MinY) , .PlayerMaxY(Player1MaxY) ,
        .player1_isReviving(player1_isReviving),
-       .isCollideLed(led)
+       .isCollideLed(led) ,
+       .start_game(start_game)
    );
    
    wire[6:0] Player1Block; 
@@ -72,7 +74,8 @@ module PixelControl(
        .DebouncedBtnC(DebouncedBtnC), 
        .ExplosionAnimations(ExplosionAnimations),
        .player1_die(player1_die) ,
-       .player1_isReviving(player1_isReviving)
+       .player1_isReviving(player1_isReviving),
+       .start_game(start_game)
    );
    
    PixelDataControl ColourControl(
@@ -80,7 +83,8 @@ module PixelControl(
        .player1_die(player1_die),
        .walls(walls) , .CenterBlock(CenterBlock), .player1(player1) , .bomb(bomb) , .ExplosionAnimations(ExplosionAnimations),
        .pixel_data(pixel_data) ,
-       .player1_isReviving(player1_isReviving)
+       .player1_isReviving(player1_isReviving) ,
+       .start_game(start_game)
    );
    
 endmodule

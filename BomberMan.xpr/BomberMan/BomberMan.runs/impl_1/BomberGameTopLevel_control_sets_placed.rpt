@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Fri Oct 25 11:08:02 2024
+| Date         : Fri Oct 25 14:17:45 2024
 | Host         : tendra running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file BomberGameTopLevel_control_sets_placed.rpt
 | Design       : BomberGameTopLevel
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    35 |
-| Unused register locations in slices containing registers |    80 |
+| Number of unique control sets                            |    36 |
+| Unused register locations in slices containing registers |    84 |
 +----------------------------------------------------------+-------+
 
 
@@ -39,7 +39,7 @@ Table of Contents
 |      6 |            1 |
 |      8 |            1 |
 |     14 |            3 |
-|    16+ |           27 |
+|    16+ |           28 |
 +--------+--------------+
 
 
@@ -49,12 +49,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             300 |           90 |
+| No           | No                    | No                     |             272 |           87 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |             664 |           95 |
-| Yes          | No                    | No                     |             294 |           66 |
+| No           | Yes                   | No                     |             664 |           94 |
+| Yes          | No                    | No                     |             326 |           72 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             390 |           72 |
+| Yes          | Yes                   | No                     |             390 |           68 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -64,41 +64,42 @@ Table of Contents
 +-----------------------------------+--------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+------------------+----------------+
 |            Clock Signal           |                                  Enable Signal                                 |                                   Set/Reset Signal                                  | Slice Load Count | Bel Load Count |
 +-----------------------------------+--------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+------------------+----------------+
-|  DebounceC/clock_1khz/SLOW_CLOCK  | DebounceC/pressed_i_2_n_0                                                      | DebounceC/counter/start0                                                            |                1 |              2 |
 | ~clk6p25m_BUFG                    |                                                                                |                                                                                     |                1 |              2 |
+|  DebounceC/clock_1khz/SLOW_CLOCK  | DebounceC/pressed_i_2_n_0                                                      | DebounceC/counter/start0                                                            |                1 |              2 |
 |  DebounceC/clock_1khz/SLOW_CLOCK  |                                                                                |                                                                                     |                1 |              4 |
 |  clk_IBUF_BUFG                    |                                                                                |                                                                                     |                3 |              6 |
-|  clk_0                            |                                                                                |                                                                                     |                3 |              8 |
-|  clk6p25m_BUFG                    | pixelColourControl/TrackPlayer1Square/FirstBlock[6]_i_1_n_0                    | pixelColourControl/TrackPlayer1Square/BlocksSet                                     |                4 |             14 |
+|  clk_0                            |                                                                                |                                                                                     |                2 |              8 |
+|  clk6p25m_BUFG                    | pixelColourControl/TrackPlayer1Square/FirstBlock[6]_i_1_n_0                    | pixelColourControl/TrackPlayer1Square/BlocksSet                                     |                2 |             14 |
 |  clk6p25m_BUFG                    | pixelColourControl/TrackPlayer1Square/BlocksSet                                |                                                                                     |                7 |             14 |
-|  clk6p25m_BUFG                    | pixelColourControl/TrackPlayer1Square/SecondBlock[6]_i_1_n_0                   | pixelColourControl/TrackPlayer1Square/BlocksSet                                     |                4 |             14 |
-|  clk6p25m_BUFG                    | pixelColourControl/TrackPlayer1Square/yBlock[2]_i_1_n_0                        |                                                                                     |                3 |             18 |
-|  clk6p25m_BUFG                    | pixelColourControl/TrackPlayer1Square/CEP                                      |                                                                                     |                5 |             22 |
-|  clk_0                            | pixelColourControl/PlayerMovementControl/FuturePlayerMaxY                      | pixelColourControl/ColourControl/Player1/player1_isReviving                         |                8 |             24 |
-|  clk_0                            | pixelColourControl/PlayerMovementControl/PlayerMaxY[5]_i_1_n_0                 | pixelColourControl/ColourControl/Player1/player1_isReviving                         |                6 |             24 |
+|  clk6p25m_BUFG                    | pixelColourControl/TrackPlayer1Square/SecondBlock[6]_i_1_n_0                   | pixelColourControl/TrackPlayer1Square/BlocksSet                                     |                5 |             14 |
+|  clk6p25m_BUFG                    | pixelColourControl/TrackPlayer1Square/yBlock[2]_i_1_n_0                        |                                                                                     |                4 |             18 |
+|  clk6p25m_BUFG                    | pixelColourControl/TrackPlayer1Square/CEP                                      |                                                                                     |                6 |             22 |
+|  clk_0                            | pixelColourControl/PlayerMovementControl/PlayerMaxY[5]_i_1_n_0                 | pixelColourControl/ColourControl/Player1/SR[0]                                      |                3 |             24 |
+|  clk_0                            | pixelColourControl/PlayerMovementControl/FuturePlayerMinY                      | pixelColourControl/ColourControl/Player1/SR[0]                                      |                8 |             24 |
 |  SevenSegControl/twohundredhz/CLK |                                                                                |                                                                                     |                3 |             26 |
-|  clk_0                            | pixelColourControl/PlayerMovementControl/PlayerMaxX[6]_i_1_n_0                 | pixelColourControl/ColourControl/Player1/player1_isReviving                         |                6 |             28 |
-|  clk_0                            | pixelColourControl/PlayerMovementControl/FuturePlayerMinX                      | pixelColourControl/ColourControl/Player1/player1_isReviving                         |                9 |             28 |
+|  clk_0                            | pixelColourControl/PlayerMovementControl/PlayerMaxX[6]_i_1_n_0                 | pixelColourControl/ColourControl/Player1/SR[0]                                      |                6 |             28 |
+|  clk_0                            | pixelColourControl/PlayerMovementControl/FuturePlayerMinX                      | pixelColourControl/ColourControl/Player1/SR[0]                                      |                9 |             28 |
+|  durations_reg[3][3]_i_2_n_0      |                                                                                |                                                                                     |                7 |             30 |
+|  durations_reg[3][3]_i_2_n_0      | SevenSegControl/start_game                                                     |                                                                                     |                4 |             32 |
 | ~clk6p25m_BUFG                    | Oled_display/delay[0]_i_1_n_0                                                  |                                                                                     |                5 |             40 |
-| ~clk6p25m_BUFG                    |                                                                                | Oled_display/frame_counter[16]_i_1_n_0                                              |               11 |             58 |
-|  durations_reg[3][3]_i_2_n_0      |                                                                                |                                                                                     |               11 |             62 |
+| ~clk6p25m_BUFG                    |                                                                                | Oled_display/frame_counter[16]_i_1_n_0                                              |                9 |             58 |
+|  clk6p25m_BUFG                    | pixelColourControl/BombControl/mod_inst2[1].ExplodeAnimation/counter_reg[31]_0 | pixelColourControl/BombControl/mod_inst2[1].ExplodeAnimation/counter[31]_i_1__0_n_0 |                9 |             64 |
+| ~clk6p25m_BUFG                    | Oled_display/state                                                             |                                                                                     |               11 |             64 |
+|  clk6p25m_BUFG                    | pixelColourControl/BombControl/mod_inst2[0].ExplodeAnimation/p_13_out          | pixelColourControl/BombControl/mod_inst2[0].ExplodeAnimation/counter[31]_i_1_n_0    |                9 |             64 |
+|  clk6p25m_BUFG                    | pixelColourControl/BombControl/mod_inst1[0].Bombcounter/p_3_out                | pixelColourControl/BombControl/mod_inst1[0].Bombcounter/clear                       |                8 |             64 |
+|  clk6p25m_BUFG                    | pixelColourControl/BombControl/mod_inst1[1].Bombcounter/p_2_out                | pixelColourControl/BombControl/mod_inst1[1].Bombcounter/count[0]_i_1_n_0            |                8 |             64 |
+|  clk6p25m_BUFG                    |                                                                                | SevenSegControl/twohundredhz/clear                                                  |                8 |             64 |
 |  clk_IBUF_BUFG                    |                                                                                | DebounceC/clock_1khz/COUNT[0]_i_1__1_n_0                                            |                8 |             64 |
 |  clk_IBUF_BUFG                    |                                                                                | pixelColourControl/PlayerMovementControl/clk40hz/clear                              |                8 |             64 |
 |  clk_IBUF_BUFG                    |                                                                                | clock_6p25MHZ/clear                                                                 |                8 |             64 |
 |  clk6p25m_BUFG                    |                                                                                | SevenSegControl/onehz/COUNT[0]_i_1__3_n_0                                           |                8 |             64 |
-|  clk6p25m_BUFG                    | pixelColourControl/BombControl/mod_inst1[1].Bombcounter/p_2_out                | pixelColourControl/BombControl/mod_inst1[1].Bombcounter/count[0]_i_1_n_0            |                8 |             64 |
-|  clk6p25m_BUFG                    | pixelColourControl/BombControl/mod_inst1[0].Bombcounter/p_3_out                | pixelColourControl/BombControl/mod_inst1[0].Bombcounter/clear                       |                8 |             64 |
-|  clk6p25m_BUFG                    | pixelColourControl/BombControl/mod_inst2[0].ExplodeAnimation/p_13_out          | pixelColourControl/BombControl/mod_inst2[0].ExplodeAnimation/counter[31]_i_1_n_0    |                9 |             64 |
-|  clk6p25m_BUFG                    | pixelColourControl/BombControl/mod_inst2[1].ExplodeAnimation/counter_reg[31]_0 | pixelColourControl/BombControl/mod_inst2[1].ExplodeAnimation/counter[31]_i_1__0_n_0 |                9 |             64 |
 |  clk6p25m_BUFG                    |                                                                                | pixelColourControl/ColourControl/player_blink/COUNT[0]_i_1_n_0                      |                8 |             64 |
-| ~clk6p25m_BUFG                    | Oled_display/FSM_onehot_state[31]_i_1_n_0                                      |                                                                                     |                9 |             64 |
-|  clk6p25m_BUFG                    |                                                                                | SevenSegControl/twohundredhz/clear                                                  |                8 |             64 |
-|  clk_IBUF_BUFG                    |                                                                                | DebounceC/counter/clear                                                             |                9 |             66 |
 |  clk6p25m_BUFG                    |                                                                                | pixelColourControl/ColourControl/Player1/counter/reached_i_1_n_0                    |                9 |             66 |
-|  clk6p25m_BUFG                    | pixelColourControl/BombControl/FindFreeBomb/BombsBlock_reg[1][1]_rep__1        |                                                                                     |               20 |             68 |
-|  clk6p25m_BUFG                    | pixelColourControl/BombControl/FindFreeBomb/BombsBlock                         |                                                                                     |               17 |             68 |
-| ~clk6p25m_BUFG                    |                                                                                | Oled_display/spi_word[39]_i_1_n_0                                                   |               18 |             90 |
-|  clk6p25m_BUFG                    |                                                                                |                                                                                     |               68 |            192 |
+|  clk_IBUF_BUFG                    |                                                                                | DebounceC/counter/clear                                                             |                9 |             66 |
+|  clk6p25m_BUFG                    | pixelColourControl/BombControl/FindFreeBomb/BombsBlock_reg[1][1]_rep__1        |                                                                                     |               16 |             68 |
+|  clk6p25m_BUFG                    | pixelColourControl/BombControl/FindFreeBomb/BombsBlock                         |                                                                                     |               19 |             68 |
+| ~clk6p25m_BUFG                    |                                                                                | Oled_display/spi_word[39]_i_1_n_0                                                   |               19 |             90 |
+|  clk6p25m_BUFG                    |                                                                                |                                                                                     |               70 |            196 |
 +-----------------------------------+--------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+------------------+----------------+
 
 
