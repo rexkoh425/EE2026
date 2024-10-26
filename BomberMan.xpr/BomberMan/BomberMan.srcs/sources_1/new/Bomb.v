@@ -52,6 +52,7 @@ module Bomb(
     wire[Maxbombcount-1 : 0] ActiveBombs;
     wire[Maxbombcount-1 : 0] player1_died;
     wire[Maxbombcount-1 : 0] immediate_explode;
+    wire[(Maxbombcount * 2) - 1 : 0] WhichPlayerBomb;
     wire[7:0] FreeBomb;
     wire edge_registered;
     wire[Maxbombcount-1 : 0] ExplosionAnimation;

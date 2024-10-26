@@ -22,6 +22,7 @@
 
 module PlayerMovement #(parameter[6:0] InitialMinX = 4 , InitialMaxX = 10 , InitialMinY = 2, InitialMaxY = 8)(
     input clk100mhz ,
+    input initiate_reset,
     input[12:0] pixel_index ,
     input btnU , btnD , btnL , btnR , btnC , 
     input player1_isReviving,
@@ -73,7 +74,7 @@ module PlayerMovement #(parameter[6:0] InitialMinX = 4 , InitialMaxX = 10 , Init
     begin
         if(start_game)
         begin
-            if(btnU & (button == 0 || button == 5))
+            if(btnU & (button == 0 || button == 5) & ~initiate_reset)
             begin
                 if(FutureCheck)
                 begin
@@ -95,7 +96,7 @@ module PlayerMovement #(parameter[6:0] InitialMinX = 4 , InitialMaxX = 10 , Init
                 end
                 button <= 0;
             end
-            else if(btnD & (button == 1 || button == 5))
+            else if(btnD & (button == 1 || button == 5) & ~initiate_reset)
             begin
                 if(FutureCheck)
                 begin
@@ -117,7 +118,7 @@ module PlayerMovement #(parameter[6:0] InitialMinX = 4 , InitialMaxX = 10 , Init
                 end
                 button <= 1;
             end
-            else if(btnL  & (button == 2 || button == 5))
+            else if(btnL  & (button == 2 || button == 5) & ~initiate_reset)
             begin
                 if(FutureCheck)
                 begin
@@ -139,7 +140,7 @@ module PlayerMovement #(parameter[6:0] InitialMinX = 4 , InitialMaxX = 10 , Init
                 end
                 button <= 2;
             end
-            else if(btnR  & (button == 3 || button == 5))
+            else if(btnR  & (button == 3 || button == 5) & ~initiate_reset)
             begin
                 if(FutureCheck)
                 begin
@@ -183,6 +184,18 @@ module PlayerMovement #(parameter[6:0] InitialMinX = 4 , InitialMaxX = 10 , Init
                 FuturePlayerMaxY <= InitialMaxY;
                 button <= 5;
             end
+        end
+        else begin
+            FutureCheck <= 0;
+            PlayerMinX <= InitialMinX;
+            PlayerMaxX <= InitialMaxX;
+            PlayerMinY <= InitialMinY;
+            PlayerMaxY <= InitialMaxY;
+            FuturePlayerMinX <= InitialMinX;
+            FuturePlayerMaxX <= InitialMaxX;
+            FuturePlayerMinY <= InitialMinY;
+            FuturePlayerMaxY <= InitialMaxY;
+            button <= 5;
         end
     end
     

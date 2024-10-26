@@ -17,7 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -42,10 +41,12 @@ read_verilog -library xil_defaultlib {
   C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Counter_100MHZ.v
   C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/ExplodeBomb.v
   C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/FreeBomb.v
+  C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/GameReset.v
   C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Oled_Display.v
   C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v
   C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelDataControl.v
   C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Player.v
+  C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerDeath.v
   C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v
   C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/SevenSegDisplay.v
   C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/SquareTracker.v
