@@ -38,7 +38,7 @@ module Bomb(
     wire[6:0] BombMinX , BombMaxX;
     wire[5:0] BombMinY , BombMaxY;
     parameter dimension = 9;
-    parameter[6:0] Maxbombcount = 4; 
+    parameter[6:0] Maxbombcount = 3; 
     //seems like got bug with dropping more than n-2 bombs where
     //it will explode where the player is
     //increasing bomb count significantly increase bitstream gen time

@@ -32,10 +32,17 @@ module PixelControl(
     output led,
     output player1_isReviving
 );
-    
+   parameter dimensions = 9;
+   parameter minX = 3 ,maxX = 93;
+   parameter minY = 1 , maxY = 64;
+   parameter player_dimensions = 7;
+   //Squaretracker tracks player
+   //Concrete blocks builds concrete blocks
+   //Collision tracker in PlayerMovement tracks if player hit concrete
+   
    wire CenterBlock , walls;
     
-   ConcreteBlocks ConcreteBlock(
+   ConcreteBlocks #(dimensions,minX,maxX,minY,maxY) ConcreteBlock(
       .pixel_index(pixel_index) ,
       .walls(walls) , .CenterBlock(CenterBlock)
    );
@@ -44,7 +51,9 @@ module PixelControl(
    wire[6:0] Player1MinX , Player1MaxX;
    wire[5:0] Player1MinY , Player1MaxY;
    
-   PlayerMovement #(4,10,2,8) PlayerMovementControl (
+   PlayerMovement 
+   #(minX+1,minX+player_dimensions,minY+1,minY + player_dimensions,dimensions,minX,maxX,minY,maxY) 
+   PlayerMovementControl (
        .clk100mhz(clk100mhz) , 
        .btnU(btnU) , .btnD(btnD) , .btnL(btnL) , .btnR(btnR) , .btnC(btnC) ,
        .pixel_index(pixel_index) ,
@@ -56,7 +65,7 @@ module PixelControl(
        .start_game(start_game), .initiate_reset(initiate_reset)
    );
    
-   wire[6:0] Player1Block; 
+   wire[6:0] #(dimensions,minX,maxX,minY,maxY) Player1Block; 
    SquareTracker TrackPlayer1Square(
        .clk6p25m(clk6p25m),
        .PlayerMinX(Player1MinX) , .PlayerMaxX(Player1MaxX) , 

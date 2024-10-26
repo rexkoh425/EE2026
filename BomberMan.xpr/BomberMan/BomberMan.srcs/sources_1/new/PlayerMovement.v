@@ -20,7 +20,11 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module PlayerMovement #(parameter[6:0] InitialMinX = 4 , InitialMaxX = 10 , InitialMinY = 2, InitialMaxY = 8)(
+module PlayerMovement 
+#(
+    parameter[6:0] InitialMinX = 4 , InitialMaxX = 10 , InitialMinY = 2, InitialMaxY = 8,
+    parameter dimensions = 9 , minX = 3 ,maxX = 93 , minY = 1 , maxY = 64
+)(
     input clk100mhz ,
     input initiate_reset,
     input[12:0] pixel_index ,
@@ -50,7 +54,7 @@ module PlayerMovement #(parameter[6:0] InitialMinX = 4 , InitialMaxX = 10 , Init
     reg FutureCheck = 1'b0;
     wire Collide_Immutable;
     
-    CollisionCheck Collision(
+    CollisionCheck #(dimensions,minX,maxX,minY,maxY) Collision(
         .PlayerMinX(FuturePlayerMinX) , .PlayerMaxX(FuturePlayerMaxX) , 
         .PlayerMinY(FuturePlayerMinY) , .PlayerMaxY(FuturePlayerMaxY) ,
         .isCollisionWithImmutable(Collide_Immutable)
