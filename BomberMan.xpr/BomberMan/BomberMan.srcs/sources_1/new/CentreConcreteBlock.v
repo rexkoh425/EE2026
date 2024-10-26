@@ -20,12 +20,10 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module CentreConcreteBlock(
+module CentreConcreteBlock #(parameter dimensions = 9)(
     input[12:0] pixel_index , 
     output CenterBlock
 );
-
-    parameter dimensions = 9; //just for log of dimension of block
     
     wire block1, block2, block3, block4, block5, block6, block7, block8, block9, block10, 
     block11, block12, block13, block14, block15, block16, block17, block18, block19, block20, 

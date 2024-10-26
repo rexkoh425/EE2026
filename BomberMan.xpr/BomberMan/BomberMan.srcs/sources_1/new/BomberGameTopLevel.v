@@ -58,8 +58,9 @@ module BomberGameTopLevel(
         .clk100mhz(clk), .clk6p25m(clk6p25m),
         .initiate_reset(initiate_reset),
         .btnU(btnU) , .btnD(btnD) , .btnL(btnL) , .btnR(btnR) , .btnC(btnC) ,
+        .Player1SW(SW),
         .pixel_index(pixel_index), .pixel_data(pixel_data) ,
-        .DebouncedBtnC(DebouncedBtnC) ,
+        .Player1DebouncedBtnC(DebouncedBtnC) ,
         .led(led[0]),
         .player1_isReviving(player1_isReviving),
         .start_game(start_game)
