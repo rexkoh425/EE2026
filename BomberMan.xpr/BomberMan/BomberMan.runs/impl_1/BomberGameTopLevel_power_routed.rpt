@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Fri Oct 25 14:19:14 2024
+| Date             : Sat Oct 26 16:43:50 2024
 | Host             : tendra running 64-bit major release  (build 9200)
 | Command          : report_power -file BomberGameTopLevel_power_routed.rpt -pb BomberGameTopLevel_power_summary_routed.pb -rpx BomberGameTopLevel_power_routed.rpx
 | Design           : BomberGameTopLevel
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.114        |
+| Total On-Chip Power (W)  | 0.082        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.042        |
+| Dynamic (W)              | 0.011        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 84.4         |
-| Junction Temperature (C) | 25.6         |
+| Max Ambient (C)          | 84.6         |
+| Junction Temperature (C) | 25.4         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,18 +52,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.004 |     7629 |       --- |             --- |
-|   LUT as Logic |     0.003 |     4938 |     20800 |           23.74 |
-|   CARRY4       |    <0.001 |      638 |      8150 |            7.83 |
-|   Register     |    <0.001 |      826 |     41600 |            1.99 |
+| Clocks         |     0.002 |        3 |       --- |             --- |
+| Slice Logic    |     0.004 |    12597 |       --- |             --- |
+|   LUT as Logic |     0.003 |     8350 |     20800 |           40.14 |
+|   CARRY4       |    <0.001 |     1093 |      8150 |           13.41 |
+|   Register     |    <0.001 |     1030 |     41600 |            2.48 |
 |   BUFG         |    <0.001 |        3 |        32 |            9.38 |
-|   F7/F8 Muxes  |    <0.001 |       51 |     32600 |            0.16 |
-|   Others       |     0.000 |       55 |       --- |             --- |
-| Signals        |     0.003 |     5281 |       --- |             --- |
-| I/O            |     0.034 |       43 |       106 |           40.57 |
+|   F7/F8 Muxes  |    <0.001 |       93 |     32600 |            0.29 |
+|   Others       |     0.000 |       61 |       --- |             --- |
+| Signals        |     0.003 |     8723 |       --- |             --- |
+| I/O            |     0.002 |       46 |       106 |           43.40 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.114 |          |           |                 |
+| Total          |     0.082 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,9 +73,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.018 |       0.008 |      0.010 |
-| Vccaux    |       1.800 |     0.014 |       0.001 |      0.013 |
-| Vcco33    |       3.300 |     0.011 |       0.010 |      0.001 |
+| Vccint    |       1.000 |     0.018 |       0.009 |      0.010 |
+| Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
+| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -142,24 +142,26 @@ Table of Contents
 +-------------------------------------+-----------+
 | Name                                | Power (W) |
 +-------------------------------------+-----------+
-| BomberGameTopLevel                  |     0.042 |
+| BomberGameTopLevel                  |     0.011 |
 |   DebounceC                         |    <0.001 |
 |     clock_1khz                      |    <0.001 |
 |     counter                         |    <0.001 |
 |   Oled_display                      |    <0.001 |
+|   ResetControl                      |    <0.001 |
 |   SevenSegControl                   |     0.005 |
 |     onehz                           |    <0.001 |
-|     twohundredhz                    |    <0.001 |
 |   clock_6p25MHZ                     |    <0.001 |
-|   pixelColourControl                |    <0.001 |
+|   pixelColourControl                |     0.001 |
 |     BombControl                     |    <0.001 |
 |       FindFreeBomb                  |    <0.001 |
-|       mod_inst1[0].Bombcounter      |     0.000 |
-|       mod_inst1[1].Bombcounter      |     0.000 |
+|       mod_inst1[0].Bombcounter      |    <0.001 |
+|       mod_inst1[1].Bombcounter      |    <0.001 |
+|       mod_inst1[2].Bombcounter      |    <0.001 |
+|       mod_inst1[3].Bombcounter      |    <0.001 |
 |       mod_inst2[0].ExplodeAnimation |    <0.001 |
 |       mod_inst2[1].ExplodeAnimation |    <0.001 |
-|       mod_inst[0].BombDrop          |     0.000 |
-|       mod_inst[1].BombDrop          |     0.000 |
+|       mod_inst2[2].ExplodeAnimation |    <0.001 |
+|       mod_inst2[3].ExplodeAnimation |    <0.001 |
 |     ColourControl                   |    <0.001 |
 |       Player1                       |     0.000 |
 |         counter                     |     0.000 |
@@ -174,6 +176,7 @@ Table of Contents
 |         Player1                     |     0.000 |
 |       clk40hz                       |    <0.001 |
 |     TrackPlayer1Square              |    <0.001 |
+|   twohundredhz                      |    <0.001 |
 +-------------------------------------+-----------+
 
 

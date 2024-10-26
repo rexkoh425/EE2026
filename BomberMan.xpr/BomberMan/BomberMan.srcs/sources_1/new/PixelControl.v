@@ -22,8 +22,10 @@
 
 module PixelControl(
     input clk100mhz ,clk6p25m ,
+    input initiate_reset,
     input btnU , btnD , btnL , btnR , btnC ,
-    input DebouncedBtnC ,
+    input [15:0]Player1SW , 
+    input Player1DebouncedBtnC ,
     input [12:0] pixel_index ,
     input start_game,
     output[15:0] pixel_data ,
@@ -31,7 +33,7 @@ module PixelControl(
     output player1_isReviving
 );
     
-    wire CenterBlock , walls;
+   wire CenterBlock , walls;
     
    ConcreteBlocks ConcreteBlock(
       .pixel_index(pixel_index) ,
@@ -51,7 +53,7 @@ module PixelControl(
        .PlayerMinY(Player1MinY) , .PlayerMaxY(Player1MaxY) ,
        .player1_isReviving(player1_isReviving),
        .isCollideLed(led) ,
-       .start_game(start_game)
+       .start_game(start_game), .initiate_reset(initiate_reset)
    );
    
    wire[6:0] Player1Block; 
@@ -71,7 +73,8 @@ module PixelControl(
        .pixel_index(pixel_index) ,
        .Player1Block(Player1Block) ,
        .bomb(bomb),
-       .DebouncedBtnC(DebouncedBtnC), 
+       .Player1DebouncedBtnC(Player1DebouncedBtnC), 
+       .Player1SW(Player1SW),
        .ExplosionAnimations(ExplosionAnimations),
        .player1_die(player1_die) ,
        .player1_isReviving(player1_isReviving),
