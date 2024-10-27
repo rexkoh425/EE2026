@@ -23,14 +23,14 @@
 module Bomb(
     input clk6p25m,
     input[12:0] pixel_index ,
-    input[6:0] Player1Block ,
-    input Player1DebouncedBtnC ,
-    input[15:0] Player1SW,
-    input player1_isReviving,
+    input[6:0] Player1Block , Player2Block,Player3Block,Player4Block,
+    input Player1DebouncedBtnC , Player2DebouncedBtnC, Player3DebouncedBtnC, Player4DebouncedBtnC, 
+    input[15:0] SW,
+    input player1_isReviving, player2_isReviving,player3_isReviving,player4_isReviving,
     input start_game,
     output reg bomb = 1'b0 ,
     output ExplosionAnimations ,
-    output player1_die
+    output player1_die , player2_die ,player3_die,player4_die
 );  
 
     wire[3:0] xBlock;
@@ -52,6 +52,9 @@ module Bomb(
     wire[Maxbombcount-1 :0] explode;
     wire[Maxbombcount-1 : 0] ActiveBombs;
     wire[Maxbombcount-1 : 0] player1_died;
+    wire[Maxbombcount-1 : 0] player2_died;
+    wire[Maxbombcount-1 : 0] player3_died;
+    wire[Maxbombcount-1 : 0] player4_died;
     wire[Maxbombcount-1 : 0] immediate_explode;
     wire[(Maxbombcount * 2) - 1 : 0] WhichPlayerBomb;
     wire[7:0] FreeBomb;
@@ -60,6 +63,10 @@ module Bomb(
     reg[69:0] blocksAffectedByExplosion;
     
     assign player1_die = |player1_died;
+    assign player2_die = |player2_died;
+    assign player3_die = |player3_died;
+    assign player4_die = |player4_died;
+    
     integer k;
    
     initial begin
@@ -73,9 +80,16 @@ module Bomb(
     FreeBomb #(Maxbombcount)FindFreeBomb(
         .clk6p25m(clk6p25m) , 
         .ActiveBombs(ActiveBombs) ,
-        .FreeBomb(FreeBomb) , .Player1DebouncedBtnC(Player1DebouncedBtnC) , 
+        .FreeBomb(FreeBomb) , 
+        .Player1DebouncedBtnC(Player1DebouncedBtnC) ,
+        .Player2DebouncedBtnC(Player2DebouncedBtnC) ,
+        .Player3DebouncedBtnC(Player3DebouncedBtnC) ,
+        .Player4DebouncedBtnC(Player4DebouncedBtnC) ,
         .edge_registered(edge_registered),
         .player1_isReviving(player1_isReviving),
+        .player2_isReviving(player2_isReviving),
+        .player3_isReviving(player3_isReviving),
+        .player4_isReviving(player4_isReviving),
         .start_game(start_game),
         .WhichPlayerBomb(WhichPlayerBomb)
     );
@@ -132,7 +146,7 @@ module Bomb(
             TriggerExplosion #(Maxbombcount) TriggerForBlockJ(
                 .BombBlock(BombsBlock[j]) ,
                 .WhichPlayerBomb(WhichPlayerBomb[j*2 +1 : j*2]),
-                .Player1SW(Player1SW[15:13]),
+                .Player1SW(SW[15:13]),
                 .active(ActiveBombs[j]),
                 .blocksAffectedByExplosion(blocksAffectedByExplosion),
                 .immediate_explode(immediate_explode[j])

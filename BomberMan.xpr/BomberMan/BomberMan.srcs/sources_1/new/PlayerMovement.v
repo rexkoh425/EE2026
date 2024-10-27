@@ -29,20 +29,19 @@ module PlayerMovement
     input initiate_reset,
     input[12:0] pixel_index ,
     input btnU , btnD , btnL , btnR , btnC , 
-    input player1_isReviving,
+    input player_isReviving,
     input start_game,
     output reg[6:0] PlayerMinX , PlayerMaxX ,
     output reg[5:0] PlayerMinY , PlayerMaxY ,
-    output [6:0] Player1Block ,
-    output player ,
-    output isCollideLed
+    output [6:0] PlayerBlock ,
+    output player
 );
      
    SquareTracker  #(dimensions,minX,maxX,minY,maxY) TrackPlayer1Square(
        .clk6p25m(clk6p25m),
        .PlayerMinX(PlayerMinX) , .PlayerMaxX(PlayerMaxX) , 
        .PlayerMinY(PlayerMinY) , .PlayerMaxY(PlayerMaxY) ,
-       .Player1Block(Player1Block)
+       .Player1Block(PlayerBlock)
     );
     
     reg[6:0] FuturePlayerMinX , FuturePlayerMaxX; 
@@ -79,7 +78,7 @@ module PlayerMovement
     var_clock clk40hz(.clk(clk100mhz) , .M(32'd1249999) , .SLOW_CLOCK(clk_40hz));
       
     wire isBottomBound = PlayerMaxY > 62;
-    assign isCollideLed = (isBottomBound && btnD) | Collide_Immutable;
+
     reg[2:0] button = 0;
     
     always @ (posedge clk_40hz)
@@ -183,7 +182,7 @@ module PlayerMovement
                 button <= 5;
             end
             
-            if(player1_isReviving)
+            if(player_isReviving)
             begin
                 FutureCheck <= 0;
                 PlayerMinX <= InitialMinX;

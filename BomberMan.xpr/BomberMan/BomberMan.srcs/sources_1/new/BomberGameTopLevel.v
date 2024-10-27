@@ -44,7 +44,6 @@ module BomberGameTopLevel(
     wire clk200hz;
     var_clock twohundredhz(.clk(clk) , .M(249_999) , . SLOW_CLOCK(clk200hz));
     
-    assign led[15:1] = 15'b0;
     //Debouncing area
     ///////////////////////////////////////////////////////////////////////////
     wire DebouncedBtnU , DebouncedBtnD , DebouncedBtnL , DebouncedBtnR , DebouncedBtnC;
@@ -62,10 +61,10 @@ module BomberGameTopLevel(
         .clk100mhz(clk), .clk6p25m(clk6p25m),
         .initiate_reset(initiate_reset),
         .btnU(btnU) , .btnD(btnD) , .btnL(btnL) , .btnR(btnR) , .btnC(btnC) ,
-        .Player1SW(SW),
+        .SW(SW),
         .pixel_index(pixel_index), .pixel_data(pixel_data) ,
         .Player1DebouncedBtnC(DebouncedBtnC) ,
-        .led(led[0]),.led3(led[3]),
+        .led3(led[3]),
         .reset(SW[14]), .masterToggle(SW[15]), .testLed(led[1]),
         .master_tx(master_tx), .master_rx(master_rx), .slave_rx(slave_rx), .slave_tx(slave_tx),
         .player1_isReviving(player1_isReviving),
