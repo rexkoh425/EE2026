@@ -56,18 +56,21 @@ module BomberGameTopLevel(
     
     //  pixel data initialised as 0 here
     //////////////////////////////////////////////////////////////////////////
-    wire player1_isReviving;
+    wire player1_isReviving,player2_isReviving,player3_isReviving,player4_isReviving;
     PixelControl pixelColourControl(
         .clk100mhz(clk), .clk6p25m(clk6p25m),
         .initiate_reset(initiate_reset),
         .btnU(btnU) , .btnD(btnD) , .btnL(btnL) , .btnR(btnR) , .btnC(btnC) ,
         .SW(SW),
         .pixel_index(pixel_index), .pixel_data(pixel_data) ,
-        .Player1DebouncedBtnC(DebouncedBtnC) ,
+        .DebouncedBtnC(DebouncedBtnC) ,
         .led3(led[3]),
         .reset(SW[14]), .masterToggle(SW[15]), .testLed(led[1]),
         .master_tx(master_tx), .master_rx(master_rx), .slave_rx(slave_rx), .slave_tx(slave_tx),
         .player1_isReviving(player1_isReviving),
+        .player2_isReviving(player2_isReviving),
+        .player3_isReviving(player3_isReviving),
+        .player4_isReviving(player4_isReviving),
         .start_game(start_game)
     );
     //////////////////////////////////////////////////////////////////////////

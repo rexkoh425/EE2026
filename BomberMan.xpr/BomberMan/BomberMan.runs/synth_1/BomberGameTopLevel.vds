@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Sun Oct 27 17:03:59 2024
-# Process ID: 17444
+# Start of session at: Sun Oct 27 18:45:28 2024
+# Process ID: 23836
 # Current directory: C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.runs/synth_1
 # Command line: vivado.exe -log BomberGameTopLevel.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source BomberGameTopLevel.tcl
 # Log file: C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.runs/synth_1/BomberGameTopLevel.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 24648 
+INFO: Helper process launched with PID 2420 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 356.938 ; gain = 100.070
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 357.434 ; gain = 100.160
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'BomberGameTopLevel' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BomberGameTopLevel.v:23]
 INFO: [Synth 8-6157] synthesizing module 'var_clock' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/var_clock.v:23]
@@ -100,7 +100,7 @@ INFO: [Synth 8-6155] done synthesizing module 'PlayerMovement__parameterized0' (
 INFO: [Synth 8-6157] synthesizing module 'PlayerMovement__parameterized1' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:23]
 	Parameter InitialMinX bound to: 7'b0000100 
 	Parameter InitialMaxX bound to: 7'b0001010 
-	Parameter InitialMinY bound to: 7'b0111000 
+	Parameter InitialMinY bound to: 7'b0111001 
 	Parameter InitialMaxY bound to: 7'b0111111 
 	Parameter dimensions bound to: 9 - type: integer 
 	Parameter minX bound to: 3 - type: integer 
@@ -111,7 +111,7 @@ INFO: [Synth 8-6155] done synthesizing module 'PlayerMovement__parameterized1' (
 INFO: [Synth 8-6157] synthesizing module 'PlayerMovement__parameterized2' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:23]
 	Parameter InitialMinX bound to: 7'b1010111 
 	Parameter InitialMaxX bound to: 7'b1011101 
-	Parameter InitialMinY bound to: 7'b0111000 
+	Parameter InitialMinY bound to: 7'b0111001 
 	Parameter InitialMaxY bound to: 7'b0111111 
 	Parameter dimensions bound to: 9 - type: integer 
 	Parameter minX bound to: 3 - type: integer 
@@ -138,9 +138,6 @@ INFO: [Synth 8-6155] done synthesizing module 'TriggerExplosion' (17#1) [C:/NUS/
 INFO: [Synth 8-6157] synthesizing module 'FreeBomb' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/FreeBomb.v:23]
 	Parameter Maxbombcount bound to: 7'b0000011 
 INFO: [Synth 8-6155] done synthesizing module 'FreeBomb' (18#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/FreeBomb.v:23]
-WARNING: [Synth 8-3848] Net player2_died in module/entity Bomb does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:55]
-WARNING: [Synth 8-3848] Net player3_died in module/entity Bomb does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:56]
-WARNING: [Synth 8-3848] Net player4_died in module/entity Bomb does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:57]
 INFO: [Synth 8-6155] done synthesizing module 'Bomb' (19#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:23]
 INFO: [Synth 8-6157] synthesizing module 'PixelDataControl' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelDataControl.v:23]
 INFO: [Synth 8-6157] synthesizing module 'AnimateDeath' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/AnimateDeath.v:23]
@@ -150,27 +147,6 @@ WARNING: [Synth 8-3848] Net slave_tx in module/entity PixelControl does not have
 WARNING: [Synth 8-3848] Net testLed in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:34]
 WARNING: [Synth 8-3848] Net led3 in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:34]
 WARNING: [Synth 8-3848] Net master_tx in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:35]
-WARNING: [Synth 8-3848] Net Player2DebouncedBtnC in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:75]
-WARNING: [Synth 8-3848] Net Player3DebouncedBtnC in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:99]
-WARNING: [Synth 8-3848] Net Player4DebouncedBtnC in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:123]
-WARNING: [Synth 8-3848] Net player3_isReviving in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:104]
-WARNING: [Synth 8-3848] Net player4_isReviving in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:128]
-WARNING: [Synth 8-3848] Net btnUPlayer2 in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:74]
-WARNING: [Synth 8-3848] Net btnDPlayer2 in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:74]
-WARNING: [Synth 8-3848] Net btnLPlayer2 in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:74]
-WARNING: [Synth 8-3848] Net btnRPlayer2 in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:74]
-WARNING: [Synth 8-3848] Net btnCPlayer2 in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:74]
-WARNING: [Synth 8-3848] Net player2_isReviving in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:80]
-WARNING: [Synth 8-3848] Net btnUPlayer3 in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:98]
-WARNING: [Synth 8-3848] Net btnDPlayer3 in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:98]
-WARNING: [Synth 8-3848] Net btnLPlayer3 in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:98]
-WARNING: [Synth 8-3848] Net btnRPlayer3 in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:98]
-WARNING: [Synth 8-3848] Net btnCPlayer3 in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:98]
-WARNING: [Synth 8-3848] Net btnUPlayer4 in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:122]
-WARNING: [Synth 8-3848] Net btnDPlayer4 in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:122]
-WARNING: [Synth 8-3848] Net btnLPlayer4 in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:122]
-WARNING: [Synth 8-3848] Net btnRPlayer4 in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:122]
-WARNING: [Synth 8-3848] Net btnCPlayer4 in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:122]
 INFO: [Synth 8-6155] done synthesizing module 'PixelControl' (22#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:23]
 INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Oled_Display.v:36]
 	Parameter Width bound to: 96 - type: integer 
@@ -235,57 +211,12 @@ INFO: [Synth 8-6157] synthesizing module 'GameReset' [C:/NUS/EE2026/EE2026/Bombe
 INFO: [Synth 8-6155] done synthesizing module 'GameReset' (25#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/GameReset.v:23]
 INFO: [Synth 8-6157] synthesizing module 'PlayerDeath' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerDeath.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'PlayerDeath' (26#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerDeath.v:23]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net led[1] with 1st driver pin 'BomberGameTopLevel:/pixelColourControl/testLed' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BomberGameTopLevel.v:23]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net led[1] with 2nd driver pin 'GND' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BomberGameTopLevel.v:23]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net led[1] is connected to constant driver, other driver is ignored [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BomberGameTopLevel.v:23]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net led[3] with 1st driver pin 'BomberGameTopLevel:/pixelColourControl/led3' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BomberGameTopLevel.v:23]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net led[3] with 2nd driver pin 'GND' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BomberGameTopLevel.v:23]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net led[3] is connected to constant driver, other driver is ignored [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BomberGameTopLevel.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'BomberGameTopLevel' (27#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BomberGameTopLevel.v:23]
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[15] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[14] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[13] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[12] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[11] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[10] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[9] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[8] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[7] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[6] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[5] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[4] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[3] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[2] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[1] driven by constant 0
-WARNING: [Synth 8-3331] design Bomb has unconnected port Player2Block[6]
-WARNING: [Synth 8-3331] design Bomb has unconnected port Player2Block[5]
-WARNING: [Synth 8-3331] design Bomb has unconnected port Player2Block[4]
-WARNING: [Synth 8-3331] design Bomb has unconnected port Player2Block[3]
-WARNING: [Synth 8-3331] design Bomb has unconnected port Player2Block[2]
-WARNING: [Synth 8-3331] design Bomb has unconnected port Player2Block[1]
-WARNING: [Synth 8-3331] design Bomb has unconnected port Player2Block[0]
-WARNING: [Synth 8-3331] design Bomb has unconnected port Player3Block[6]
-WARNING: [Synth 8-3331] design Bomb has unconnected port Player3Block[5]
-WARNING: [Synth 8-3331] design Bomb has unconnected port Player3Block[4]
-WARNING: [Synth 8-3331] design Bomb has unconnected port Player3Block[3]
-WARNING: [Synth 8-3331] design Bomb has unconnected port Player3Block[2]
-WARNING: [Synth 8-3331] design Bomb has unconnected port Player3Block[1]
-WARNING: [Synth 8-3331] design Bomb has unconnected port Player3Block[0]
-WARNING: [Synth 8-3331] design Bomb has unconnected port Player4Block[6]
-WARNING: [Synth 8-3331] design Bomb has unconnected port Player4Block[5]
-WARNING: [Synth 8-3331] design Bomb has unconnected port Player4Block[4]
-WARNING: [Synth 8-3331] design Bomb has unconnected port Player4Block[3]
-WARNING: [Synth 8-3331] design Bomb has unconnected port Player4Block[2]
-WARNING: [Synth 8-3331] design Bomb has unconnected port Player4Block[1]
-WARNING: [Synth 8-3331] design Bomb has unconnected port Player4Block[0]
 WARNING: [Synth 8-3331] design Bomb has unconnected port SW[12]
 WARNING: [Synth 8-3331] design Bomb has unconnected port SW[11]
 WARNING: [Synth 8-3331] design Bomb has unconnected port SW[10]
 WARNING: [Synth 8-3331] design Bomb has unconnected port SW[9]
 WARNING: [Synth 8-3331] design Bomb has unconnected port SW[8]
-WARNING: [Synth 8-3331] design Bomb has unconnected port SW[7]
-WARNING: [Synth 8-3331] design Bomb has unconnected port SW[6]
-WARNING: [Synth 8-3331] design Bomb has unconnected port SW[5]
 WARNING: [Synth 8-3331] design Bomb has unconnected port SW[4]
 WARNING: [Synth 8-3331] design Bomb has unconnected port SW[3]
 WARNING: [Synth 8-3331] design Bomb has unconnected port SW[2]
@@ -306,9 +237,22 @@ WARNING: [Synth 8-3331] design PixelControl has unconnected port master_rx
 WARNING: [Synth 8-3331] design PixelControl has unconnected port slave_rx[1]
 WARNING: [Synth 8-3331] design PixelControl has unconnected port slave_rx[0]
 WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port JC[2]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[15]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[14]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[13]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[12]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[11]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[10]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[9]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[8]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[7]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[6]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[5]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[4]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[2]
 WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 432.816 ; gain = 175.949
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 434.609 ; gain = 177.336
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -317,35 +261,14 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
-WARNING: [Synth 8-3295] tying undriven pin Player2MovementControl:btnU to constant 0 [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:85]
-WARNING: [Synth 8-3295] tying undriven pin Player2MovementControl:btnD to constant 0 [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:85]
-WARNING: [Synth 8-3295] tying undriven pin Player2MovementControl:btnL to constant 0 [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:85]
-WARNING: [Synth 8-3295] tying undriven pin Player2MovementControl:btnR to constant 0 [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:85]
-WARNING: [Synth 8-3295] tying undriven pin Player2MovementControl:player_isReviving to constant 0 [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:85]
-WARNING: [Synth 8-3295] tying undriven pin Player3MovementControl:btnU to constant 0 [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:109]
-WARNING: [Synth 8-3295] tying undriven pin Player3MovementControl:btnD to constant 0 [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:109]
-WARNING: [Synth 8-3295] tying undriven pin Player3MovementControl:btnL to constant 0 [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:109]
-WARNING: [Synth 8-3295] tying undriven pin Player3MovementControl:btnR to constant 0 [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:109]
-WARNING: [Synth 8-3295] tying undriven pin Player3MovementControl:player_isReviving to constant 0 [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:109]
-WARNING: [Synth 8-3295] tying undriven pin Player4MovementControl:btnU to constant 0 [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:133]
-WARNING: [Synth 8-3295] tying undriven pin Player4MovementControl:btnD to constant 0 [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:133]
-WARNING: [Synth 8-3295] tying undriven pin Player4MovementControl:btnL to constant 0 [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:133]
-WARNING: [Synth 8-3295] tying undriven pin Player4MovementControl:btnR to constant 0 [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:133]
-WARNING: [Synth 8-3295] tying undriven pin Player4MovementControl:player_isReviving to constant 0 [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:133]
-WARNING: [Synth 8-3295] tying undriven pin BombControl:Player2DebouncedBtnC to constant 0 [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:149]
-WARNING: [Synth 8-3295] tying undriven pin BombControl:Player3DebouncedBtnC to constant 0 [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:149]
-WARNING: [Synth 8-3295] tying undriven pin BombControl:Player4DebouncedBtnC to constant 0 [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:149]
-WARNING: [Synth 8-3295] tying undriven pin BombControl:player2_isReviving to constant 0 [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:149]
-WARNING: [Synth 8-3295] tying undriven pin BombControl:player3_isReviving to constant 0 [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:149]
-WARNING: [Synth 8-3295] tying undriven pin BombControl:player4_isReviving to constant 0 [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:149]
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 432.816 ; gain = 175.949
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 434.609 ; gain = 177.336
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 432.816 ; gain = 175.949
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 434.609 ; gain = 177.336
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -361,22 +284,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 799.082 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 801.863 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:17 . Memory (MB): peak = 799.234 ; gain = 542.367
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:20 . Memory (MB): peak = 801.910 ; gain = 544.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:17 . Memory (MB): peak = 799.234 ; gain = 542.367
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:20 . Memory (MB): peak = 801.910 ; gain = 544.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:17 . Memory (MB): peak = 799.234 ; gain = 542.367
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:03 ; elapsed = 00:00:20 . Memory (MB): peak = 801.910 ; gain = 544.637
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "SLOW_CLOCK" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5546] ROM "xBlock" won't be mapped to RAM because it is too sparse
@@ -461,7 +384,7 @@ INFO: [Synth 8-5545] ROM "start_game" won't be mapped to RAM because address siz
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Oled_Display'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:22 . Memory (MB): peak = 799.234 ; gain = 542.367
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:27 . Memory (MB): peak = 801.910 ; gain = 544.637
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -473,9 +396,9 @@ Report RTL Partitions:
 |3     |PlayerMovement__parameterized0__GC0 |           1|      3660|
 |4     |PlayerMovement__parameterized1__GC0 |           1|      3660|
 |5     |PlayerMovement__parameterized2__GC0 |           1|      3660|
-|6     |ExplodeBomb                         |           3|      8834|
-|7     |Bomb__GC0                           |           1|     11315|
-|8     |PixelControl__GC0                   |           1|      9959|
+|6     |ExplodeBomb                         |           3|      9212|
+|7     |Bomb__GC0                           |           1|     11336|
+|8     |PixelControl__GC0                   |           1|     10922|
 |9     |BomberGameTopLevel__GC0             |           1|      7963|
 +------+------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
@@ -506,7 +429,7 @@ Detailed RTL Component Info :
 	                4 Bit    Registers := 8     
 	                3 Bit    Registers := 9     
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 58    
+	                1 Bit    Registers := 64    
 +---Muxes : 
 	   2 Input     70 Bit        Muxes := 25    
 	   2 Input     40 Bit        Muxes := 3     
@@ -517,7 +440,7 @@ Detailed RTL Component Info :
 	   2 Input     17 Bit        Muxes := 1     
 	   7 Input     16 Bit        Muxes := 1     
 	   6 Input      8 Bit        Muxes := 1     
-	   2 Input      7 Bit        Muxes := 893   
+	   2 Input      7 Bit        Muxes := 896   
 	   3 Input      7 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 39    
 	  32 Input      6 Bit        Muxes := 1     
@@ -528,7 +451,7 @@ Detailed RTL Component Info :
 	   2 Input      3 Bit        Muxes := 8     
 	   4 Input      3 Bit        Muxes := 4     
 	   2 Input      2 Bit        Muxes := 6     
-	   2 Input      1 Bit        Muxes := 1239  
+	   2 Input      1 Bit        Muxes := 1242  
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -770,7 +693,7 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input     70 Bit        Muxes := 25    
 	   2 Input     26 Bit        Muxes := 3     
-	   2 Input      7 Bit        Muxes := 3     
+	   2 Input      7 Bit        Muxes := 6     
 	   2 Input      6 Bit        Muxes := 3     
 	   2 Input      1 Bit        Muxes := 4     
 Module var_clock__5 
@@ -780,6 +703,36 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 1     
 Module Counter_100MHZ__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module AnimateDeath__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module Counter_100MHZ__2 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module AnimateDeath__2 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module Counter_100MHZ__3 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module AnimateDeath__3 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module Counter_100MHZ__4 
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 1     
@@ -807,7 +760,7 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 1     
-Module Counter_100MHZ__2 
+Module Counter_100MHZ__5 
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 1     
@@ -821,7 +774,7 @@ Module ButtonDebouncing__1
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 3     
-Module Counter_100MHZ__3 
+Module Counter_100MHZ__6 
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 1     
@@ -835,7 +788,7 @@ Module ButtonDebouncing__2
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 3     
-Module Counter_100MHZ__4 
+Module Counter_100MHZ__7 
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 1     
@@ -849,7 +802,7 @@ Module ButtonDebouncing__3
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 3     
-Module Counter_100MHZ__5 
+Module Counter_100MHZ__8 
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 1     
@@ -993,38 +946,30 @@ INFO: [Synth 8-5545] ROM "ResetControl/count0" won't be mapped to RAM because ad
 INFO: [Synth 8-5545] ROM "ResetControl/start_game" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "clock_6p25MHZ/SLOW_CLOCK" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "twohundredhz/SLOW_CLOCK" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[15] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[14] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[13] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[12] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[11] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[10] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[9] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[8] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[7] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[6] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[5] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[4] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[3] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[2] driven by constant 0
-WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[1] driven by constant 0
 WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port master_tx[1]
 WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port master_tx[0]
 WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port slave_tx
 WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port JC[2]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[15]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[14]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[13]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[12]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[11]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[10]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[9]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[8]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[7]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[6]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[5]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[4]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[3]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[2]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[1]
 WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port led[0]
 WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[12]
 WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[11]
 WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[10]
 WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[9]
-WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[8]
-WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[7]
-WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[6]
-WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[5]
-WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[4]
-WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[3]
-WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[2]
-WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[0]
 WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port slave_rx[1]
 WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port slave_rx[0]
 WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port master_rx
@@ -1055,71 +1000,62 @@ INFO: [Synth 8-3886] merging instance 'pixelColourControli_6/ColourControl/pixel
 INFO: [Synth 8-3886] merging instance 'pixelColourControli_6/ColourControl/pixel_data_reg[5]' (FD) to 'pixelColourControli_6/ColourControl/pixel_data_reg[10]'
 INFO: [Synth 8-3886] merging instance 'pixelColourControli_6/ColourControl/pixel_data_reg[11]' (FD) to 'pixelColourControli_6/ColourControl/pixel_data_reg[14]'
 INFO: [Synth 8-3886] merging instance 'pixelColourControli_6/ColourControl/pixel_data_reg[13]' (FD) to 'pixelColourControli_6/ColourControl/pixel_data_reg[15]'
-INFO: [Synth 8-3886] merging instance 'BombControli_5/FindFreeBomb/triggered_player_reg[0]' (FDE) to 'BombControli_5/FindFreeBomb/triggered_player_reg[1]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_5/FindFreeBomb/\triggered_player_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_5/FindFreeBomb/\WhichPlayerBomb_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_5/FindFreeBomb/\WhichPlayerBomb_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_5/FindFreeBomb/\WhichPlayerBomb_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_5/FindFreeBomb/\WhichPlayerBomb_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_5/FindFreeBomb/\WhichPlayerBomb_reg[4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_5/FindFreeBomb/\WhichPlayerBomb_reg[5] )
-WARNING: [Synth 8-3332] Sequential element (triggered_player_reg[1]) is unused and will be removed from module FreeBomb.
-WARNING: [Synth 8-3332] Sequential element (WhichPlayerBomb_reg[5]) is unused and will be removed from module FreeBomb.
-WARNING: [Synth 8-3332] Sequential element (WhichPlayerBomb_reg[4]) is unused and will be removed from module FreeBomb.
-WARNING: [Synth 8-3332] Sequential element (WhichPlayerBomb_reg[3]) is unused and will be removed from module FreeBomb.
-WARNING: [Synth 8-3332] Sequential element (WhichPlayerBomb_reg[2]) is unused and will be removed from module FreeBomb.
-WARNING: [Synth 8-3332] Sequential element (WhichPlayerBomb_reg[1]) is unused and will be removed from module FreeBomb.
-WARNING: [Synth 8-3332] Sequential element (WhichPlayerBomb_reg[0]) is unused and will be removed from module FreeBomb.
 INFO: [Synth 8-3886] merging instance 'BombControli_5/Bombs_reg[2][7]' (FDE) to 'BombControli_5/Bombs_reg[2][4]'
 INFO: [Synth 8-3886] merging instance 'BombControli_5/Bombs_reg[1][7]' (FDE) to 'BombControli_5/Bombs_reg[1][4]'
 INFO: [Synth 8-3886] merging instance 'BombControli_5/Bombs_reg[0][7]' (FDE) to 'BombControli_5/Bombs_reg[0][4]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:01:32 . Memory (MB): peak = 799.234 ; gain = 542.367
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:02:25 . Memory (MB): peak = 801.910 ; gain = 544.637
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+------------------------+------------+----------+
-|      |RTL Partition           |Replication |Instances |
-+------+------------------------+------------+----------+
-|1     |SquareTracker           |           1|      1994|
-|2     |PlayerMovement__GC0     |           1|       993|
-|3     |ExplodeBomb             |           3|      6040|
-|4     |Bomb__GC0               |           1|      6285|
-|5     |PixelControl__GC0       |           1|       594|
-|6     |BomberGameTopLevel__GC0 |           1|      2326|
-+------+------------------------+------------+----------+
++------+------------------------------------+------------+----------+
+|      |RTL Partition                       |Replication |Instances |
++------+------------------------------------+------------+----------+
+|1     |SquareTracker                       |           4|      1994|
+|2     |PlayerMovement__GC0                 |           1|       993|
+|3     |PlayerMovement__parameterized0__GC0 |           1|       993|
+|4     |PlayerMovement__parameterized1__GC0 |           1|       993|
+|5     |PlayerMovement__parameterized2__GC0 |           1|       993|
+|6     |ExplodeBomb                         |           3|      6397|
+|7     |Bomb__GC0                           |           1|      6339|
+|8     |PixelControl__GC0                   |           1|       845|
+|9     |BomberGameTopLevel__GC0             |           1|      2326|
++------+------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:01:40 . Memory (MB): peak = 799.234 ; gain = 542.367
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:02:49 . Memory (MB): peak = 801.910 ; gain = 544.637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:01:41 . Memory (MB): peak = 818.254 ; gain = 561.387
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:02:51 . Memory (MB): peak = 821.961 ; gain = 564.688
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+------------------------+------------+----------+
-|      |RTL Partition           |Replication |Instances |
-+------+------------------------+------------+----------+
-|1     |SquareTracker           |           1|      1994|
-|2     |PlayerMovement__GC0     |           1|       993|
-|3     |ExplodeBomb             |           3|      6040|
-|4     |Bomb__GC0               |           1|      6285|
-|5     |PixelControl__GC0       |           1|       594|
-|6     |BomberGameTopLevel__GC0 |           1|      2326|
-+------+------------------------+------------+----------+
++------+------------------------------------+------------+----------+
+|      |RTL Partition                       |Replication |Instances |
++------+------------------------------------+------------+----------+
+|1     |SquareTracker                       |           4|      1994|
+|2     |PlayerMovement__GC0                 |           1|       993|
+|3     |PlayerMovement__parameterized0__GC0 |           1|       993|
+|4     |PlayerMovement__parameterized1__GC0 |           1|       993|
+|5     |PlayerMovement__parameterized2__GC0 |           1|       993|
+|6     |ExplodeBomb                         |           3|      6397|
+|7     |Bomb__GC0                           |           1|      6339|
+|8     |PixelControl__GC0                   |           1|       845|
+|9     |BomberGameTopLevel__GC0             |           1|      2326|
++------+------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3886] merging instance 'pixelColourControl/BombControl/Bombs_reg[1][20]' (FDE) to 'pixelColourControl/BombControl/Bombs_reg[1][13]'
 INFO: [Synth 8-3886] merging instance 'pixelColourControl/BombControl/Bombs_reg[0][20]' (FDE) to 'pixelColourControl/BombControl/Bombs_reg[0][13]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControl/BombControl/Bombs_reg[2][20]' (FDE) to 'pixelColourControl/BombControl/Bombs_reg[2][13]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControl/BombControl/Bombs_reg[1][13]' (FDE) to 'pixelColourControl/BombControl/Bombs_reg[1][20]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControl/BombControl/Bombs_reg[2][13]' (FDE) to 'pixelColourControl/BombControl/Bombs_reg[2][20]'
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:01:44 . Memory (MB): peak = 942.328 ; gain = 685.461
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:03:04 . Memory (MB): peak = 950.219 ; gain = 692.945
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1143,7 +1079,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:01:45 . Memory (MB): peak = 942.328 ; gain = 685.461
+Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:03:08 . Memory (MB): peak = 950.219 ; gain = 692.945
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1156,7 +1092,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:01:45 . Memory (MB): peak = 942.328 ; gain = 685.461
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:03:08 . Memory (MB): peak = 950.219 ; gain = 692.945
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1168,25 +1104,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:01:46 . Memory (MB): peak = 942.328 ; gain = 685.461
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:03:11 . Memory (MB): peak = 950.219 ; gain = 692.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:01:47 . Memory (MB): peak = 942.328 ; gain = 685.461
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:03:13 . Memory (MB): peak = 950.219 ; gain = 692.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:01:47 . Memory (MB): peak = 942.328 ; gain = 685.461
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:03:14 . Memory (MB): peak = 950.219 ; gain = 692.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:01:47 . Memory (MB): peak = 942.328 ; gain = 685.461
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:03:14 . Memory (MB): peak = 950.219 ; gain = 692.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1202,68 +1138,89 @@ Report Cell Usage:
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |BUFG   |     4|
-|2     |CARRY4 |   852|
-|3     |LUT1   |   507|
-|4     |LUT2   |  1525|
-|5     |LUT3   |   731|
-|6     |LUT4   |  1427|
-|7     |LUT5   |  1156|
-|8     |LUT6   |  2959|
-|9     |MUXF7  |    64|
-|10    |MUXF8  |    14|
+|1     |BUFG   |     7|
+|2     |CARRY4 |   999|
+|3     |LUT1   |   568|
+|4     |LUT2   |  1853|
+|5     |LUT3   |  1045|
+|6     |LUT4   |  1748|
+|7     |LUT5   |  1690|
+|8     |LUT6   |  4591|
+|9     |MUXF7  |   184|
+|10    |MUXF8  |    20|
 |11    |FDE_1  |    32|
-|12    |FDRE   |   825|
-|13    |FDSE   |    77|
-|14    |IBUF   |    10|
-|15    |OBUF   |    34|
-|16    |OBUFT  |     5|
+|12    |FDRE   |  1241|
+|13    |FDSE   |   167|
+|14    |IBUF   |    14|
+|15    |OBUF   |    19|
+|16    |OBUFT  |    20|
 +------+-------+------+
 
 Report Instance Areas: 
-+------+--------------------------------------------+--------------------+------+
-|      |Instance                                    |Module              |Cells |
-+------+--------------------------------------------+--------------------+------+
-|1     |top                                         |                    | 10222|
-|2     |  DebounceC                                 |ButtonDebouncing    |   113|
-|3     |    clock_1khz                              |var_clock_9         |    55|
-|4     |    counter                                 |Counter_100MHZ_10   |    54|
-|5     |  Oled_display                              |Oled_Display        |  2817|
-|6     |  ResetControl                              |GameReset           |    63|
-|7     |  SevenSegControl                           |SevenSegDisplay     |   456|
-|8     |    onehz                                   |var_clock_8         |    60|
-|9     |  clock_6p25MHZ                             |var_clock           |    52|
-|10    |  pixelColourControl                        |PixelControl        |  6594|
-|11    |    BombControl                             |Bomb                |  5279|
-|12    |      FindFreeBomb                          |FreeBomb            |    19|
-|13    |      \mod_inst1[0].Bombcounter             |BombCounter         |   116|
-|14    |      \mod_inst1[1].Bombcounter             |BombCounter_4       |   116|
-|15    |      \mod_inst1[2].Bombcounter             |BombCounter_5       |   118|
-|16    |      \mod_inst2[0].ExplodeAnimation        |ExplodeBomb         |   988|
-|17    |      \mod_inst2[1].ExplodeAnimation        |ExplodeBomb_6       |   965|
-|18    |      \mod_inst2[2].ExplodeAnimation        |ExplodeBomb_7       |   981|
-|19    |    ColourControl                           |PixelDataControl    |   122|
-|20    |      Player1                               |AnimateDeath        |    55|
-|21    |        counter                             |Counter_100MHZ      |    50|
-|22    |      player_blink                          |var_clock_3         |    56|
-|23    |    ConcreteBlock                           |ConcreteBlocks      |    55|
-|24    |      Concrete                              |CentreConcreteBlock |    55|
-|25    |        \outer_loop[12].mod_inst[10].Block  |isColourPixel_2     |    55|
-|26    |    Player1MovementControl                  |PlayerMovement      |  1138|
-|27    |      Player1                               |Player              |    35|
-|28    |        Player1                             |isColourPixel       |    35|
-|29    |      TrackPlayer1Square                    |SquareTracker       |   816|
-|30    |      clk40hz                               |var_clock_1         |    55|
-|31    |  twohundredhz                              |var_clock_0         |    55|
-+------+--------------------------------------------+--------------------+------+
++------+--------------------------------------------+-------------------------------+------+
+|      |Instance                                    |Module                         |Cells |
++------+--------------------------------------------+-------------------------------+------+
+|1     |top                                         |                               | 14198|
+|2     |  DebounceC                                 |ButtonDebouncing               |   118|
+|3     |    clock_1khz                              |var_clock_27                   |    55|
+|4     |    counter                                 |Counter_100MHZ_28              |    54|
+|5     |  Oled_display                              |Oled_Display                   |  3081|
+|6     |  ResetControl                              |GameReset                      |    64|
+|7     |  SevenSegControl                           |SevenSegDisplay                |   456|
+|8     |    onehz                                   |var_clock_26                   |    60|
+|9     |  clock_6p25MHZ                             |var_clock                      |    52|
+|10    |  pixelColourControl                        |PixelControl                   | 10293|
+|11    |    BombControl                             |Bomb                           |  5461|
+|12    |      FindFreeBomb                          |FreeBomb                       |    38|
+|13    |      \mod_inst1[0].Bombcounter             |BombCounter                    |   114|
+|14    |      \mod_inst1[1].Bombcounter             |BombCounter_22                 |   115|
+|15    |      \mod_inst1[2].Bombcounter             |BombCounter_23                 |   114|
+|16    |      \mod_inst2[0].ExplodeAnimation        |ExplodeBomb                    |   976|
+|17    |      \mod_inst2[1].ExplodeAnimation        |ExplodeBomb_24                 |   956|
+|18    |      \mod_inst2[2].ExplodeAnimation        |ExplodeBomb_25                 |   954|
+|19    |    ColourControl                           |PixelDataControl               |   281|
+|20    |      Player1                               |AnimateDeath                   |    54|
+|21    |        counter                             |Counter_100MHZ_21              |    50|
+|22    |      Player2                               |AnimateDeath_15                |    52|
+|23    |        counter                             |Counter_100MHZ_20              |    50|
+|24    |      Player3                               |AnimateDeath_16                |    53|
+|25    |        counter                             |Counter_100MHZ_19              |    50|
+|26    |      Player4                               |AnimateDeath_17                |    55|
+|27    |        counter                             |Counter_100MHZ                 |    50|
+|28    |      player_blink                          |var_clock_18                   |    56|
+|29    |    ConcreteBlock                           |ConcreteBlocks                 |    55|
+|30    |      Concrete                              |CentreConcreteBlock            |    55|
+|31    |        \outer_loop[12].mod_inst[10].Block  |isColourPixel_14               |    55|
+|32    |    Player1MovementControl                  |PlayerMovement                 |  1148|
+|33    |      Player1                               |Player_10                      |    35|
+|34    |        Player1                             |isColourPixel_13               |    35|
+|35    |      TrackPlayer1Square                    |SquareTracker_11               |   822|
+|36    |      clk40hz                               |var_clock_12                   |    55|
+|37    |    Player2MovementControl                  |PlayerMovement__parameterized0 |  1121|
+|38    |      Player1                               |Player_6                       |    50|
+|39    |        Player1                             |isColourPixel_9                |    50|
+|40    |      TrackPlayer1Square                    |SquareTracker_7                |   784|
+|41    |      clk40hz                               |var_clock_8                    |    55|
+|42    |    Player3MovementControl                  |PlayerMovement__parameterized1 |  1118|
+|43    |      Player1                               |Player_2                       |    50|
+|44    |        Player1                             |isColourPixel_5                |    50|
+|45    |      TrackPlayer1Square                    |SquareTracker_3                |   781|
+|46    |      clk40hz                               |var_clock_4                    |    55|
+|47    |    Player4MovementControl                  |PlayerMovement__parameterized2 |  1109|
+|48    |      Player1                               |Player                         |    50|
+|49    |        Player1                             |isColourPixel                  |    50|
+|50    |      TrackPlayer1Square                    |SquareTracker                  |   772|
+|51    |      clk40hz                               |var_clock_1                    |    55|
+|52    |  twohundredhz                              |var_clock_0                    |    55|
++------+--------------------------------------------+-------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:01:47 . Memory (MB): peak = 942.328 ; gain = 685.461
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:03:14 . Memory (MB): peak = 950.219 ; gain = 692.945
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 44 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:01:36 . Memory (MB): peak = 942.328 ; gain = 319.043
-Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:01:47 . Memory (MB): peak = 942.328 ; gain = 685.461
+Synthesis finished with 0 errors, 0 critical warnings and 29 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:03:03 . Memory (MB): peak = 950.219 ; gain = 325.645
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:03:14 . Memory (MB): peak = 950.219 ; gain = 692.945
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 972 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 1249 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -1272,11 +1229,12 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   FDE_1 => FDRE (inverted pins: C): 32 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-209 Infos, 159 Warnings, 6 Critical Warnings and 0 Errors encountered.
+201 Infos, 73 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:01:51 . Memory (MB): peak = 942.328 ; gain = 697.984
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:03:27 . Memory (MB): peak = 950.219 ; gain = 705.586
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.runs/synth_1/BomberGameTopLevel.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 950.219 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_utilization -file BomberGameTopLevel_utilization_synth.rpt -pb BomberGameTopLevel_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.076 . Memory (MB): peak = 942.328 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sun Oct 27 17:05:55 2024...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.295 . Memory (MB): peak = 950.219 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sun Oct 27 18:49:07 2024...

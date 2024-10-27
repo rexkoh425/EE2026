@@ -44,6 +44,7 @@ module Bomb(
     //increasing bomb count significantly increase bitstream gen time
     //decrease bomb count for testing purposes
     
+    //look to remove this
     reg[25:0] Bombs [0:Maxbombcount-1];
     reg[6:0] BombsBlock [0:Maxbombcount-1];
     wire[6:0] ExplosionRadiusBlocks[0 : Maxbombcount-1][0:7];
@@ -128,9 +129,9 @@ module Bomb(
                 .pixel_index(pixel_index),
                 .BombBlock(BombsBlock[j]),    
                 .active(ActiveBombs[j]),   
-                .Player1Block(Player1Block),     
+                .Player1Block(Player1Block), .Player2Block(Player2Block),.Player3Block(Player3Block),.Player4Block(Player4Block), 
                 .ExplosionAnimation(ExplosionAnimation[j]),
-                .player1_died(player1_died[j]),
+                .player1_died(player1_died[j]),.player2_died(player2_died[j]),.player3_died(player3_died[j]),.player4_died(player4_died[j]),
                 .Up1(ExplosionRadiusBlocks[j][0]) , .Up2(ExplosionRadiusBlocks[j][1]),
                 .Left1(ExplosionRadiusBlocks[j][2]) , .Left2(ExplosionRadiusBlocks[j][3]),
                 .Right1(ExplosionRadiusBlocks[j][4]) , .Right2(ExplosionRadiusBlocks[j][5]),
@@ -154,9 +155,14 @@ module Bomb(
         end
     endgenerate
     
+    wire[6:0] PlayerBlock;
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+    assign PlayerBlock = SW[5] ? Player1Block : SW[6] ? Player2Block : SW[7] ? Player3Block : Player4Block;
+    //assign to different players according to signals
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////
     assign ExplosionAnimations = |ExplosionAnimation;
-    assign xBlock = (Player1Block % 10) + 1;
-    assign yBlock = (Player1Block / 10) + 1;
+    assign xBlock = (PlayerBlock % 10) + 1;
+    assign yBlock = (PlayerBlock / 10) + 1;
     assign BombMinX = 3 + (xBlock - 1) * dimension;
     assign BombMaxX = 3 + (xBlock * dimension) - 1;
     assign BombMinY = 1 + (yBlock - 1) * dimension;
@@ -166,7 +172,7 @@ module Bomb(
     begin
         if(FreeBomb != 99)
         begin
-            BombsBlock[FreeBomb] <= Player1Block;
+            BombsBlock[FreeBomb] <= PlayerBlock;
             Bombs[FreeBomb][25:19] <= BombMinX;
             Bombs[FreeBomb][18:12] <= BombMaxX;
             Bombs[FreeBomb][11:6] <= BombMinY;
