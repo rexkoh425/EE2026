@@ -22,8 +22,12 @@
 
 module BomberGameTopLevel(
     input clk , 
-    input[15:0] SW,
+    input[15:0] SW ,
     input btnU , btnD , btnL , btnR , btnC ,
+    input [1:0] slave_rx, 
+    input master_rx,
+    output [1:0] master_tx, 
+    output slave_tx,
     output[7:0] JC , 
     output[15:0] led ,
     output[3:0] an,
@@ -34,11 +38,7 @@ module BomberGameTopLevel(
     wire frame_begin ,sending_pixels , sample_pixel;
     wire[12:0] pixel_index;
     wire[15:0] pixel_data;
-    wire start_game;
-    wire initiate_reset;
-    var_clock clock_6p25MHZ(.clk(clk) , .M(7) , .SLOW_CLOCK(clk6p25m));
-    wire clk200hz;
-    var_clock twohundredhz(.clk(clk) , .M(249_999) , . SLOW_CLOCK(clk200hz));
+    var_clock clock_6p25MHZ(clk , 32'd7 , clk6p25m);
     
     assign led[15:1] = 15'b0;
     //Debouncing area
@@ -56,14 +56,12 @@ module BomberGameTopLevel(
     wire player1_isReviving;
     PixelControl pixelColourControl(
         .clk100mhz(clk), .clk6p25m(clk6p25m),
-        .initiate_reset(initiate_reset),
-        .btnU(btnU) , .btnD(btnD) , .btnL(btnL) , .btnR(btnR) , .btnC(btnC) ,
-        .Player1SW(SW),
-        .pixel_index(pixel_index), .pixel_data(pixel_data) ,
-        .Player1DebouncedBtnC(DebouncedBtnC) ,
-        .led(led[0]),
-        .player1_isReviving(player1_isReviving),
-        .start_game(start_game)
+    .btnU(btnU) , .btnD(btnD) , .btnL(btnL) , .btnR(btnR),
+    .pixel_index(pixel_index), .pixel_data(pixel_data),
+    .DebouncedBtnC(DebouncedBtnC), .led3(led[3]),
+    .led(led[0]), .reset(SW[14]), .masterToggle(SW[15]), .testLed(led[1]),
+    .master_tx(master_tx), .master_rx(master_rx), .slave_rx(slave_rx), .slave_tx(slave_tx),
+    .player1_isReviving(player1_isReviving)
     );
     //////////////////////////////////////////////////////////////////////////
     
@@ -73,31 +71,14 @@ module BomberGameTopLevel(
         reset, 
         frame_begin, sending_pixels,sample_pixel, 
         pixel_index, pixel_data, 
-        JC[0], JC[1] , JC[3], JC[4], JC[5], JC[6],JC[7]
+        JC[0],JC[1] , JC[3], JC[4], JC[5], JC[6],JC[7]
     );
     
     SevenSegDisplay SevenSegControl(
-        .clk6p25m(clk6p25m), .clk200hz(clk200hz),
+        .clk6p25m(clk6p25m),
+        .player1_isReviving(player1_isReviving),
         .an(an),
         .seg(seg),
-        .dp(dp) ,
-        .start_game(start_game)
+        .dp(dp)
     );     
-    
-    GameReset ResetControl(
-        .clk6p25m(clk6p25m),
-        .SW1(SW[1]),
-        .btnU(btnU) , .btnD(btnD) , .btnL(btnL) , .btnR(btnR) ,
-        .start_game(start_game),
-        .initiate_reset(initiate_reset)
-    );
-    
-    wire[7:0] player1_deathcount;
-    PlayerDeath PlayerDeathControl(
-        .clk200hz(clk200hz),
-        .start_game(start_game),
-        .player1_isReviving(player1_isReviving),
-        .player1_deathcount(player1_deathcount)
-    );
-    
 endmodule

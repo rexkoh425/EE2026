@@ -22,11 +22,11 @@
 
 module PixelDataControl(
     input clk6p25m , 
-    input player1_die,
-    input CenterBlock , walls , player1 , bomb , ExplosionAnimations,
-    input start_game ,
+    input player1_die, player2_die,
+    input CenterBlock , walls , player1 , bomb1 , ExplosionAnimations, 
+    input player2, ExplosionAnimations2, bomb2,
     output reg[15:0] pixel_data = 16'b0 ,
-    output player1_isReviving
+    output player1_isReviving, player2_isReviving
 );
    wire[15:0] WHITE = 16'hFFFF;
    wire[15:0] BLUE = 16'h001F;
@@ -37,10 +37,11 @@ module PixelDataControl(
    wire[15:0] BROWN = 16'hA52A;
    wire[15:0] ORANGE = 16'hFCA0;
    
+   
    wire PlayerBlinkClk;
    var_clock player_blink(clk6p25m , 32'd624999 , PlayerBlinkClk);
-   wire player1_status;
-   
+   wire player1_status, player2_status;
+
    AnimateDeath Player1(
        .clk6p25m(clk6p25m), .PlayerBlinkClk(PlayerBlinkClk),
        .player(player1),
@@ -49,27 +50,29 @@ module PixelDataControl(
        .isReviving(player1_isReviving)
    );
    
+   AnimateDeath Player2(
+       .clk6p25m(clk6p25m), .PlayerBlinkClk(PlayerBlinkClk),
+       .player(player2),
+       .player_die(player2_die),
+       .player_status(player2_status),
+       .isReviving(player2_isReviving)
+   );
    always @(posedge clk6p25m)
    begin
-       
-       if(~start_game)
-       begin
-           pixel_data <= WHITE;
-       end
-       else if(CenterBlock)
+       if(CenterBlock)
        begin
            pixel_data <= DARK_GREY;
        end
        else if(walls)
            pixel_data <= BROWN;
-       else if(player1_status)
+       else if(player1_status || player2_status)
            pixel_data <= GREEN;
-       else if(ExplosionAnimations)
+       else if(ExplosionAnimations || ExplosionAnimations2)
            pixel_data <= ORANGE;
-       else if(bomb)
+       else if(bomb1 || bomb2)
            pixel_data <= RED;
        else
            pixel_data <= BLACK;
-       
+           
    end
 endmodule
