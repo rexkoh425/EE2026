@@ -24,8 +24,10 @@ module Bomb(
     input clk6p25m,
     input[12:0] pixel_index ,
     input[6:0] Player1Block ,
-    input DebouncedBtnC ,
+    input Player1DebouncedBtnC ,
+    input[15:0] Player1SW,
     input player1_isReviving,
+    input start_game,
     output reg bomb = 1'b0 ,
     output ExplosionAnimations ,
     output player1_die
@@ -36,7 +38,7 @@ module Bomb(
     wire[6:0] BombMinX , BombMaxX;
     wire[5:0] BombMinY , BombMaxY;
     parameter dimension = 9;
-    parameter[6:0] Maxbombcount = 2; 
+    parameter[6:0] Maxbombcount = 3; 
     //seems like got bug with dropping more than n-2 bombs where
     //it will explode where the player is
     //increasing bomb count significantly increase bitstream gen time
@@ -51,6 +53,7 @@ module Bomb(
     wire[Maxbombcount-1 : 0] ActiveBombs;
     wire[Maxbombcount-1 : 0] player1_died;
     wire[Maxbombcount-1 : 0] immediate_explode;
+    wire[(Maxbombcount * 2) - 1 : 0] WhichPlayerBomb;
     wire[7:0] FreeBomb;
     wire edge_registered;
     wire[Maxbombcount-1 : 0] ExplosionAnimation;
@@ -70,9 +73,11 @@ module Bomb(
     FreeBomb #(Maxbombcount)FindFreeBomb(
         .clk6p25m(clk6p25m) , 
         .ActiveBombs(ActiveBombs) ,
-        .FreeBomb(FreeBomb) , .DebouncedBtnC(DebouncedBtnC) , 
+        .FreeBomb(FreeBomb) , .Player1DebouncedBtnC(Player1DebouncedBtnC) , 
         .edge_registered(edge_registered),
-        .player1_isReviving(player1_isReviving)
+        .player1_isReviving(player1_isReviving),
+        .start_game(start_game),
+        .WhichPlayerBomb(WhichPlayerBomb)
     );
     
     genvar j;
@@ -124,8 +129,10 @@ module Bomb(
     generate
         for(j = 0 ; j < Maxbombcount ; j = j+1)
         begin : mod_inst3
-            TriggerExplosion TriggerForBlockJ(
+            TriggerExplosion #(Maxbombcount) TriggerForBlockJ(
                 .BombBlock(BombsBlock[j]) ,
+                .WhichPlayerBomb(WhichPlayerBomb[j*2 +1 : j*2]),
+                .Player1SW(Player1SW[15:13]),
                 .active(ActiveBombs[j]),
                 .blocksAffectedByExplosion(blocksAffectedByExplosion),
                 .immediate_explode(immediate_explode[j])

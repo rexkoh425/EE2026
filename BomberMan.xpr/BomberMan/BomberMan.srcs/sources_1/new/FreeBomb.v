@@ -23,20 +23,24 @@
 module FreeBomb #(parameter[6:0] Maxbombcount = 5)(
     input clk6p25m ,
     input [Maxbombcount-1 : 0]ActiveBombs,
-    input DebouncedBtnC , 
+    input Player1DebouncedBtnC , 
+    input start_game,
     input player1_isReviving,
     output reg[7:0] FreeBomb = Maxbombcount - 1,
-    output reg edge_registered = 0
+    output reg edge_registered = 0 ,
+    output reg [(Maxbombcount * 2) - 1 : 0] WhichPlayerBomb = 0
 );
 
     integer k;
     reg reassign = 1;
+    reg[1:0] triggered_player = 0;
     
     always @(posedge clk6p25m)
     begin
-        if(DebouncedBtnC == 1 & ~player1_isReviving)
+        if(Player1DebouncedBtnC == 1 & ~player1_isReviving & start_game)
         begin
             edge_registered <= 1;
+            triggered_player <= 0;
         end
         else begin
             edge_registered <= 0;
@@ -53,15 +57,16 @@ module FreeBomb #(parameter[6:0] Maxbombcount = 5)(
                             FreeBomb <= k;
                             reassign <= 0;
                         end
-                        
                     end
                 end
             end
         end
         
-        if(ActiveBombs[FreeBomb] == 1)
+        if(FreeBomb == 99 | ActiveBombs[FreeBomb] == 1)
         begin
             reassign <= 1;
+            WhichPlayerBomb <= WhichPlayerBomb & ~(2'b11 << (FreeBomb * 2));
+            WhichPlayerBomb <= WhichPlayerBomb | triggered_player << (FreeBomb * 2);
         end
     end
 endmodule

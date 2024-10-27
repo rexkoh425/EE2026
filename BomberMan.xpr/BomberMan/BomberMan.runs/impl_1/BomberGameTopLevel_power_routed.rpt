@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Fri Oct 25 11:08:42 2024
+| Date             : Sat Oct 26 20:25:27 2024
 | Host             : tendra running 64-bit major release  (build 9200)
 | Command          : report_power -file BomberGameTopLevel_power_routed.rpt -pb BomberGameTopLevel_power_summary_routed.pb -rpx BomberGameTopLevel_power_routed.rpx
 | Design           : BomberGameTopLevel
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.114        |
+| Total On-Chip Power (W)  | 0.084        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.043        |
+| Dynamic (W)              | 0.012        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 84.4         |
-| Junction Temperature (C) | 25.6         |
+| Max Ambient (C)          | 84.6         |
+| Junction Temperature (C) | 25.4         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,18 +52,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.004 |     7653 |       --- |             --- |
-|   LUT as Logic |     0.003 |     4939 |     20800 |           23.75 |
-|   CARRY4       |    <0.001 |      638 |      8150 |            7.83 |
-|   Register     |    <0.001 |      824 |     41600 |            1.98 |
+| Clocks         |     0.002 |        3 |       --- |             --- |
+| Slice Logic    |     0.004 |    10060 |       --- |             --- |
+|   LUT as Logic |     0.003 |     6572 |     20800 |           31.60 |
+|   CARRY4       |    <0.001 |      852 |      8150 |           10.45 |
+|   Register     |    <0.001 |      934 |     41600 |            2.25 |
 |   BUFG         |    <0.001 |        3 |        32 |            9.38 |
-|   F7/F8 Muxes  |    <0.001 |       54 |     32600 |            0.17 |
+|   F7/F8 Muxes  |    <0.001 |       78 |     32600 |            0.24 |
 |   Others       |     0.000 |       55 |       --- |             --- |
-| Signals        |     0.003 |     5285 |       --- |             --- |
-| I/O            |     0.035 |       42 |       106 |           39.62 |
+| Signals        |     0.003 |     7031 |       --- |             --- |
+| I/O            |     0.004 |       46 |       106 |           43.40 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.114 |          |           |                 |
+| Total          |     0.084 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,9 +73,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.017 |       0.008 |      0.010 |
-| Vccaux    |       1.800 |     0.014 |       0.001 |      0.013 |
-| Vcco33    |       3.300 |     0.011 |       0.010 |      0.001 |
+| Vccint    |       1.000 |     0.018 |       0.009 |      0.010 |
+| Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
+| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -139,41 +139,40 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+-------------------------------------+-----------+
-| Name                                | Power (W) |
-+-------------------------------------+-----------+
-| BomberGameTopLevel                  |     0.043 |
-|   DebounceC                         |    <0.001 |
-|     clock_1khz                      |    <0.001 |
-|     counter                         |    <0.001 |
-|   Oled_display                      |    <0.001 |
-|   SevenSegControl                   |     0.005 |
-|     onehz                           |    <0.001 |
-|     twohundredhz                    |    <0.001 |
-|   clock_6p25MHZ                     |    <0.001 |
-|   pixelColourControl                |    <0.001 |
-|     BombControl                     |    <0.001 |
-|       FindFreeBomb                  |    <0.001 |
-|       mod_inst1[0].Bombcounter      |     0.000 |
-|       mod_inst1[1].Bombcounter      |     0.000 |
-|       mod_inst2[0].ExplodeAnimation |    <0.001 |
-|       mod_inst2[1].ExplodeAnimation |    <0.001 |
-|       mod_inst[0].BombDrop          |     0.000 |
-|       mod_inst[1].BombDrop          |     0.000 |
-|     ColourControl                   |    <0.001 |
-|       Player1                       |    <0.001 |
-|         counter                     |     0.000 |
-|       player_blink                  |    <0.001 |
-|     ConcreteBlock                   |     0.000 |
-|       Concrete                      |     0.000 |
-|         Block69                     |     0.000 |
-|       SideWall                      |     0.000 |
-|         TopBlock                    |     0.000 |
-|     PlayerMovementControl           |    <0.001 |
-|       Player1                       |     0.000 |
-|         Player1                     |     0.000 |
-|       clk40hz                       |    <0.001 |
-|     TrackPlayer1Square              |    <0.001 |
-+-------------------------------------+-----------+
++-------------------------------------------+-----------+
+| Name                                      | Power (W) |
++-------------------------------------------+-----------+
+| BomberGameTopLevel                        |     0.012 |
+|   DebounceC                               |    <0.001 |
+|     clock_1khz                            |    <0.001 |
+|     counter                               |    <0.001 |
+|   Oled_display                            |    <0.001 |
+|   ResetControl                            |    <0.001 |
+|   SevenSegControl                         |     0.005 |
+|     onehz                                 |    <0.001 |
+|   clock_6p25MHZ                           |    <0.001 |
+|   pixelColourControl                      |    <0.001 |
+|     BombControl                           |    <0.001 |
+|       FindFreeBomb                        |    <0.001 |
+|       mod_inst1[0].Bombcounter            |    <0.001 |
+|       mod_inst1[1].Bombcounter            |    <0.001 |
+|       mod_inst1[2].Bombcounter            |    <0.001 |
+|       mod_inst2[0].ExplodeAnimation       |    <0.001 |
+|       mod_inst2[1].ExplodeAnimation       |    <0.001 |
+|       mod_inst2[2].ExplodeAnimation       |    <0.001 |
+|     ColourControl                         |    <0.001 |
+|       Player1                             |    <0.001 |
+|         counter                           |     0.000 |
+|       player_blink                        |    <0.001 |
+|     ConcreteBlock                         |     0.000 |
+|       Concrete                            |     0.000 |
+|         outer_loop[12].mod_inst[10].Block |     0.000 |
+|     PlayerMovementControl                 |    <0.001 |
+|       Player1                             |     0.000 |
+|         Player1                           |     0.000 |
+|       clk40hz                             |    <0.001 |
+|     TrackPlayer1Square                    |    <0.001 |
+|   twohundredhz                            |    <0.001 |
++-------------------------------------------+-----------+
 
 

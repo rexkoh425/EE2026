@@ -20,13 +20,18 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module ConcreteBlocks(
+module ConcreteBlocks
+#(
+    parameter dimensions = 9 , 
+    parameter minX = 3 ,maxX = 93 ,
+    parameter minY = 1 , maxY = 64
+)(
     input[12:0] pixel_index , 
     output walls , CenterBlock
 );
 
     Walls SideWall(.pixel_index(pixel_index) , .walls(walls));
-    CentreConcreteBlock Concrete(.pixel_index(pixel_index) , .CenterBlock(CenterBlock));
+    CentreConcreteBlock #(dimensions,minX,maxX,minY,maxY)Concrete(.pixel_index(pixel_index) , .CenterBlock(CenterBlock));
     
     
  
