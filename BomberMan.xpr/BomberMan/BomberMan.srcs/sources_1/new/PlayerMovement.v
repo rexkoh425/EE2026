@@ -25,7 +25,7 @@ module PlayerMovement
     parameter[6:0] InitialMinX = 4 , InitialMaxX = 10 , InitialMinY = 2, InitialMaxY = 8,
     parameter dimensions = 9 , minX = 3 ,maxX = 93 , minY = 1 , maxY = 64
 )(
-    input clk100mhz ,
+    input clk100mhz , clk6p25m,
     input initiate_reset,
     input[12:0] pixel_index ,
     input btnU , btnD , btnL , btnR , btnC , 
@@ -33,9 +33,17 @@ module PlayerMovement
     input start_game,
     output reg[6:0] PlayerMinX , PlayerMaxX ,
     output reg[5:0] PlayerMinY , PlayerMaxY ,
+    output [6:0] Player1Block ,
     output player ,
     output isCollideLed
 );
+     
+   SquareTracker  #(dimensions,minX,maxX,minY,maxY) TrackPlayer1Square(
+       .clk6p25m(clk6p25m),
+       .PlayerMinX(PlayerMinX) , .PlayerMaxX(PlayerMaxX) , 
+       .PlayerMinY(PlayerMinY) , .PlayerMaxY(PlayerMaxY) ,
+       .Player1Block(Player1Block)
+    );
     
     reg[6:0] FuturePlayerMinX , FuturePlayerMaxX; 
     reg[5:0] FuturePlayerMinY , FuturePlayerMaxY;

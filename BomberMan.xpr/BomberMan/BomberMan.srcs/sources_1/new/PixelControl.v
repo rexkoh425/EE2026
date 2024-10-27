@@ -50,11 +50,17 @@ module PixelControl(
    wire player1;
    wire[6:0] Player1MinX , Player1MaxX;
    wire[5:0] Player1MinY , Player1MaxY;
+   wire[6:0] Player1Block;
+   
+   wire player2;
+   wire[6:0] Player2MinX , Player2MaxX;
+   wire[5:0] Player2MinY , Player2MaxY;
+   wire[6:0] Player2Block;
    
    PlayerMovement 
    #(minX+1,minX+player_dimensions,minY+1,minY + player_dimensions,dimensions,minX,maxX,minY,maxY) 
-   PlayerMovementControl (
-       .clk100mhz(clk100mhz) , 
+   Player1MovementControl (
+       .clk100mhz(clk100mhz) , .clk6p25m(clk6p25m),
        .btnU(btnU) , .btnD(btnD) , .btnL(btnL) , .btnR(btnR) , .btnC(btnC) ,
        .pixel_index(pixel_index) ,
        .player(player1),
@@ -62,20 +68,13 @@ module PixelControl(
        .PlayerMinY(Player1MinY) , .PlayerMaxY(Player1MaxY) ,
        .player1_isReviving(player1_isReviving),
        .isCollideLed(led) ,
-       .start_game(start_game), .initiate_reset(initiate_reset)
-   );
-   
-   wire[6:0] #(dimensions,minX,maxX,minY,maxY) Player1Block; 
-   SquareTracker TrackPlayer1Square(
-       .clk6p25m(clk6p25m),
-       .PlayerMinX(Player1MinX) , .PlayerMaxX(Player1MaxX) , 
-       .PlayerMinY(Player1MinY) , .PlayerMaxY(Player1MaxY) ,
+       .start_game(start_game), .initiate_reset(initiate_reset),
        .Player1Block(Player1Block)
    );
    
    wire bomb;
    wire ExplosionAnimations;
-   wire player1_die;
+   wire player1_die , player2_die;
 
    Bomb BombControl(
        .clk6p25m(clk6p25m),
