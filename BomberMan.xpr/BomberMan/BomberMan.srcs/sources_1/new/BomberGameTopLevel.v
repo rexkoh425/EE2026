@@ -24,6 +24,10 @@ module BomberGameTopLevel(
     input clk , 
     input[15:0] SW,
     input btnU , btnD , btnL , btnR , btnC ,
+    input [1:0] slave_rx, 
+    input master_rx,
+    output [1:0] master_tx, 
+    output slave_tx,
     output[7:0] JC , 
     output[15:0] led ,
     output[3:0] an,
@@ -61,12 +65,15 @@ module BomberGameTopLevel(
         .Player1SW(SW),
         .pixel_index(pixel_index), .pixel_data(pixel_data) ,
         .Player1DebouncedBtnC(DebouncedBtnC) ,
-        .led(led[0]),
+        .led(led[0]),.led3(led[3]),
+        .reset(SW[14]), .masterToggle(SW[15]), .testLed(led[1]),
+        .master_tx(master_tx), .master_rx(master_rx), .slave_rx(slave_rx), .slave_tx(slave_tx),
         .player1_isReviving(player1_isReviving),
         .start_game(start_game)
     );
     //////////////////////////////////////////////////////////////////////////
-    
+    //current uart siwtch clashes with instant explosions
+    ////////////////////////////////////////////////////////////////////////
     reg reset = 1'b0;
     Oled_Display Oled_display(
         clk6p25m, 

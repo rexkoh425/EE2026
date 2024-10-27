@@ -28,8 +28,11 @@ module PixelControl(
     input Player1DebouncedBtnC ,
     input [12:0] pixel_index ,
     input start_game,
+    input reset, masterToggle, master_rx,
+    input [1:0] slave_rx,
     output[15:0] pixel_data ,
-    output led,
+    output led, slave_tx, testLed, led3,
+    output [1:0] master_tx,
     output player1_isReviving
 );
    parameter dimensions = 9;

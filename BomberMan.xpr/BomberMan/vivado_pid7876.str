@@ -255,3 +255,59 @@ typeControlKey((HResource) null, "uart_tx_new.v", 'v'); // ce (w, ck)
 // TclEventType: DG_GRAPH_GENERATED
 // Elapsed time: 16 seconds
 selectCodeEditor("uart_tx_new.v", 276, 99); // ce (w, ck)
+// Elapsed time: 24 seconds
+selectCodeEditor("uart_tx_new.v", 361, 102); // ce (w, ck)
+selectCodeEditor("uart_tx_new.v", 373, 72); // ce (w, ck)
+selectCodeEditor("uart_tx_new.v", 380, 58); // ce (w, ck)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+// Elapsed time: 34 seconds
+selectCodeEditor("BomberGameTopLevel.v", 184, 61); // ce (w, ck)
+typeControlKey((HResource) null, "BomberGameTopLevel.v", 'v'); // ce (w, ck)
+selectCodeEditor("BomberGameTopLevel.v", 178, 142); // ce (w, ck)
+selectCodeEditor("BomberGameTopLevel.v", 155, 99); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("BomberGameTopLevel.v", 197, 110); // ce (w, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("BomberGameTopLevel.v", 187, 98); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 29 seconds
+selectCodeEditor("BomberGameTopLevel.v", 173, 124); // ce (w, ck)
+typeControlKey((HResource) null, "BomberGameTopLevel.v", 'v'); // ce (w, ck)
+selectCodeEditor("BomberGameTopLevel.v", 86, 147); // ce (w, ck)
+selectCodeEditor("BomberGameTopLevel.v", 85, 150); // ce (w, ck)
+selectCodeEditor("BomberGameTopLevel.v", 467, 139); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 18 seconds
+selectCodeEditor("BomberGameTopLevel.v", 209, 95); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// Elapsed time: 21 seconds
+selectCodeEditor("BomberGameTopLevel.v", 220, 57); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 32 seconds
+selectCodeEditor("BomberGameTopLevel.v", 82, 11); // ce (w, ck)
+selectCodeEditor("BomberGameTopLevel.v", 82, 11, false, false, false, true, false); // ce (w, ck) - Popup Trigger
+selectMenuItem(PAResourceOtoP.PACodeEditor_GOTO_DEFINITION, "Go to Definition"); // ad (aj, Popup.HeavyWeightWindow)
+selectCodeEditor("PixelControl.v", 148, 30); // ce (w, ck)
+selectCodeEditor("PixelControl.v", 204, 140); // ce (w, ck)
+typeControlKey((HResource) null, "PixelControl.v", 'v'); // ce (w, ck)
+selectCodeEditor("PixelControl.v", 27, 130); // ce (w, ck)
+selectCodeEditor("PixelControl.v", 55, 143); // ce (w, ck)
+selectCodeEditor("PixelControl.v", 247, 164); // ce (w, ck)
+selectCodeEditor("PixelControl.v", 261, 119); // ce (w, ck)
+selectCodeEditor("PixelControl.v", 28, 144); // ce (w, ck)
+selectCodeEditor("PixelControl.v", 217, 146); // ce (w, ck)
+selectCodeEditor("PixelControl.v", 205, 166); // ce (w, ck)
+selectCodeEditor("PixelControl.v", 114, 180); // ce (w, ck)
+selectCodeEditor("PixelControl.v", 238, 50); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
