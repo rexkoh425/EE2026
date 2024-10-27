@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 27.10.2024 14:34:11
+// Create Date: 27.10.2024 15:39:17
 // Design Name: 
 // Module Name: uart_tx_new
 // Project Name: 
