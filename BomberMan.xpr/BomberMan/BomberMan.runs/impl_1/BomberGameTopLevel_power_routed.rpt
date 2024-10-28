@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Sat Oct 26 20:25:27 2024
+| Date             : Sun Oct 27 18:53:45 2024
 | Host             : tendra running 64-bit major release  (build 9200)
 | Command          : report_power -file BomberGameTopLevel_power_routed.rpt -pb BomberGameTopLevel_power_summary_routed.pb -rpx BomberGameTopLevel_power_routed.rpx
 | Design           : BomberGameTopLevel
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.084        |
+| Total On-Chip Power (W)  | 0.083        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 0.012        |
@@ -52,18 +52,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |     0.004 |    10060 |       --- |             --- |
-|   LUT as Logic |     0.003 |     6572 |     20800 |           31.60 |
-|   CARRY4       |    <0.001 |      852 |      8150 |           10.45 |
-|   Register     |    <0.001 |      934 |     41600 |            2.25 |
-|   BUFG         |    <0.001 |        3 |        32 |            9.38 |
-|   F7/F8 Muxes  |    <0.001 |       78 |     32600 |            0.24 |
-|   Others       |     0.000 |       55 |       --- |             --- |
-| Signals        |     0.003 |     7031 |       --- |             --- |
-| I/O            |     0.004 |       46 |       106 |           43.40 |
+| Clocks         |     0.003 |        3 |       --- |             --- |
+| Slice Logic    |     0.004 |    14061 |       --- |             --- |
+|   LUT as Logic |     0.004 |     9322 |     20800 |           44.82 |
+|   CARRY4       |    <0.001 |      999 |      8150 |           12.26 |
+|   Register     |    <0.001 |     1440 |     41600 |            3.46 |
+|   BUFG         |    <0.001 |        6 |        32 |           18.75 |
+|   F7/F8 Muxes  |    <0.001 |      204 |     32600 |            0.63 |
+|   Others       |     0.000 |       91 |       --- |             --- |
+| Signals        |     0.004 |    10185 |       --- |             --- |
+| I/O            |    <0.001 |       53 |       106 |           50.00 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.084 |          |           |                 |
+| Total          |     0.083 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,9 +73,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.018 |       0.009 |      0.010 |
+| Vccint    |       1.000 |     0.020 |       0.011 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
-| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
+| Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -151,7 +151,7 @@ Table of Contents
 |   SevenSegControl                         |     0.005 |
 |     onehz                                 |    <0.001 |
 |   clock_6p25MHZ                           |    <0.001 |
-|   pixelColourControl                      |    <0.001 |
+|   pixelColourControl                      |     0.003 |
 |     BombControl                           |    <0.001 |
 |       FindFreeBomb                        |    <0.001 |
 |       mod_inst1[0].Bombcounter            |    <0.001 |
@@ -163,15 +163,36 @@ Table of Contents
 |     ColourControl                         |    <0.001 |
 |       Player1                             |    <0.001 |
 |         counter                           |     0.000 |
+|       Player2                             |     0.000 |
+|         counter                           |     0.000 |
+|       Player3                             |    <0.001 |
+|         counter                           |     0.000 |
+|       Player4                             |    <0.001 |
+|         counter                           |     0.000 |
 |       player_blink                        |    <0.001 |
 |     ConcreteBlock                         |     0.000 |
 |       Concrete                            |     0.000 |
 |         outer_loop[12].mod_inst[10].Block |     0.000 |
-|     PlayerMovementControl                 |    <0.001 |
+|     Player1MovementControl                |    <0.001 |
 |       Player1                             |     0.000 |
 |         Player1                           |     0.000 |
+|       TrackPlayer1Square                  |    <0.001 |
 |       clk40hz                             |    <0.001 |
-|     TrackPlayer1Square                    |    <0.001 |
+|     Player2MovementControl                |    <0.001 |
+|       Player1                             |     0.000 |
+|         Player1                           |     0.000 |
+|       TrackPlayer1Square                  |    <0.001 |
+|       clk40hz                             |    <0.001 |
+|     Player3MovementControl                |    <0.001 |
+|       Player1                             |     0.000 |
+|         Player1                           |     0.000 |
+|       TrackPlayer1Square                  |    <0.001 |
+|       clk40hz                             |    <0.001 |
+|     Player4MovementControl                |    <0.001 |
+|       Player1                             |     0.000 |
+|         Player1                           |     0.000 |
+|       TrackPlayer1Square                  |    <0.001 |
+|       clk40hz                             |    <0.001 |
 |   twohundredhz                            |    <0.001 |
 +-------------------------------------------+-----------+
 

@@ -22,12 +22,12 @@
 
 module ExplodeBomb(
     input clk6p25m,
-    input[6:0] Player1Block,
+    input[6:0] Player1Block,Player2Block,Player3Block,Player4Block,
     input [12:0] pixel_index,
     input[6:0] BombBlock,
     input active , 
     output ExplosionAnimation ,
-    output player1_died,
+    output player1_died,  player2_died ,player3_died,player4_died,
     output [6:0] Up1 , Up2 , Left1 , Left2 , Right1 , Right2 , Down1 , Down2 ,
     output reg explode = 0
 );
@@ -59,7 +59,13 @@ module ExplodeBomb(
     assign Down2 = (BombBlock > 50 | (Down1 == BombBlock)) ? BombBlock : BombBlock + 20;
     assign player1_died = explode ? ((Player1Block == Up1) | (Player1Block == Up2) | (Player1Block == Down1) | (Player1Block == Down2) 
                         | (Player1Block == Left1) | (Player1Block == Left2) | (Player1Block == Right1) | (Player1Block == Right2) | (Player1Block == BombBlock)) : 0;
-    
+    assign player2_died = explode ? ((Player2Block == Up1) | (Player2Block == Up2) | (Player2Block == Down1) | (Player2Block == Down2) 
+                        | (Player2Block == Left1) | (Player2Block == Left2) | (Player2Block == Right1) | (Player2Block == Right2) | (Player2Block == BombBlock)) : 0;
+    assign player3_died = explode ? ((Player3Block == Up1) | (Player3Block == Up2) | (Player3Block == Down1) | (Player3Block == Down2) 
+                        | (Player3Block == Left1) | (Player3Block == Left2) | (Player3Block == Right1) | (Player3Block == Right2) | (Player3Block == BombBlock)) : 0;
+    assign player4_died = explode ? ((Player4Block == Up1) | (Player4Block == Up2) | (Player4Block == Down1) | (Player4Block == Down2) 
+                        | (Player4Block == Left1) | (Player4Block == Left2) | (Player4Block == Right1) | (Player4Block == Right2) | (Player4Block == BombBlock)) : 0;
+
     BlockColourPixel BombExplosion1(.BombBlock(BombBlock) , .pixel_index(pixel_index) , .isColouredPixel(blocks[0]));
     BlockColourPixel BombExplosion2(.BombBlock(Up1) , .pixel_index(pixel_index) , .isColouredPixel(blocks[1]));
     BlockColourPixel BombExplosion3(.BombBlock(Up2) , .pixel_index(pixel_index) , .isColouredPixel(blocks[2]));

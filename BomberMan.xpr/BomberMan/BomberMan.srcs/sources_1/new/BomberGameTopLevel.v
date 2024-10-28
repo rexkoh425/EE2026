@@ -24,6 +24,10 @@ module BomberGameTopLevel(
     input clk , 
     input[15:0] SW,
     input btnU , btnD , btnL , btnR , btnC ,
+    input [1:0] slave_rx, 
+    input master_rx,
+    output [1:0] master_tx, 
+    output slave_tx,
     output[7:0] JC , 
     output[15:0] led ,
     output[3:0] an,
@@ -40,7 +44,6 @@ module BomberGameTopLevel(
     wire clk200hz;
     var_clock twohundredhz(.clk(clk) , .M(249_999) , . SLOW_CLOCK(clk200hz));
     
-    assign led[15:1] = 15'b0;
     //Debouncing area
     ///////////////////////////////////////////////////////////////////////////
     wire DebouncedBtnU , DebouncedBtnD , DebouncedBtnL , DebouncedBtnR , DebouncedBtnC;
@@ -53,20 +56,26 @@ module BomberGameTopLevel(
     
     //  pixel data initialised as 0 here
     //////////////////////////////////////////////////////////////////////////
-    wire player1_isReviving;
+    wire player1_isReviving,player2_isReviving,player3_isReviving,player4_isReviving;
     PixelControl pixelColourControl(
         .clk100mhz(clk), .clk6p25m(clk6p25m),
         .initiate_reset(initiate_reset),
         .btnU(btnU) , .btnD(btnD) , .btnL(btnL) , .btnR(btnR) , .btnC(btnC) ,
-        .Player1SW(SW),
+        .SW(SW),
         .pixel_index(pixel_index), .pixel_data(pixel_data) ,
-        .Player1DebouncedBtnC(DebouncedBtnC) ,
-        .led(led[0]),
+        .DebouncedBtnC(DebouncedBtnC) ,
+        .led3(led[3]),
+        .reset(SW[14]), .masterToggle(SW[15]), .testLed(led[1]),
+        .master_tx(master_tx), .master_rx(master_rx), .slave_rx(slave_rx), .slave_tx(slave_tx),
         .player1_isReviving(player1_isReviving),
+        .player2_isReviving(player2_isReviving),
+        .player3_isReviving(player3_isReviving),
+        .player4_isReviving(player4_isReviving),
         .start_game(start_game)
     );
     //////////////////////////////////////////////////////////////////////////
-    
+    //current uart siwtch clashes with instant explosions
+    ////////////////////////////////////////////////////////////////////////
     reg reset = 1'b0;
     Oled_Display Oled_display(
         clk6p25m, 

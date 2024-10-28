@@ -19,14 +19,16 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
+//to handle death of individual players
 module PixelDataControl(
     input clk6p25m , 
-    input player1_die,
-    input CenterBlock , walls , player1 , bomb , ExplosionAnimations,
+    input player1_die,player2_die,player3_die,player4_die,
+    input CenterBlock , walls , 
+    input player1 , player2 , player3 , player4 , 
+    input bomb , ExplosionAnimations,
     input start_game ,
     output reg[15:0] pixel_data = 16'b0 ,
-    output player1_isReviving
+    output player1_isReviving ,player2_isReviving,player3_isReviving,player4_isReviving
 );
    wire[15:0] WHITE = 16'hFFFF;
    wire[15:0] BLUE = 16'h001F;
@@ -39,7 +41,8 @@ module PixelDataControl(
    
    wire PlayerBlinkClk;
    var_clock player_blink(clk6p25m , 32'd624999 , PlayerBlinkClk);
-   wire player1_status;
+   wire player1_status , player2_status,player3_status,player4_status , player_status;
+   assign player_status = player1_status | player2_status | player3_status | player4_status;
    
    AnimateDeath Player1(
        .clk6p25m(clk6p25m), .PlayerBlinkClk(PlayerBlinkClk),
@@ -48,6 +51,33 @@ module PixelDataControl(
        .player_status(player1_status),
        .isReviving(player1_isReviving)
    );
+   
+   AnimateDeath Player2(
+      .clk6p25m(clk6p25m), .PlayerBlinkClk(PlayerBlinkClk),
+      .player(player2),
+      .player_die(player2_die),
+      .player_status(player2_status),
+      .isReviving(player2_isReviving)
+    );
+      
+      
+    AnimateDeath Player3(
+        .clk6p25m(clk6p25m), .PlayerBlinkClk(PlayerBlinkClk),
+        .player(player3),
+        .player_die(player3_die),
+        .player_status(player3_status),
+        .isReviving(player3_isReviving)
+    );
+       
+         
+    AnimateDeath Player4(
+        .clk6p25m(clk6p25m), .PlayerBlinkClk(PlayerBlinkClk),
+        .player(player4),
+        .player_die(player4_die),
+        .player_status(player4_status),
+        .isReviving(player4_isReviving)
+    );
+            
    
    always @(posedge clk6p25m)
    begin
@@ -62,7 +92,7 @@ module PixelDataControl(
        end
        else if(walls)
            pixel_data <= BROWN;
-       else if(player1_status)
+       else if(player_status)
            pixel_data <= GREEN;
        else if(ExplosionAnimations)
            pixel_data <= ORANGE;
