@@ -1,0 +1,1365 @@
+
+*** Running vivado
+    with args -log BomberGameTopLevel.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source BomberGameTopLevel.tcl
+
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source BomberGameTopLevel.tcl -notrace
+Command: synth_design -top BomberGameTopLevel -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 11220 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 356.773 ; gain = 99.922
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'BomberGameTopLevel' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BomberGameTopLevel.v:23]
+INFO: [Synth 8-6157] synthesizing module 'var_clock' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/var_clock.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'var_clock' (1#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/var_clock.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ButtonDebouncing' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/ButtonDebouncing.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Counter_100MHZ' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Counter_100MHZ.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Counter_100MHZ' (2#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Counter_100MHZ.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ButtonDebouncing' (3#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/ButtonDebouncing.v:23]
+INFO: [Synth 8-6157] synthesizing module 'PixelControl' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:23]
+	Parameter dimensions bound to: 9 - type: integer 
+	Parameter minX bound to: 3 - type: integer 
+	Parameter maxX bound to: 93 - type: integer 
+	Parameter minY bound to: 1 - type: integer 
+	Parameter maxY bound to: 64 - type: integer 
+	Parameter player_dimensions bound to: 7 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'ConcreteBlocks' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/ConcreteBlocks.v:23]
+	Parameter dimensions bound to: 9 - type: integer 
+	Parameter minX bound to: 3 - type: integer 
+	Parameter maxX bound to: 93 - type: integer 
+	Parameter minY bound to: 1 - type: integer 
+	Parameter maxY bound to: 64 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Walls' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Walls.v:23]
+INFO: [Synth 8-6157] synthesizing module 'isColourPixel' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/isColourPixel.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'isColourPixel' (4#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/isColourPixel.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'Walls' (5#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Walls.v:23]
+INFO: [Synth 8-6157] synthesizing module 'CentreConcreteBlock' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/CentreConcreteBlock.v:23]
+	Parameter dimensions bound to: 9 - type: integer 
+	Parameter minX bound to: 3 - type: integer 
+	Parameter maxX bound to: 93 - type: integer 
+	Parameter minY bound to: 1 - type: integer 
+	Parameter maxY bound to: 64 - type: integer 
+	Parameter num_x_blocks bound to: 10 - type: integer 
+	Parameter num_y_blocks bound to: 7 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'CentreConcreteBlock' (6#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/CentreConcreteBlock.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ConcreteBlocks' (7#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/ConcreteBlocks.v:23]
+INFO: [Synth 8-6157] synthesizing module 'PlayerMovement' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:23]
+	Parameter InitialMinX bound to: 7'b0000100 
+	Parameter InitialMaxX bound to: 7'b0001010 
+	Parameter InitialMinY bound to: 7'b0000010 
+	Parameter InitialMaxY bound to: 7'b0001000 
+	Parameter dimensions bound to: 9 - type: integer 
+	Parameter minX bound to: 3 - type: integer 
+	Parameter maxX bound to: 93 - type: integer 
+	Parameter minY bound to: 1 - type: integer 
+	Parameter maxY bound to: 64 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'CollisionCheck' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/CollisionCheck.v:23]
+	Parameter dimensions bound to: 9 - type: integer 
+	Parameter minX bound to: 3 - type: integer 
+	Parameter maxX bound to: 93 - type: integer 
+	Parameter minY bound to: 1 - type: integer 
+	Parameter maxY bound to: 64 - type: integer 
+	Parameter num_x_blocks bound to: 10 - type: integer 
+	Parameter num_y_blocks bound to: 7 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'WithinXY' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/WithinXY.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'WithinXY' (8#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/WithinXY.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'CollisionCheck' (9#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/CollisionCheck.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Player' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Player.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Player' (10#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Player.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'PlayerMovement' (11#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:23]
+INFO: [Synth 8-6157] synthesizing module 'SquareTracker' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/SquareTracker.v:23]
+	Parameter dimensions bound to: 9 - type: integer 
+	Parameter minX bound to: 3 - type: integer 
+	Parameter maxX bound to: 93 - type: integer 
+	Parameter minY bound to: 1 - type: integer 
+	Parameter maxY bound to: 64 - type: integer 
+	Parameter num_x_blocks bound to: 10 - type: integer 
+	Parameter num_y_blocks bound to: 7 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'SquareTracker' (12#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/SquareTracker.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Bomb' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:23]
+	Parameter dimension bound to: 9 - type: integer 
+	Parameter Maxbombcount bound to: 7'b0000011 
+INFO: [Synth 8-6157] synthesizing module 'renderBomb' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderBomb.v:23]
+INFO: [Synth 8-6157] synthesizing module 'staticBomb' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/staticBomb.v:23]
+WARNING: [Synth 8-6014] Unused sequential element x_value_check_reg was removed.  [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/staticBomb.v:274]
+WARNING: [Synth 8-6014] Unused sequential element y_value_check_reg was removed.  [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/staticBomb.v:275]
+INFO: [Synth 8-6155] done synthesizing module 'staticBomb' (13#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/staticBomb.v:23]
+INFO: [Synth 8-6157] synthesizing module 'redBomb' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/redBomb.v:23]
+WARNING: [Synth 8-6014] Unused sequential element x_value_check_reg was removed.  [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/redBomb.v:276]
+WARNING: [Synth 8-6014] Unused sequential element y_value_check_reg was removed.  [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/redBomb.v:277]
+INFO: [Synth 8-6155] done synthesizing module 'redBomb' (14#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/redBomb.v:23]
+INFO: [Synth 8-6157] synthesizing module 'flickerBomb' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/flickerBomb.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'flickerBomb' (15#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/flickerBomb.v:23]
+WARNING: [Synth 8-6090] variable 'startFlicker' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderBomb.v:70]
+INFO: [Synth 8-6155] done synthesizing module 'renderBomb' (16#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderBomb.v:23]
+WARNING: [Synth 8-689] width (32) of port connection 'centreX' does not match port width (7) of module 'renderBomb' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:99]
+WARNING: [Synth 8-689] width (32) of port connection 'centreY' does not match port width (6) of module 'renderBomb' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:100]
+WARNING: [Synth 8-689] width (8) of port connection 'FreeBomb' does not match port width (16) of module 'renderBomb' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:102]
+WARNING: [Synth 8-350] instance 'nolabel_line99' of module 'renderBomb' requires 10 connections, but only 9 given [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:99]
+WARNING: [Synth 8-689] width (32) of port connection 'centreX' does not match port width (7) of module 'renderBomb' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:99]
+WARNING: [Synth 8-689] width (32) of port connection 'centreY' does not match port width (6) of module 'renderBomb' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:100]
+WARNING: [Synth 8-689] width (8) of port connection 'FreeBomb' does not match port width (16) of module 'renderBomb' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:102]
+WARNING: [Synth 8-350] instance 'nolabel_line99' of module 'renderBomb' requires 10 connections, but only 9 given [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:99]
+WARNING: [Synth 8-689] width (32) of port connection 'centreX' does not match port width (7) of module 'renderBomb' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:99]
+WARNING: [Synth 8-689] width (32) of port connection 'centreY' does not match port width (6) of module 'renderBomb' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:100]
+WARNING: [Synth 8-689] width (8) of port connection 'FreeBomb' does not match port width (16) of module 'renderBomb' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:102]
+WARNING: [Synth 8-350] instance 'nolabel_line99' of module 'renderBomb' requires 10 connections, but only 9 given [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:99]
+INFO: [Synth 8-6157] synthesizing module 'BombCounter' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BombCounter.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'BombCounter' (17#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BombCounter.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ExplodeBomb' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/ExplodeBomb.v:23]
+INFO: [Synth 8-6157] synthesizing module 'BlockIsImmutable' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BlockIsImmutable.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'BlockIsImmutable' (18#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BlockIsImmutable.v:23]
+INFO: [Synth 8-6157] synthesizing module 'BlockColourPixel' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BlockColourPixel.v:23]
+	Parameter dimension bound to: 7'b0001001 
+	Parameter MaxBlocks bound to: 7'b1000101 
+INFO: [Synth 8-6155] done synthesizing module 'BlockColourPixel' (19#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BlockColourPixel.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ExplodeBomb' (20#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/ExplodeBomb.v:23]
+INFO: [Synth 8-6157] synthesizing module 'TriggerExplosion' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/TriggerExplosion.v:23]
+	Parameter Maxbombcount bound to: 7'b0000011 
+INFO: [Synth 8-6155] done synthesizing module 'TriggerExplosion' (21#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/TriggerExplosion.v:23]
+INFO: [Synth 8-6157] synthesizing module 'FreeBomb' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/FreeBomb.v:23]
+	Parameter Maxbombcount bound to: 7'b0000011 
+INFO: [Synth 8-6155] done synthesizing module 'FreeBomb' (22#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/FreeBomb.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Bomb' (23#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:23]
+INFO: [Synth 8-6157] synthesizing module 'PixelDataControl' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelDataControl.v:23]
+INFO: [Synth 8-6157] synthesizing module 'AnimateDeath' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/AnimateDeath.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'AnimateDeath' (24#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/AnimateDeath.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'PixelDataControl' (25#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelDataControl.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'PixelControl' (26#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Oled_Display.v:36]
+	Parameter Width bound to: 96 - type: integer 
+	Parameter Height bound to: 64 - type: integer 
+	Parameter PixelCount bound to: 6144 - type: integer 
+	Parameter PixelCountWidth bound to: 13 - type: integer 
+	Parameter ClkFreq bound to: 6250000 - type: integer 
+	Parameter FrameFreq bound to: 60 - type: integer 
+	Parameter FrameDiv bound to: 104166 - type: integer 
+	Parameter FrameDivWidth bound to: 17 - type: integer 
+	Parameter PowerDelay bound to: 20 - type: integer 
+	Parameter ResetDelay bound to: 3 - type: integer 
+	Parameter VccEnDelay bound to: 20 - type: integer 
+	Parameter StartupCompleteDelay bound to: 100 - type: integer 
+	Parameter MaxDelay bound to: 100 - type: integer 
+	Parameter MaxDelayCount bound to: 625000 - type: integer 
+	Parameter StateCount bound to: 32 - type: integer 
+	Parameter StateWidth bound to: 5 - type: integer 
+	Parameter PowerUp bound to: 5'b00000 
+	Parameter Reset bound to: 5'b00001 
+	Parameter ReleaseReset bound to: 5'b00011 
+	Parameter EnableDriver bound to: 5'b00010 
+	Parameter DisplayOff bound to: 5'b00110 
+	Parameter SetRemapDisplayFormat bound to: 5'b00111 
+	Parameter SetStartLine bound to: 5'b00101 
+	Parameter SetOffset bound to: 5'b00100 
+	Parameter SetNormalDisplay bound to: 5'b01100 
+	Parameter SetMultiplexRatio bound to: 5'b01101 
+	Parameter SetMasterConfiguration bound to: 5'b01111 
+	Parameter DisablePowerSave bound to: 5'b01110 
+	Parameter SetPhaseAdjust bound to: 5'b01010 
+	Parameter SetDisplayClock bound to: 5'b01011 
+	Parameter SetSecondPrechargeA bound to: 5'b01001 
+	Parameter SetSecondPrechargeB bound to: 5'b01000 
+	Parameter SetSecondPrechargeC bound to: 5'b11000 
+	Parameter SetPrechargeLevel bound to: 5'b11001 
+	Parameter SetVCOMH bound to: 5'b11011 
+	Parameter SetMasterCurrent bound to: 5'b11010 
+	Parameter SetContrastA bound to: 5'b11110 
+	Parameter SetContrastB bound to: 5'b11111 
+	Parameter SetContrastC bound to: 5'b11101 
+	Parameter DisableScrolling bound to: 5'b11100 
+	Parameter ClearScreen bound to: 5'b10100 
+	Parameter VccEn bound to: 5'b10101 
+	Parameter DisplayOn bound to: 5'b10111 
+	Parameter PrepareNextFrame bound to: 5'b10110 
+	Parameter SetColAddress bound to: 5'b10010 
+	Parameter SetRowAddress bound to: 5'b10011 
+	Parameter WaitNextFrame bound to: 5'b10001 
+	Parameter SendPixel bound to: 5'b10000 
+	Parameter SpiCommandMaxWidth bound to: 40 - type: integer 
+	Parameter SpiCommandBitCountWidth bound to: 6 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Oled_Display.v:123]
+INFO: [Synth 8-226] default block is never used [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Oled_Display.v:198]
+WARNING: [Synth 8-693] zero replication count - replication ignored [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Oled_Display.v:346]
+INFO: [Synth 8-6155] done synthesizing module 'Oled_Display' (27#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Oled_Display.v:36]
+INFO: [Synth 8-6157] synthesizing module 'SevenSegDisplay' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/SevenSegDisplay.v:23]
+	Parameter game_mins bound to: 6'b001010 
+	Parameter game_seconds bound to: 6'b000000 
+INFO: [Synth 8-6155] done synthesizing module 'SevenSegDisplay' (28#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/SevenSegDisplay.v:23]
+INFO: [Synth 8-6157] synthesizing module 'GameReset' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/GameReset.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'GameReset' (29#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/GameReset.v:23]
+INFO: [Synth 8-6157] synthesizing module 'PlayerDeath' [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerDeath.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'PlayerDeath' (30#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerDeath.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'BomberGameTopLevel' (31#1) [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BomberGameTopLevel.v:23]
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[15] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[14] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[13] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[12] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[11] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[10] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[9] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[8] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[7] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[6] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[5] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[4] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[3] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[2] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[1] driven by constant 0
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[31]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[30]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[29]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[28]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[27]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[26]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[25]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[24]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[23]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[22]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[21]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[20]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[19]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[18]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[17]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[16]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[15]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[14]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[13]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[12]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[11]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[10]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[9]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[8]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[7]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[6]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[5]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[4]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[3]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[2]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[1]
+WARNING: [Synth 8-3331] design renderBomb has unconnected port bombCount[0]
+WARNING: [Synth 8-3331] design Bomb has unconnected port Player1SW[12]
+WARNING: [Synth 8-3331] design Bomb has unconnected port Player1SW[11]
+WARNING: [Synth 8-3331] design Bomb has unconnected port Player1SW[10]
+WARNING: [Synth 8-3331] design Bomb has unconnected port Player1SW[9]
+WARNING: [Synth 8-3331] design Bomb has unconnected port Player1SW[8]
+WARNING: [Synth 8-3331] design Bomb has unconnected port Player1SW[7]
+WARNING: [Synth 8-3331] design Bomb has unconnected port Player1SW[6]
+WARNING: [Synth 8-3331] design Bomb has unconnected port Player1SW[5]
+WARNING: [Synth 8-3331] design Bomb has unconnected port Player1SW[4]
+WARNING: [Synth 8-3331] design Bomb has unconnected port Player1SW[3]
+WARNING: [Synth 8-3331] design Bomb has unconnected port Player1SW[2]
+WARNING: [Synth 8-3331] design Bomb has unconnected port Player1SW[1]
+WARNING: [Synth 8-3331] design Bomb has unconnected port Player1SW[0]
+WARNING: [Synth 8-3331] design PlayerMovement has unconnected port btnC
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port JC[2]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 436.676 ; gain = 179.824
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 436.676 ; gain = 179.824
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 436.676 ; gain = 179.824
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/constrs_1/new/my_constraints.xdc]
+Finished Parsing XDC File [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/constrs_1/new/my_constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/constrs_1/new/my_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/BomberGameTopLevel_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/BomberGameTopLevel_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 793.871 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 793.977 ; gain = 537.125
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 793.977 ; gain = 537.125
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 793.977 ; gain = 537.125
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "SLOW_CLOCK" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:66]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:66]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:65]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:65]
+INFO: [Synth 8-5544] ROM "button" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "xBlock" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "yBlock" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "FirstBlock" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "SecondBlock" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "SecondBlock" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "isRed0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "explode" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "explode" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "BombsBlock_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "BombsBlock_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "BombsBlock_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Bombs_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Bombs_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Bombs_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Bombs_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Bombs_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Bombs_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Oled_Display'
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "fsm_next_state0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "count0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "start_game" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 PowerUp | 00000000100000000000000000000000 |                            00000
+                   Reset | 00000000000100000000000000000000 |                            00001
+            ReleaseReset | 00000000000000000000100000000000 |                            00011
+            EnableDriver | 00000000000000000001000000000000 |                            00010
+              DisplayOff | 00000000000000000100000000000000 |                            00110
+   SetRemapDisplayFormat | 00000100000000000000000000000000 |                            00111
+            SetStartLine | 00001000000000000000000000000000 |                            00101
+               SetOffset | 10000000000000000000000000000000 |                            00100
+        SetNormalDisplay | 00000000000000000000000010000000 |                            01100
+       SetMultiplexRatio | 00000000000000000000000000100000 |                            01101
+  SetMasterConfiguration | 00000000000000000000000001000000 |                            01111
+        DisablePowerSave | 00000000000000000000000000000100 |                            01110
+          SetPhaseAdjust | 00000000000000000000000000001000 |                            01010
+         SetDisplayClock | 00000000001000000000000000000000 |                            01011
+     SetSecondPrechargeA | 00000000010000000000000000000000 |                            01001
+     SetSecondPrechargeB | 01000000000000000000000000000000 |                            01000
+     SetSecondPrechargeC | 00000010000000000000000000000000 |                            11000
+       SetPrechargeLevel | 00000001000000000000000000000000 |                            11001
+                SetVCOMH | 00000000000000010000000000000000 |                            11011
+        SetMasterCurrent | 00000000000000100000000000000000 |                            11010
+            SetContrastA | 00000000000001000000000000000000 |                            11110
+            SetContrastB | 00100000000000000000000000000000 |                            11111
+            SetContrastC | 00000000000000000000000000000001 |                            11101
+        DisableScrolling | 00000000000000000000000000000010 |                            11100
+             ClearScreen | 00000000000000000000000000010000 |                            10100
+                   VccEn | 00010000000000000000000000000000 |                            10101
+               DisplayOn | 00000000000010000000000000000000 |                            10111
+        PrepareNextFrame | 00000000000000001000000000000000 |                            10110
+           SetColAddress | 00000000000000000000010000000000 |                            10010
+           SetRowAddress | 00000000000000000000000100000000 |                            10011
+           WaitNextFrame | 00000000000000000000001000000000 |                            10001
+               SendPixel | 00000000000000000010000000000000 |                            10000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Oled_Display'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 793.977 ; gain = 537.125
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+------------------------+------------+----------+
+|      |RTL Partition           |Replication |Instances |
++------+------------------------+------------+----------+
+|1     |ExplodeBomb             |           3|      8834|
+|2     |Bomb__GC0               |           1|     23360|
+|3     |PixelControl__GCB0      |           1|     22728|
+|4     |ConcreteBlocks          |           1|      9306|
+|5     |BomberGameTopLevel__GC0 |           1|      7963|
++------+------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 3     
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 4     
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 104   
+	   3 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 84    
+	   2 Input      4 Bit       Adders := 29    
+	   2 Input      3 Bit       Adders := 29    
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               70 Bit    Registers := 1     
+	               40 Bit    Registers := 1     
+	               32 Bit    Registers := 6     
+	               26 Bit    Registers := 3     
+	               17 Bit    Registers := 1     
+	               16 Bit    Registers := 11    
+	                8 Bit    Registers := 2     
+	                7 Bit    Registers := 11    
+	                6 Bit    Registers := 7     
+	                4 Bit    Registers := 5     
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 67    
++---Muxes : 
+	   2 Input     70 Bit        Muxes := 25    
+	   2 Input     40 Bit        Muxes := 3     
+	   2 Input     32 Bit        Muxes := 5     
+	  32 Input     32 Bit        Muxes := 1     
+	   2 Input     26 Bit        Muxes := 3     
+	  32 Input     20 Bit        Muxes := 1     
+	   2 Input     17 Bit        Muxes := 1     
+	  55 Input     16 Bit        Muxes := 3     
+	   2 Input     16 Bit        Muxes := 11    
+	   2 Input      8 Bit        Muxes := 2     
+	   2 Input      7 Bit        Muxes := 239   
+	   3 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 15    
+	  32 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 5     
+	  32 Input      5 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   4 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 354   
+	  55 Input      1 Bit        Muxes := 6     
+	  54 Input      1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module BlockColourPixel__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
+Module BlockColourPixel__2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
+Module BlockColourPixel__3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
+Module BlockColourPixel__4 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
+Module BlockColourPixel__5 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
+Module BlockColourPixel__6 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
+Module BlockColourPixel__7 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
+Module BlockColourPixel__8 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
+Module BlockColourPixel 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
+Module ExplodeBomb 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 8     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 5     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+Module FreeBomb 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 2     
+	   2 Input      7 Bit        Muxes := 3     
+	   3 Input      7 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
+Module staticBomb__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 7     
+	   2 Input      6 Bit       Adders := 8     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	  55 Input     16 Bit        Muxes := 1     
+	  55 Input      1 Bit        Muxes := 1     
+	  54 Input      1 Bit        Muxes := 1     
+Module redBomb__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 7     
+	   2 Input      6 Bit       Adders := 8     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	  55 Input      1 Bit        Muxes := 1     
+	  54 Input      1 Bit        Muxes := 1     
+Module flickerBomb__1 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
+Module renderBomb__1 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module staticBomb__2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 7     
+	   2 Input      6 Bit       Adders := 8     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	  55 Input     16 Bit        Muxes := 1     
+	  55 Input      1 Bit        Muxes := 1     
+	  54 Input      1 Bit        Muxes := 1     
+Module redBomb__2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 7     
+	   2 Input      6 Bit       Adders := 8     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	  55 Input      1 Bit        Muxes := 1     
+	  54 Input      1 Bit        Muxes := 1     
+Module flickerBomb__2 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
+Module renderBomb__2 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module staticBomb 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 7     
+	   2 Input      6 Bit       Adders := 8     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	  55 Input     16 Bit        Muxes := 1     
+	  55 Input      1 Bit        Muxes := 1     
+	  54 Input      1 Bit        Muxes := 1     
+Module redBomb 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 7     
+	   2 Input      6 Bit       Adders := 8     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	  55 Input      1 Bit        Muxes := 1     
+	  54 Input      1 Bit        Muxes := 1     
+Module flickerBomb 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
+Module renderBomb 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module BombCounter__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module BombCounter__2 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module BombCounter 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module Bomb 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 3     
+	   2 Input      7 Bit       Adders := 4     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               70 Bit    Registers := 1     
+	               26 Bit    Registers := 3     
+	               16 Bit    Registers := 1     
+	                7 Bit    Registers := 3     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     70 Bit        Muxes := 25    
+	   2 Input     26 Bit        Muxes := 3     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input      7 Bit        Muxes := 3     
+	   2 Input      6 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 6     
+Module var_clock__2 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module Counter_100MHZ__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module AnimateDeath 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module PixelDataControl 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 6     
+Module var_clock__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module PlayerMovement 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 6     
+	   2 Input      6 Bit       Adders := 6     
++---Registers : 
+	                7 Bit    Registers := 4     
+	                6 Bit    Registers := 4     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      7 Bit        Muxes := 8     
+	   2 Input      6 Bit        Muxes := 8     
+	   5 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   4 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 12    
+Module SquareTracker 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input      8 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 1     
+	   3 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                7 Bit    Registers := 3     
+	                6 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      7 Bit        Muxes := 210   
+	   2 Input      1 Bit        Muxes := 285   
+Module var_clock__5 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module var_clock 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module Counter_100MHZ__2 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module var_clock__6 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module ButtonDebouncing__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module Counter_100MHZ__3 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module var_clock__7 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module ButtonDebouncing__2 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module Counter_100MHZ__4 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module var_clock__8 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module ButtonDebouncing__3 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module Counter_100MHZ__5 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module var_clock__9 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module ButtonDebouncing__4 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module Counter_100MHZ 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module var_clock__4 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module ButtonDebouncing 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module Oled_Display 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	               40 Bit    Registers := 1     
+	               17 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     40 Bit        Muxes := 3     
+	  32 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 2     
+	  32 Input     20 Bit        Muxes := 1     
+	   2 Input     17 Bit        Muxes := 1     
+	  32 Input      6 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	  32 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module var_clock__3 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module SevenSegDisplay 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 4     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   4 Input      4 Bit        Muxes := 1     
+Module GameReset 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module PlayerDeath 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5546] ROM "Bombs_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Bombs_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Bombs_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Bombs_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Bombs_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Bombs_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "BombsBlock_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "BombsBlock_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "BombsBlock_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "SecondBlock" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "SecondBlock" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "xBlock" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "yBlock" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "FirstBlock" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "clock_6p25MHZ/SLOW_CLOCK" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "twohundredhz/SLOW_CLOCK" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "explode" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "explode" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "isRed0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "isRed0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "isRed0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "BombsBlock_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "BombsBlock_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "BombsBlock_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Bombs_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Bombs_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Bombs_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Bombs_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Bombs_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Bombs_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "SecondBlock" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "SecondBlock" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "xBlock" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "yBlock" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "FirstBlock" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "ColourControl/player_blink/SLOW_CLOCK" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "PlayerMovementControl/clk40hz/SLOW_CLOCK" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clock_1khz/SLOW_CLOCK" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clock_1khz/SLOW_CLOCK" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clock_1khz/SLOW_CLOCK" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clock_1khz/SLOW_CLOCK" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clock_1khz/SLOW_CLOCK" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "onehz/SLOW_CLOCK" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "ResetControl/count0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "ResetControl/start_game" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clock_6p25MHZ/SLOW_CLOCK" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "twohundredhz/SLOW_CLOCK" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[15] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[14] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[13] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[12] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[11] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[10] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[9] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[8] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[7] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[6] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[5] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[4] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[3] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[2] driven by constant 0
+WARNING: [Synth 8-3917] design BomberGameTopLevel has port led[1] driven by constant 0
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port JC[2]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[12]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[11]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[10]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[9]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[8]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[7]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[6]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[5]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[4]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[3]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[2]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[0]
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/\mod_inst[0].nolabel_line99 /\flickerBomb/bufferLimit_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/\mod_inst[1].nolabel_line99 /\flickerBomb/bufferLimit_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/\mod_inst[2].nolabel_line99 /\flickerBomb/bufferLimit_reg[31] )
+INFO: [Synth 8-3886] merging instance 'BombControli_1/Bombs_reg[0][6]' (FDE) to 'BombControli_1/Bombs_reg[0][0]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/Bombs_reg[0][0]' (FDE) to 'BombControli_1/Bombs_reg[0][3]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/Bombs_reg[0][1]' (FDE) to 'BombControli_1/Bombs_reg[0][4]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/Bombs_reg[0][2]' (FDE) to 'BombControli_1/Bombs_reg[0][5]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/Bombs_reg[0][19]' (FDE) to 'BombControli_1/Bombs_reg[0][12]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/Bombs_reg[1][6]' (FDE) to 'BombControli_1/Bombs_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/Bombs_reg[1][0]' (FDE) to 'BombControli_1/Bombs_reg[1][3]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/Bombs_reg[1][1]' (FDE) to 'BombControli_1/Bombs_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/Bombs_reg[1][2]' (FDE) to 'BombControli_1/Bombs_reg[1][5]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/Bombs_reg[1][19]' (FDE) to 'BombControli_1/Bombs_reg[1][12]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/Bombs_reg[2][6]' (FDE) to 'BombControli_1/Bombs_reg[2][0]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/Bombs_reg[2][0]' (FDE) to 'BombControli_1/Bombs_reg[2][3]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/Bombs_reg[2][1]' (FDE) to 'BombControli_1/Bombs_reg[2][4]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/Bombs_reg[2][2]' (FDE) to 'BombControli_1/Bombs_reg[2][5]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/Bombs_reg[2][19]' (FDE) to 'BombControli_1/Bombs_reg[2][12]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[0]' (FDE) to 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[1]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[0]' (FDE) to 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[1]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[0]' (FDE) to 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[1]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[1]' (FDE) to 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[2]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[1]' (FDE) to 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[2]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[1]' (FDE) to 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[2]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[2]' (FDE) to 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[3]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[2].nolabel_line99/nolabel_line42/pixel_data_reg[2]' (FDE) to 'BombControli_1/mod_inst[2].nolabel_line99/nolabel_line42/pixel_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[2]' (FDE) to 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[3]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[1].nolabel_line99/nolabel_line42/pixel_data_reg[2]' (FDE) to 'BombControli_1/mod_inst[1].nolabel_line99/nolabel_line42/pixel_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[2]' (FDE) to 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[3]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/nolabel_line42/pixel_data_reg[2]' (FDE) to 'BombControli_1/mod_inst[0].nolabel_line99/nolabel_line42/pixel_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[3]' (FDE) to 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[4]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[3]' (FDE) to 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[4]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[3]' (FDE) to 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[4]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[4]' (FDE) to 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[5]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[4]' (FDE) to 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[5]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[4]' (FDE) to 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[5]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[5]' (FDE) to 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[6]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[5]' (FDE) to 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[6]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[5]' (FDE) to 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[6]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[6]' (FDE) to 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[7]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[2].nolabel_line99/nolabel_line42/pixel_data_reg[6]' (FDE) to 'BombControli_1/mod_inst[2].nolabel_line99/nolabel_line42/pixel_data_reg[13]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[6]' (FDE) to 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[7]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[1].nolabel_line99/nolabel_line42/pixel_data_reg[6]' (FDE) to 'BombControli_1/mod_inst[1].nolabel_line99/nolabel_line42/pixel_data_reg[13]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[6]' (FDE) to 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[7]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/nolabel_line42/pixel_data_reg[6]' (FDE) to 'BombControli_1/mod_inst[0].nolabel_line99/nolabel_line42/pixel_data_reg[13]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[7]' (FDE) to 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[7]' (FDE) to 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[7]' (FDE) to 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[8]' (FDE) to 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[8]' (FDE) to 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[8]' (FDE) to 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[9]' (FDE) to 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[10]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[2].nolabel_line99/nolabel_line42/pixel_data_reg[9]' (FDE) to 'BombControli_1/mod_inst[2].nolabel_line99/nolabel_line42/pixel_data_reg[14]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[9]' (FDE) to 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[10]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[1].nolabel_line99/nolabel_line42/pixel_data_reg[9]' (FDE) to 'BombControli_1/mod_inst[1].nolabel_line99/nolabel_line42/pixel_data_reg[14]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[9]' (FDE) to 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[10]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/nolabel_line42/pixel_data_reg[9]' (FDE) to 'BombControli_1/mod_inst[0].nolabel_line99/nolabel_line42/pixel_data_reg[14]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/\mod_inst[2].nolabel_line99 /\redBomb/pixel_data_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/\mod_inst[1].nolabel_line99 /\redBomb/pixel_data_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/\mod_inst[0].nolabel_line99 /\redBomb/pixel_data_reg[10] )
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[11]' (FDE) to 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[2].nolabel_line99/nolabel_line42/pixel_data_reg[11]' (FDE) to 'BombControli_1/mod_inst[2].nolabel_line99/nolabel_line42/pixel_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[11]' (FDE) to 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[1].nolabel_line99/nolabel_line42/pixel_data_reg[11]' (FDE) to 'BombControli_1/mod_inst[1].nolabel_line99/nolabel_line42/pixel_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[11]' (FDE) to 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/nolabel_line42/pixel_data_reg[11]' (FDE) to 'BombControli_1/mod_inst[0].nolabel_line99/nolabel_line42/pixel_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[12]' (FDE) to 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[13]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/\mod_inst[2].nolabel_line99 /\nolabel_line42/pixel_data_reg[12] )
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[12]' (FDE) to 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[13]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/\mod_inst[1].nolabel_line99 /\nolabel_line42/pixel_data_reg[12] )
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[12]' (FDE) to 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[13]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/\mod_inst[0].nolabel_line99 /\nolabel_line42/pixel_data_reg[12] )
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[13]' (FDE) to 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[14]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[13]' (FDE) to 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[14]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[13]' (FDE) to 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[14]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[14]' (FDE) to 'BombControli_1/mod_inst[2].nolabel_line99/redBomb/pixel_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[14]' (FDE) to 'BombControli_1/mod_inst[1].nolabel_line99/redBomb/pixel_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[14]' (FDE) to 'BombControli_1/mod_inst[0].nolabel_line99/redBomb/pixel_data_reg[15]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (BombControli_1/\mod_inst[2].nolabel_line99 /\redBomb/pixel_data_reg[15] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (BombControli_1/\mod_inst[1].nolabel_line99 /\redBomb/pixel_data_reg[15] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (BombControli_1/\mod_inst[0].nolabel_line99 /\redBomb/pixel_data_reg[15] )
+INFO: [Synth 8-3886] merging instance 'BombControli_1/FindFreeBomb/triggered_player_reg[0]' (FDRE) to 'BombControli_1/FindFreeBomb/triggered_player_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/FindFreeBomb/\triggered_player_reg[1] )
+INFO: [Synth 8-3886] merging instance 'BombControli_1/FindFreeBomb/FreeBomb_reg[6]' (FDRE) to 'BombControli_1/FindFreeBomb/FreeBomb_reg[5]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/FindFreeBomb/FreeBomb_reg[4]' (FDRE) to 'BombControli_1/FindFreeBomb/FreeBomb_reg[3]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/FindFreeBomb/FreeBomb_reg[3]' (FDRE) to 'BombControli_1/FindFreeBomb/FreeBomb_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/FindFreeBomb/\FreeBomb_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/FindFreeBomb/\FreeBomb_reg[7] )
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/flickerBomb/bufferLimit_reg[30]' (FDRE) to 'BombControli_1/mod_inst[0].nolabel_line99/flickerBomb/bufferLimit_reg[29]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/flickerBomb/bufferLimit_reg[31]' (FDRE) to 'BombControli_1/mod_inst[0].nolabel_line99/flickerBomb/bufferLimit_reg[29]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/\mod_inst[0].nolabel_line99 /\flickerBomb/bufferLimit_reg[29] )
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[1].nolabel_line99/flickerBomb/bufferLimit_reg[30]' (FDRE) to 'BombControli_1/mod_inst[1].nolabel_line99/flickerBomb/bufferLimit_reg[29]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[1].nolabel_line99/flickerBomb/bufferLimit_reg[31]' (FDRE) to 'BombControli_1/mod_inst[1].nolabel_line99/flickerBomb/bufferLimit_reg[29]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/\mod_inst[1].nolabel_line99 /\flickerBomb/bufferLimit_reg[29] )
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[2].nolabel_line99/flickerBomb/bufferLimit_reg[30]' (FDRE) to 'BombControli_1/mod_inst[2].nolabel_line99/flickerBomb/bufferLimit_reg[29]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[2].nolabel_line99/flickerBomb/bufferLimit_reg[31]' (FDRE) to 'BombControli_1/mod_inst[2].nolabel_line99/flickerBomb/bufferLimit_reg[29]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/\mod_inst[2].nolabel_line99 /\flickerBomb/bufferLimit_reg[29] )
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[2].nolabel_line99/pixel_data_reg[2]' (FD) to 'BombControli_1/mod_inst[2].nolabel_line99/pixel_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[1].nolabel_line99/pixel_data_reg[2]' (FD) to 'BombControli_1/mod_inst[1].nolabel_line99/pixel_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/pixel_data_reg[2]' (FD) to 'BombControli_1/mod_inst[0].nolabel_line99/pixel_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[2].nolabel_line99/pixel_data_reg[11]' (FD) to 'BombControli_1/mod_inst[2].nolabel_line99/pixel_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[1].nolabel_line99/pixel_data_reg[11]' (FD) to 'BombControli_1/mod_inst[1].nolabel_line99/pixel_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/pixel_data_reg[11]' (FD) to 'BombControli_1/mod_inst[0].nolabel_line99/pixel_data_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/FindFreeBomb/\WhichPlayerBomb_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/FindFreeBomb/\WhichPlayerBomb_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/FindFreeBomb/\WhichPlayerBomb_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/FindFreeBomb/\WhichPlayerBomb_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/FindFreeBomb/\WhichPlayerBomb_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/FindFreeBomb/\WhichPlayerBomb_reg[5] )
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/flickerBomb/bufferLimit_reg[28]' (FDRE) to 'BombControli_1/mod_inst[0].nolabel_line99/flickerBomb/bufferLimit_reg[27]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/flickerBomb/bufferLimit_reg[29]' (FDRE) to 'BombControli_1/mod_inst[0].nolabel_line99/flickerBomb/bufferLimit_reg[27]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/\mod_inst[0].nolabel_line99 /\flickerBomb/bufferLimit_reg[27] )
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[1].nolabel_line99/flickerBomb/bufferLimit_reg[28]' (FDRE) to 'BombControli_1/mod_inst[1].nolabel_line99/flickerBomb/bufferLimit_reg[27]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[1].nolabel_line99/flickerBomb/bufferLimit_reg[29]' (FDRE) to 'BombControli_1/mod_inst[1].nolabel_line99/flickerBomb/bufferLimit_reg[27]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/\mod_inst[1].nolabel_line99 /\flickerBomb/bufferLimit_reg[27] )
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[2].nolabel_line99/flickerBomb/bufferLimit_reg[28]' (FDRE) to 'BombControli_1/mod_inst[2].nolabel_line99/flickerBomb/bufferLimit_reg[27]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[2].nolabel_line99/flickerBomb/bufferLimit_reg[29]' (FDRE) to 'BombControli_1/mod_inst[2].nolabel_line99/flickerBomb/bufferLimit_reg[27]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/\mod_inst[2].nolabel_line99 /\flickerBomb/bufferLimit_reg[27] )
+INFO: [Synth 8-3886] merging instance 'BombControli_1/pixel_data_reg[2]' (FDE) to 'BombControli_1/pixel_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/pixel_data_reg[11]' (FDE) to 'BombControli_1/pixel_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/flickerBomb/bufferLimit_reg[26]' (FDRE) to 'BombControli_1/mod_inst[0].nolabel_line99/flickerBomb/bufferLimit_reg[25]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/flickerBomb/bufferLimit_reg[27]' (FDRE) to 'BombControli_1/mod_inst[0].nolabel_line99/flickerBomb/bufferLimit_reg[25]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/\mod_inst[0].nolabel_line99 /\flickerBomb/bufferLimit_reg[25] )
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[1].nolabel_line99/flickerBomb/bufferLimit_reg[26]' (FDRE) to 'BombControli_1/mod_inst[1].nolabel_line99/flickerBomb/bufferLimit_reg[25]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[1].nolabel_line99/flickerBomb/bufferLimit_reg[27]' (FDRE) to 'BombControli_1/mod_inst[1].nolabel_line99/flickerBomb/bufferLimit_reg[25]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/\mod_inst[1].nolabel_line99 /\flickerBomb/bufferLimit_reg[25] )
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[2].nolabel_line99/flickerBomb/bufferLimit_reg[26]' (FDRE) to 'BombControli_1/mod_inst[2].nolabel_line99/flickerBomb/bufferLimit_reg[25]'
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[2].nolabel_line99/flickerBomb/bufferLimit_reg[27]' (FDRE) to 'BombControli_1/mod_inst[2].nolabel_line99/flickerBomb/bufferLimit_reg[25]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/\mod_inst[2].nolabel_line99 /\flickerBomb/bufferLimit_reg[25] )
+INFO: [Synth 8-3886] merging instance 'BombControli_1/mod_inst[0].nolabel_line99/flickerBomb/bufferLimit_reg[24]' (FDRE) to 'BombControli_1/mod_inst[0].nolabel_line99/flickerBomb/bufferLimit_reg[23]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/\mod_inst[0].nolabel_line99 /\flickerBomb/bufferLimit_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/\mod_inst[1].nolabel_line99 /\flickerBomb/bufferLimit_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/\mod_inst[2].nolabel_line99 /\flickerBomb/bufferLimit_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/\mod_inst[0].nolabel_line99 /\flickerBomb/bufferLimit_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/\mod_inst[1].nolabel_line99 /\flickerBomb/bufferLimit_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BombControli_1/\mod_inst[2].nolabel_line99 /\flickerBomb/bufferLimit_reg[21] )
+WARNING: [Synth 8-3332] Sequential element (FreeBomb_reg[7]) is unused and will be removed from module FreeBomb.
+WARNING: [Synth 8-3332] Sequential element (FreeBomb_reg[2]) is unused and will be removed from module FreeBomb.
+WARNING: [Synth 8-3332] Sequential element (triggered_player_reg[1]) is unused and will be removed from module FreeBomb.
+WARNING: [Synth 8-3332] Sequential element (WhichPlayerBomb_reg[5]) is unused and will be removed from module FreeBomb.
+WARNING: [Synth 8-3332] Sequential element (WhichPlayerBomb_reg[4]) is unused and will be removed from module FreeBomb.
+WARNING: [Synth 8-3332] Sequential element (WhichPlayerBomb_reg[3]) is unused and will be removed from module FreeBomb.
+WARNING: [Synth 8-3332] Sequential element (WhichPlayerBomb_reg[2]) is unused and will be removed from module FreeBomb.
+WARNING: [Synth 8-3332] Sequential element (WhichPlayerBomb_reg[1]) is unused and will be removed from module FreeBomb.
+WARNING: [Synth 8-3332] Sequential element (WhichPlayerBomb_reg[0]) is unused and will be removed from module FreeBomb.
+WARNING: [Synth 8-3332] Sequential element (nolabel_line42/pixel_data_reg[12]) is unused and will be removed from module renderBomb__1.
+WARNING: [Synth 8-3332] Sequential element (redBomb/pixel_data_reg[15]) is unused and will be removed from module renderBomb__1.
+WARNING: [Synth 8-3332] Sequential element (redBomb/pixel_data_reg[10]) is unused and will be removed from module renderBomb__1.
+WARNING: [Synth 8-3332] Sequential element (flickerBomb/bufferLimit_reg[21]) is unused and will be removed from module renderBomb__1.
+WARNING: [Synth 8-3332] Sequential element (flickerBomb/bufferLimit_reg[20]) is unused and will be removed from module renderBomb__1.
+WARNING: [Synth 8-3332] Sequential element (nolabel_line42/pixel_data_reg[12]) is unused and will be removed from module renderBomb__2.
+WARNING: [Synth 8-3332] Sequential element (redBomb/pixel_data_reg[15]) is unused and will be removed from module renderBomb__2.
+WARNING: [Synth 8-3332] Sequential element (redBomb/pixel_data_reg[10]) is unused and will be removed from module renderBomb__2.
+WARNING: [Synth 8-3332] Sequential element (flickerBomb/bufferLimit_reg[21]) is unused and will be removed from module renderBomb__2.
+WARNING: [Synth 8-3332] Sequential element (flickerBomb/bufferLimit_reg[20]) is unused and will be removed from module renderBomb__2.
+WARNING: [Synth 8-3332] Sequential element (nolabel_line42/pixel_data_reg[12]) is unused and will be removed from module renderBomb.
+WARNING: [Synth 8-3332] Sequential element (redBomb/pixel_data_reg[15]) is unused and will be removed from module renderBomb.
+WARNING: [Synth 8-3332] Sequential element (redBomb/pixel_data_reg[10]) is unused and will be removed from module renderBomb.
+WARNING: [Synth 8-3332] Sequential element (flickerBomb/bufferLimit_reg[21]) is unused and will be removed from module renderBomb.
+WARNING: [Synth 8-3332] Sequential element (flickerBomb/bufferLimit_reg[20]) is unused and will be removed from module renderBomb.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:23 ; elapsed = 00:02:27 . Memory (MB): peak = 817.074 ; gain = 560.223
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+------------------------+------------+----------+
+|      |RTL Partition           |Replication |Instances |
++------+------------------------+------------+----------+
+|1     |ExplodeBomb             |           3|      6040|
+|2     |Bomb__GC0               |           1|      9780|
+|3     |PixelControl__GCB0      |           1|      3232|
+|4     |ConcreteBlocks          |           1|       311|
+|5     |BomberGameTopLevel__GC0 |           1|      2328|
++------+------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:33 ; elapsed = 00:02:39 . Memory (MB): peak = 817.074 ; gain = 560.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:02:34 ; elapsed = 00:02:40 . Memory (MB): peak = 827.098 ; gain = 570.246
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+------------------------+------------+----------+
+|      |RTL Partition           |Replication |Instances |
++------+------------------------+------------+----------+
+|1     |ExplodeBomb             |           3|      6040|
+|2     |Bomb__GC0               |           1|      9780|
+|3     |PixelControl__GCB0      |           1|      3232|
+|4     |ConcreteBlocks          |           1|       311|
+|5     |BomberGameTopLevel__GC0 |           1|      2328|
++------+------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:02:40 ; elapsed = 00:02:46 . Memory (MB): peak = 950.180 ; gain = 693.328
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:02:42 ; elapsed = 00:02:48 . Memory (MB): peak = 950.180 ; gain = 693.328
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:42 ; elapsed = 00:02:48 . Memory (MB): peak = 950.180 ; gain = 693.328
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:43 ; elapsed = 00:02:50 . Memory (MB): peak = 950.180 ; gain = 693.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:45 ; elapsed = 00:02:51 . Memory (MB): peak = 950.180 ; gain = 693.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:45 ; elapsed = 00:02:51 . Memory (MB): peak = 950.180 ; gain = 693.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:45 ; elapsed = 00:02:51 . Memory (MB): peak = 950.180 ; gain = 693.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     4|
+|2     |CARRY4 |  1014|
+|3     |LUT1   |   541|
+|4     |LUT2   |  1881|
+|5     |LUT3   |   922|
+|6     |LUT4   |  1605|
+|7     |LUT5   |  1266|
+|8     |LUT6   |  3299|
+|9     |MUXF7  |    65|
+|10    |MUXF8  |    14|
+|11    |FDE_1  |    32|
+|12    |FDRE   |  1235|
+|13    |FDSE   |   127|
+|14    |IBUF   |    10|
+|15    |OBUF   |    35|
+|16    |OBUFT  |     1|
++------+-------+------+
+
+Report Instance Areas: 
++------+--------------------------------------------+--------------------+------+
+|      |Instance                                    |Module              |Cells |
++------+--------------------------------------------+--------------------+------+
+|1     |top                                         |                    | 12051|
+|2     |  DebounceC                                 |ButtonDebouncing    |   114|
+|3     |    clock_1khz                              |var_clock_17        |    55|
+|4     |    counter                                 |Counter_100MHZ_18   |    54|
+|5     |  Oled_display                              |Oled_Display        |  3003|
+|6     |  ResetControl                              |GameReset           |    63|
+|7     |  SevenSegControl                           |SevenSegDisplay     |   456|
+|8     |    onehz                                   |var_clock_16        |    60|
+|9     |  clock_6p25MHZ                             |var_clock           |    52|
+|10    |  pixelColourControl                        |PixelControl        |  8257|
+|11    |    BombControl                             |Bomb                |  6921|
+|12    |      FindFreeBomb                          |FreeBomb            |    36|
+|13    |      \mod_inst1[0].Bombcounter             |BombCounter         |   115|
+|14    |      \mod_inst1[1].Bombcounter             |BombCounter_4       |   114|
+|15    |      \mod_inst1[2].Bombcounter             |BombCounter_5       |   115|
+|16    |      \mod_inst2[0].ExplodeAnimation        |ExplodeBomb         |   986|
+|17    |      \mod_inst2[1].ExplodeAnimation        |ExplodeBomb_6       |   958|
+|18    |      \mod_inst2[2].ExplodeAnimation        |ExplodeBomb_7       |   961|
+|19    |      \mod_inst[0].nolabel_line99           |renderBomb          |   575|
+|20    |        flickerBomb                         |flickerBomb_13      |   239|
+|21    |        nolabel_line42                      |staticBomb_14       |   196|
+|22    |        redBomb                             |redBomb_15          |   124|
+|23    |      \mod_inst[1].nolabel_line99           |renderBomb_8        |   589|
+|24    |        flickerBomb                         |flickerBomb_10      |   239|
+|25    |        nolabel_line42                      |staticBomb_11       |   196|
+|26    |        redBomb                             |redBomb_12          |   124|
+|27    |      \mod_inst[2].nolabel_line99           |renderBomb_9        |   576|
+|28    |        flickerBomb                         |flickerBomb         |   239|
+|29    |        nolabel_line42                      |staticBomb          |   196|
+|30    |        redBomb                             |redBomb             |   124|
+|31    |    ColourControl                           |PixelDataControl    |   123|
+|32    |      Player1                               |AnimateDeath        |    52|
+|33    |        counter                             |Counter_100MHZ      |    50|
+|34    |      player_blink                          |var_clock_3         |    55|
+|35    |    ConcreteBlock                           |ConcreteBlocks      |    58|
+|36    |      Concrete                              |CentreConcreteBlock |    23|
+|37    |        \outer_loop[12].mod_inst[10].Block  |isColourPixel_2     |    23|
+|38    |    PlayerMovementControl                   |PlayerMovement      |   906|
+|39    |      Player1                               |Player              |    72|
+|40    |        Player1                             |isColourPixel       |    72|
+|41    |      clk40hz                               |var_clock_1         |    55|
+|42    |    TrackPlayer1Square                      |SquareTracker       |   249|
+|43    |  twohundredhz                              |var_clock_0         |    55|
++------+--------------------------------------------+--------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:45 ; elapsed = 00:02:51 . Memory (MB): peak = 950.180 ; gain = 693.328
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 52 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:29 ; elapsed = 00:02:40 . Memory (MB): peak = 950.180 ; gain = 336.027
+Synthesis Optimization Complete : Time (s): cpu = 00:02:45 ; elapsed = 00:02:52 . Memory (MB): peak = 950.180 ; gain = 693.328
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 1135 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 32 instances were transformed.
+  FDE_1 => FDRE (inverted pins: C): 32 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+294 Infos, 132 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:51 ; elapsed = 00:02:58 . Memory (MB): peak = 950.180 ; gain = 706.250
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.runs/synth_1/BomberGameTopLevel.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file BomberGameTopLevel_utilization_synth.rpt -pb BomberGameTopLevel_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.111 . Memory (MB): peak = 950.180 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Oct 28 12:39:16 2024...

@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/flickerBomb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module flickerBomb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sim_1/new/sim_flickerBomb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sim_flickerBomb

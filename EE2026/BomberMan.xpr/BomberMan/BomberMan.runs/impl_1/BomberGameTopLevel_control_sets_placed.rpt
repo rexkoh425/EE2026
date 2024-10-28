@@ -1,0 +1,124 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Mon Oct 28 12:40:42 2024
+| Host         : LAPTOP-8LR4E0L3 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file BomberGameTopLevel_control_sets_placed.rpt
+| Design       : BomberGameTopLevel
+| Device       : xc7a35t
+-----------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    56 |
+| Unused register locations in slices containing registers |    92 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      2 |            1 |
+|      6 |            1 |
+|      8 |            2 |
+|     14 |            3 |
+|    16+ |           49 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             392 |          110 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             694 |          100 |
+| Yes          | No                    | No                     |             426 |          104 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |            1276 |          183 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+------------------+----------------+
+|           Clock Signal           |                                            Enable Signal                                           |                                      Set/Reset Signal                                     | Slice Load Count | Bel Load Count |
++----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+------------------+----------------+
+| ~clk6p25m_BUFG                   |                                                                                                    |                                                                                           |                1 |              2 |
+|  DebounceC/clock_1khz/SLOW_CLOCK |                                                                                                    |                                                                                           |                1 |              6 |
+|  clk_IBUF_BUFG                   |                                                                                                    |                                                                                           |                4 |              8 |
+|  clk_0                           |                                                                                                    |                                                                                           |                2 |              8 |
+|  clk6p25m_BUFG                   | pixelColourControl/TrackPlayer1Square/BlocksSet                                                    |                                                                                           |                7 |             14 |
+|  clk6p25m_BUFG                   | pixelColourControl/TrackPlayer1Square/FirstBlock[6]_i_1_n_0                                        | pixelColourControl/TrackPlayer1Square/BlocksSet                                           |                3 |             14 |
+|  clk6p25m_BUFG                   | pixelColourControl/TrackPlayer1Square/SecondBlock[6]_i_1_n_0                                       | pixelColourControl/TrackPlayer1Square/BlocksSet                                           |                5 |             14 |
+|  clk6p25m_BUFG                   | pixelColourControl/TrackPlayer1Square/yBlock[2]_i_1_n_0                                            |                                                                                           |                2 |             18 |
+|  clk6p25m_BUFG                   | pixelColourControl/BombControl/mod_inst[2].nolabel_line99/nolabel_line42/pixel_data[15]_i_1__1_n_0 |                                                                                           |                8 |             22 |
+|  clk6p25m_BUFG                   |                                                                                                    | ResetControl/pixel_data_reg[0]                                                            |                5 |             22 |
+|  clk6p25m_BUFG                   | pixelColourControl/BombControl/mod_inst[0].nolabel_line99/nolabel_line42/pixel_data[15]_i_1_n_0    |                                                                                           |               10 |             22 |
+|  clk6p25m_BUFG                   | pixelColourControl/BombControl/mod_inst[1].nolabel_line99/nolabel_line42/pixel_data[15]_i_1__0_n_0 |                                                                                           |                9 |             22 |
+|  clk6p25m_BUFG                   | pixelColourControl/TrackPlayer1Square/CEP                                                          |                                                                                           |                6 |             22 |
+|  clk_0                           | pixelColourControl/PlayerMovementControl/FuturePlayerMaxY                                          | pixelColourControl/ColourControl/Player1/SR[0]                                            |                9 |             24 |
+|  clk_0                           | pixelColourControl/PlayerMovementControl/PlayerMaxY[5]_i_1_n_0                                     | pixelColourControl/ColourControl/Player1/SR[0]                                            |                5 |             24 |
+|  twohundredhz/CLK                |                                                                                                    |                                                                                           |                4 |             26 |
+|  clk6p25m_BUFG                   | pixelColourControl/BombControl/mod_inst[2].nolabel_line99/E[0]                                     |                                                                                           |                6 |             28 |
+|  clk_0                           | pixelColourControl/PlayerMovementControl/PlayerMaxX[6]_i_1_n_0                                     | pixelColourControl/ColourControl/Player1/SR[0]                                            |                6 |             28 |
+|  clk_0                           | pixelColourControl/PlayerMovementControl/FuturePlayerMinX                                          | pixelColourControl/ColourControl/Player1/SR[0]                                            |               10 |             28 |
+|  SLOW_CLOCK                      |                                                                                                    |                                                                                           |                8 |             30 |
+|  SLOW_CLOCK                      |                                                                                                    | ResetControl/pixel_data_reg[0]                                                            |                4 |             32 |
+| ~clk6p25m_BUFG                   |                                                                                                    | Oled_display/frame_counter[16]_i_1_n_0                                                    |                5 |             34 |
+|  clk6p25m_BUFG                   | pixelColourControl/BombControl/mod_inst[0].nolabel_line99/flickerBomb/bufferLimit                  | pixelColourControl/BombControl/mod_inst[0].nolabel_line99/flickerBomb/count               |                6 |             40 |
+|  clk6p25m_BUFG                   | pixelColourControl/BombControl/mod_inst[2].nolabel_line99/flickerBomb/bufferLimit                  | pixelColourControl/BombControl/mod_inst[2].nolabel_line99/flickerBomb/count               |                5 |             40 |
+|  clk6p25m_BUFG                   | pixelColourControl/BombControl/mod_inst[1].nolabel_line99/flickerBomb/bufferLimit                  | pixelColourControl/BombControl/mod_inst[1].nolabel_line99/flickerBomb/count               |                4 |             40 |
+| ~clk6p25m_BUFG                   | Oled_display/delay[0]_i_1_n_0                                                                      |                                                                                           |                5 |             40 |
+|  clk6p25m_BUFG                   | pixelColourControl/BombControl/FindFreeBomb/BombsBlock_reg[1][0]_rep__1                            |                                                                                           |               15 |             58 |
+|  clk6p25m_BUFG                   | pixelColourControl/BombControl/FindFreeBomb/BombsBlock_reg[2][0]_rep__1                            |                                                                                           |               16 |             58 |
+|  clk6p25m_BUFG                   | pixelColourControl/BombControl/FindFreeBomb/BombsBlock_reg[0][0]_rep__1                            |                                                                                           |               12 |             58 |
+|  clk6p25m_BUFG                   | pixelColourControl/BombControl/mod_inst[1].nolabel_line99/startFlicker                             | pixelColourControl/BombControl/mod_inst[1].nolabel_line99/flickerBomb/count               |                8 |             64 |
+|  clk6p25m_BUFG                   | pixelColourControl/BombControl/mod_inst[2].nolabel_line99/flickerBomb/state                        | pixelColourControl/BombControl/mod_inst[2].nolabel_line99/flickerBomb/state[0]_i_1__1_n_0 |                8 |             64 |
+|  clk6p25m_BUFG                   | pixelColourControl/BombControl/mod_inst[2].nolabel_line99/startFlicker                             | pixelColourControl/BombControl/mod_inst[2].nolabel_line99/flickerBomb/buffer              |                8 |             64 |
+|  clk6p25m_BUFG                   | pixelColourControl/BombControl/mod_inst[2].nolabel_line99/startFlicker                             | pixelColourControl/BombControl/mod_inst[2].nolabel_line99/flickerBomb/count               |                8 |             64 |
+|  clk6p25m_BUFG                   | pixelColourControl/BombControl/mod_inst[1].nolabel_line99/startFlicker                             | pixelColourControl/BombControl/mod_inst[1].nolabel_line99/flickerBomb/buffer              |                8 |             64 |
+|  clk6p25m_BUFG                   |                                                                                                    | SevenSegControl/onehz/clear_0                                                             |                8 |             64 |
+|  clk6p25m_BUFG                   |                                                                                                    | pixelColourControl/ColourControl/player_blink/clear                                       |                8 |             64 |
+|  clk6p25m_BUFG                   | ResetControl/count0                                                                                | ResetControl/clear                                                                        |                8 |             64 |
+|  clk6p25m_BUFG                   | pixelColourControl/BombControl/mod_inst1[0].Bombcounter/p_5_out                                    | pixelColourControl/BombControl/mod_inst1[0].Bombcounter/clear                             |                8 |             64 |
+|  clk6p25m_BUFG                   | pixelColourControl/BombControl/mod_inst1[1].Bombcounter/p_4_out                                    | pixelColourControl/BombControl/mod_inst1[1].Bombcounter/count_reg[31]_0                   |                8 |             64 |
+|  clk6p25m_BUFG                   | pixelColourControl/BombControl/mod_inst1[2].Bombcounter/p_3_out                                    | pixelColourControl/BombControl/mod_inst1[2].Bombcounter/count_reg[31]_0                   |                8 |             64 |
+|  clk6p25m_BUFG                   | pixelColourControl/BombControl/mod_inst2[1].ExplodeAnimation/p_14_out                              | pixelColourControl/BombControl/mod_inst2[1].ExplodeAnimation/counter[31]_i_1__0_n_0       |                9 |             64 |
+| ~clk6p25m_BUFG                   | Oled_display/state                                                                                 |                                                                                           |                8 |             64 |
+|  clk6p25m_BUFG                   | pixelColourControl/BombControl/mod_inst2[2].ExplodeAnimation/counter_reg[3]_0                      | pixelColourControl/BombControl/mod_inst2[2].ExplodeAnimation/counter[31]_i_1__1_n_0       |                9 |             64 |
+|  clk_IBUF_BUFG                   |                                                                                                    | DebounceC/clock_1khz/COUNT[0]_i_1__1_n_0                                                  |                8 |             64 |
+|  clk6p25m_BUFG                   | pixelColourControl/BombControl/mod_inst[0].nolabel_line99/flickerBomb/state                        | pixelColourControl/BombControl/mod_inst[0].nolabel_line99/flickerBomb/state[0]_i_1_n_0    |                8 |             64 |
+|  clk_IBUF_BUFG                   |                                                                                                    | twohundredhz/COUNT[0]_i_1__3_n_0                                                          |                8 |             64 |
+|  clk_IBUF_BUFG                   |                                                                                                    | pixelColourControl/PlayerMovementControl/clk40hz/COUNT[0]_i_1__0_n_0                      |                8 |             64 |
+|  clk6p25m_BUFG                   | pixelColourControl/BombControl/mod_inst[0].nolabel_line99/startFlicker                             | pixelColourControl/BombControl/mod_inst[0].nolabel_line99/flickerBomb/buffer              |                8 |             64 |
+|  clk6p25m_BUFG                   | pixelColourControl/BombControl/mod_inst[0].nolabel_line99/startFlicker                             | pixelColourControl/BombControl/mod_inst[0].nolabel_line99/flickerBomb/count               |                8 |             64 |
+|  clk6p25m_BUFG                   | pixelColourControl/BombControl/mod_inst[1].nolabel_line99/flickerBomb/state                        | pixelColourControl/BombControl/mod_inst[1].nolabel_line99/flickerBomb/state[0]_i_1__0_n_0 |                8 |             64 |
+|  clk6p25m_BUFG                   | pixelColourControl/BombControl/mod_inst2[0].ExplodeAnimation/p_25_out                              | pixelColourControl/BombControl/mod_inst2[0].ExplodeAnimation/counter[31]_i_1_n_0          |                8 |             64 |
+|  clk_IBUF_BUFG                   |                                                                                                    | clock_6p25MHZ/COUNT[0]_i_1__2_n_0                                                         |                8 |             64 |
+|  clk6p25m_BUFG                   |                                                                                                    | pixelColourControl/ColourControl/Player1/counter/reached_i_1_n_0                          |                9 |             66 |
+|  clk_IBUF_BUFG                   |                                                                                                    | DebounceC/counter/clear                                                                   |                9 |             66 |
+| ~clk6p25m_BUFG                   |                                                                                                    | Oled_display/spi_word[39]_i_1_n_0                                                         |               20 |             90 |
+|  clk6p25m_BUFG                   |                                                                                                    |                                                                                           |               90 |            312 |
++----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+------------------+----------------+
+
+
