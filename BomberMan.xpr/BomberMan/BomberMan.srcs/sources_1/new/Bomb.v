@@ -30,7 +30,10 @@ module Bomb(
     input start_game,
     output reg bomb = 1'b0 ,
     output ExplosionAnimations ,
-    output player1_die
+    output player1_die,
+    
+    output reg [15:0] pixel_data
+
 );  
 
     wire[3:0] xBlock;
@@ -59,6 +62,9 @@ module Bomb(
     wire[Maxbombcount-1 : 0] ExplosionAnimation;
     reg[69:0] blocksAffectedByExplosion;
     
+    wire[15:0] bombPixelData [0:Maxbombcount-1]; 
+
+    
     assign player1_die = |player1_died;
     integer k;
    
@@ -85,10 +91,19 @@ module Bomb(
     generate
         for(j = 0 ; j < Maxbombcount ; j = j+1)
         begin : mod_inst
-            isColourPixel BombDrop(
-                .min_x(Bombs[j][25:19]) , .max_x(Bombs[j][18:12]) , 
-                .min_y(Bombs[j][11:6]) , .max_y(Bombs[j][5:0]) , 
-                .pixel_index(pixel_index) , .isColouredPixel(bombs[j])
+//            isColourPixel BombDrop(
+//                .min_x(Bombs[j][25:19]) , .max_x(Bombs[j][18:12]) , 
+//                .min_y(Bombs[j][11:6]) , .max_y(Bombs[j][5:0]) , 
+//                .pixel_index(pixel_index) , .isColouredPixel(bombs[j])
+//            );
+              renderBomb(.centreX((Bombs[j][25:19] + Bombs[j][18:12])/2), 
+                 .centreY((Bombs[j][11:6] + Bombs[j][5:0])/2), 
+                 .pixel_index(pixel_index), .clock(clk6p25m), 
+                 .FreeBomb(FreeBomb),
+                 .MyNumber(j), 
+                 .edge_registered(edge_registered),
+                 .isBomb(bombs[j]), 
+                 .pixel_data(bombPixelData[j])
             );
         end
     endgenerate
@@ -165,6 +180,7 @@ module Bomb(
             if(bombs[k] == 1'b1 && ActiveBombs[k] == 1'b1)
             begin
                 bomb <= 1'b1;
+                pixel_data <= bombPixelData[k];
             end
         end
     end

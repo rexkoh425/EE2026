@@ -25,6 +25,7 @@ module PixelDataControl(
     input player1_die,
     input CenterBlock , walls , player1 , bomb , ExplosionAnimations,
     input start_game ,
+    input [15:0] bombPixelData,
     output reg[15:0] pixel_data = 16'b0 ,
     output player1_isReviving
 );
@@ -67,7 +68,8 @@ module PixelDataControl(
        else if(ExplosionAnimations)
            pixel_data <= ORANGE;
        else if(bomb)
-           pixel_data <= RED;
+//           pixel_data <= RED;
+           pixel_data <= bombPixelData;
        else
            pixel_data <= BLACK;
        

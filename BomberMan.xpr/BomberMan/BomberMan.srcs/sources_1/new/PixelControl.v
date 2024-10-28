@@ -76,6 +76,7 @@ module PixelControl(
    wire bomb;
    wire ExplosionAnimations;
    wire player1_die;
+   wire [15:0] bombPixelData;
 
    Bomb BombControl(
        .clk6p25m(clk6p25m),
@@ -87,7 +88,8 @@ module PixelControl(
        .ExplosionAnimations(ExplosionAnimations),
        .player1_die(player1_die) ,
        .player1_isReviving(player1_isReviving),
-       .start_game(start_game)
+       .start_game(start_game),
+       .pixel_data(bombPixelData)
    );
    
    PixelDataControl ColourControl(
@@ -96,7 +98,8 @@ module PixelControl(
        .walls(walls) , .CenterBlock(CenterBlock), .player1(player1) , .bomb(bomb) , .ExplosionAnimations(ExplosionAnimations),
        .pixel_data(pixel_data) ,
        .player1_isReviving(player1_isReviving) ,
-       .start_game(start_game)
+       .start_game(start_game),
+       .bombPixelData(bombPixelData)
    );
    
 endmodule

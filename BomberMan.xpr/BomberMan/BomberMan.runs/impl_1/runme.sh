@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.runs/impl_1'
+HD_PWD='C:/Users/quant_sz9uc09/OneDrive/Desktop/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -41,7 +41,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .init_design.begin.rst
+/bin/touch .write_bitstream.begin.rst
 EAStep vivado -log BomberGameTopLevel.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source BomberGameTopLevel.tcl -notrace
 
 
