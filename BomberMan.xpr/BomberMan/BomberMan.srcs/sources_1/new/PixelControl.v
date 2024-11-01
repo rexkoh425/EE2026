@@ -56,7 +56,8 @@ module PixelControl(
    wire player1;
    wire[6:0] Player1MinX , Player1MaxX;
    wire[5:0] Player1MinY , Player1MaxY;
-   reg btnUPlayer1,btnDPlayer1,btnLPlayer1,btnRPlayer1,btnCPlayer1;
+   wire btnUPlayer1,btnDPlayer1,btnLPlayer1,btnRPlayer1,btnCPlayer1;
+   reg btnUPlayer1In,btnDPlayer1In,btnLPlayer1In,btnRPlayer1In,btnCPlayer1In;
    wire[6:0] Player1Block;
    wire player1_die;
    
@@ -67,7 +68,8 @@ module PixelControl(
    assign btnCPlayer1 = SW[5] ? btnC : 0;
    assign Player1DebouncedBtnC = SW[5] ? DebouncedBtnC : 0;*/
    
-   reg btnUPlayer2,btnDPlayer2,btnLPlayer2,btnRPlayer2,btnCPlayer2;
+   wire btnUPlayer2,btnDPlayer2,btnLPlayer2,btnRPlayer2,btnCPlayer2;
+   reg btnUPlayer2In,btnDPlayer2In,btnLPlayer2In,btnRPlayer2In,btnCPlayer2In;
    wire player2;
    wire[6:0] Player2MinX , Player2MaxX;
    wire[5:0] Player2MinY , Player2MaxY;
@@ -81,7 +83,8 @@ module PixelControl(
    assign btnCPlayer2 = SW[6] ? btnC : 0;
    assign Player2DebouncedBtnC = SW[6] ? DebouncedBtnC : 0;*/
       
-   reg btnUPlayer3,btnDPlayer3,btnLPlayer3,btnRPlayer3,btnCPlayer3;
+   wire btnUPlayer3,btnDPlayer3,btnLPlayer3,btnRPlayer3,btnCPlayer3;
+   reg btnUPlayer3In,btnDPlayer3In,btnLPlayer3In,btnRPlayer3In,btnCPlayer3In;  
    wire player3;
    wire[6:0] Player3MinX , Player3MaxX;
    wire[5:0] Player3MinY , Player3MaxY;
@@ -95,7 +98,8 @@ module PixelControl(
    assign btnCPlayer3 = SW[7] ? btnC : 0;
    assign Player3DebouncedBtnC = SW[7] ? DebouncedBtnC : 0;*/
       
-   reg btnUPlayer4,btnDPlayer4,btnLPlayer4,btnRPlayer4,btnCPlayer4;
+   wire btnUPlayer4,btnDPlayer4,btnLPlayer4,btnRPlayer4,btnCPlayer4;
+   reg btnUPlayer4In,btnDPlayer4In,btnLPlayer4In,btnRPlayer4In,btnCPlayer4In;
    wire player4;
    wire[6:0] Player4MinX , Player4MaxX;
    wire[5:0] Player4MinY , Player4MaxY;
@@ -119,7 +123,6 @@ module PixelControl(
        .player_isReviving(player1_isReviving),
        .start_game(start_game), .initiate_reset(initiate_reset),
        ////output
-       .player(player1),
        .PlayerMinX(Player1MinX) , .PlayerMaxX(Player1MaxX) ,
        .PlayerMinY(Player1MinY) , .PlayerMaxY(Player1MaxY) ,
        .PlayerBlock(Player1Block)
@@ -134,7 +137,6 @@ module PixelControl(
       .player_isReviving(player2_isReviving),
       .start_game(start_game), .initiate_reset(initiate_reset),
       ////output
-      .player(player2),
       .PlayerMinX(Player2MinX) , .PlayerMaxX(Player2MaxX) ,
       .PlayerMinY(Player2MinY) , .PlayerMaxY(Player2MaxY) ,
       .PlayerBlock(Player2Block)
@@ -149,7 +151,6 @@ module PixelControl(
         .player_isReviving(player3_isReviving),
         .start_game(start_game), .initiate_reset(initiate_reset),
         ////output
-        .player(player3),
         .PlayerMinX(Player3MinX) , .PlayerMaxX(Player3MaxX) ,
         .PlayerMinY(Player3MinY) , .PlayerMaxY(Player3MaxY) ,
         .PlayerBlock(Player3Block)
@@ -164,7 +165,6 @@ module PixelControl(
         .player_isReviving(player4_isReviving),
         .start_game(start_game), .initiate_reset(initiate_reset),
         ////output
-        .player(player4),
         .PlayerMinX(Player4MinX) , .PlayerMaxX(Player4MaxX) ,
         .PlayerMinY(Player4MinY) , .PlayerMaxY(Player4MaxY) ,
         .PlayerBlock(Player4Block)
@@ -172,6 +172,7 @@ module PixelControl(
    
    wire bomb;
    wire ExplosionAnimations;
+   wire [15:0] bombPixelData;
 
    Bomb BombControl(
        .clk6p25m(clk6p25m),
@@ -199,15 +200,19 @@ module PixelControl(
        .player4_isReviving(player4_isReviving),
        
        .ExplosionAnimations(ExplosionAnimations),
-       .start_game(start_game)
+       .start_game(start_game),
+       .pixel_data(bombPixelData)
    );
    
+   wire [15:0] player1PixelData, player2PixelData, player3PixelData, player4PixelData;    
    PixelDataControl ColourControl(
        .clk6p25m(clk6p25m) , 
        .player1_die(player1_die), .player2_die(player2_die), .player3_die(player3_die), .player4_die(player4_die),
        .walls(walls) , .CenterBlock(CenterBlock), 
        .player1(player1) , .player2(player2) ,.player3(player3) ,.player4(player4) ,
-       .bomb(bomb) , .ExplosionAnimations(ExplosionAnimations),
+       .bomb(bomb) , .bombPixelData(bombPixelData),
+       .ExplosionAnimations(ExplosionAnimations),
+       .player1PixelData(player1PixelData), .player2PixelData(player2PixelData), .player3PixelData(player3PixelData), .player4PixelData(player4PixelData),
        .pixel_data(pixel_data) ,
        .player1_isReviving(player1_isReviving) , .player2_isReviving(player2_isReviving) ,
        .player3_isReviving(player3_isReviving) , .player4_isReviving(player4_isReviving) ,
@@ -316,7 +321,16 @@ module PixelControl(
           .clk(clk100mhz), .reset(reset),
           .rx(slave_rx[3]), .data(rx_data_slave4), .valid(valid_slave4)
       );
-                  
+      
+      ButtonGate buttonControl(.SWCheck(SWCheck), 
+          .btnUPlayer1In(btnUPlayer1In),.btnDPlayer1In(btnDPlayer1In),.btnLPlayer1In(btnLPlayer1In),.btnRPlayer1In(btnRPlayer1In),.btnCPlayer1In(btnCPlayer1In),
+          .btnUPlayer2In(btnUPlayer2In),.btnDPlayer2In(btnDPlayer2In),.btnLPlayer2In(btnLPlayer2In),.btnRPlayer2In(btnRPlayer2In),.btnCPlayer2In(btnCPlayer2In),
+          .btnUPlayer3In(btnUPlayer3In),.btnDPlayer3In(btnDPlayer3In),.btnLPlayer3In(btnLPlayer3In),.btnRPlayer3In(btnRPlayer3In),.btnCPlayer3In(btnCPlayer3In),
+          .btnUPlayer4In(btnUPlayer4In),.btnDPlayer4In(btnDPlayer4In),.btnLPlayer4In(btnLPlayer4In),.btnRPlayer4In(btnRPlayer4In),.btnCPlayer4In(btnCPlayer4In),
+          .btnUPlayer1(btnUPlayer1),.btnDPlayer1(btnDPlayer1),.btnLPlayer1(btnLPlayer1),.btnRPlayer1(btnRPlayer1),.btnCPlayer1(btnCPlayer1),
+          .btnUPlayer2(btnUPlayer2),.btnDPlayer2(btnDPlayer2),.btnLPlayer2(btnLPlayer2),.btnRPlayer2(btnRPlayer2),.btnCPlayer2(btnCPlayer2),
+          .btnUPlayer3(btnUPlayer3),.btnDPlayer3(btnDPlayer3),.btnLPlayer3(btnLPlayer3),.btnRPlayer3(btnRPlayer3),.btnCPlayer3(btnCPlayer3),
+          .btnUPlayer4(btnUPlayer4),.btnDPlayer4(btnDPlayer4),.btnLPlayer4(btnLPlayer4),.btnRPlayer4(btnRPlayer4),.btnCPlayer4(btnCPlayer4));              
       wire clk_40hz;
       var_clock clk40hz2(.clk(clk100mhz), .M(32'd1249999), .SLOW_CLOCK(clk_40hz));
       always @(posedge clk_40hz) begin
@@ -326,200 +340,214 @@ module PixelControl(
                if (SWCheck) begin
                    case (rx_data_master[7:0])
                        8'h01: begin // Move Up   
-                           btnUPlayer2 <= 1;
-                           btnDPlayer2 <= 0;
-                           btnLPlayer2 <= 0;
-                           btnRPlayer2 <= 0;
-                           btnCPlayer2 <= 0;                     
+                           btnUPlayer2In <= 1;
+                           btnDPlayer2In <= 0;
+                           btnLPlayer2In <= 0;
+                           btnRPlayer2In <= 0;
+                           btnCPlayer2In <= 0;                     
                        end
                        8'h02: begin // Move Down    
-                           btnUPlayer2 <= 0;
-                           btnDPlayer2 <= 1;
-                           btnLPlayer2 <= 0;
-                           btnRPlayer2 <= 0;
-                           btnCPlayer2 <= 0;                         
+                           btnUPlayer2In <= 0;
+                           btnDPlayer2In <= 1;
+                           btnLPlayer2In <= 0;
+                           btnRPlayer2In <= 0;
+                           btnCPlayer2In <= 0;                         
                        end
                        8'h03: begin // Move Left
-                           btnUPlayer2 <= 0;
-                           btnDPlayer2 <= 0;
-                           btnLPlayer2 <= 1;
-                           btnRPlayer2 <= 0;
-                           btnCPlayer2 <= 0;                   
+                           btnUPlayer2In <= 0;
+                           btnDPlayer2In <= 0;
+                           btnLPlayer2In <= 1;
+                           btnRPlayer2In <= 0;
+                           btnCPlayer2In <= 0;                   
                        end
                        8'h04: begin // Move Right
-                           btnUPlayer2 <= 0;
-                           btnDPlayer2 <= 0;
-                           btnLPlayer2 <= 0;
-                           btnRPlayer2 <= 1;
-                           btnCPlayer2 <= 0;                      
+                           btnUPlayer2In <= 0;
+                           btnDPlayer2In <= 0;
+                           btnLPlayer2In <= 0;
+                           btnRPlayer2In <= 1;
+                           btnCPlayer2In <= 0;                      
                        end
                        8'h05: begin
-                           btnUPlayer2 <= 0;
-                           btnDPlayer2 <= 0;
-                           btnLPlayer2 <= 0;
-                           btnRPlayer2 <= 0;
-                           btnCPlayer2 <= 1;  
+                           btnUPlayer2In <= 0;
+                           btnDPlayer2In <= 0;
+                           btnLPlayer2In <= 0;
+                           btnRPlayer2In <= 0;
+                           btnCPlayer2In <= 1; 
                        end
                        default: begin
-                           btnUPlayer2 <= 0;
-                           btnDPlayer2 <= 0;
-                           btnLPlayer2 <= 0;
-                           btnRPlayer2 <= 0;
-                           btnCPlayer2 <= 0;                          
+                           btnUPlayer2In <= 0;
+                           btnDPlayer2In <= 0;
+                           btnLPlayer2In <= 0;
+                           btnRPlayer2In <= 0;
+                           btnCPlayer2In <= 0;                          
                        end
                    endcase  
                    
                    case (rx_data_master2[7:0])
                        8'h01: begin // Move Up   
-                           btnUPlayer3 <= 1;
-                           btnDPlayer3 <= 0;
-                           btnLPlayer3 <= 0;
-                           btnRPlayer3 <= 0;
-                           btnCPlayer3 <= 0;                     
+                           btnUPlayer3In <= 1;
+                           btnDPlayer3In <= 0;
+                           btnLPlayer3In <= 0;
+                           btnRPlayer3In <= 0;
+                           btnCPlayer3In <= 0;                     
                        end
                        8'h02: begin // Move Down    
-                           btnUPlayer3 <= 0;
-                           btnDPlayer3 <= 1;
-                           btnLPlayer3 <= 0;
-                           btnRPlayer3 <= 0;
-                           btnCPlayer3 <= 0;                         
+                           btnUPlayer3In <= 0;
+                           btnDPlayer3In <= 1;
+                           btnLPlayer3In <= 0;
+                           btnRPlayer3In <= 0;
+                           btnCPlayer3In <= 0;                          
                        end
                        8'h03: begin // Move Left
-                           btnUPlayer3 <= 0;
-                           btnDPlayer3 <= 0;
-                           btnLPlayer3 <= 1;
-                           btnRPlayer3 <= 0;
-                           btnCPlayer3 <= 0;                   
+                           btnUPlayer3In <= 0;
+                           btnDPlayer3In <= 0;
+                           btnLPlayer3In <= 1;
+                           btnRPlayer3In <= 0;
+                           btnCPlayer3In <= 0;                    
                        end
                        8'h04: begin // Move Right
-                           btnUPlayer3 <= 0;
-                           btnDPlayer3 <= 0;
-                           btnLPlayer3 <= 0;
-                           btnRPlayer3 <= 1;
-                           btnCPlayer3 <= 0;                      
+                           btnUPlayer3In <= 0;
+                           btnDPlayer3In <= 0;
+                           btnLPlayer3In <= 0;
+                           btnRPlayer3In <= 1;
+                           btnCPlayer3In <= 0;                       
                        end
                        8'h05: begin
-                           btnUPlayer3 <= 0;
-                           btnDPlayer3 <= 0;
-                           btnLPlayer3 <= 0;
-                           btnRPlayer3 <= 0;
-                           btnCPlayer3 <= 1;  
+                           btnUPlayer3In <= 0;
+                           btnDPlayer3In <= 0;
+                           btnLPlayer3In <= 0;
+                           btnRPlayer3In <= 0;
+                           btnCPlayer3In <= 1;   
                        end
                        default: begin
-                           btnUPlayer3 <= 0;
-                           btnDPlayer3 <= 0;
-                           btnLPlayer3 <= 0;
-                           btnRPlayer3 <= 0;
-                           btnCPlayer3 <= 0;                          
+                           btnUPlayer3In <= 0;
+                           btnDPlayer3In <= 0;
+                           btnLPlayer3In <= 0;
+                           btnRPlayer3In <= 0;
+                           btnCPlayer3In <= 0;                          
                        end
                    endcase     
                    
                    case (rx_data_master3[7:0])
                        8'h01: begin // Move Up   
-                           btnUPlayer4 <= 1;
-                           btnDPlayer4 <= 0;
-                           btnLPlayer4 <= 0;
-                           btnRPlayer4 <= 0;
-                           btnCPlayer4 <= 0;                     
+                           btnUPlayer4In <= 1;
+                           btnDPlayer4In <= 0;
+                           btnLPlayer4In <= 0;
+                           btnRPlayer4In <= 0;
+                           btnCPlayer4In <= 0;                     
                        end
                        8'h02: begin // Move Down    
-                           btnUPlayer4 <= 0;
-                           btnDPlayer4 <= 1;
-                           btnLPlayer4 <= 0;
-                           btnRPlayer4 <= 0;
-                           btnCPlayer4 <= 0;                         
+                           btnUPlayer4In <= 0;
+                           btnDPlayer4In <= 1;
+                           btnLPlayer4In <= 0;
+                           btnRPlayer4In <= 0;
+                           btnCPlayer4In <= 0;                                
                        end
                        8'h03: begin // Move Left
-                           btnUPlayer4 <= 0;
-                           btnDPlayer4 <= 0;
-                           btnLPlayer4 <= 1;
-                           btnRPlayer4 <= 0;
-                           btnCPlayer4 <= 0;                   
+                           btnUPlayer4In <= 0;
+                           btnDPlayer4In <= 0;
+                           btnLPlayer4In <= 1;
+                           btnRPlayer4In <= 0;
+                           btnCPlayer4In <= 0;                                      
                        end
                        8'h04: begin // Move Right
-                           btnUPlayer4 <= 0;
-                           btnDPlayer4 <= 0;
-                           btnLPlayer4 <= 0;
-                           btnRPlayer4 <= 1;
-                           btnCPlayer4 <= 0;                      
+                           btnUPlayer4In <= 0;
+                           btnDPlayer4In <= 0;
+                           btnLPlayer4In <= 0;
+                           btnRPlayer4In <= 1;
+                           btnCPlayer4In <= 0;                                          
                        end
                        8'h05: begin
-                           btnUPlayer4 <= 0;
-                           btnDPlayer4 <= 0;
-                           btnLPlayer4 <= 0;
-                           btnRPlayer4 <= 0;
-                           btnCPlayer4 <= 1;  
+                           btnUPlayer4In <= 0;
+                           btnDPlayer4In <= 0;
+                           btnLPlayer4In <= 0;
+                           btnRPlayer4In <= 0;
+                           btnCPlayer4In <= 1;                      
                        end
                        default: begin
-                           btnUPlayer4 <= 0;
-                           btnDPlayer4 <= 0;
-                           btnLPlayer4 <= 0;
-                           btnRPlayer4 <= 0;
-                           btnCPlayer4 <= 0;                          
+                           btnUPlayer4In <= 0;
+                           btnDPlayer4In <= 0;
+                           btnLPlayer4In <= 0;
+                           btnRPlayer4In <= 0;
+                           btnCPlayer4In <= 0;                                              
                        end
                    endcase   
                                                 
                    if (btnU) begin
-                       btnUPlayer1 <= 1;
-                       btnDPlayer1 <= 0;
-                       btnLPlayer1 <= 0;
-                       btnRPlayer1 <= 0;
-                       btnCPlayer1 <= 0;               
+                       btnUPlayer1In <= 1;
+                       btnDPlayer1In <= 0;
+                       btnLPlayer1In <= 0;
+                       btnRPlayer1In <= 0;
+                       btnCPlayer1In <= 0;               
                    end else if (btnD) begin 
-                       btnUPlayer1 <= 0;
-                       btnDPlayer1 <= 1;
-                       btnLPlayer1 <= 0;
-                       btnRPlayer1 <= 0;
-                       btnCPlayer1 <= 0;               
+                       btnUPlayer1In <= 0;
+                       btnDPlayer1In <= 1;
+                       btnLPlayer1In <= 0;
+                       btnRPlayer1In <= 0;
+                       btnCPlayer1In <= 0;               
                    end else if (btnL) begin 
-                       btnUPlayer1 <= 0;
-                       btnDPlayer1 <= 0;
-                       btnLPlayer1 <= 1;
-                       btnRPlayer1 <= 0;
-                       btnCPlayer1 <= 0;             
+                       btnUPlayer1In <= 0;
+                       btnDPlayer1In <= 0;
+                       btnLPlayer1In <= 1;
+                       btnRPlayer1In <= 0;
+                       btnCPlayer1In <= 0;              
                    end else if (btnR) begin  
-                       btnUPlayer1 <= 0;
-                       btnDPlayer1 <= 0;
-                       btnLPlayer1 <= 0;
-                       btnRPlayer1 <= 1;
-                       btnCPlayer1 <= 0;              
+                       btnUPlayer1In <= 0;
+                       btnDPlayer1In <= 0;
+                       btnLPlayer1In <= 0;
+                       btnRPlayer1In <= 1;
+                       btnCPlayer1In <= 0;                
                    end else if (DebouncedBtnC) begin
-                       btnUPlayer1 <= 0;
-                       btnDPlayer1 <= 0;
-                       btnLPlayer1 <= 0;
-                       btnRPlayer1 <= 0;
-                       btnCPlayer1 <= 1;             
+                       btnUPlayer1In <= 0;
+                       btnDPlayer1In <= 0;
+                       btnLPlayer1In <= 0;
+                       btnRPlayer1In <= 0;
+                       btnCPlayer1In <= 1;                
                    end else begin
-                       btnUPlayer1 <= 0;
-                       btnDPlayer1 <= 0;
-                       btnLPlayer1 <= 0;
-                       btnRPlayer1 <= 0;
-                       btnCPlayer1 <= 0;              
+                       btnUPlayer1In <= 0;
+                       btnDPlayer1In <= 0;
+                       btnLPlayer1In <= 0;
+                       btnRPlayer1In <= 0;
+                       btnCPlayer1In <= 0;                 
                    end
                end 
            end else begin
-               btnUPlayer1 <= rx_data_slave[31];
-               btnDPlayer1 <= rx_data_slave[30];
-               btnLPlayer1 <= rx_data_slave[29];
-               btnRPlayer1 <= rx_data_slave[28];
-               btnCPlayer1 <= rx_data_slave[27]; 
-               btnUPlayer2 <= rx_data_slave2[31];
-               btnDPlayer2 <= rx_data_slave2[30];
-               btnLPlayer2 <= rx_data_slave2[29];
-               btnRPlayer2 <= rx_data_slave2[28];
-               btnCPlayer2 <= rx_data_slave2[27];
-               btnUPlayer3 <= rx_data_slave3[31];
-               btnDPlayer3 <= rx_data_slave3[30];
-               btnLPlayer3 <= rx_data_slave3[29];
-               btnRPlayer3 <= rx_data_slave3[28];
-               btnCPlayer3 <= rx_data_slave3[27];
-               btnUPlayer4 <= rx_data_slave4[31];
-               btnDPlayer4 <= rx_data_slave4[30];
-               btnLPlayer4 <= rx_data_slave4[29];
-               btnRPlayer4 <= rx_data_slave4[28];
-               btnCPlayer4 <= rx_data_slave4[27];
+               btnUPlayer1In <= rx_data_slave[31];
+               btnDPlayer1In <= rx_data_slave[30];
+               btnLPlayer1In <= rx_data_slave[29];
+               btnRPlayer1In <= rx_data_slave[28];
+               btnCPlayer1In <= rx_data_slave[27]; 
+               btnUPlayer2In <= rx_data_slave2[31];
+               btnDPlayer2In <= rx_data_slave2[30];
+               btnLPlayer2In <= rx_data_slave2[29];
+               btnRPlayer2In <= rx_data_slave2[28];
+               btnCPlayer2In <= rx_data_slave2[27];
+               btnUPlayer3In <= rx_data_slave3[31];
+               btnDPlayer3In <= rx_data_slave3[30];
+               btnLPlayer3In <= rx_data_slave3[29];
+               btnRPlayer3In <= rx_data_slave3[28];
+               btnCPlayer3In <= rx_data_slave3[27];
+               btnUPlayer4In <= rx_data_slave4[31];
+               btnDPlayer4In <= rx_data_slave4[30];
+               btnLPlayer4In <= rx_data_slave4[29];
+               btnRPlayer4In <= rx_data_slave4[28];
+               btnCPlayer4In <= rx_data_slave4[27];
                led[3:0] <= rx_data_slave[26:23];
-               SWCheck <= rx_data_slave[24] & rx_data_slave[23];                        
+               SWCheck <= rx_data_slave[26] & rx_data_slave[25] & rx_data_slave[24] & rx_data_slave[23];                        
            end
       end
+ /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    wire player1IsMoving, player2IsMoving, player3IsMoving, player4IsMoving;
+    assign player1IsMoving = btnUPlayer1 | btnDPlayer1 | btnLPlayer1 | btnRPlayer1;
+    assign player2IsMoving = btnUPlayer2 | btnDPlayer2 | btnLPlayer2 | btnRPlayer2;
+    assign player3IsMoving = btnUPlayer3 | btnDPlayer3 | btnLPlayer3 | btnRPlayer3;
+    assign player4IsMoving = btnUPlayer4 | btnDPlayer4 | btnLPlayer4 | btnRPlayer4;
+    renderJones (.centreX((Player1MaxX+Player1MinX)/2), .centreY((Player1MaxY+Player1MinY)/2),
+                  .clock(clk6p25m), .pixel_index(pixel_index),
+                  .isJones(player1), .pixel_data(player1PixelData),
+                  .isWalking(player1IsMoving));
+    renderWiz (.centreX((Player2MaxX+Player2MinX)/2), .centreY((Player2MaxY+Player2MinY)/2),
+               .clock(clk6p25m), .pixel_index(pixel_index),
+               .isWiz(player2), .pixel_data(player2PixelData),
+               .isWalking(player2IsMoving));
 endmodule

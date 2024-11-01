@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Fri Nov  1 13:08:06 2024
+| Date             : Fri Nov  1 16:36:58 2024
 | Host             : DESKTOP-V4SV6TR running 64-bit major release  (build 9200)
 | Command          : report_power -file BomberGameTopLevel_power_routed.rpt -pb BomberGameTopLevel_power_summary_routed.pb -rpx BomberGameTopLevel_power_routed.rpx
 | Design           : BomberGameTopLevel
@@ -52,15 +52,15 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.007 |        3 |       --- |             --- |
-| Slice Logic    |     0.004 |    18469 |       --- |             --- |
-|   LUT as Logic |     0.004 |    11962 |     20800 |           57.51 |
-|   CARRY4       |    <0.001 |     1048 |      8150 |           12.86 |
-|   Register     |    <0.001 |     2003 |     41600 |            4.81 |
+| Clocks         |     0.006 |        3 |       --- |             --- |
+| Slice Logic    |     0.004 |    21937 |       --- |             --- |
+|   LUT as Logic |     0.004 |    13992 |     20800 |           67.27 |
+|   CARRY4       |    <0.001 |     1225 |      8150 |           15.03 |
+|   Register     |    <0.001 |     2707 |     41600 |            6.51 |
 |   BUFG         |    <0.001 |        6 |        32 |           18.75 |
 |   F7/F8 Muxes  |    <0.001 |     1025 |     32600 |            3.14 |
-|   Others       |     0.000 |      136 |       --- |             --- |
-| Signals        |     0.005 |    12580 |       --- |             --- |
+|   Others       |     0.000 |      177 |       --- |             --- |
+| Signals        |     0.005 |    15434 |       --- |             --- |
 | I/O            |     0.004 |       63 |       106 |           59.43 |
 | Static Power   |     0.072 |          |           |                 |
 | Total          |     0.091 |          |           |                 |
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.025 |       0.016 |      0.010 |
+| Vccint    |       1.000 |     0.025 |       0.015 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -147,25 +147,38 @@ Table of Contents
 |     clock_1khz                            |    <0.001 |
 |     counter                               |    <0.001 |
 |   Oled_display                            |    <0.001 |
+|   PlayerDeathControl                      |     0.000 |
+|   PlayerDeathControl2                     |    <0.001 |
+|   PlayerDeathControl3                     |    <0.001 |
+|   PlayerDeathControl4                     |     0.000 |
 |   ResetControl                            |    <0.001 |
 |   SevenSegControl                         |    <0.001 |
 |     onehz                                 |    <0.001 |
 |   clock_6p25MHZ                           |    <0.001 |
-|   pixelColourControl                      |     0.013 |
+|   pixelColourControl                      |     0.012 |
 |     BombControl                           |    <0.001 |
 |       FindFreeBomb                        |    <0.001 |
-|       mod_inst1[0].Bombcounter            |    <0.001 |
+|       mod_inst1[0].Bombcounter            |     0.000 |
 |       mod_inst1[1].Bombcounter            |    <0.001 |
-|       mod_inst1[2].Bombcounter            |    <0.001 |
+|       mod_inst1[2].Bombcounter            |     0.000 |
 |       mod_inst2[0].ExplodeAnimation       |    <0.001 |
 |       mod_inst2[1].ExplodeAnimation       |    <0.001 |
 |       mod_inst2[2].ExplodeAnimation       |    <0.001 |
+|       mod_inst[0].nolabel_line111         |    <0.001 |
+|         flickerBomb                       |    <0.001 |
+|         nolabel_line40                    |     0.000 |
+|       mod_inst[1].nolabel_line111         |    <0.001 |
+|         flickerBomb                       |    <0.001 |
+|         nolabel_line40                    |     0.000 |
+|       mod_inst[2].nolabel_line111         |    <0.001 |
+|         flickerBomb                       |    <0.001 |
+|         nolabel_line40                    |     0.000 |
 |     ColourControl                         |    <0.001 |
 |       Player1                             |    <0.001 |
 |         counter                           |     0.000 |
-|       Player2                             |    <0.001 |
+|       Player2                             |     0.000 |
 |         counter                           |     0.000 |
-|       Player3                             |    <0.001 |
+|       Player3                             |     0.000 |
 |         counter                           |     0.000 |
 |       Player4                             |     0.000 |
 |         counter                           |     0.000 |
@@ -175,23 +188,15 @@ Table of Contents
 |       Concrete                            |     0.000 |
 |         outer_loop[12].mod_inst[10].Block |     0.000 |
 |     Player1MovementControl                |    <0.001 |
-|       Player1                             |     0.000 |
-|         Player1                           |     0.000 |
 |       TrackPlayer1Square                  |    <0.001 |
 |       clk40hz                             |    <0.001 |
 |     Player2MovementControl                |    <0.001 |
-|       Player1                             |     0.000 |
-|         Player1                           |     0.000 |
 |       TrackPlayer1Square                  |    <0.001 |
 |       clk40hz                             |    <0.001 |
 |     Player3MovementControl                |    <0.001 |
-|       Player1                             |     0.000 |
-|         Player1                           |     0.000 |
 |       TrackPlayer1Square                  |    <0.001 |
 |       clk40hz                             |    <0.001 |
 |     Player4MovementControl                |    <0.001 |
-|       Player1                             |     0.000 |
-|         Player1                           |     0.000 |
 |       TrackPlayer1Square                  |    <0.001 |
 |       clk40hz                             |    <0.001 |
 |     clk40hz2                              |    <0.001 |
@@ -206,6 +211,16 @@ Table of Contents
 |       uart_tx_inst                        |    <0.001 |
 |     master_tx_module4                     |    <0.001 |
 |       uart_tx_inst                        |    <0.001 |
+|     nolabel_line545                       |    <0.001 |
+|       nolabel_line41                      |     0.000 |
+|       nolabel_line48                      |     0.000 |
+|       nolabel_line55                      |     0.000 |
+|       nolabel_line62                      |     0.000 |
+|     nolabel_line549                       |    <0.001 |
+|       nolabel_line41                      |     0.000 |
+|       nolabel_line48                      |     0.000 |
+|       nolabel_line55                      |     0.000 |
+|       nolabel_line62                      |     0.000 |
 |     slave_rx_module                       |    <0.001 |
 |     slave_rx_module2                      |    <0.001 |
 |     slave_rx_module3                      |    <0.001 |

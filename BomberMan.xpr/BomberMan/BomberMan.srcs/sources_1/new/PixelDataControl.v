@@ -25,8 +25,10 @@ module PixelDataControl(
     input player1_die,player2_die,player3_die,player4_die,
     input CenterBlock , walls , 
     input player1 , player2 , player3 , player4 , 
-    input bomb , ExplosionAnimations,
-    input start_game ,
+    input bomb , 
+    input [15:0] bombPixelData, player1PixelData, player2PixelData, player3PixelData, player4PixelData,
+    input ExplosionAnimations,
+    input start_game,
     output reg[15:0] pixel_data = 16'b0 ,
     output player1_isReviving ,player2_isReviving,player3_isReviving,player4_isReviving
 );
@@ -84,6 +86,7 @@ module PixelDataControl(
     .pixel_index(pixel_index),
     .pixel_data(ss_pixeldata)
   );
+  
    always @(posedge clk6p25m)
    begin
        
@@ -97,12 +100,18 @@ module PixelDataControl(
        end
        else if(walls)
            pixel_data <= BROWN;
-       else if(player_status)
+       else if(player1_status)
+           pixel_data <= player1PixelData;
+       else if(player2_status)
+           pixel_data <= player2PixelData;
+       else if(player3_status)
+           pixel_data <= GREEN;
+       else if(player4_status)
            pixel_data <= GREEN;
        else if(ExplosionAnimations)
            pixel_data <= ORANGE;
        else if(bomb)
-           pixel_data <= RED;
+           pixel_data <= bombPixelData;
        else
            pixel_data <= BLACK;
        

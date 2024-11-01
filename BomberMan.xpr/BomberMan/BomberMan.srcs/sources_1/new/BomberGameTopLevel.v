@@ -38,13 +38,13 @@ module BomberGameTopLevel(
     wire frame_begin ,sending_pixels , sample_pixel;
     wire[12:0] pixel_index;
     wire[15:0] pixel_data;
-    wire start_game;
+    wire start_game, EndGame;
     wire initiate_reset;
     wire SWCheck;
     var_clock clock_6p25MHZ(.clk(clk) , .M(7) , .SLOW_CLOCK(clk6p25m));
     wire clk200hz;
     var_clock twohundredhz(.clk(clk) , .M(249_999) , . SLOW_CLOCK(clk200hz));
-    assign start_game = SWCheck;
+    assign start_game = SWCheck & ~EndGame;
     //Debouncing area
     ///////////////////////////////////////////////////////////////////////////
     wire DebouncedBtnU , DebouncedBtnD , DebouncedBtnL , DebouncedBtnR , DebouncedBtnC;
@@ -65,7 +65,7 @@ module BomberGameTopLevel(
         .SW(SW),
         .pixel_index(pixel_index), .pixel_data(pixel_data) ,
         .DebouncedBtnC(DebouncedBtnC) ,
-        .led(led),
+        .led(led), 
         .reset(SW[14]), .masterToggle(SW[15]),
         .master_tx(master_tx), .master_rx(master_rx), .slave_rx(slave_rx), .slave_tx(slave_tx),
         .player1_isReviving(player1_isReviving),
@@ -108,5 +108,32 @@ module BomberGameTopLevel(
         .player1_isReviving(player1_isReviving),
         .player1_deathcount(player1_deathcount)
     );
+    
+    wire[7:0] player2_deathcount;
+    PlayerDeath PlayerDeathControl2(
+        .clk200hz(clk200hz),
+        .start_game(start_game),
+        .player1_isReviving(player2_isReviving),
+        .player1_deathcount(player2_deathcount)
+    );
+    
+    wire[7:0] player3_deathcount;
+    PlayerDeath PlayerDeathControl3(
+        .clk200hz(clk200hz),
+        .start_game(start_game),
+        .player1_isReviving(player3_isReviving),
+        .player1_deathcount(player3_deathcount)
+    );
+    
+    wire[7:0] player4_deathcount;
+    PlayerDeath PlayerDeathControl4(
+        .clk200hz(clk200hz),
+        .start_game(start_game),
+        .player1_isReviving(player4_isReviving),
+        .player1_deathcount(player4_deathcount)
+    );    
+    EndGame endGame(.player1_deathcount(player1_deathcount) 
+        ,.player2_deathcount(player2_deathcount),.player3_deathcount(player3_deathcount),
+        .player4_deathcount(player4_deathcount), .EndGame(EndGame));
     
 endmodule

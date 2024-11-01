@@ -69,12 +69,12 @@ set rc [catch {
   create_project -in_memory -part xc7a35tcpg236-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir {C:/Users/ASUS/OneDrive - National University of Singapore/Documents/BomberManMultiplayer.xpr/BomberMan/BomberMan.cache/wt} [current_project]
-  set_property parent.project_path {C:/Users/ASUS/OneDrive - National University of Singapore/Documents/BomberManMultiplayer.xpr/BomberMan/BomberMan.xpr} [current_project]
-  set_property ip_output_repo {{C:/Users/ASUS/OneDrive - National University of Singapore/Documents/BomberManMultiplayer.xpr/BomberMan/BomberMan.cache/ip}} [current_project]
+  set_property webtalk.parent_dir {C:/Users/ASUS/OneDrive - National University of Singapore/Documents/EE2026/BomberMan.xpr/BomberMan/BomberMan.cache/wt} [current_project]
+  set_property parent.project_path {C:/Users/ASUS/OneDrive - National University of Singapore/Documents/EE2026/BomberMan.xpr/BomberMan/BomberMan.xpr} [current_project]
+  set_property ip_output_repo {{C:/Users/ASUS/OneDrive - National University of Singapore/Documents/EE2026/BomberMan.xpr/BomberMan/BomberMan.cache/ip}} [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet {{C:/Users/ASUS/OneDrive - National University of Singapore/Documents/BomberManMultiplayer.xpr/BomberMan/BomberMan.runs/synth_1/BomberGameTopLevel.dcp}}
-  read_xdc {{C:/Users/ASUS/OneDrive - National University of Singapore/Documents/BomberManMultiplayer.xpr/BomberMan/BomberMan.srcs/constrs_1/new/my_constraints.xdc}}
+  add_files -quiet {{C:/Users/ASUS/OneDrive - National University of Singapore/Documents/EE2026/BomberMan.xpr/BomberMan/BomberMan.runs/synth_1/BomberGameTopLevel.dcp}}
+  read_xdc {{C:/Users/ASUS/OneDrive - National University of Singapore/Documents/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/constrs_1/new/my_constraints.xdc}}
   link_design -top BomberGameTopLevel -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb
 } RESULT]
