@@ -21,7 +21,7 @@
 
 
 module EndGame(
-    input[2:0] player1_deathcount ,player2_deathcount,player3_deathcount,player4_deathcount,
+    input[5:0] player1_deathcount ,player2_deathcount,player3_deathcount,player4_deathcount,
     output EndGame
     );
     

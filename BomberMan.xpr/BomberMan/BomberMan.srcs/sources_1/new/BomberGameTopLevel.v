@@ -41,6 +41,7 @@ module BomberGameTopLevel(
     wire start_game, EndGame;
     wire initiate_reset;
     wire SWCheck;
+    wire[5:0] player1_deathcount,player2_deathcount,player3_deathcount,player4_deathcount;
     var_clock clock_6p25MHZ(.clk(clk) , .M(7) , .SLOW_CLOCK(clk6p25m));
     wire clk200hz;
     var_clock twohundredhz(.clk(clk) , .M(249_999) , . SLOW_CLOCK(clk200hz));
@@ -48,6 +49,7 @@ module BomberGameTopLevel(
     //Debouncing area
     ///////////////////////////////////////////////////////////////////////////
     wire DebouncedBtnU , DebouncedBtnD , DebouncedBtnL , DebouncedBtnR , DebouncedBtnC;
+    wire initiate_reset_out;
     ButtonDebouncing DebounceU(.button(btnU) , .clk(clk) , .DebouncedSignal(DebouncedBtnU));
     ButtonDebouncing DebounceD(.button(btnD) , .clk(clk) , .DebouncedSignal(DebouncedBtnD));
     ButtonDebouncing DebounceL(.button(btnL) , .clk(clk) , .DebouncedSignal(DebouncedBtnL));
@@ -72,7 +74,13 @@ module BomberGameTopLevel(
         .player2_isReviving(player2_isReviving),
         .player3_isReviving(player3_isReviving),
         .player4_isReviving(player4_isReviving),
-        .start_game(start_game), .SWCheck(SWCheck)
+        .start_game(start_game), .SWCheck(SWCheck),
+        .player1_deathcount(player1_deathcount),
+        .player2_deathcount(player2_deathcount),
+        .player3_deathcount(player3_deathcount),
+        .player4_deathcount(player4_deathcount),
+        .initiate_reset_out(initiate_reset_out)
+
     );
     //////////////////////////////////////////////////////////////////////////
     //current uart siwtch clashes with instant explosions
@@ -101,34 +109,30 @@ module BomberGameTopLevel(
         .initiate_reset(initiate_reset)
     );
     
-    wire[7:0] player1_deathcount;
     PlayerDeath PlayerDeathControl(
         .clk200hz(clk200hz),
-        .start_game(start_game),
+        .initiate_reset(initiate_reset_out),
         .player1_isReviving(player1_isReviving),
         .player1_deathcount(player1_deathcount)
     );
     
-    wire[7:0] player2_deathcount;
     PlayerDeath PlayerDeathControl2(
         .clk200hz(clk200hz),
-        .start_game(start_game),
+        .initiate_reset(initiate_reset_out),
         .player1_isReviving(player2_isReviving),
         .player1_deathcount(player2_deathcount)
     );
     
-    wire[7:0] player3_deathcount;
     PlayerDeath PlayerDeathControl3(
         .clk200hz(clk200hz),
-        .start_game(start_game),
+        .initiate_reset(initiate_reset_out),
         .player1_isReviving(player3_isReviving),
         .player1_deathcount(player3_deathcount)
     );
     
-    wire[7:0] player4_deathcount;
     PlayerDeath PlayerDeathControl4(
         .clk200hz(clk200hz),
-        .start_game(start_game),
+        .initiate_reset(initiate_reset_out),
         .player1_isReviving(player4_isReviving),
         .player1_deathcount(player4_deathcount)
     );    

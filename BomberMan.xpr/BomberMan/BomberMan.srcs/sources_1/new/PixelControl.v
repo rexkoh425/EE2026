@@ -31,11 +31,13 @@ module PixelControl(
     input reset, masterToggle, 
     input [2:0] master_rx,
     input [3:0] slave_rx,
+    input[5:0] player1_deathcount,player2_deathcount,player3_deathcount,player4_deathcount,
     output[15:0] pixel_data ,
     output [2:0] slave_tx, output reg [15:0] led = 0,
     output reg SWCheck = 0,
     output [3:0] master_tx,
-    output player1_isReviving,player2_isReviving,player3_isReviving,player4_isReviving
+    output player1_isReviving,player2_isReviving,player3_isReviving,player4_isReviving,
+    output reg initiate_reset_out = 0
 );
    parameter dimensions = 9;
    parameter minX = 3 ,maxX = 93;
@@ -214,6 +216,10 @@ module PixelControl(
        .ExplosionAnimations(ExplosionAnimations),
        .player1PixelData(player1PixelData), .player2PixelData(player2PixelData), .player3PixelData(player3PixelData), .player4PixelData(player4PixelData),
        .pixel_data(pixel_data) ,
+       .player1_deathcount(player1_deathcount),
+       .player2_deathcount(player2_deathcount),
+       .player3_deathcount(player3_deathcount),
+       .player4_deathcount(player4_deathcount),
        .player1_isReviving(player1_isReviving) , .player2_isReviving(player2_isReviving) ,
        .player3_isReviving(player3_isReviving) , .player4_isReviving(player4_isReviving) ,
        .start_game(start_game), .pixel_index(pixel_index)
@@ -266,27 +272,27 @@ module PixelControl(
           .clk(clk100mhz), .reset(reset),
           .btnU(btnUPlayer1), .btnD(btnDPlayer1), .btnL(btnLPlayer1),
           .btnR(btnRPlayer1), .btnC(btnCPlayer1), .led(led),                           
-          .tx(master_tx[0])
+          .tx(master_tx[0]), .initiate_reset(initiate_reset)
       );
        
       master_tx master_tx_module2(
           .clk(clk100mhz), .reset(reset),
           .btnU(btnUPlayer2), .btnD(btnDPlayer2), .btnL(btnLPlayer2),
           .btnR(btnRPlayer2), .btnC(btnCPlayer2), .led(led[3:0]),
-          .tx(master_tx[1])
+          .tx(master_tx[1]), .initiate_reset(initiate_reset)
       );
       
       master_tx master_tx_module3(
           .clk(clk100mhz), .reset(reset),
           .btnU(btnUPlayer3), .btnD(btnDPlayer3), .btnL(btnLPlayer3),
           .btnR(btnRPlayer3), .btnC(btnCPlayer3), .led(led[3:0]),
-          .tx(master_tx[2])
+          .tx(master_tx[2]), .initiate_reset(initiate_reset)
       );        
       master_tx master_tx_module4(
           .clk(clk100mhz), .reset(reset),
           .btnU(btnUPlayer4), .btnD(btnDPlayer4), .btnL(btnLPlayer4),
           .btnR(btnRPlayer4), .btnC(btnCPlayer4), .led(led[3:0]),
-          .tx(master_tx[3])
+          .tx(master_tx[3]), .initiate_reset(initiate_reset)
       );     
       wire [31:0] rx_data_slave;
       reg valid_slave_flag;
@@ -335,8 +341,9 @@ module PixelControl(
       var_clock clk40hz2(.clk(clk100mhz), .M(32'd1249999), .SLOW_CLOCK(clk_40hz));
       always @(posedge clk_40hz) begin
            if (masterToggle) begin
+               initiate_reset_out <= initiate_reset;
                led[3:0] <= {rx_data_master3[31],rx_data_master2[31],rx_data_master[31],SW[0]};
-               SWCheck <= rx_data_master[31] & SW[0];
+               SWCheck <= rx_data_master3[31] & rx_data_master2[31] & rx_data_master[31] & SW[0];
                if (SWCheck) begin
                    case (rx_data_master[7:0])
                        8'h01: begin // Move Up   
@@ -533,6 +540,7 @@ module PixelControl(
                btnRPlayer4In <= rx_data_slave4[28];
                btnCPlayer4In <= rx_data_slave4[27];
                led[3:0] <= rx_data_slave[26:23];
+               initiate_reset_out <= rx_data_slave[22];
                SWCheck <= rx_data_slave[26] & rx_data_slave[25] & rx_data_slave[24] & rx_data_slave[23];                        
            end
       end

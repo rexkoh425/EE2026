@@ -26,12 +26,14 @@ module PixelDataControl(
     input CenterBlock , walls , 
     input player1 , player2 , player3 , player4 , 
     input bomb , 
+    input[5:0] player1_deathcount,player2_deathcount,player3_deathcount,player4_deathcount,
     input [15:0] bombPixelData, player1PixelData, player2PixelData, player3PixelData, player4PixelData,
     input ExplosionAnimations,
     input start_game,
     output reg[15:0] pixel_data = 16'b0 ,
     output player1_isReviving ,player2_isReviving,player3_isReviving,player4_isReviving
 );
+   parameter[2:0] deathcount = 4;
    wire[15:0] WHITE = 16'hFFFF;
    wire[15:0] BLUE = 16'h001F;
    wire[15:0] GREEN = 16'h07E0;
@@ -44,7 +46,6 @@ module PixelDataControl(
    wire PlayerBlinkClk;
    var_clock player_blink(clk6p25m , 32'd624999 , PlayerBlinkClk);
    wire player1_status , player2_status,player3_status,player4_status , player_status;
-   assign player_status = player1_status | player2_status | player3_status | player4_status;
    
    AnimateDeath Player1(
        .clk6p25m(clk6p25m), .PlayerBlinkClk(PlayerBlinkClk),
@@ -100,13 +101,13 @@ module PixelDataControl(
        end
        else if(walls)
            pixel_data <= BROWN;
-       else if(player1_status)
+       else if(player1_status & (player1_deathcount <= 4))
            pixel_data <= player1PixelData;
-       else if(player2_status)
+       else if(player2_status & (player2_deathcount <= 4))
            pixel_data <= player2PixelData;
-       else if(player3_status)
+       else if(player3_status & (player3_deathcount <= 4))
            pixel_data <= GREEN;
-       else if(player4_status)
+       else if(player4_status & (player4_deathcount <= 4))
            pixel_data <= GREEN;
        else if(ExplosionAnimations)
            pixel_data <= ORANGE;

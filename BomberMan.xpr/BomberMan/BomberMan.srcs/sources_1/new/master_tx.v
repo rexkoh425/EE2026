@@ -23,7 +23,7 @@
 module master_tx(
     input clk,
     input reset,
-    input btnU, btnD, btnL, btnR, btnC,       
+    input btnU, btnD, btnL, btnR, btnC, initiate_reset,     
     input [3:0] led,
     output tx
 );
@@ -57,7 +57,7 @@ module master_tx(
                 IDLE: begin
                     // Encode the coordinates into a 32-bit data word
                     tx_data <= {btnU,btnD,btnL,btnR,btnC,
-                                led,23'b0};                                                                        
+                                led,initiate_reset,22'b0};                                                                        
                     start <= 1;
                     state <= START;
                 end
