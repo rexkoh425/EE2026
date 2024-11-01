@@ -24,7 +24,6 @@ module GameReset(
     input clk6p25m,
     input SW1,
     input btnU , btnD , btnL , btnR ,
-    output reg  start_game = 0 ,
     output reg initiate_reset = 0
 );
     
@@ -41,14 +40,6 @@ module GameReset(
         else begin
             initiate_reset <= 0;
             count <= 0;
-        end
-        if(SW1)
-        begin
-            start_game <= 1;
-        end
-        if(count == 31_250_000)
-        begin
-            start_game <= 0;
         end
     end
 endmodule

@@ -155,9 +155,20 @@ module Bomb(
         end
     endgenerate
     
-    wire[6:0] PlayerBlock;
+    reg[6:0] PlayerBlock;
     //////////////////////////////////////////////////////////////////////////////////////////////////////
-    assign PlayerBlock = SW[5] ? Player1Block : SW[6] ? Player2Block : SW[7] ? Player3Block : Player4Block;
+    //assign PlayerBlock = SW[5] ? Player1Block : SW[6] ? Player2Block : SW[7] ? Player3Block : Player4Block;
+    always @(posedge clk6p25m) begin
+        if (Player1DebouncedBtnC) begin
+            PlayerBlock <= Player1Block;
+        end else if (Player2DebouncedBtnC) begin
+            PlayerBlock <= Player2Block;        
+        end else if (Player3DebouncedBtnC) begin
+            PlayerBlock <= Player3Block;        
+        end else if (Player4DebouncedBtnC) begin
+            PlayerBlock <= Player4Block;        
+        end
+    end
     //assign to different players according to signals
     ////////////////////////////////////////////////////////////////////////////////////////////////////////
     assign ExplosionAnimations = |ExplosionAnimation;

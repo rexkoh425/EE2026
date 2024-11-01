@@ -21,7 +21,7 @@
 
 //to handle death of individual players
 module PixelDataControl(
-    input clk6p25m , 
+    input clk6p25m , input[12:0] pixel_index,
     input player1_die,player2_die,player3_die,player4_die,
     input CenterBlock , walls , 
     input player1 , player2 , player3 , player4 , 
@@ -78,13 +78,18 @@ module PixelDataControl(
         .isReviving(player4_isReviving)
     );
             
-   
+   wire[15:0] ss_pixeldata;
+   StartingScreen start(
+    .clk6p25m(clk6p25m),
+    .pixel_index(pixel_index),
+    .pixel_data(ss_pixeldata)
+  );
    always @(posedge clk6p25m)
    begin
        
        if(~start_game)
        begin
-           pixel_data <= WHITE;
+           pixel_data <= ss_pixeldata;
        end
        else if(CenterBlock)
        begin
