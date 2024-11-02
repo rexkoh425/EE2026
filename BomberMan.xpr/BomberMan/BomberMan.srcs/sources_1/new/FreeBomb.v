@@ -27,8 +27,7 @@ module FreeBomb #(parameter[6:0] Maxbombcount = 5)(
     input start_game,
     input player1_isReviving,player2_isReviving,player3_isReviving,player4_isReviving,
     output reg[7:0] FreeBomb = Maxbombcount - 1,
-    output reg edge_registered = 0 ,
-    output reg [(Maxbombcount * 2) - 1 : 0] WhichPlayerBomb = 0
+    output reg edge_registered = 0
 );
 
     integer k;
@@ -80,8 +79,6 @@ module FreeBomb #(parameter[6:0] Maxbombcount = 5)(
         if(FreeBomb == 99 | ActiveBombs[FreeBomb] == 1)
         begin
             reassign <= 1;
-            WhichPlayerBomb <= WhichPlayerBomb & ~(2'b11 << (FreeBomb * 2));
-            WhichPlayerBomb <= WhichPlayerBomb | triggered_player << (FreeBomb * 2);
         end
     end
 endmodule

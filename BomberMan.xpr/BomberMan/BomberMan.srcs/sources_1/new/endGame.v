@@ -40,5 +40,5 @@ module EndGame(
         num_player_dead <= player_dead[0] + player_dead[1] + player_dead[2] + player_dead[3];
     end
     
-    assign EndGame = (num_player_dead == 2) & start_game;
+    assign EndGame = (num_player_dead == 1) & start_game;
 endmodule
