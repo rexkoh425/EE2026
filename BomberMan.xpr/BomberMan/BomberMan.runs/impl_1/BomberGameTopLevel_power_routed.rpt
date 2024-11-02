@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Sat Nov  2 16:46:33 2024
-| Host             : tendra running 64-bit major release  (build 9200)
+| Date             : Sun Nov  3 02:00:15 2024
+| Host             : DESKTOP-O393SDG running 64-bit major release  (build 9200)
 | Command          : report_power -file BomberGameTopLevel_power_routed.rpt -pb BomberGameTopLevel_power_summary_routed.pb -rpx BomberGameTopLevel_power_routed.rpx
 | Design           : BomberGameTopLevel
 | Device           : xc7a35tcpg236-1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.095        |
+| Total On-Chip Power (W)  | 0.094        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.023        |
+| Dynamic (W)              | 0.022        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.5         |
@@ -53,18 +53,18 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.005 |        3 |       --- |             --- |
-| Slice Logic    |     0.007 |    26136 |       --- |             --- |
-|   LUT as Logic |     0.007 |    17392 |     20800 |           83.62 |
-|   CARRY4       |    <0.001 |     1220 |      8150 |           14.97 |
-|   Register     |    <0.001 |     2695 |     41600 |            6.48 |
+| Slice Logic    |     0.007 |    29352 |       --- |             --- |
+|   LUT as Logic |     0.007 |    19720 |     20800 |           94.81 |
+|   CARRY4       |    <0.001 |     1446 |      8150 |           17.74 |
+|   Register     |    <0.001 |     2841 |     41600 |            6.83 |
 |   BUFG         |    <0.001 |        6 |        32 |           18.75 |
-|   F7/F8 Muxes  |    <0.001 |     1893 |     32600 |            5.81 |
-|   Others       |     0.000 |      179 |       --- |             --- |
-| Signals        |     0.007 |    18014 |       --- |             --- |
+|   F7/F8 Muxes  |    <0.001 |     1604 |     32600 |            4.92 |
+|   Others       |     0.000 |      195 |       --- |             --- |
+| Signals        |     0.006 |    21164 |       --- |             --- |
 | Block RAM      |     0.000 |        4 |        50 |            8.00 |
 | I/O            |     0.004 |       62 |       106 |           58.49 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.095 |          |           |                 |
+| Total          |     0.094 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.029 |       0.019 |      0.010 |
+| Vccint    |       1.000 |     0.028 |       0.019 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -143,7 +143,7 @@ Table of Contents
 +-------------------------------------------+-----------+
 | Name                                      | Power (W) |
 +-------------------------------------------+-----------+
-| BomberGameTopLevel                        |     0.023 |
+| BomberGameTopLevel                        |     0.022 |
 |   Oled_display                            |    <0.001 |
 |   PlayerDeathControl                      |    <0.001 |
 |   PlayerDeathControl2                     |    <0.001 |
@@ -179,13 +179,14 @@ Table of Contents
 |         counter                           |     0.000 |
 |       Player3                             |    <0.001 |
 |         counter                           |     0.000 |
-|       Player4                             |     0.000 |
+|       Player4                             |    <0.001 |
 |         counter                           |     0.000 |
-|       paused                              |     0.000 |
+|       nolabel_line127                     |     0.000 |
+|       paused                              |    <0.001 |
 |       player_blink                        |    <0.001 |
 |       player_one                          |    <0.001 |
 |       player_two                          |    <0.001 |
-|       start                               |     0.000 |
+|       start                               |    <0.001 |
 |     ConcreteBlock                         |     0.000 |
 |       Concrete                            |     0.000 |
 |         outer_loop[12].mod_inst[10].Block |     0.000 |
@@ -223,6 +224,13 @@ Table of Contents
 |       nolabel_line48                      |     0.000 |
 |       nolabel_line55                      |     0.000 |
 |       nolabel_line62                      |     0.000 |
+|     nolabel_line553                       |    <0.001 |
+|       nolabel_line41                      |     0.000 |
+|       nolabel_line48                      |     0.000 |
+|       nolabel_line55                      |     0.000 |
+|     nolabel_line557                       |    <0.001 |
+|       nolabel_line41                      |     0.000 |
+|       nolabel_line48                      |     0.000 |
 |     slave_rx_module                       |    <0.001 |
 |     slave_rx_module2                      |    <0.001 |
 |     slave_rx_module3                      |    <0.001 |

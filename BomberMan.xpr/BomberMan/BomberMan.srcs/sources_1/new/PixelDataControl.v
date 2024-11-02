@@ -118,6 +118,16 @@ module PixelDataControl(
         .pixel_data(p4_data)
     );
     
+    wire [6:0] centreX;
+    wire [7:0] centreY;
+    assign centreX = (((pixel_index % 96) - 3)/9)*9 + 6; // x coordinate for centre of block
+    assign centreY = (((pixel_index / 96) - 1)/9)*9 + 5; // y coordinate for centre of block
+    wire isExplosion;
+    wire [15:0] explosionData;
+    renderExplosion(.centreX(centreX), .centreY(centreY), 
+                    .clock(clk6p25m), .pixel_index(pixel_index), 
+                    .isPixel(isExplosion), .pixel_data(explosionData));
+    
    always @(posedge clk6p25m)
    begin
        
@@ -148,11 +158,11 @@ module PixelDataControl(
        else if(player2_status & ~player_dead[1])
            pixel_data <= player2PixelData;
        else if(player3_status & ~player_dead[2])
-           pixel_data <= GREEN;
+           pixel_data <= player3PixelData;
        else if(player4_status & ~player_dead[3])
-           pixel_data <= GREEN;
-       else if(ExplosionAnimations)
-           pixel_data <= ORANGE;
+           pixel_data <= player4PixelData;
+       else if(ExplosionAnimations && isExplosion)
+           pixel_data <= explosionData;
        else if(bomb)
            pixel_data <= bombPixelData;
        else

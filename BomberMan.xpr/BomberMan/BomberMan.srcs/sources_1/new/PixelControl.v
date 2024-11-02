@@ -93,7 +93,7 @@ module PixelControl(
    /////////////////////////////////////////////////////////////////////////////////////////////
    always @ (posedge clk6p25m)
    begin
-        if(btnUPlayer1 & btnUPlayer2 /*& btnCPlayer3 & btnCPlayer4 */& SWCheck)
+        if(btnUPlayer1 /* & btnUPlayer2 & btnCPlayer3 & btnCPlayer4 */& SWCheck)
         begin
             start_game <= 1;
         end
@@ -335,7 +335,7 @@ module PixelControl(
            if (masterToggle) begin
                initiate_reset_out <= initiate_reset;
                led[3:0] <= {rx_data_master3[31],rx_data_master2[31],rx_data_master[31],SW[0]};
-               SWCheck <= /*rx_data_master3[31] & rx_data_master2[31] & */rx_data_master[31] & SW[0];
+               SWCheck <= /*rx_data_master3[31] & rx_data_master2[31] & rx_data_master[31] & */SW[0];
                if (SWCheck) begin
                    case (rx_data_master[7:0])
                        8'h01: begin // Move Up   
@@ -533,7 +533,7 @@ module PixelControl(
                btnCPlayer4In <= rx_data_slave4[27];
                led[3:0] <= rx_data_slave[26:23];
                initiate_reset_out <= rx_data_slave[22];
-               SWCheck <= /*rx_data_slave[26] & rx_data_slave[25] & */rx_data_slave[24] & rx_data_slave[23];                        
+               SWCheck <= /*rx_data_slave[26] & rx_data_slave[25] & rx_data_slave[24] & rx_data_slave[23]; */1;                       
            end
       end
  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -550,4 +550,12 @@ module PixelControl(
                .clock(clk6p25m), .pixel_index(pixel_index),
                .isWiz(player2), .pixel_data(player2PixelData),
                .isWalking(player2IsMoving));
+    renderRob (.centreX((Player3MaxX+Player3MinX)/2), .centreY((Player3MaxY+Player3MinY)/2),
+              .clock(clk6p25m), .pixel_index(pixel_index),
+              .isRob(player3), .pixel_data(player3PixelData),
+              .isWalking(player3IsMoving));
+    renderAl (.centreX((Player4MaxX+Player4MinX)/2), .centreY((Player4MaxY+Player4MinY)/2),
+             .clock(clk6p25m), .pixel_index(pixel_index),
+             .isAl(player4), .pixel_data(player4PixelData),
+             .isWalking(player4IsMoving));
 endmodule

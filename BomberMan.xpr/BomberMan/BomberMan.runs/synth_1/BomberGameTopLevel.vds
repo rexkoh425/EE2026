@@ -2,12 +2,12 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Sat Nov  2 16:36:29 2024
-# Process ID: 32336
-# Current directory: C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.runs/synth_1
+# Start of session at: Sun Nov  3 01:49:17 2024
+# Process ID: 1344
+# Current directory: C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.runs/synth_1
 # Command line: vivado.exe -log BomberGameTopLevel.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source BomberGameTopLevel.tcl
-# Log file: C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.runs/synth_1/BomberGameTopLevel.vds
-# Journal file: C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.runs/synth_1\vivado.jou
+# Log file: C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.runs/synth_1/BomberGameTopLevel.vds
+# Journal file: C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source BomberGameTopLevel.tcl -notrace
 Command: synth_design -top BomberGameTopLevel -part xc7a35tcpg236-1
@@ -15,31 +15,31 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 36208 
+INFO: Helper process launched with PID 15248 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 361.527 ; gain = 104.148
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 361.875 ; gain = 104.352
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'BomberGameTopLevel' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BomberGameTopLevel.v:23]
-INFO: [Synth 8-6157] synthesizing module 'var_clock' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/var_clock.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'var_clock' (1#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/var_clock.v:23]
-INFO: [Synth 8-6157] synthesizing module 'PixelControl' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:23]
+INFO: [Synth 8-6157] synthesizing module 'BomberGameTopLevel' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BomberGameTopLevel.v:23]
+INFO: [Synth 8-6157] synthesizing module 'var_clock' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/var_clock.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'var_clock' (1#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/var_clock.v:23]
+INFO: [Synth 8-6157] synthesizing module 'PixelControl' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:23]
 	Parameter dimensions bound to: 9 - type: integer 
 	Parameter minX bound to: 3 - type: integer 
 	Parameter maxX bound to: 93 - type: integer 
 	Parameter minY bound to: 1 - type: integer 
 	Parameter maxY bound to: 64 - type: integer 
 	Parameter player_dimensions bound to: 7 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'ConcreteBlocks' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/ConcreteBlocks.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ConcreteBlocks' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/ConcreteBlocks.v:23]
 	Parameter dimensions bound to: 9 - type: integer 
 	Parameter minX bound to: 3 - type: integer 
 	Parameter maxX bound to: 93 - type: integer 
 	Parameter minY bound to: 1 - type: integer 
 	Parameter maxY bound to: 64 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'Walls' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Walls.v:23]
-INFO: [Synth 8-6157] synthesizing module 'isColourPixel' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/isColourPixel.v:25]
-INFO: [Synth 8-6155] done synthesizing module 'isColourPixel' (2#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/isColourPixel.v:25]
-INFO: [Synth 8-6155] done synthesizing module 'Walls' (3#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Walls.v:23]
-INFO: [Synth 8-6157] synthesizing module 'CentreConcreteBlock' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/CentreConcreteBlock.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Walls' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Walls.v:23]
+INFO: [Synth 8-6157] synthesizing module 'isColourPixel' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/isColourPixel.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'isColourPixel' (2#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/isColourPixel.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'Walls' (3#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Walls.v:23]
+INFO: [Synth 8-6157] synthesizing module 'CentreConcreteBlock' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/CentreConcreteBlock.v:23]
 	Parameter dimensions bound to: 9 - type: integer 
 	Parameter minX bound to: 3 - type: integer 
 	Parameter maxX bound to: 93 - type: integer 
@@ -47,11 +47,11 @@ INFO: [Synth 8-6157] synthesizing module 'CentreConcreteBlock' [C:/NUS/EE2026/EE
 	Parameter maxY bound to: 64 - type: integer 
 	Parameter num_x_blocks bound to: 10 - type: integer 
 	Parameter num_y_blocks bound to: 7 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'CentreConcreteBlock' (4#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/CentreConcreteBlock.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'ConcreteBlocks' (5#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/ConcreteBlocks.v:23]
-INFO: [Synth 8-6157] synthesizing module 'ButtonGate' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/buttonGate.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'ButtonGate' (6#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/buttonGate.v:23]
-INFO: [Synth 8-6157] synthesizing module 'PlayerMovement' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'CentreConcreteBlock' (4#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/CentreConcreteBlock.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ConcreteBlocks' (5#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/ConcreteBlocks.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ButtonGate' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/buttonGate.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ButtonGate' (6#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/buttonGate.v:23]
+INFO: [Synth 8-6157] synthesizing module 'PlayerMovement' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:23]
 	Parameter InitialMinX bound to: 7'b0000100 
 	Parameter InitialMaxX bound to: 7'b0001010 
 	Parameter InitialMinY bound to: 7'b0000010 
@@ -61,7 +61,7 @@ INFO: [Synth 8-6157] synthesizing module 'PlayerMovement' [C:/NUS/EE2026/EE2026/
 	Parameter maxX bound to: 93 - type: integer 
 	Parameter minY bound to: 1 - type: integer 
 	Parameter maxY bound to: 64 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'SquareTracker' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/SquareTracker.v:23]
+INFO: [Synth 8-6157] synthesizing module 'SquareTracker' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/SquareTracker.v:23]
 	Parameter dimensions bound to: 9 - type: integer 
 	Parameter minX bound to: 3 - type: integer 
 	Parameter maxX bound to: 93 - type: integer 
@@ -69,10 +69,10 @@ INFO: [Synth 8-6157] synthesizing module 'SquareTracker' [C:/NUS/EE2026/EE2026/B
 	Parameter maxY bound to: 64 - type: integer 
 	Parameter num_x_blocks bound to: 10 - type: integer 
 	Parameter num_y_blocks bound to: 7 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'WithinXY' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/WithinXY.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'WithinXY' (7#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/WithinXY.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'SquareTracker' (8#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/SquareTracker.v:23]
-INFO: [Synth 8-6157] synthesizing module 'CollisionCheck' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/CollisionCheck.v:23]
+INFO: [Synth 8-6157] synthesizing module 'WithinXY' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/WithinXY.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'WithinXY' (7#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/WithinXY.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'SquareTracker' (8#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/SquareTracker.v:23]
+INFO: [Synth 8-6157] synthesizing module 'CollisionCheck' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/CollisionCheck.v:23]
 	Parameter dimensions bound to: 9 - type: integer 
 	Parameter minX bound to: 3 - type: integer 
 	Parameter maxX bound to: 93 - type: integer 
@@ -80,9 +80,9 @@ INFO: [Synth 8-6157] synthesizing module 'CollisionCheck' [C:/NUS/EE2026/EE2026/
 	Parameter maxY bound to: 64 - type: integer 
 	Parameter num_x_blocks bound to: 10 - type: integer 
 	Parameter num_y_blocks bound to: 7 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'CollisionCheck' (9#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/CollisionCheck.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'PlayerMovement' (10#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:23]
-INFO: [Synth 8-6157] synthesizing module 'PlayerMovement__parameterized0' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'CollisionCheck' (9#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/CollisionCheck.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'PlayerMovement' (10#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:23]
+INFO: [Synth 8-6157] synthesizing module 'PlayerMovement__parameterized0' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:23]
 	Parameter InitialMinX bound to: 7'b1010111 
 	Parameter InitialMaxX bound to: 7'b1011101 
 	Parameter InitialMinY bound to: 7'b0000010 
@@ -92,8 +92,8 @@ INFO: [Synth 8-6157] synthesizing module 'PlayerMovement__parameterized0' [C:/NU
 	Parameter maxX bound to: 93 - type: integer 
 	Parameter minY bound to: 1 - type: integer 
 	Parameter maxY bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'PlayerMovement__parameterized0' (10#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:23]
-INFO: [Synth 8-6157] synthesizing module 'PlayerMovement__parameterized1' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'PlayerMovement__parameterized0' (10#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:23]
+INFO: [Synth 8-6157] synthesizing module 'PlayerMovement__parameterized1' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:23]
 	Parameter InitialMinX bound to: 7'b0000100 
 	Parameter InitialMaxX bound to: 7'b0001010 
 	Parameter InitialMinY bound to: 7'b0111001 
@@ -103,8 +103,8 @@ INFO: [Synth 8-6157] synthesizing module 'PlayerMovement__parameterized1' [C:/NU
 	Parameter maxX bound to: 93 - type: integer 
 	Parameter minY bound to: 1 - type: integer 
 	Parameter maxY bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'PlayerMovement__parameterized1' (10#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:23]
-INFO: [Synth 8-6157] synthesizing module 'PlayerMovement__parameterized2' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'PlayerMovement__parameterized1' (10#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:23]
+INFO: [Synth 8-6157] synthesizing module 'PlayerMovement__parameterized2' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:23]
 	Parameter InitialMinX bound to: 7'b1010111 
 	Parameter InitialMaxX bound to: 7'b1011101 
 	Parameter InitialMinY bound to: 7'b0111001 
@@ -114,136 +114,165 @@ INFO: [Synth 8-6157] synthesizing module 'PlayerMovement__parameterized2' [C:/NU
 	Parameter maxX bound to: 93 - type: integer 
 	Parameter minY bound to: 1 - type: integer 
 	Parameter maxY bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'PlayerMovement__parameterized2' (10#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:23]
-INFO: [Synth 8-6157] synthesizing module 'Bomb' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'PlayerMovement__parameterized2' (10#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Bomb' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:23]
 	Parameter dimension bound to: 9 - type: integer 
 	Parameter Maxbombcount bound to: 7'b0000011 
-INFO: [Synth 8-6157] synthesizing module 'renderBomb' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderBomb.v:23]
-INFO: [Synth 8-6157] synthesizing module 'staticBomb' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/staticBomb.v:23]
-WARNING: [Synth 8-6014] Unused sequential element x_value_check_reg was removed.  [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/staticBomb.v:274]
-WARNING: [Synth 8-6014] Unused sequential element y_value_check_reg was removed.  [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/staticBomb.v:275]
-INFO: [Synth 8-6155] done synthesizing module 'staticBomb' (11#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/staticBomb.v:23]
-INFO: [Synth 8-6157] synthesizing module 'flickerBomb' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/flickerBomb.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'flickerBomb' (12#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/flickerBomb.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'renderBomb' (13#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderBomb.v:23]
-WARNING: [Synth 8-689] width (32) of port connection 'centreX' does not match port width (7) of module 'renderBomb' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:109]
-WARNING: [Synth 8-689] width (32) of port connection 'centreY' does not match port width (6) of module 'renderBomb' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:110]
-WARNING: [Synth 8-689] width (8) of port connection 'FreeBomb' does not match port width (16) of module 'renderBomb' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:112]
-WARNING: [Synth 8-689] width (32) of port connection 'centreX' does not match port width (7) of module 'renderBomb' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:109]
-WARNING: [Synth 8-689] width (32) of port connection 'centreY' does not match port width (6) of module 'renderBomb' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:110]
-WARNING: [Synth 8-689] width (8) of port connection 'FreeBomb' does not match port width (16) of module 'renderBomb' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:112]
-WARNING: [Synth 8-689] width (32) of port connection 'centreX' does not match port width (7) of module 'renderBomb' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:109]
-WARNING: [Synth 8-689] width (32) of port connection 'centreY' does not match port width (6) of module 'renderBomb' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:110]
-WARNING: [Synth 8-689] width (8) of port connection 'FreeBomb' does not match port width (16) of module 'renderBomb' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:112]
-INFO: [Synth 8-6157] synthesizing module 'BombCounter' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BombCounter.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'BombCounter' (14#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BombCounter.v:23]
-INFO: [Synth 8-6157] synthesizing module 'ExplodeBomb' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/ExplodeBomb.v:23]
-INFO: [Synth 8-6157] synthesizing module 'BlockIsImmutable' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BlockIsImmutable.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'BlockIsImmutable' (15#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BlockIsImmutable.v:23]
-INFO: [Synth 8-6157] synthesizing module 'BlockColourPixel' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BlockColourPixel.v:23]
+INFO: [Synth 8-6157] synthesizing module 'renderBomb' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderBomb.v:23]
+INFO: [Synth 8-6157] synthesizing module 'staticBomb' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/staticBomb.v:23]
+WARNING: [Synth 8-6014] Unused sequential element x_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/staticBomb.v:274]
+WARNING: [Synth 8-6014] Unused sequential element y_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/staticBomb.v:275]
+INFO: [Synth 8-6155] done synthesizing module 'staticBomb' (11#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/staticBomb.v:23]
+INFO: [Synth 8-6157] synthesizing module 'flickerBomb' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/flickerBomb.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'flickerBomb' (12#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/flickerBomb.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'renderBomb' (13#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderBomb.v:23]
+WARNING: [Synth 8-689] width (32) of port connection 'centreX' does not match port width (7) of module 'renderBomb' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:109]
+WARNING: [Synth 8-689] width (32) of port connection 'centreY' does not match port width (6) of module 'renderBomb' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:110]
+WARNING: [Synth 8-689] width (8) of port connection 'FreeBomb' does not match port width (16) of module 'renderBomb' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:112]
+WARNING: [Synth 8-689] width (32) of port connection 'centreX' does not match port width (7) of module 'renderBomb' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:109]
+WARNING: [Synth 8-689] width (32) of port connection 'centreY' does not match port width (6) of module 'renderBomb' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:110]
+WARNING: [Synth 8-689] width (8) of port connection 'FreeBomb' does not match port width (16) of module 'renderBomb' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:112]
+WARNING: [Synth 8-689] width (32) of port connection 'centreX' does not match port width (7) of module 'renderBomb' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:109]
+WARNING: [Synth 8-689] width (32) of port connection 'centreY' does not match port width (6) of module 'renderBomb' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:110]
+WARNING: [Synth 8-689] width (8) of port connection 'FreeBomb' does not match port width (16) of module 'renderBomb' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:112]
+INFO: [Synth 8-6157] synthesizing module 'BombCounter' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BombCounter.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'BombCounter' (14#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BombCounter.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ExplodeBomb' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/ExplodeBomb.v:23]
+INFO: [Synth 8-6157] synthesizing module 'BlockIsImmutable' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BlockIsImmutable.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'BlockIsImmutable' (15#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BlockIsImmutable.v:23]
+INFO: [Synth 8-6157] synthesizing module 'BlockColourPixel' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BlockColourPixel.v:23]
 	Parameter dimension bound to: 7'b0001001 
 	Parameter MaxBlocks bound to: 7'b1000101 
-INFO: [Synth 8-6155] done synthesizing module 'BlockColourPixel' (16#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BlockColourPixel.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'ExplodeBomb' (17#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/ExplodeBomb.v:23]
-INFO: [Synth 8-6157] synthesizing module 'TriggerExplosion' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/TriggerExplosion.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'BlockColourPixel' (16#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BlockColourPixel.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ExplodeBomb' (17#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/ExplodeBomb.v:23]
+INFO: [Synth 8-6157] synthesizing module 'TriggerExplosion' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/TriggerExplosion.v:23]
 	Parameter Maxbombcount bound to: 7'b0000011 
-INFO: [Synth 8-6155] done synthesizing module 'TriggerExplosion' (18#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/TriggerExplosion.v:23]
-INFO: [Synth 8-6157] synthesizing module 'FreeBomb' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/FreeBomb.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'TriggerExplosion' (18#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/TriggerExplosion.v:23]
+INFO: [Synth 8-6157] synthesizing module 'FreeBomb' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/FreeBomb.v:23]
 	Parameter Maxbombcount bound to: 7'b0000011 
-WARNING: [Synth 8-6014] Unused sequential element triggered_player_reg was removed.  [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/FreeBomb.v:42]
-INFO: [Synth 8-6155] done synthesizing module 'FreeBomb' (19#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/FreeBomb.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'Bomb' (20#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:23]
-INFO: [Synth 8-6157] synthesizing module 'PixelDataControl' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelDataControl.v:23]
+WARNING: [Synth 8-6014] Unused sequential element triggered_player_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/FreeBomb.v:42]
+INFO: [Synth 8-6155] done synthesizing module 'FreeBomb' (19#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/FreeBomb.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Bomb' (20#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Bomb.v:23]
+INFO: [Synth 8-6157] synthesizing module 'PixelDataControl' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelDataControl.v:23]
 	Parameter deathcount bound to: 3'b100 
-INFO: [Synth 8-6157] synthesizing module 'AnimateDeath' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/AnimateDeath.v:23]
-INFO: [Synth 8-6157] synthesizing module 'Counter_100MHZ' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Counter_100MHZ.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'Counter_100MHZ' (21#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Counter_100MHZ.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'AnimateDeath' (22#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/AnimateDeath.v:23]
-INFO: [Synth 8-6157] synthesizing module 'StartingScreen' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/StartingScreen.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'StartingScreen' (23#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/StartingScreen.v:23]
-INFO: [Synth 8-6157] synthesizing module 'EndScreen' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/EndScreen.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'EndScreen' (24#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/EndScreen.v:23]
-INFO: [Synth 8-6157] synthesizing module 'p1_win' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/p1_win.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'p1_win' (25#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/p1_win.v:23]
-INFO: [Synth 8-6157] synthesizing module 'p2_win' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/p2_win.v:23]
-INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/p2_win.v:28]
-INFO: [Synth 8-6155] done synthesizing module 'p2_win' (26#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/p2_win.v:23]
-INFO: [Synth 8-6157] synthesizing module 'p3_win' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/p3_win.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'p3_win' (27#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/p3_win.v:23]
-INFO: [Synth 8-6157] synthesizing module 'p4_win' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/p4_win.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'p4_win' (28#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/p4_win.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'PixelDataControl' (29#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelDataControl.v:23]
-INFO: [Synth 8-6157] synthesizing module 'slave_tx' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/slave_tx.v:23]
-INFO: [Synth 8-6157] synthesizing module 'uart_tx_new' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/uart_tx_new.v:23]
+INFO: [Synth 8-6157] synthesizing module 'AnimateDeath' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/AnimateDeath.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Counter_100MHZ' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Counter_100MHZ.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Counter_100MHZ' (21#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Counter_100MHZ.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'AnimateDeath' (22#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/AnimateDeath.v:23]
+INFO: [Synth 8-6157] synthesizing module 'StartingScreen' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/StartingScreen.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'StartingScreen' (23#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/StartingScreen.v:23]
+INFO: [Synth 8-6157] synthesizing module 'EndScreen' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/EndScreen.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'EndScreen' (24#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/EndScreen.v:23]
+INFO: [Synth 8-6157] synthesizing module 'p1_win' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/p1_win.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'p1_win' (25#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/p1_win.v:23]
+INFO: [Synth 8-6157] synthesizing module 'p2_win' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/p2_win.v:23]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/p2_win.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'p2_win' (26#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/p2_win.v:23]
+INFO: [Synth 8-6157] synthesizing module 'p3_win' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/p3_win.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'p3_win' (27#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/p3_win.v:23]
+INFO: [Synth 8-6157] synthesizing module 'p4_win' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/p4_win.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'p4_win' (28#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/p4_win.v:23]
+INFO: [Synth 8-6157] synthesizing module 'renderExplosion' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderExplosion.v:23]
+WARNING: [Synth 8-6014] Unused sequential element x_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderExplosion.v:323]
+WARNING: [Synth 8-6014] Unused sequential element y_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderExplosion.v:324]
+INFO: [Synth 8-6155] done synthesizing module 'renderExplosion' (29#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderExplosion.v:23]
+WARNING: [Synth 8-689] width (8) of port connection 'centreY' does not match port width (6) of module 'renderExplosion' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelDataControl.v:127]
+INFO: [Synth 8-6155] done synthesizing module 'PixelDataControl' (30#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelDataControl.v:23]
+INFO: [Synth 8-6157] synthesizing module 'slave_tx' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/slave_tx.v:23]
+INFO: [Synth 8-6157] synthesizing module 'uart_tx_new' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/uart_tx_new.v:23]
 	Parameter CLKS_PER_BIT bound to: 2604 - type: integer 
 	Parameter IDLE bound to: 2'b00 
 	Parameter START bound to: 2'b01 
 	Parameter DATA bound to: 2'b10 
 	Parameter STOP bound to: 2'b11 
-INFO: [Synth 8-6155] done synthesizing module 'uart_tx_new' (30#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/uart_tx_new.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'slave_tx' (31#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/slave_tx.v:23]
-INFO: [Synth 8-6157] synthesizing module 'uart_rx_new' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/uart_rx_new.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'uart_tx_new' (31#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/uart_tx_new.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'slave_tx' (32#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/slave_tx.v:23]
+INFO: [Synth 8-6157] synthesizing module 'uart_rx_new' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/uart_rx_new.v:23]
 	Parameter CLKS_PER_BIT bound to: 2604 - type: integer 
 	Parameter IDLE bound to: 2'b00 
 	Parameter START bound to: 2'b01 
 	Parameter DATA bound to: 2'b10 
 	Parameter STOP bound to: 2'b11 
-INFO: [Synth 8-6155] done synthesizing module 'uart_rx_new' (32#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/uart_rx_new.v:23]
-INFO: [Synth 8-6157] synthesizing module 'master_tx' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/master_tx.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'uart_rx_new' (33#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/uart_rx_new.v:23]
+INFO: [Synth 8-6157] synthesizing module 'master_tx' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/master_tx.v:23]
 	Parameter IDLE bound to: 2'b00 
 	Parameter START bound to: 2'b01 
 	Parameter WAIT bound to: 2'b10 
-WARNING: [Synth 8-689] width (52) of port connection 'data' does not match port width (32) of module 'uart_tx_new' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/master_tx.v:44]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/master_tx.v:56]
-WARNING: [Synth 8-5788] Register tx_data_reg in module master_tx is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/master_tx.v:44]
-INFO: [Synth 8-6155] done synthesizing module 'master_tx' (33#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/master_tx.v:23]
-WARNING: [Synth 8-689] width (16) of port connection 'led' does not match port width (4) of module 'master_tx' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:274]
-INFO: [Synth 8-6157] synthesizing module 'renderJones' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones.v:23]
-INFO: [Synth 8-6157] synthesizing module 'renderJones0' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones0.v:23]
-WARNING: [Synth 8-6014] Unused sequential element x_value_check_reg was removed.  [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones0.v:271]
-WARNING: [Synth 8-6014] Unused sequential element y_value_check_reg was removed.  [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones0.v:272]
-INFO: [Synth 8-6155] done synthesizing module 'renderJones0' (34#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones0.v:23]
-INFO: [Synth 8-6157] synthesizing module 'renderJones1' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones1.v:23]
-WARNING: [Synth 8-6014] Unused sequential element x_value_check_reg was removed.  [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones1.v:271]
-WARNING: [Synth 8-6014] Unused sequential element y_value_check_reg was removed.  [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones1.v:272]
-INFO: [Synth 8-6155] done synthesizing module 'renderJones1' (35#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones1.v:23]
-INFO: [Synth 8-6157] synthesizing module 'renderJones2' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones2.v:23]
-WARNING: [Synth 8-6014] Unused sequential element x_value_check_reg was removed.  [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones2.v:255]
-WARNING: [Synth 8-6014] Unused sequential element y_value_check_reg was removed.  [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones2.v:256]
-INFO: [Synth 8-6155] done synthesizing module 'renderJones2' (36#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones2.v:23]
-INFO: [Synth 8-6157] synthesizing module 'renderJones3' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones3.v:23]
-WARNING: [Synth 8-6014] Unused sequential element x_value_check_reg was removed.  [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones3.v:259]
-WARNING: [Synth 8-6014] Unused sequential element y_value_check_reg was removed.  [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones3.v:260]
-INFO: [Synth 8-6155] done synthesizing module 'renderJones3' (37#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones3.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'renderJones' (38#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones.v:23]
-WARNING: [Synth 8-689] width (32) of port connection 'centreX' does not match port width (7) of module 'renderJones' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:545]
-WARNING: [Synth 8-689] width (32) of port connection 'centreY' does not match port width (6) of module 'renderJones' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:545]
-INFO: [Synth 8-6157] synthesizing module 'renderWiz' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz.v:23]
-INFO: [Synth 8-6157] synthesizing module 'renderWiz0' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz0.v:23]
-WARNING: [Synth 8-6014] Unused sequential element x_value_check_reg was removed.  [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz0.v:343]
-WARNING: [Synth 8-6014] Unused sequential element y_value_check_reg was removed.  [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz0.v:344]
-INFO: [Synth 8-6155] done synthesizing module 'renderWiz0' (39#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz0.v:23]
-INFO: [Synth 8-6157] synthesizing module 'renderWiz1' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz1.v:23]
-WARNING: [Synth 8-6014] Unused sequential element x_value_check_reg was removed.  [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz1.v:343]
-WARNING: [Synth 8-6014] Unused sequential element y_value_check_reg was removed.  [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz1.v:344]
-INFO: [Synth 8-6155] done synthesizing module 'renderWiz1' (40#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz1.v:23]
-INFO: [Synth 8-6157] synthesizing module 'renderWiz2' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz2.v:23]
-WARNING: [Synth 8-6014] Unused sequential element x_value_check_reg was removed.  [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz2.v:315]
-WARNING: [Synth 8-6014] Unused sequential element y_value_check_reg was removed.  [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz2.v:316]
-INFO: [Synth 8-6155] done synthesizing module 'renderWiz2' (41#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz2.v:23]
-INFO: [Synth 8-6157] synthesizing module 'renderWiz3' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz3.v:23]
-WARNING: [Synth 8-6014] Unused sequential element x_value_check_reg was removed.  [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz3.v:331]
-WARNING: [Synth 8-6014] Unused sequential element y_value_check_reg was removed.  [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz3.v:332]
-INFO: [Synth 8-6155] done synthesizing module 'renderWiz3' (42#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz3.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'renderWiz' (43#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz.v:23]
-WARNING: [Synth 8-689] width (32) of port connection 'centreX' does not match port width (7) of module 'renderWiz' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:549]
-WARNING: [Synth 8-689] width (32) of port connection 'centreY' does not match port width (6) of module 'renderWiz' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:549]
-WARNING: [Synth 8-3848] Net player3 in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:77]
-WARNING: [Synth 8-3848] Net player4 in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:86]
-WARNING: [Synth 8-3848] Net player3PixelData in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:212]
-WARNING: [Synth 8-3848] Net player4PixelData in module/entity PixelControl does not have driver. [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:212]
-INFO: [Synth 8-6155] done synthesizing module 'PixelControl' (44#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:23]
-INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Oled_Display.v:36]
+WARNING: [Synth 8-689] width (52) of port connection 'data' does not match port width (32) of module 'uart_tx_new' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/master_tx.v:44]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/master_tx.v:56]
+WARNING: [Synth 8-5788] Register tx_data_reg in module master_tx is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/master_tx.v:44]
+INFO: [Synth 8-6155] done synthesizing module 'master_tx' (34#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/master_tx.v:23]
+WARNING: [Synth 8-689] width (16) of port connection 'led' does not match port width (4) of module 'master_tx' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:274]
+INFO: [Synth 8-6157] synthesizing module 'renderJones' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones.v:23]
+INFO: [Synth 8-6157] synthesizing module 'renderJones0' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones0.v:23]
+WARNING: [Synth 8-6014] Unused sequential element x_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones0.v:271]
+WARNING: [Synth 8-6014] Unused sequential element y_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones0.v:272]
+INFO: [Synth 8-6155] done synthesizing module 'renderJones0' (35#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones0.v:23]
+INFO: [Synth 8-6157] synthesizing module 'renderJones1' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones1.v:23]
+WARNING: [Synth 8-6014] Unused sequential element x_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones1.v:271]
+WARNING: [Synth 8-6014] Unused sequential element y_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones1.v:272]
+INFO: [Synth 8-6155] done synthesizing module 'renderJones1' (36#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones1.v:23]
+INFO: [Synth 8-6157] synthesizing module 'renderJones2' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones2.v:23]
+WARNING: [Synth 8-6014] Unused sequential element x_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones2.v:255]
+WARNING: [Synth 8-6014] Unused sequential element y_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones2.v:256]
+INFO: [Synth 8-6155] done synthesizing module 'renderJones2' (37#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones2.v:23]
+INFO: [Synth 8-6157] synthesizing module 'renderJones3' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones3.v:23]
+WARNING: [Synth 8-6014] Unused sequential element x_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones3.v:259]
+WARNING: [Synth 8-6014] Unused sequential element y_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones3.v:260]
+INFO: [Synth 8-6155] done synthesizing module 'renderJones3' (38#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones3.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'renderJones' (39#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderJones.v:23]
+WARNING: [Synth 8-689] width (32) of port connection 'centreX' does not match port width (7) of module 'renderJones' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:545]
+WARNING: [Synth 8-689] width (32) of port connection 'centreY' does not match port width (6) of module 'renderJones' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:545]
+INFO: [Synth 8-6157] synthesizing module 'renderWiz' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz.v:23]
+INFO: [Synth 8-6157] synthesizing module 'renderWiz0' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz0.v:23]
+WARNING: [Synth 8-6014] Unused sequential element x_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz0.v:343]
+WARNING: [Synth 8-6014] Unused sequential element y_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz0.v:344]
+INFO: [Synth 8-6155] done synthesizing module 'renderWiz0' (40#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz0.v:23]
+INFO: [Synth 8-6157] synthesizing module 'renderWiz1' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz1.v:23]
+WARNING: [Synth 8-6014] Unused sequential element x_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz1.v:343]
+WARNING: [Synth 8-6014] Unused sequential element y_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz1.v:344]
+INFO: [Synth 8-6155] done synthesizing module 'renderWiz1' (41#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz1.v:23]
+INFO: [Synth 8-6157] synthesizing module 'renderWiz2' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz2.v:23]
+WARNING: [Synth 8-6014] Unused sequential element x_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz2.v:315]
+WARNING: [Synth 8-6014] Unused sequential element y_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz2.v:316]
+INFO: [Synth 8-6155] done synthesizing module 'renderWiz2' (42#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz2.v:23]
+INFO: [Synth 8-6157] synthesizing module 'renderWiz3' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz3.v:23]
+WARNING: [Synth 8-6014] Unused sequential element x_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz3.v:331]
+WARNING: [Synth 8-6014] Unused sequential element y_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz3.v:332]
+INFO: [Synth 8-6155] done synthesizing module 'renderWiz3' (43#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz3.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'renderWiz' (44#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderWiz.v:23]
+WARNING: [Synth 8-689] width (32) of port connection 'centreX' does not match port width (7) of module 'renderWiz' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:549]
+WARNING: [Synth 8-689] width (32) of port connection 'centreY' does not match port width (6) of module 'renderWiz' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:549]
+INFO: [Synth 8-6157] synthesizing module 'renderRob' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderRob.v:23]
+INFO: [Synth 8-6157] synthesizing module 'renderRob0' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderRob0.v:23]
+WARNING: [Synth 8-6014] Unused sequential element x_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderRob0.v:223]
+WARNING: [Synth 8-6014] Unused sequential element y_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderRob0.v:224]
+INFO: [Synth 8-6155] done synthesizing module 'renderRob0' (45#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderRob0.v:23]
+INFO: [Synth 8-6157] synthesizing module 'renderRob1' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderRob1.v:23]
+WARNING: [Synth 8-6014] Unused sequential element x_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderRob1.v:227]
+WARNING: [Synth 8-6014] Unused sequential element y_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderRob1.v:228]
+INFO: [Synth 8-6155] done synthesizing module 'renderRob1' (46#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderRob1.v:23]
+INFO: [Synth 8-6157] synthesizing module 'renderRob2' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderRob2.v:23]
+WARNING: [Synth 8-6014] Unused sequential element x_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderRob2.v:223]
+WARNING: [Synth 8-6014] Unused sequential element y_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderRob2.v:224]
+INFO: [Synth 8-6155] done synthesizing module 'renderRob2' (47#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderRob2.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'renderRob' (48#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderRob.v:23]
+WARNING: [Synth 8-689] width (32) of port connection 'centreX' does not match port width (7) of module 'renderRob' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:553]
+WARNING: [Synth 8-689] width (32) of port connection 'centreY' does not match port width (6) of module 'renderRob' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:553]
+INFO: [Synth 8-6157] synthesizing module 'renderAl' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderAl.v:23]
+INFO: [Synth 8-6157] synthesizing module 'renderAl0' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderAl0.v:23]
+WARNING: [Synth 8-6014] Unused sequential element x_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderAl0.v:191]
+WARNING: [Synth 8-6014] Unused sequential element y_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderAl0.v:192]
+INFO: [Synth 8-6155] done synthesizing module 'renderAl0' (49#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderAl0.v:23]
+INFO: [Synth 8-6157] synthesizing module 'renderAl1' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderAl1.v:23]
+WARNING: [Synth 8-6014] Unused sequential element x_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderAl1.v:187]
+WARNING: [Synth 8-6014] Unused sequential element y_value_check_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderAl1.v:188]
+INFO: [Synth 8-6155] done synthesizing module 'renderAl1' (50#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderAl1.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'renderAl' (51#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderAl.v:23]
+WARNING: [Synth 8-689] width (32) of port connection 'centreX' does not match port width (7) of module 'renderAl' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:557]
+WARNING: [Synth 8-689] width (32) of port connection 'centreY' does not match port width (6) of module 'renderAl' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:557]
+INFO: [Synth 8-6155] done synthesizing module 'PixelControl' (52#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Oled_Display.v:36]
 	Parameter Width bound to: 96 - type: integer 
 	Parameter Height bound to: 64 - type: integer 
 	Parameter PixelCount bound to: 6144 - type: integer 
@@ -294,59 +323,27 @@ INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/NUS/EE2026/EE2026/Bo
 	Parameter SendPixel bound to: 5'b10000 
 	Parameter SpiCommandMaxWidth bound to: 40 - type: integer 
 	Parameter SpiCommandBitCountWidth bound to: 6 - type: integer 
-INFO: [Synth 8-226] default block is never used [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Oled_Display.v:123]
-INFO: [Synth 8-226] default block is never used [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Oled_Display.v:198]
-WARNING: [Synth 8-693] zero replication count - replication ignored [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Oled_Display.v:346]
-INFO: [Synth 8-6155] done synthesizing module 'Oled_Display' (45#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Oled_Display.v:36]
-INFO: [Synth 8-6157] synthesizing module 'SevenSegDisplay' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/SevenSegDisplay.v:23]
+INFO: [Synth 8-226] default block is never used [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Oled_Display.v:123]
+INFO: [Synth 8-226] default block is never used [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Oled_Display.v:198]
+WARNING: [Synth 8-693] zero replication count - replication ignored [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Oled_Display.v:346]
+INFO: [Synth 8-6155] done synthesizing module 'Oled_Display' (53#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/Oled_Display.v:36]
+INFO: [Synth 8-6157] synthesizing module 'SevenSegDisplay' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/SevenSegDisplay.v:23]
 	Parameter game_mins bound to: 6'b001010 
 	Parameter game_seconds bound to: 6'b000000 
-INFO: [Synth 8-6155] done synthesizing module 'SevenSegDisplay' (46#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/SevenSegDisplay.v:23]
-INFO: [Synth 8-6157] synthesizing module 'GameReset' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/GameReset.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'GameReset' (47#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/GameReset.v:23]
-INFO: [Synth 8-6157] synthesizing module 'PlayerDeath' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerDeath.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'PlayerDeath' (48#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerDeath.v:23]
-WARNING: [Synth 8-689] width (6) of port connection 'player1_deathcount' does not match port width (3) of module 'PlayerDeath' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BomberGameTopLevel.v:101]
-WARNING: [Synth 8-689] width (6) of port connection 'player1_deathcount' does not match port width (3) of module 'PlayerDeath' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BomberGameTopLevel.v:108]
-WARNING: [Synth 8-689] width (6) of port connection 'player1_deathcount' does not match port width (3) of module 'PlayerDeath' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BomberGameTopLevel.v:115]
-WARNING: [Synth 8-689] width (6) of port connection 'player1_deathcount' does not match port width (3) of module 'PlayerDeath' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BomberGameTopLevel.v:122]
-INFO: [Synth 8-6157] synthesizing module 'EndGame' [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/endGame.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'SevenSegDisplay' (54#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/SevenSegDisplay.v:23]
+INFO: [Synth 8-6157] synthesizing module 'GameReset' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/GameReset.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'GameReset' (55#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/GameReset.v:23]
+INFO: [Synth 8-6157] synthesizing module 'PlayerDeath' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerDeath.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'PlayerDeath' (56#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerDeath.v:23]
+WARNING: [Synth 8-689] width (6) of port connection 'player1_deathcount' does not match port width (3) of module 'PlayerDeath' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BomberGameTopLevel.v:101]
+WARNING: [Synth 8-689] width (6) of port connection 'player1_deathcount' does not match port width (3) of module 'PlayerDeath' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BomberGameTopLevel.v:108]
+WARNING: [Synth 8-689] width (6) of port connection 'player1_deathcount' does not match port width (3) of module 'PlayerDeath' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BomberGameTopLevel.v:115]
+WARNING: [Synth 8-689] width (6) of port connection 'player1_deathcount' does not match port width (3) of module 'PlayerDeath' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BomberGameTopLevel.v:122]
+INFO: [Synth 8-6157] synthesizing module 'EndGame' [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/endGame.v:23]
 	Parameter deathcount bound to: 3'b100 
-INFO: [Synth 8-6155] done synthesizing module 'EndGame' (49#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/endGame.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'BomberGameTopLevel' (50#1) [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BomberGameTopLevel.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'EndGame' (57#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/endGame.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'BomberGameTopLevel' (58#1) [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BomberGameTopLevel.v:23]
 WARNING: [Synth 8-3331] design GameReset has unconnected port SW1
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player3PixelData[15]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player3PixelData[14]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player3PixelData[13]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player3PixelData[12]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player3PixelData[11]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player3PixelData[10]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player3PixelData[9]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player3PixelData[8]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player3PixelData[7]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player3PixelData[6]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player3PixelData[5]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player3PixelData[4]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player3PixelData[3]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player3PixelData[2]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player3PixelData[1]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player3PixelData[0]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player4PixelData[15]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player4PixelData[14]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player4PixelData[13]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player4PixelData[12]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player4PixelData[11]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player4PixelData[10]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player4PixelData[9]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player4PixelData[8]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player4PixelData[7]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player4PixelData[6]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player4PixelData[5]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player4PixelData[4]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player4PixelData[3]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player4PixelData[2]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player4PixelData[1]
-WARNING: [Synth 8-3331] design PixelDataControl has unconnected port player4PixelData[0]
 WARNING: [Synth 8-3331] design TriggerExplosion has unconnected port Player1SW[2]
 WARNING: [Synth 8-3331] design TriggerExplosion has unconnected port Player1SW[1]
 WARNING: [Synth 8-3331] design TriggerExplosion has unconnected port Player1SW[0]
@@ -414,9 +411,14 @@ WARNING: [Synth 8-3331] design PlayerMovement has unconnected port pixel_index[7
 WARNING: [Synth 8-3331] design PlayerMovement has unconnected port pixel_index[6]
 WARNING: [Synth 8-3331] design PlayerMovement has unconnected port pixel_index[5]
 WARNING: [Synth 8-3331] design PlayerMovement has unconnected port pixel_index[4]
-INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3331] design PlayerMovement has unconnected port pixel_index[3]
+WARNING: [Synth 8-3331] design PlayerMovement has unconnected port pixel_index[2]
+WARNING: [Synth 8-3331] design PlayerMovement has unconnected port pixel_index[1]
+WARNING: [Synth 8-3331] design PlayerMovement has unconnected port pixel_index[0]
+WARNING: [Synth 8-3331] design PlayerMovement has unconnected port btnC
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port JC[2]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 523.047 ; gain = 265.668
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 552.863 ; gain = 295.340
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -425,47 +427,45 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
-WARNING: [Synth 8-3295] tying undriven pin ColourControl:player3 to constant 0 [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:213]
-WARNING: [Synth 8-3295] tying undriven pin ColourControl:player4 to constant 0 [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PixelControl.v:213]
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:14 . Memory (MB): peak = 523.047 ; gain = 265.668
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 552.863 ; gain = 295.340
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:14 . Memory (MB): peak = 523.047 ; gain = 265.668
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 552.863 ; gain = 295.340
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/constrs_1/new/my_constraints.xdc]
-Finished Parsing XDC File [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/constrs_1/new/my_constraints.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/constrs_1/new/my_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/BomberGameTopLevel_propImpl.xdc].
+Parsing XDC File [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/constrs_1/new/my_constraints.xdc]
+Finished Parsing XDC File [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/constrs_1/new/my_constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/constrs_1/new/my_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/BomberGameTopLevel_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/BomberGameTopLevel_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 879.336 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 906.906 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:32 . Memory (MB): peak = 879.336 ; gain = 621.957
+Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 906.906 ; gain = 649.383
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:32 . Memory (MB): peak = 879.336 ; gain = 621.957
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 906.906 ; gain = 649.383
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:32 . Memory (MB): peak = 879.336 ; gain = 621.957
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 906.906 ; gain = 649.383
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "SLOW_CLOCK" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5546] ROM "xBlock" won't be mapped to RAM because it is too sparse
@@ -473,25 +473,25 @@ INFO: [Synth 8-5546] ROM "yBlock" won't be mapped to RAM because it is too spars
 INFO: [Synth 8-5546] ROM "FirstBlock" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "SecondBlock" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "SecondBlock" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:42]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:42]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:41]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:41]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:42]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:42]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:41]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:41]
 INFO: [Synth 8-5544] ROM "button" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:42]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:42]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:41]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:41]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:42]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:42]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:41]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:41]
 INFO: [Synth 8-5544] ROM "button" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:42]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:42]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:41]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:41]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:42]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:42]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:41]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:41]
 INFO: [Synth 8-5544] ROM "button" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:42]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:42]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:41]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:41]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:42]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:42]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:41]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/PlayerMovement.v:41]
 INFO: [Synth 8-5544] ROM "button" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "FreeBomb" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5545] ROM "isRed0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -511,7 +511,7 @@ INFO: [Synth 8-5546] ROM "pixel_data" won't be mapped to RAM because it is too s
 INFO: [Synth 8-5546] ROM "pixel_data" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "pixel_data" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5547] Trying to map ROM "ram" into Block RAM due to explicit "ram_style" or "rom_style" specification
-WARNING: [Synth 8-6014] Unused sequential element pixel_data_reg was removed.  [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/p2_win.v:6179]
+WARNING: [Synth 8-6014] Unused sequential element pixel_data_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/p2_win.v:6179]
 INFO: [Synth 8-5546] ROM "pixel_data" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "pixel_data" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'uart_tx_new'
@@ -528,6 +528,10 @@ INFO: [Synth 8-5544] ROM "state0" won't be mapped to Block RAM because address s
 INFO: [Synth 8-5545] ROM "count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "state" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5544] ROM "state0" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "state" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "state" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5546] ROM "btnUPlayer2In" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "btnDPlayer2In" won't be mapped to RAM because it is too sparse
@@ -615,7 +619,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Oled_Display'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:01:25 . Memory (MB): peak = 879.336 ; gain = 621.957
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:19 ; elapsed = 00:01:23 . Memory (MB): peak = 906.906 ; gain = 649.383
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -629,40 +633,44 @@ Report RTL Partitions:
 |5     |PlayerMovement__parameterized2__GC0 |           1|      3174|
 |6     |ExplodeBomb                         |           3|      9212|
 |7     |Bomb__GC0                           |           1|     20553|
-|8     |PixelDataControl__GB0               |           1|     51817|
-|9     |PixelDataControl__GB1               |           1|     21799|
-|10    |PixelControl__GCB0                  |           1|     26272|
-|11    |PixelControl__GCB1                  |           1|      6126|
-|12    |BomberGameTopLevel__GC0             |           1|      5149|
+|8     |PixelDataControl__GB0               |           1|     29716|
+|9     |PixelDataControl__GB1               |           1|     27388|
+|10    |PixelDataControl__GB2               |           1|     20063|
+|11    |PixelControl__GCB0                  |           1|     25675|
+|12    |ConcreteBlocks                      |           1|      9306|
+|13    |datapath__766__GD                   |           1|        23|
+|14    |PixelControl__GCB3                  |           1|      6130|
+|15    |BomberGameTopLevel__GC0             |           1|      5149|
 +------+------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 5     
+	   2 Input     32 Bit       Adders := 9     
 	   2 Input     17 Bit       Adders := 1     
 	   2 Input     14 Bit       Adders := 7     
 	   2 Input     12 Bit       Adders := 7     
 	   3 Input      8 Bit       Adders := 8     
-	   2 Input      8 Bit       Adders := 5     
-	   2 Input      7 Bit       Adders := 178   
+	   2 Input      8 Bit       Adders := 7     
+	   2 Input      7 Bit       Adders := 224   
 	   3 Input      7 Bit       Adders := 4     
-	   2 Input      6 Bit       Adders := 154   
+	   2 Input      6 Bit       Adders := 207   
 	   2 Input      5 Bit       Adders := 14    
 	   2 Input      4 Bit       Adders := 32    
 	   2 Input      3 Bit       Adders := 36    
 	   4 Input      3 Bit       Adders := 1     
-	   2 Input      2 Bit       Adders := 3     
+	   2 Input      2 Bit       Adders := 4     
 +---Registers : 
 	               70 Bit    Registers := 1     
 	               52 Bit    Registers := 4     
 	               40 Bit    Registers := 1     
 	               33 Bit    Registers := 7     
-	               32 Bit    Registers := 25    
+	               32 Bit    Registers := 27    
 	               26 Bit    Registers := 3     
 	               17 Bit    Registers := 1     
-	               16 Bit    Registers := 25    
+	               16 Bit    Registers := 31    
+	               15 Bit    Registers := 2     
 	               14 Bit    Registers := 14    
 	                8 Bit    Registers := 1     
 	                7 Bit    Registers := 33    
@@ -670,24 +678,25 @@ Detailed RTL Component Info :
 	                5 Bit    Registers := 14    
 	                4 Bit    Registers := 8     
 	                3 Bit    Registers := 14    
-	                2 Bit    Registers := 3     
-	                1 Bit    Registers := 120   
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 129   
 +---ROMs : 
 	                              ROMs := 1     
 +---Muxes : 
 	   2 Input     70 Bit        Muxes := 25    
 	   2 Input     40 Bit        Muxes := 3     
-	   2 Input     32 Bit        Muxes := 14    
+	   2 Input     32 Bit        Muxes := 16    
 	   4 Input     32 Bit        Muxes := 7     
 	  32 Input     32 Bit        Muxes := 1     
 	   2 Input     26 Bit        Muxes := 3     
 	  32 Input     20 Bit        Muxes := 1     
 	   2 Input     17 Bit        Muxes := 1     
 	  55 Input     16 Bit        Muxes := 3     
-	   2 Input     16 Bit        Muxes := 14    
-	   3 Input     16 Bit        Muxes := 2     
-	  59 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 15    
 	  57 Input     16 Bit        Muxes := 2     
+	  58 Input     16 Bit        Muxes := 1     
+	   3 Input     16 Bit        Muxes := 3     
+	  59 Input     16 Bit        Muxes := 1     
 	  54 Input     16 Bit        Muxes := 1     
 	  72 Input     16 Bit        Muxes := 2     
 	  65 Input     16 Bit        Muxes := 1     
@@ -695,6 +704,10 @@ Detailed RTL Component Info :
 	   4 Input     16 Bit        Muxes := 2     
 	  46 Input     16 Bit        Muxes := 2     
 	  42 Input     16 Bit        Muxes := 2     
+	  34 Input     16 Bit        Muxes := 2     
+	  35 Input     16 Bit        Muxes := 1     
+	  23 Input     15 Bit        Muxes := 1     
+	  22 Input     15 Bit        Muxes := 1     
 	   2 Input     14 Bit        Muxes := 7     
 	   4 Input     14 Bit        Muxes := 7     
 	   2 Input     12 Bit        Muxes := 7     
@@ -712,12 +725,14 @@ Detailed RTL Component Info :
 	   5 Input      3 Bit        Muxes := 4     
 	   2 Input      3 Bit        Muxes := 8     
 	   4 Input      3 Bit        Muxes := 4     
-	   2 Input      2 Bit        Muxes := 11    
+	   2 Input      2 Bit        Muxes := 12    
 	   3 Input      2 Bit        Muxes := 1     
 	   4 Input      2 Bit        Muxes := 14    
-	   2 Input      1 Bit        Muxes := 1278  
+	   2 Input      1 Bit        Muxes := 1281  
 	  55 Input      1 Bit        Muxes := 5     
 	  54 Input      1 Bit        Muxes := 4     
+	  69 Input      1 Bit        Muxes := 1     
+	  68 Input      1 Bit        Muxes := 1     
 	  74 Input      1 Bit        Muxes := 2     
 	  73 Input      1 Bit        Muxes := 2     
 	  66 Input      1 Bit        Muxes := 2     
@@ -728,6 +743,13 @@ Detailed RTL Component Info :
 	  52 Input      1 Bit        Muxes := 2     
 	  51 Input      1 Bit        Muxes := 1     
 	  53 Input      1 Bit        Muxes := 1     
+	  36 Input      1 Bit        Muxes := 1     
+	  35 Input      1 Bit        Muxes := 2     
+	  34 Input      1 Bit        Muxes := 1     
+	  44 Input      1 Bit        Muxes := 3     
+	  43 Input      1 Bit        Muxes := 2     
+	  45 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
 	   7 Input      1 Bit        Muxes := 15    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -1048,31 +1070,12 @@ Detailed RTL Component Info :
 	   2 Input      7 Bit        Muxes := 6     
 	   2 Input      6 Bit        Muxes := 3     
 	   2 Input      1 Bit        Muxes := 9     
-Module p2_win 
+Module var_clock__5 
 Detailed RTL Component Info : 
 +---Registers : 
-	               16 Bit    Registers := 1     
-+---ROMs : 
-	                              ROMs := 1     
-Module p1_win 
-Detailed RTL Component Info : 
-+---Registers : 
-	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
 +---Muxes : 
-	   3 Input     16 Bit        Muxes := 1     
-	   3 Input      2 Bit        Muxes := 1     
-Module EndScreen 
-Detailed RTL Component Info : 
-+---Registers : 
-	               16 Bit    Registers := 1     
-+---Muxes : 
-	  59 Input     16 Bit        Muxes := 1     
-Module StartingScreen 
-Detailed RTL Component Info : 
-+---Registers : 
-	               16 Bit    Registers := 1     
-+---Muxes : 
-	  57 Input     16 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
 Module Counter_100MHZ__1 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -1113,26 +1116,59 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 1     
-Module p3_win 
+Module StartingScreen 
 Detailed RTL Component Info : 
 +---Registers : 
 	               16 Bit    Registers := 1     
 +---Muxes : 
-	  54 Input     16 Bit        Muxes := 1     
+	  57 Input     16 Bit        Muxes := 1     
+Module renderExplosion 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 8     
+	   2 Input      6 Bit       Adders := 8     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	  58 Input     16 Bit        Muxes := 1     
+	  69 Input      1 Bit        Muxes := 1     
+	  68 Input      1 Bit        Muxes := 1     
+Module p2_win 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---ROMs : 
+	                              ROMs := 1     
+Module p1_win 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---Muxes : 
+	   3 Input     16 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+Module EndScreen 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---Muxes : 
+	  59 Input     16 Bit        Muxes := 1     
 Module p4_win 
 Detailed RTL Component Info : 
 +---Registers : 
 	               16 Bit    Registers := 1     
 +---Muxes : 
 	  57 Input     16 Bit        Muxes := 1     
-Module var_clock__5 
+Module p3_win 
 Detailed RTL Component Info : 
 +---Registers : 
-	                1 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
+	  54 Input     16 Bit        Muxes := 1     
 Module PixelDataControl 
 Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
 +---Registers : 
 	               16 Bit    Registers := 1     
 +---Muxes : 
@@ -1265,7 +1301,158 @@ Detailed RTL Component Info :
 	   2 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 2     
 	   4 Input      1 Bit        Muxes := 1     
+Module renderAl0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 6     
+	   2 Input      6 Bit       Adders := 9     
++---Registers : 
+	               15 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	  23 Input     15 Bit        Muxes := 1     
+	  36 Input      1 Bit        Muxes := 1     
+	  35 Input      1 Bit        Muxes := 1     
+Module renderAl1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 6     
+	   2 Input      6 Bit       Adders := 9     
++---Registers : 
+	               15 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	  22 Input     15 Bit        Muxes := 1     
+	  35 Input      1 Bit        Muxes := 1     
+	  34 Input      1 Bit        Muxes := 1     
+Module renderAl 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module renderRob0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 8     
+	   2 Input      6 Bit       Adders := 9     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	  34 Input     16 Bit        Muxes := 1     
+	  44 Input      1 Bit        Muxes := 1     
+	  43 Input      1 Bit        Muxes := 1     
+Module renderRob1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 8     
+	   2 Input      6 Bit       Adders := 9     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	  35 Input     16 Bit        Muxes := 1     
+	  45 Input      1 Bit        Muxes := 1     
+	  44 Input      1 Bit        Muxes := 1     
+Module renderRob2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 8     
+	   2 Input      6 Bit       Adders := 9     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	  34 Input     16 Bit        Muxes := 1     
+	  44 Input      1 Bit        Muxes := 1     
+	  43 Input      1 Bit        Muxes := 1     
+Module renderRob 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   3 Input     16 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
 Module uart_rx_new__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     14 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 2     
+	               14 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 1     
+	   4 Input     14 Bit        Muxes := 1     
+	   4 Input      5 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 6     
+Module uart_rx_new__2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     14 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 2     
+	               14 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 1     
+	   4 Input     14 Bit        Muxes := 1     
+	   4 Input      5 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 6     
+Module uart_rx_new__3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     14 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 2     
+	               14 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 1     
+	   4 Input     14 Bit        Muxes := 1     
+	   4 Input      5 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 6     
+Module var_clock__6 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module uart_rx_new__4 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     14 Bit       Adders := 1     
@@ -1384,63 +1571,6 @@ Detailed RTL Component Info :
 	   3 Input      4 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 1     
 	   4 Input      1 Bit        Muxes := 2     
-Module uart_rx_new__2 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     14 Bit       Adders := 1     
-	   2 Input      5 Bit       Adders := 1     
-+---Registers : 
-	               32 Bit    Registers := 2     
-	               14 Bit    Registers := 1     
-	                5 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     32 Bit        Muxes := 1     
-	   4 Input     32 Bit        Muxes := 1     
-	   2 Input     14 Bit        Muxes := 1     
-	   4 Input     14 Bit        Muxes := 1     
-	   4 Input      5 Bit        Muxes := 1     
-	   4 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 6     
-Module uart_rx_new__3 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     14 Bit       Adders := 1     
-	   2 Input      5 Bit       Adders := 1     
-+---Registers : 
-	               32 Bit    Registers := 2     
-	               14 Bit    Registers := 1     
-	                5 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     32 Bit        Muxes := 1     
-	   4 Input     32 Bit        Muxes := 1     
-	   2 Input     14 Bit        Muxes := 1     
-	   4 Input     14 Bit        Muxes := 1     
-	   4 Input      5 Bit        Muxes := 1     
-	   4 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 6     
-Module uart_rx_new__4 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     14 Bit       Adders := 1     
-	   2 Input      5 Bit       Adders := 1     
-+---Registers : 
-	               32 Bit    Registers := 2     
-	               14 Bit    Registers := 1     
-	                5 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     32 Bit        Muxes := 1     
-	   4 Input     32 Bit        Muxes := 1     
-	   2 Input     14 Bit        Muxes := 1     
-	   4 Input     14 Bit        Muxes := 1     
-	   4 Input      5 Bit        Muxes := 1     
-	   4 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 6     
 Module uart_rx_new__5 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -1460,12 +1590,6 @@ Detailed RTL Component Info :
 	   4 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
 	   4 Input      1 Bit        Muxes := 6     
-Module var_clock__6 
-Detailed RTL Component Info : 
-+---Registers : 
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
 Module uart_rx_new__6 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -1570,8 +1694,8 @@ Detailed RTL Component Info :
 Module PixelControl 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      8 Bit       Adders := 2     
-	   2 Input      7 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 4     
+	   2 Input      7 Bit       Adders := 4     
 +---Registers : 
 	               16 Bit    Registers := 1     
 	                1 Bit    Registers := 24    
@@ -1701,121 +1825,131 @@ INFO: [Synth 8-5545] ROM "ResetControl/count0" won't be mapped to RAM because ad
 INFO: [Synth 8-5545] ROM "ResetControl/initiate_reset" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "clock_6p25MHZ/SLOW_CLOCK" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "twohundredhz/SLOW_CLOCK" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[30]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[29]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[29]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[28]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[28]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[27]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[27]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[26]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[26]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[25]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[25]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[24]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[24]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[23]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[23]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[22]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[22]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[21]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[21]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[20]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[20]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[19]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[19]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[18]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[18]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[17]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[16]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[16]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[15]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[15]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[14]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[14]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[13]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[13]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[12]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[12]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[11]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[11]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[10]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[10]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[9]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[9]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[8]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[8]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[7]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[7]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[6]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[6]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[5]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[5]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[4]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module/tx_data_reg[4]' (FDCE) to 'pixelColourControli_9/slave_tx_module/tx_data_reg[3]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_9/\slave_tx_module/tx_data_reg[3] )
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[30]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[29]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[29]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[28]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[28]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[27]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[27]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[26]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[26]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[25]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[25]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[24]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[24]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[23]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[23]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[22]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[22]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[21]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[21]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[20]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[20]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[19]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[19]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[18]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[18]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[17]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[16]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[16]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[15]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[15]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[14]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[14]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[13]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[13]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[12]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[12]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[11]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[11]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[10]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[10]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[9]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[9]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[8]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[8]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[7]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[7]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[6]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[6]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[5]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[5]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[4]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module2/tx_data_reg[4]' (FDCE) to 'pixelColourControli_9/slave_tx_module2/tx_data_reg[3]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_9/\slave_tx_module2/tx_data_reg[3] )
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[30]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[29]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[29]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[28]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[28]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[27]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[27]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[26]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[26]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[25]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[25]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[24]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[24]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[23]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[23]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[22]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[22]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[21]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[21]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[20]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[20]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[19]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[19]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[18]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[18]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[17]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[16]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[16]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[15]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[15]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[14]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[14]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[13]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[13]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[12]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[12]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[11]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[11]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[10]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[10]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[9]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[9]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[8]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[8]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[7]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[7]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[6]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[6]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[5]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[5]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[4]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/slave_tx_module3/tx_data_reg[4]' (FDCE) to 'pixelColourControli_9/slave_tx_module3/tx_data_reg[3]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_9/\slave_tx_module3/tx_data_reg[3] )
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/master_tx_module1/tx_data_reg[51]' (FDE) to 'pixelColourControli_9/master_tx_module1/tx_data_reg[21]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/master_tx_module1/tx_data_reg[50]' (FDE) to 'pixelColourControli_9/master_tx_module1/tx_data_reg[21]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/master_tx_module1/tx_data_reg[49]' (FDE) to 'pixelColourControli_9/master_tx_module1/tx_data_reg[21]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/master_tx_module1/tx_data_reg[48]' (FDE) to 'pixelColourControli_9/master_tx_module1/tx_data_reg[21]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/master_tx_module1/tx_data_reg[47]' (FDE) to 'pixelColourControli_9/master_tx_module1/tx_data_reg[21]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/master_tx_module1/tx_data_reg[46]' (FDE) to 'pixelColourControli_9/master_tx_module1/tx_data_reg[21]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/master_tx_module1/tx_data_reg[45]' (FDE) to 'pixelColourControli_9/master_tx_module1/tx_data_reg[21]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/master_tx_module1/tx_data_reg[44]' (FDE) to 'pixelColourControli_9/master_tx_module1/tx_data_reg[21]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/master_tx_module1/tx_data_reg[43]' (FDE) to 'pixelColourControli_9/master_tx_module1/tx_data_reg[21]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/master_tx_module1/tx_data_reg[42]' (FDE) to 'pixelColourControli_9/master_tx_module1/tx_data_reg[21]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/master_tx_module1/tx_data_reg[41]' (FDE) to 'pixelColourControli_9/master_tx_module1/tx_data_reg[21]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/master_tx_module1/tx_data_reg[40]' (FDE) to 'pixelColourControli_9/master_tx_module1/tx_data_reg[21]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/master_tx_module1/tx_data_reg[39]' (FDE) to 'pixelColourControli_9/master_tx_module1/tx_data_reg[21]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/master_tx_module1/tx_data_reg[38]' (FDE) to 'pixelColourControli_9/master_tx_module1/tx_data_reg[21]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/master_tx_module1/tx_data_reg[37]' (FDE) to 'pixelColourControli_9/master_tx_module1/tx_data_reg[21]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/master_tx_module1/tx_data_reg[36]' (FDE) to 'pixelColourControli_9/master_tx_module1/tx_data_reg[21]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/master_tx_module1/tx_data_reg[35]' (FDE) to 'pixelColourControli_9/master_tx_module1/tx_data_reg[21]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/master_tx_module1/tx_data_reg[34]' (FDE) to 'pixelColourControli_9/master_tx_module1/tx_data_reg[21]'
-INFO: [Synth 8-3886] merging instance 'pixelColourControli_9/master_tx_module1/tx_data_reg[33]' (FDE) to 'pixelColourControli_9/master_tx_module1/tx_data_reg[21]'
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port JC[2]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[12]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[11]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[10]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[9]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[8]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[7]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[6]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[5]
+WARNING: [Synth 8-3331] design BomberGameTopLevel has unconnected port SW[4]
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[30]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[29]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[29]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[28]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[28]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[27]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[27]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[26]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[26]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[25]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[25]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[24]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[24]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[23]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[23]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[22]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[22]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[21]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[21]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[20]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[20]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[19]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[19]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[18]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[18]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[17]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[17]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[16]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[16]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[15]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[14]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[14]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[13]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[13]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[12]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[11]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[11]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[10]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[10]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[9]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[8]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[7]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[7]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[6]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[6]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[5]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[5]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[4]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module/tx_data_reg[4]' (FDCE) to 'pixelColourControli_11/slave_tx_module/tx_data_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_11/\slave_tx_module/tx_data_reg[3] )
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[30]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[29]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[29]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[28]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[28]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[27]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[27]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[26]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[26]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[25]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[25]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[24]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[24]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[23]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[23]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[22]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[22]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[21]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[21]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[20]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[20]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[19]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[19]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[18]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[18]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[17]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[17]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[16]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[16]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[15]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[14]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[14]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[13]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[13]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[12]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[11]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[11]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[10]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[10]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[9]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[8]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[7]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[7]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[6]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[6]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[5]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[5]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[4]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module2/tx_data_reg[4]' (FDCE) to 'pixelColourControli_11/slave_tx_module2/tx_data_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_11/\slave_tx_module2/tx_data_reg[3] )
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[30]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[29]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[29]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[28]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[28]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[27]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[27]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[26]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[26]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[25]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[25]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[24]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[24]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[23]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[23]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[22]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[22]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[21]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[21]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[20]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[20]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[19]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[19]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[18]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[18]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[17]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[17]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[16]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[16]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[15]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[14]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[14]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[13]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[13]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[12]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[11]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[11]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[10]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[10]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[9]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[8]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[7]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[7]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[6]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[6]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[5]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[5]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[4]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/slave_tx_module3/tx_data_reg[4]' (FDCE) to 'pixelColourControli_11/slave_tx_module3/tx_data_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_11/\slave_tx_module3/tx_data_reg[3] )
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/master_tx_module1/tx_data_reg[51]' (FDE) to 'pixelColourControli_11/master_tx_module1/tx_data_reg[21]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/master_tx_module1/tx_data_reg[50]' (FDE) to 'pixelColourControli_11/master_tx_module1/tx_data_reg[21]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/master_tx_module1/tx_data_reg[49]' (FDE) to 'pixelColourControli_11/master_tx_module1/tx_data_reg[21]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/master_tx_module1/tx_data_reg[48]' (FDE) to 'pixelColourControli_11/master_tx_module1/tx_data_reg[21]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/master_tx_module1/tx_data_reg[47]' (FDE) to 'pixelColourControli_11/master_tx_module1/tx_data_reg[21]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/master_tx_module1/tx_data_reg[46]' (FDE) to 'pixelColourControli_11/master_tx_module1/tx_data_reg[21]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/master_tx_module1/tx_data_reg[45]' (FDE) to 'pixelColourControli_11/master_tx_module1/tx_data_reg[21]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/master_tx_module1/tx_data_reg[44]' (FDE) to 'pixelColourControli_11/master_tx_module1/tx_data_reg[21]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/master_tx_module1/tx_data_reg[43]' (FDE) to 'pixelColourControli_11/master_tx_module1/tx_data_reg[21]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/master_tx_module1/tx_data_reg[42]' (FDE) to 'pixelColourControli_11/master_tx_module1/tx_data_reg[21]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/master_tx_module1/tx_data_reg[41]' (FDE) to 'pixelColourControli_11/master_tx_module1/tx_data_reg[21]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/master_tx_module1/tx_data_reg[40]' (FDE) to 'pixelColourControli_11/master_tx_module1/tx_data_reg[21]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/master_tx_module1/tx_data_reg[39]' (FDE) to 'pixelColourControli_11/master_tx_module1/tx_data_reg[21]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/master_tx_module1/tx_data_reg[38]' (FDE) to 'pixelColourControli_11/master_tx_module1/tx_data_reg[21]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/master_tx_module1/tx_data_reg[37]' (FDE) to 'pixelColourControli_11/master_tx_module1/tx_data_reg[21]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/master_tx_module1/tx_data_reg[36]' (FDE) to 'pixelColourControli_11/master_tx_module1/tx_data_reg[21]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/master_tx_module1/tx_data_reg[35]' (FDE) to 'pixelColourControli_11/master_tx_module1/tx_data_reg[21]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/master_tx_module1/tx_data_reg[34]' (FDE) to 'pixelColourControli_11/master_tx_module1/tx_data_reg[21]'
+INFO: [Synth 8-3886] merging instance 'pixelColourControli_11/master_tx_module1/tx_data_reg[33]' (FDE) to 'pixelColourControli_11/master_tx_module1/tx_data_reg[21]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_9/\master_tx_module1/tx_data_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_9/\master_tx_module2/tx_data_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_9/\master_tx_module3/tx_data_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_9/\master_tx_module4/tx_data_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_9/\slave_tx_module/uart_tx_inst_slave/clk_cnt_reg[12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_9/\slave_tx_module2/uart_tx_inst_slave/clk_cnt_reg[12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_9/\slave_tx_module3/uart_tx_inst_slave/clk_cnt_reg[12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_9/\master_tx_module1/uart_tx_inst/clk_cnt_reg[12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_9/\master_tx_module2/uart_tx_inst/clk_cnt_reg[12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_9/\master_tx_module3/uart_tx_inst/clk_cnt_reg[12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_9/\master_tx_module4/uart_tx_inst/clk_cnt_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_11/\master_tx_module1/tx_data_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_11/\master_tx_module2/tx_data_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_11/\master_tx_module3/tx_data_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_11/\master_tx_module4/tx_data_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_11/\slave_tx_module/uart_tx_inst_slave/clk_cnt_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_11/\slave_tx_module2/uart_tx_inst_slave/clk_cnt_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_11/\slave_tx_module3/uart_tx_inst_slave/clk_cnt_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_11/\master_tx_module1/uart_tx_inst/clk_cnt_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_11/\master_tx_module2/uart_tx_inst/clk_cnt_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_11/\master_tx_module3/uart_tx_inst/clk_cnt_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pixelColourControli_11/\master_tx_module4/uart_tx_inst/clk_cnt_reg[12] )
 INFO: [Synth 8-5546] ROM "SecondBlock" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "SecondBlock" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "xBlock" won't be mapped to RAM because it is too sparse
@@ -1860,6 +1994,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mod_inst
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mod_inst[0].nolabel_line109 /\flickerBomb/bufferLimit_reg[29] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mod_inst[2].nolabel_line109 /\flickerBomb/bufferLimit_reg[27] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mod_inst[1].nolabel_line109 /\flickerBomb/bufferLimit_reg[27] )
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mod_inst[0].nolabel_line109 /\flickerBomb/bufferLimit_reg[27] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mod_inst[2].nolabel_line109 /\flickerBomb/bufferLimit_reg[25] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mod_inst[1].nolabel_line109 /\flickerBomb/bufferLimit_reg[25] )
@@ -1881,19 +2016,30 @@ WARNING: [Synth 8-3332] Sequential element (nolabel_line40/pixel_data_reg[12]) i
 WARNING: [Synth 8-3332] Sequential element (flickerBomb/bufferLimit_reg[21]) is unused and will be removed from module renderBomb.
 WARNING: [Synth 8-3332] Sequential element (flickerBomb/bufferLimit_reg[20]) is unused and will be removed from module renderBomb.
 WARNING: [Synth 8-3332] Sequential element (nolabel_line40/pixel_data_reg[12]) is unused and will be removed from module renderBomb.
+INFO: [Synth 8-5545] ROM "SLOW_CLOCK" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "start/pixel_data" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\nolabel_line127/pixel_data_reg[15] )
 INFO: [Synth 8-5546] ROM "player_one/pixel_data" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "paused/pixel_data" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "start/pixel_data" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\player_one/pixel_data_reg[3] )
-WARNING: [Synth 8-6014] Unused sequential element player_three/pixel_data_reg was removed.  [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/p3_win.v:31]
-WARNING: [Synth 8-6014] Unused sequential element player_four/pixel_data_reg was removed.  [C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/p4_win.v:31]
-INFO: [Synth 8-5545] ROM "player_blink/SLOW_CLOCK" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element player_four/pixel_data_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/p4_win.v:31]
+WARNING: [Synth 8-6014] Unused sequential element player_three/pixel_data_reg was removed.  [C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/p3_win.v:31]
 INFO: [Synth 8-5545] ROM "count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "state" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "state" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "state" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "state" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nolabel_line557/\nolabel_line48/pixel_data_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nolabel_line557/\nolabel_line41/pixel_data_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (nolabel_line557/\pixel_data_reg[4] )
+WARNING: [Synth 8-3332] Sequential element (nolabel_line41/pixel_data_reg[4]) is unused and will be removed from module renderAl.
+WARNING: [Synth 8-3332] Sequential element (nolabel_line48/pixel_data_reg[4]) is unused and will be removed from module renderAl.
+WARNING: [Synth 8-3332] Sequential element (pixel_data_reg[4]) is unused and will be removed from module renderAl.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:36 ; elapsed = 00:03:46 . Memory (MB): peak = 879.336 ; gain = 621.957
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:06:27 ; elapsed = 00:06:56 . Memory (MB): peak = 906.906 ; gain = 649.383
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1909,10 +2055,10 @@ ROM:
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4480] The timing for the instance ColourControli_6/i_0/player_two/pixel_data_reg_0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance ColourControli_6/i_0/player_two/pixel_data_reg_1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance ColourControli_6/i_0/player_two/pixel_data_reg_2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance ColourControli_6/i_0/player_two/pixel_data_reg_3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance ColourControli_7/i_0/player_two/pixel_data_reg_0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance ColourControli_7/i_0/player_two/pixel_data_reg_1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance ColourControli_7/i_0/player_two/pixel_data_reg_2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance ColourControli_7/i_0/player_two/pixel_data_reg_3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 
 Report RTL Partitions: 
 +------+------------------------------------+------------+----------+
@@ -1925,23 +2071,26 @@ Report RTL Partitions:
 |5     |PlayerMovement__parameterized2__GC0 |           1|       665|
 |6     |ExplodeBomb                         |           3|      6397|
 |7     |Bomb__GC0                           |           1|      8625|
-|8     |PixelDataControl__GB0               |           1|     16363|
-|9     |PixelDataControl__GB1               |           1|       684|
-|10    |PixelControl__GCB0                  |           1|      5386|
-|11    |PixelControl__GCB1                  |           1|      2459|
-|12    |BomberGameTopLevel__GC0             |           1|      2219|
+|8     |PixelDataControl__GB0               |           1|     21084|
+|9     |PixelDataControl__GB1               |           1|      8973|
+|10    |PixelDataControl__GB2               |           1|        16|
+|11    |PixelControl__GCB0                  |           1|      6765|
+|12    |ConcreteBlocks                      |           1|       311|
+|13    |datapath__766__GD                   |           1|         9|
+|14    |PixelControl__GCB3                  |           1|      2459|
+|15    |BomberGameTopLevel__GC0             |           1|      2219|
 +------+------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:47 ; elapsed = 00:04:04 . Memory (MB): peak = 879.336 ; gain = 621.957
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:06:36 ; elapsed = 00:07:07 . Memory (MB): peak = 906.906 ; gain = 649.383
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:49 ; elapsed = 00:04:09 . Memory (MB): peak = 880.219 ; gain = 622.840
+Finished Timing Optimization : Time (s): cpu = 00:06:39 ; elapsed = 00:07:10 . Memory (MB): peak = 906.906 ; gain = 649.383
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1955,21 +2104,24 @@ Report RTL Partitions:
 |5     |PlayerMovement__parameterized2__GC0 |           1|       665|
 |6     |ExplodeBomb                         |           3|      6397|
 |7     |Bomb__GC0                           |           1|      8625|
-|8     |PixelDataControl__GB0               |           1|     16363|
-|9     |PixelDataControl__GB1               |           1|       673|
-|10    |PixelControl__GCB0                  |           1|      5386|
-|11    |PixelControl__GCB1                  |           1|      2467|
-|12    |BomberGameTopLevel__GC0             |           1|      2219|
+|8     |PixelDataControl__GB0               |           1|     21084|
+|9     |PixelDataControl__GB1               |           1|      8956|
+|10    |PixelDataControl__GB2               |           1|        16|
+|11    |PixelControl__GCB0                  |           1|      6765|
+|12    |ConcreteBlocks                      |           1|       311|
+|13    |datapath__766__GD                   |           1|         9|
+|14    |PixelControl__GCB3                  |           1|      2467|
+|15    |BomberGameTopLevel__GC0             |           1|      2219|
 +------+------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4480] The timing for the instance ColourControli_6/pixelColourControl/ColourControl/player_two/pixel_data_reg_0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance ColourControli_6/pixelColourControl/ColourControl/player_two/pixel_data_reg_1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance ColourControli_6/pixelColourControl/ColourControl/player_two/pixel_data_reg_2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance ColourControli_6/pixelColourControl/ColourControl/player_two/pixel_data_reg_3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance ColourControli_7/player_two/pixel_data_reg_0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance ColourControli_7/player_two/pixel_data_reg_1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance ColourControli_7/player_two/pixel_data_reg_2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance ColourControli_7/player_two/pixel_data_reg_3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:55 ; elapsed = 00:04:37 . Memory (MB): peak = 1004.605 ; gain = 747.227
+Finished Technology Mapping : Time (s): cpu = 00:06:47 ; elapsed = 00:07:25 . Memory (MB): peak = 1021.672 ; gain = 764.148
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1983,16 +2135,19 @@ Report RTL Partitions:
 |5     |PlayerMovement__parameterized2__GC0 |           1|       278|
 |6     |ExplodeBomb                         |           1|      1680|
 |7     |Bomb__GC0                           |           1|      3399|
-|8     |PixelDataControl__GB0               |           1|      7508|
-|9     |PixelDataControl__GB1               |           1|       355|
-|10    |PixelControl__GCB0                  |           1|      2570|
-|11    |PixelControl__GCB1                  |           1|      1345|
-|12    |BomberGameTopLevel__GC0             |           1|       923|
-|13    |SquareTracker__1                    |           1|       764|
-|14    |SquareTracker__2                    |           1|       764|
-|15    |SquareTracker__3                    |           1|       764|
-|16    |ExplodeBomb__1                      |           1|      1680|
-|17    |ExplodeBomb__2                      |           1|      1680|
+|8     |PixelDataControl__GB0               |           1|      7030|
+|9     |PixelDataControl__GB1               |           1|      2872|
+|10    |PixelDataControl__GB2               |           1|        16|
+|11    |PixelControl__GCB0                  |           1|      3305|
+|12    |ConcreteBlocks                      |           1|       126|
+|13    |datapath__766__GD                   |           1|         9|
+|14    |PixelControl__GCB3                  |           1|      1346|
+|15    |BomberGameTopLevel__GC0             |           1|       923|
+|16    |SquareTracker__1                    |           1|       764|
+|17    |SquareTracker__2                    |           1|       764|
+|18    |SquareTracker__3                    |           1|       764|
+|19    |ExplodeBomb__1                      |           1|      1680|
+|20    |ExplodeBomb__2                      |           1|      1680|
 +------+------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -2010,12 +2165,11 @@ INFO: [Synth 8-4480] The timing for the instance pixelColourControl/ColourContro
 INFO: [Synth 8-4480] The timing for the instance pixelColourControl/ColourControl/player_two/pixel_data_reg_1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance pixelColourControl/ColourControl/player_two/pixel_data_reg_2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance pixelColourControl/ColourControl/player_two/pixel_data_reg_3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6064] Net pixel_index[9] is driving 4 big block pins (URAM, BRAM and DSP loads). Created 1 replicas of its driver. 
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:00 ; elapsed = 00:04:46 . Memory (MB): peak = 1004.605 ; gain = 747.227
+Finished IO Insertion : Time (s): cpu = 00:06:52 ; elapsed = 00:07:31 . Memory (MB): peak = 1021.672 ; gain = 764.148
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2028,7 +2182,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:00 ; elapsed = 00:04:47 . Memory (MB): peak = 1004.605 ; gain = 747.227
+Finished Renaming Generated Instances : Time (s): cpu = 00:06:52 ; elapsed = 00:07:31 . Memory (MB): peak = 1021.672 ; gain = 764.148
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2040,25 +2194,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:03 ; elapsed = 00:04:51 . Memory (MB): peak = 1004.605 ; gain = 747.227
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:06:55 ; elapsed = 00:07:34 . Memory (MB): peak = 1021.672 ; gain = 764.148
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:04 ; elapsed = 00:04:52 . Memory (MB): peak = 1004.605 ; gain = 747.227
+Finished Renaming Generated Ports : Time (s): cpu = 00:06:56 ; elapsed = 00:07:35 . Memory (MB): peak = 1021.672 ; gain = 764.148
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:05 ; elapsed = 00:04:54 . Memory (MB): peak = 1004.605 ; gain = 747.227
+Finished Handling Custom Attributes : Time (s): cpu = 00:06:57 ; elapsed = 00:07:36 . Memory (MB): peak = 1021.672 ; gain = 764.148
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:05 ; elapsed = 00:04:54 . Memory (MB): peak = 1004.605 ; gain = 747.227
+Finished Renaming Generated Nets : Time (s): cpu = 00:06:57 ; elapsed = 00:07:36 . Memory (MB): peak = 1021.672 ; gain = 764.148
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -2075,15 +2229,15 @@ Report Cell Usage:
 |      |Cell       |Count |
 +------+-----------+------+
 |1     |BUFG       |     7|
-|2     |CARRY4     |  1220|
-|3     |LUT1       |   686|
-|4     |LUT2       |  2720|
-|5     |LUT3       |  1697|
-|6     |LUT4       |  1823|
-|7     |LUT5       |  3524|
-|8     |LUT6       |  9891|
-|9     |MUXF7      |  1628|
-|10    |MUXF8      |   265|
+|2     |CARRY4     |  1446|
+|3     |LUT1       |   831|
+|4     |LUT2       |  3423|
+|5     |LUT3       |  2518|
+|6     |LUT4       |  2348|
+|7     |LUT5       |  2940|
+|8     |LUT6       | 11353|
+|9     |MUXF7      |  1263|
+|10    |MUXF8      |   341|
 |11    |RAMB36E1   |     1|
 |12    |RAMB36E1_1 |     1|
 |13    |RAMB36E1_2 |     1|
@@ -2091,8 +2245,8 @@ Report Cell Usage:
 |15    |FDCE       |   474|
 |16    |FDE_1      |    32|
 |17    |FDPE       |    11|
-|18    |FDRE       |  1940|
-|19    |FDSE       |   242|
+|18    |FDRE       |  2062|
+|19    |FDSE       |   266|
 |20    |IBUF       |    19|
 |21    |OBUF       |    42|
 |22    |OBUFT      |     1|
@@ -2102,106 +2256,114 @@ Report Instance Areas:
 +------+--------------------------------------------+-------------------------------+------+
 |      |Instance                                    |Module                         |Cells |
 +------+--------------------------------------------+-------------------------------+------+
-|1     |top                                         |                               | 26226|
-|2     |  Oled_display                              |Oled_Display                   | 10650|
+|1     |top                                         |                               | 29381|
+|2     |  Oled_display                              |Oled_Display                   | 12043|
 |3     |  PlayerDeathControl                        |PlayerDeath                    |     7|
 |4     |  PlayerDeathControl2                       |PlayerDeath_0                  |     7|
-|5     |  PlayerDeathControl3                       |PlayerDeath_1                  |     8|
-|6     |  PlayerDeathControl4                       |PlayerDeath_2                  |     7|
+|5     |  PlayerDeathControl3                       |PlayerDeath_1                  |     7|
+|6     |  PlayerDeathControl4                       |PlayerDeath_2                  |     9|
 |7     |  ResetControl                              |GameReset                      |    63|
 |8     |  SevenSegControl                           |SevenSegDisplay                |   454|
 |9     |    onehz                                   |var_clock_46                   |    60|
 |10    |  clock_6p25MHZ                             |var_clock                      |    51|
-|11    |  endGame                                   |EndGame                        |     8|
-|12    |  pixelColourControl                        |PixelControl                   | 14848|
-|13    |    BombControl                             |Bomb                           |  7441|
+|11    |  endGame                                   |EndGame                        |     7|
+|12    |  pixelColourControl                        |PixelControl                   | 16377|
+|13    |    BombControl                             |Bomb                           |  7631|
 |14    |      FindFreeBomb                          |FreeBomb                       |    35|
 |15    |      \mod_inst1[0].Bombcounter             |BombCounter                    |   115|
 |16    |      \mod_inst1[1].Bombcounter             |BombCounter_36                 |   114|
 |17    |      \mod_inst1[2].Bombcounter             |BombCounter_37                 |   115|
-|18    |      \mod_inst2[0].ExplodeAnimation        |ExplodeBomb                    |  1780|
-|19    |      \mod_inst2[1].ExplodeAnimation        |ExplodeBomb_38                 |  1324|
-|20    |      \mod_inst2[2].ExplodeAnimation        |ExplodeBomb_39                 |  1458|
-|21    |      \mod_inst[0].nolabel_line109          |renderBomb                     |   452|
+|18    |      \mod_inst2[0].ExplodeAnimation        |ExplodeBomb                    |  1771|
+|19    |      \mod_inst2[1].ExplodeAnimation        |ExplodeBomb_38                 |  1400|
+|20    |      \mod_inst2[2].ExplodeAnimation        |ExplodeBomb_39                 |  1534|
+|21    |      \mod_inst[0].nolabel_line109          |renderBomb                     |   498|
 |22    |        flickerBomb                         |flickerBomb_44                 |   235|
-|23    |        nolabel_line40                      |staticBomb_45                  |   201|
-|24    |      \mod_inst[1].nolabel_line109          |renderBomb_40                  |   452|
+|23    |        nolabel_line40                      |staticBomb_45                  |   247|
+|24    |      \mod_inst[1].nolabel_line109          |renderBomb_40                  |   498|
 |25    |        flickerBomb                         |flickerBomb_42                 |   235|
-|26    |        nolabel_line40                      |staticBomb_43                  |   201|
-|27    |      \mod_inst[2].nolabel_line109          |renderBomb_41                  |   512|
+|26    |        nolabel_line40                      |staticBomb_43                  |   247|
+|27    |      \mod_inst[2].nolabel_line109          |renderBomb_41                  |   513|
 |28    |        flickerBomb                         |flickerBomb                    |   235|
-|29    |        nolabel_line40                      |staticBomb                     |   246|
-|30    |    ColourControl                           |PixelDataControl               |   388|
-|31    |      Player1                               |AnimateDeath                   |    68|
-|32    |        counter                             |Counter_100MHZ_35              |    52|
-|33    |      Player2                               |AnimateDeath_29                |    61|
+|29    |        nolabel_line40                      |staticBomb                     |   247|
+|30    |    ColourControl                           |PixelDataControl               |   972|
+|31    |      Player1                               |AnimateDeath                   |    57|
+|32    |        counter                             |Counter_100MHZ_35              |    53|
+|33    |      Player2                               |AnimateDeath_29                |    56|
 |34    |        counter                             |Counter_100MHZ_34              |    53|
-|35    |      Player3                               |AnimateDeath_30                |    58|
-|36    |        counter                             |Counter_100MHZ_33              |    52|
-|37    |      Player4                               |AnimateDeath_31                |    54|
-|38    |        counter                             |Counter_100MHZ                 |    52|
-|39    |      paused                                |EndScreen                      |    30|
-|40    |      player_blink                          |var_clock_32                   |    61|
-|41    |      player_one                            |p1_win                         |     5|
-|42    |      player_two                            |p2_win                         |    16|
-|43    |      start                                 |StartingScreen                 |    19|
-|44    |    ConcreteBlock                           |ConcreteBlocks                 |    77|
-|45    |      Concrete                              |CentreConcreteBlock            |    77|
-|46    |        \outer_loop[12].mod_inst[10].Block  |isColourPixel                  |    77|
-|47    |    Player1MovementControl                  |PlayerMovement                 |  1319|
-|48    |      TrackPlayer1Square                    |SquareTracker_27               |   788|
-|49    |      clk40hz                               |var_clock_28                   |    55|
-|50    |    Player2MovementControl                  |PlayerMovement__parameterized0 |  1325|
-|51    |      TrackPlayer1Square                    |SquareTracker_25               |   782|
-|52    |      clk40hz                               |var_clock_26                   |    55|
-|53    |    Player3MovementControl                  |PlayerMovement__parameterized1 |  1062|
-|54    |      TrackPlayer1Square                    |SquareTracker_23               |   781|
-|55    |      clk40hz                               |var_clock_24                   |    55|
-|56    |    Player4MovementControl                  |PlayerMovement__parameterized2 |  1053|
-|57    |      TrackPlayer1Square                    |SquareTracker                  |   772|
-|58    |      clk40hz                               |var_clock_22                   |    55|
-|59    |    clk40hz2                                |var_clock_4                    |    63|
-|60    |    master_rx_module                        |uart_rx_new                    |   100|
-|61    |    master_rx_module2                       |uart_rx_new_5                  |   100|
-|62    |    master_rx_module3                       |uart_rx_new_6                  |   100|
-|63    |    master_tx_module1                       |master_tx                      |    90|
-|64    |      uart_tx_inst                          |uart_tx_new_21                 |    73|
-|65    |    master_tx_module2                       |master_tx_7                    |    90|
-|66    |      uart_tx_inst                          |uart_tx_new_20                 |    73|
-|67    |    master_tx_module3                       |master_tx_8                    |    90|
-|68    |      uart_tx_inst                          |uart_tx_new_19                 |    73|
-|69    |    master_tx_module4                       |master_tx_9                    |    90|
-|70    |      uart_tx_inst                          |uart_tx_new_18                 |    73|
-|71    |    nolabel_line545                         |renderJones                    |   428|
-|72    |      nolabel_line41                        |renderJones0                   |    57|
-|73    |      nolabel_line48                        |renderJones1                   |    86|
-|74    |      nolabel_line55                        |renderJones2                   |    56|
-|75    |      nolabel_line62                        |renderJones3                   |    94|
-|76    |    nolabel_line549                         |renderWiz                      |   431|
-|77    |      nolabel_line41                        |renderWiz0                     |    64|
-|78    |      nolabel_line48                        |renderWiz1                     |    76|
-|79    |      nolabel_line55                        |renderWiz2                     |    61|
-|80    |      nolabel_line62                        |renderWiz3                     |    93|
-|81    |    slave_rx_module                         |uart_rx_new_10                 |   113|
-|82    |    slave_rx_module2                        |uart_rx_new_11                 |    84|
-|83    |    slave_rx_module3                        |uart_rx_new_12                 |    84|
-|84    |    slave_rx_module4                        |uart_rx_new_13                 |    84|
-|85    |    slave_tx_module                         |slave_tx                       |    69|
-|86    |      uart_tx_inst_slave                    |uart_tx_new_17                 |    61|
-|87    |    slave_tx_module2                        |slave_tx_14                    |    66|
-|88    |      uart_tx_inst_slave                    |uart_tx_new_16                 |    61|
-|89    |    slave_tx_module3                        |slave_tx_15                    |    66|
-|90    |      uart_tx_inst_slave                    |uart_tx_new                    |    61|
-|91    |  twohundredhz                              |var_clock_3                    |    53|
+|35    |      Player3                               |AnimateDeath_30                |    65|
+|36    |        counter                             |Counter_100MHZ_33              |    53|
+|37    |      Player4                               |AnimateDeath_31                |    98|
+|38    |        counter                             |Counter_100MHZ                 |    53|
+|39    |      nolabel_line127                       |renderExplosion                |   538|
+|40    |      paused                                |EndScreen                      |    23|
+|41    |      player_blink                          |var_clock_32                   |    65|
+|42    |      player_one                            |p1_win                         |    14|
+|43    |      player_two                            |p2_win                         |     6|
+|44    |      start                                 |StartingScreen                 |    29|
+|45    |    ConcreteBlock                           |ConcreteBlocks                 |    88|
+|46    |      Concrete                              |CentreConcreteBlock            |    43|
+|47    |        \outer_loop[12].mod_inst[10].Block  |isColourPixel                  |    43|
+|48    |    Player1MovementControl                  |PlayerMovement                 |  1363|
+|49    |      TrackPlayer1Square                    |SquareTracker_27               |   788|
+|50    |      clk40hz                               |var_clock_28                   |    55|
+|51    |    Player2MovementControl                  |PlayerMovement__parameterized0 |  1325|
+|52    |      TrackPlayer1Square                    |SquareTracker_25               |   782|
+|53    |      clk40hz                               |var_clock_26                   |    55|
+|54    |    Player3MovementControl                  |PlayerMovement__parameterized1 |  1135|
+|55    |      TrackPlayer1Square                    |SquareTracker_23               |   781|
+|56    |      clk40hz                               |var_clock_24                   |    55|
+|57    |    Player4MovementControl                  |PlayerMovement__parameterized2 |  1104|
+|58    |      TrackPlayer1Square                    |SquareTracker                  |   772|
+|59    |      clk40hz                               |var_clock_22                   |    55|
+|60    |    clk40hz2                                |var_clock_4                    |    63|
+|61    |    master_rx_module                        |uart_rx_new                    |   100|
+|62    |    master_rx_module2                       |uart_rx_new_5                  |   100|
+|63    |    master_rx_module3                       |uart_rx_new_6                  |   100|
+|64    |    master_tx_module1                       |master_tx                      |    90|
+|65    |      uart_tx_inst                          |uart_tx_new_21                 |    73|
+|66    |    master_tx_module2                       |master_tx_7                    |    90|
+|67    |      uart_tx_inst                          |uart_tx_new_20                 |    73|
+|68    |    master_tx_module3                       |master_tx_8                    |    90|
+|69    |      uart_tx_inst                          |uart_tx_new_19                 |    73|
+|70    |    master_tx_module4                       |master_tx_9                    |    90|
+|71    |      uart_tx_inst                          |uart_tx_new_18                 |    73|
+|72    |    nolabel_line545                         |renderJones                    |   379|
+|73    |      nolabel_line41                        |renderJones0                   |    57|
+|74    |      nolabel_line48                        |renderJones1                   |    65|
+|75    |      nolabel_line55                        |renderJones2                   |    49|
+|76    |      nolabel_line62                        |renderJones3                   |    75|
+|77    |    nolabel_line549                         |renderWiz                      |   427|
+|78    |      nolabel_line41                        |renderWiz0                     |    64|
+|79    |      nolabel_line48                        |renderWiz1                     |    76|
+|80    |      nolabel_line55                        |renderWiz2                     |    61|
+|81    |      nolabel_line62                        |renderWiz3                     |    93|
+|82    |    nolabel_line553                         |renderRob                      |   357|
+|83    |      nolabel_line41                        |renderRob0                     |   181|
+|84    |      nolabel_line48                        |renderRob1                     |    32|
+|85    |      nolabel_line55                        |renderRob2                     |    14|
+|86    |    nolabel_line557                         |renderAl                       |   273|
+|87    |      nolabel_line41                        |renderAl0                      |   137|
+|88    |      nolabel_line48                        |renderAl1                      |    18|
+|89    |    slave_rx_module                         |uart_rx_new_10                 |   112|
+|90    |    slave_rx_module2                        |uart_rx_new_11                 |    84|
+|91    |    slave_rx_module3                        |uart_rx_new_12                 |    84|
+|92    |    slave_rx_module4                        |uart_rx_new_13                 |    84|
+|93    |    slave_tx_module                         |slave_tx                       |    69|
+|94    |      uart_tx_inst_slave                    |uart_tx_new_17                 |    61|
+|95    |    slave_tx_module2                        |slave_tx_14                    |    66|
+|96    |      uart_tx_inst_slave                    |uart_tx_new_16                 |    61|
+|97    |    slave_tx_module3                        |slave_tx_15                    |    66|
+|98    |      uart_tx_inst_slave                    |uart_tx_new                    |    61|
+|99    |  twohundredhz                              |var_clock_3                    |    53|
 +------+--------------------------------------------+-------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:05 ; elapsed = 00:04:54 . Memory (MB): peak = 1004.605 ; gain = 747.227
+Finished Writing Synthesis Report : Time (s): cpu = 00:06:57 ; elapsed = 00:07:36 . Memory (MB): peak = 1021.672 ; gain = 764.148
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 24 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:57 ; elapsed = 00:04:40 . Memory (MB): peak = 1004.605 ; gain = 390.938
-Synthesis Optimization Complete : Time (s): cpu = 00:02:06 ; elapsed = 00:04:56 . Memory (MB): peak = 1004.605 ; gain = 747.227
+Synthesis finished with 0 errors, 0 critical warnings and 27 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:06:36 ; elapsed = 00:07:26 . Memory (MB): peak = 1021.672 ; gain = 410.105
+Synthesis Optimization Complete : Time (s): cpu = 00:06:57 ; elapsed = 00:07:39 . Memory (MB): peak = 1021.672 ; gain = 764.148
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 3168 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 3105 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -2210,12 +2372,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   FDE_1 => FDRE (inverted pins: C): 32 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-418 Infos, 160 Warnings, 0 Critical Warnings and 0 Errors encountered.
+445 Infos, 158 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:12 ; elapsed = 00:05:09 . Memory (MB): peak = 1004.605 ; gain = 760.262
+synth_design: Time (s): cpu = 00:07:05 ; elapsed = 00:07:47 . Memory (MB): peak = 1021.672 ; gain = 776.980
 WARNING: [Constraints 18-5210] No constraint will be written out.
-INFO: [Common 17-1381] The checkpoint 'C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.runs/synth_1/BomberGameTopLevel.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1004.605 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.runs/synth_1/BomberGameTopLevel.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file BomberGameTopLevel_utilization_synth.rpt -pb BomberGameTopLevel_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.311 . Memory (MB): peak = 1004.605 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat Nov  2 16:41:50 2024...
+report_utilization: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.207 . Memory (MB): peak = 1021.672 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sun Nov  3 01:57:13 2024...

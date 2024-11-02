@@ -11,9 +11,9 @@ echo "Please update the PATH and LD_LIBRARY_PATH variables below, before executi
 exit
 
 if [ -z "$PATH" ]; then
-  PATH=C:/Xilinx/SDK/2018.2/bin;C:/Xilinx/Vivado/2018.2/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2018.2/ids_lite/ISE/lib/nt64:C:/Xilinx/Vivado/2018.2/bin
+  PATH=E:/vivado/SDK/2018.2/bin;E:/vivado/Vivado/2018.2/ids_lite/ISE/bin/nt64;E:/vivado/Vivado/2018.2/ids_lite/ISE/lib/nt64:E:/vivado/Vivado/2018.2/bin
 else
-  PATH=C:/Xilinx/SDK/2018.2/bin;C:/Xilinx/Vivado/2018.2/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2018.2/ids_lite/ISE/lib/nt64:C:/Xilinx/Vivado/2018.2/bin:$PATH
+  PATH=E:/vivado/SDK/2018.2/bin;E:/vivado/Vivado/2018.2/ids_lite/ISE/bin/nt64;E:/vivado/Vivado/2018.2/ids_lite/ISE/lib/nt64:E:/vivado/Vivado/2018.2/bin:$PATH
 fi
 export PATH
 
@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.runs/impl_1'
+HD_PWD='C:/Users/quant/Desktop/git/EE2026/BomberMan.xpr/BomberMan/BomberMan.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -41,7 +41,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .write_bitstream.begin.rst
+/bin/touch .init_design.begin.rst
 EAStep vivado -log BomberGameTopLevel.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source BomberGameTopLevel.tcl -notrace
 
 
