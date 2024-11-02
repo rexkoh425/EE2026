@@ -31,9 +31,9 @@ module renderJones2(
 
     integer numPoints = 52;
     integer i;
-    reg [6:0] xValueArray[0:52];
-    reg [5:0] yValueArray[0:52];
-    reg [15:0] colourValueArray[0:52];
+    (* ram_style = "block" *)reg [6:0] xValueArray[0:52];
+    (* ram_style = "block" *)reg [5:0] yValueArray[0:52];
+    (* ram_style = "block" *)reg [15:0] colourValueArray[0:52];
     reg [6:0] x_value_check;
     reg [5:0] y_value_check;
 

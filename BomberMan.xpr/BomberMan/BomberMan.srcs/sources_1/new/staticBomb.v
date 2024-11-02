@@ -38,9 +38,9 @@ module staticBomb(
     reg [15:0] ORANGE=16'hEBE6;
     reg [15:0] RED=16'hEAC7;
     integer i;
-    reg [6:0] xValueArray[0:54];
-    reg [5:0] yValueArray[0:54];
-    reg [15:0] colourValueArray[0:54];
+    (* ram_style = "block" *)reg [6:0] xValueArray[0:54];
+    (* ram_style = "block" *)reg [5:0] yValueArray[0:54];
+    (* ram_style = "block" *)reg [15:0] colourValueArray[0:54];
     reg [6:0] x_value_check;
     reg [5:0] y_value_check;
 

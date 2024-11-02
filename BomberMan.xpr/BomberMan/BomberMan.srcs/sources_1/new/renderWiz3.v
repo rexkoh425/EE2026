@@ -31,9 +31,9 @@ module renderWiz3(
 
     integer numPoints = 71;
     integer i;
-    reg [6:0] xValueArray[0:71];
-    reg [5:0] yValueArray[0:71];
-    reg [15:0] colourValueArray[0:71];
+    (* ram_style = "block" *)reg [6:0] xValueArray[0:71];
+    (* ram_style = "block" *)reg [5:0] yValueArray[0:71];
+    (* ram_style = "block" *)reg [15:0] colourValueArray[0:71];
     reg [6:0] x_value_check;
     reg [5:0] y_value_check;
 

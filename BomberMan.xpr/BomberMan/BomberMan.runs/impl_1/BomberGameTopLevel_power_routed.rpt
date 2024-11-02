@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Sat Nov  2 16:46:33 2024
+| Date             : Sat Nov  2 18:32:13 2024
 | Host             : tendra running 64-bit major release  (build 9200)
 | Command          : report_power -file BomberGameTopLevel_power_routed.rpt -pb BomberGameTopLevel_power_summary_routed.pb -rpx BomberGameTopLevel_power_routed.rpx
 | Design           : BomberGameTopLevel
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.095        |
+| Total On-Chip Power (W)  | 0.094        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.023        |
+| Dynamic (W)              | 0.022        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.5         |
@@ -53,18 +53,18 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.005 |        3 |       --- |             --- |
-| Slice Logic    |     0.007 |    26136 |       --- |             --- |
-|   LUT as Logic |     0.007 |    17392 |     20800 |           83.62 |
+| Slice Logic    |     0.007 |    18845 |       --- |             --- |
+|   LUT as Logic |     0.006 |    11912 |     20800 |           57.27 |
 |   CARRY4       |    <0.001 |     1220 |      8150 |           14.97 |
-|   Register     |    <0.001 |     2695 |     41600 |            6.48 |
+|   Register     |    <0.001 |     2666 |     41600 |            6.41 |
 |   BUFG         |    <0.001 |        6 |        32 |           18.75 |
-|   F7/F8 Muxes  |    <0.001 |     1893 |     32600 |            5.81 |
+|   F7/F8 Muxes  |    <0.001 |      208 |     32600 |            0.64 |
 |   Others       |     0.000 |      179 |       --- |             --- |
-| Signals        |     0.007 |    18014 |       --- |             --- |
-| Block RAM      |     0.000 |        4 |        50 |            8.00 |
+| Signals        |     0.006 |    14056 |       --- |             --- |
+| Block RAM      |     0.000 |       16 |        50 |           32.00 |
 | I/O            |     0.004 |       62 |       106 |           58.49 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.095 |          |           |                 |
+| Total          |     0.094 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.029 |       0.019 |      0.010 |
+| Vccint    |       1.000 |     0.028 |       0.018 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -83,7 +83,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.000 |       0.000 |      0.000 |
+| Vccbram   |       1.000 |     0.001 |       0.000 |      0.001 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
@@ -143,7 +143,7 @@ Table of Contents
 +-------------------------------------------+-----------+
 | Name                                      | Power (W) |
 +-------------------------------------------+-----------+
-| BomberGameTopLevel                        |     0.023 |
+| BomberGameTopLevel                        |     0.022 |
 |   Oled_display                            |    <0.001 |
 |   PlayerDeathControl                      |    <0.001 |
 |   PlayerDeathControl2                     |    <0.001 |
@@ -157,9 +157,9 @@ Table of Contents
 |   pixelColourControl                      |     0.012 |
 |     BombControl                           |    <0.001 |
 |       FindFreeBomb                        |    <0.001 |
-|       mod_inst1[0].Bombcounter            |     0.000 |
-|       mod_inst1[1].Bombcounter            |     0.000 |
-|       mod_inst1[2].Bombcounter            |     0.000 |
+|       mod_inst1[0].Bombcounter            |    <0.001 |
+|       mod_inst1[1].Bombcounter            |    <0.001 |
+|       mod_inst1[2].Bombcounter            |    <0.001 |
 |       mod_inst2[0].ExplodeAnimation       |    <0.001 |
 |       mod_inst2[1].ExplodeAnimation       |    <0.001 |
 |       mod_inst2[2].ExplodeAnimation       |    <0.001 |
@@ -173,13 +173,13 @@ Table of Contents
 |         flickerBomb                       |    <0.001 |
 |         nolabel_line40                    |     0.000 |
 |     ColourControl                         |    <0.001 |
-|       Player1                             |    <0.001 |
+|       Player1                             |     0.000 |
 |         counter                           |     0.000 |
-|       Player2                             |    <0.001 |
+|       Player2                             |     0.000 |
 |         counter                           |     0.000 |
-|       Player3                             |    <0.001 |
+|       Player3                             |     0.000 |
 |         counter                           |     0.000 |
-|       Player4                             |     0.000 |
+|       Player4                             |    <0.001 |
 |         counter                           |     0.000 |
 |       paused                              |     0.000 |
 |       player_blink                        |    <0.001 |
