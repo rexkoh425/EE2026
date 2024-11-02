@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Fri Nov  1 18:14:18 2024
-| Host             : DESKTOP-V4SV6TR running 64-bit major release  (build 9200)
+| Date             : Sat Nov  2 14:04:11 2024
+| Host             : tendra running 64-bit major release  (build 9200)
 | Command          : report_power -file BomberGameTopLevel_power_routed.rpt -pb BomberGameTopLevel_power_summary_routed.pb -rpx BomberGameTopLevel_power_routed.rpx
 | Design           : BomberGameTopLevel
 | Device           : xc7a35tcpg236-1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.090        |
+| Total On-Chip Power (W)  | 0.095        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.018        |
+| Dynamic (W)              | 0.023        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.5         |
@@ -53,17 +53,17 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.005 |        3 |       --- |             --- |
-| Slice Logic    |     0.005 |    27497 |       --- |             --- |
-|   LUT as Logic |     0.004 |    17514 |     20800 |           84.20 |
-|   CARRY4       |    <0.001 |     1748 |      8150 |           21.45 |
-|   Register     |    <0.001 |     3213 |     41600 |            7.72 |
+| Slice Logic    |     0.007 |    29167 |       --- |             --- |
+|   LUT as Logic |     0.007 |    19753 |     20800 |           94.97 |
+|   CARRY4       |    <0.001 |     1220 |      8150 |           14.97 |
+|   Register     |    <0.001 |     2720 |     41600 |            6.54 |
 |   BUFG         |    <0.001 |        6 |        32 |           18.75 |
-|   F7/F8 Muxes  |    <0.001 |     1050 |     32600 |            3.22 |
-|   Others       |     0.000 |      199 |       --- |             --- |
-| Signals        |     0.005 |    19252 |       --- |             --- |
-| I/O            |     0.004 |       63 |       106 |           59.43 |
+|   F7/F8 Muxes  |    <0.001 |     2169 |     32600 |            6.65 |
+|   Others       |     0.000 |      179 |       --- |             --- |
+| Signals        |     0.006 |    20366 |       --- |             --- |
+| I/O            |     0.004 |       62 |       106 |           58.49 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.090 |          |           |                 |
+| Total          |     0.095 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.024 |       0.015 |      0.010 |
+| Vccint    |       1.000 |     0.029 |       0.019 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -142,57 +142,48 @@ Table of Contents
 +-------------------------------------------+-----------+
 | Name                                      | Power (W) |
 +-------------------------------------------+-----------+
-| BomberGameTopLevel                        |     0.018 |
-|   DebounceC                               |    <0.001 |
-|     clock_1khz                            |    <0.001 |
-|     counter                               |    <0.001 |
+| BomberGameTopLevel                        |     0.023 |
 |   Oled_display                            |    <0.001 |
 |   PlayerDeathControl                      |    <0.001 |
 |   PlayerDeathControl2                     |    <0.001 |
 |   PlayerDeathControl3                     |    <0.001 |
 |   PlayerDeathControl4                     |    <0.001 |
 |   ResetControl                            |    <0.001 |
-|   SevenSegControl                         |    <0.001 |
+|   SevenSegControl                         |     0.005 |
 |     onehz                                 |    <0.001 |
 |   clock_6p25MHZ                           |    <0.001 |
+|   endGame                                 |    <0.001 |
 |   pixelColourControl                      |     0.012 |
 |     BombControl                           |    <0.001 |
 |       FindFreeBomb                        |    <0.001 |
 |       mod_inst1[0].Bombcounter            |     0.000 |
 |       mod_inst1[1].Bombcounter            |     0.000 |
 |       mod_inst1[2].Bombcounter            |     0.000 |
-|       mod_inst1[3].Bombcounter            |     0.000 |
-|       mod_inst1[4].Bombcounter            |     0.000 |
 |       mod_inst2[0].ExplodeAnimation       |    <0.001 |
 |       mod_inst2[1].ExplodeAnimation       |    <0.001 |
 |       mod_inst2[2].ExplodeAnimation       |    <0.001 |
-|       mod_inst2[3].ExplodeAnimation       |    <0.001 |
-|       mod_inst2[4].ExplodeAnimation       |    <0.001 |
-|       mod_inst[0].nolabel_line111         |     0.000 |
-|         flickerBomb                       |     0.000 |
+|       mod_inst[0].nolabel_line109         |    <0.001 |
+|         flickerBomb                       |    <0.001 |
 |         nolabel_line40                    |     0.000 |
-|       mod_inst[1].nolabel_line111         |     0.000 |
-|         flickerBomb                       |     0.000 |
+|       mod_inst[1].nolabel_line109         |    <0.001 |
+|         flickerBomb                       |    <0.001 |
 |         nolabel_line40                    |     0.000 |
-|       mod_inst[2].nolabel_line111         |     0.000 |
-|         flickerBomb                       |     0.000 |
-|         nolabel_line40                    |     0.000 |
-|       mod_inst[3].nolabel_line111         |     0.000 |
-|         flickerBomb                       |     0.000 |
-|         nolabel_line40                    |     0.000 |
-|       mod_inst[4].nolabel_line111         |     0.000 |
-|         flickerBomb                       |     0.000 |
+|       mod_inst[2].nolabel_line109         |    <0.001 |
+|         flickerBomb                       |    <0.001 |
 |         nolabel_line40                    |     0.000 |
 |     ColourControl                         |    <0.001 |
-|       Player1                             |     0.000 |
+|       Player1                             |    <0.001 |
 |         counter                           |     0.000 |
-|       Player2                             |     0.000 |
+|       Player2                             |    <0.001 |
 |         counter                           |     0.000 |
 |       Player3                             |     0.000 |
 |         counter                           |     0.000 |
 |       Player4                             |     0.000 |
 |         counter                           |     0.000 |
+|       paused                              |     0.000 |
 |       player_blink                        |    <0.001 |
+|       player_one                          |    <0.001 |
+|       player_two                          |    <0.001 |
 |       start                               |     0.000 |
 |     ConcreteBlock                         |     0.000 |
 |       Concrete                            |     0.000 |
@@ -221,12 +212,12 @@ Table of Contents
 |       uart_tx_inst                        |    <0.001 |
 |     master_tx_module4                     |    <0.001 |
 |       uart_tx_inst                        |    <0.001 |
-|     nolabel_line553                       |    <0.001 |
+|     nolabel_line543                       |    <0.001 |
 |       nolabel_line41                      |     0.000 |
 |       nolabel_line48                      |     0.000 |
 |       nolabel_line55                      |     0.000 |
-|       nolabel_line62                      |     0.000 |
-|     nolabel_line557                       |    <0.001 |
+|       nolabel_line62                      |    <0.001 |
+|     nolabel_line547                       |    <0.001 |
 |       nolabel_line41                      |     0.000 |
 |       nolabel_line48                      |     0.000 |
 |       nolabel_line55                      |     0.000 |

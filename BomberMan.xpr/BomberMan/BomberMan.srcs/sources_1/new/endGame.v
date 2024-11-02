@@ -21,10 +21,24 @@
 
 
 module EndGame(
+    input clk6p25m, start_game,
     input[5:0] player1_deathcount ,player2_deathcount,player3_deathcount,player4_deathcount,
-    output EndGame
-    );
+    output EndGame,
+    output[3:0] player_dead
+);
     
     parameter[2:0] deathcount = 4;
-    assign EndGame = (player1_deathcount >= deathcount) || (player2_deathcount >= deathcount) || (player3_deathcount >= deathcount) || (player4_deathcount >= deathcount);
+    assign player_dead[0] = (player1_deathcount >= deathcount);
+    assign player_dead[1] = (player2_deathcount >= deathcount);
+    assign player_dead[2] = (player3_deathcount >= deathcount);
+    assign player_dead[3] = (player4_deathcount >= deathcount);
+    
+    integer k;
+    reg[2:0] num_player_dead= 0;
+    always @ (posedge clk6p25m)
+    begin
+        num_player_dead <= player_dead[0] + player_dead[1] + player_dead[2] + player_dead[3];
+    end
+    
+    assign EndGame = (num_player_dead == 2) & start_game;
 endmodule

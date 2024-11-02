@@ -21,7 +21,7 @@
 
 
 module ButtonGate(
-    input SWCheck ,
+    input SWCheck , input[3:0] player_dead,
     input btnUPlayer1In,btnDPlayer1In,btnLPlayer1In,btnRPlayer1In,btnCPlayer1In,
     btnUPlayer2In,btnDPlayer2In,btnLPlayer2In,btnRPlayer2In,btnCPlayer2In,
     btnUPlayer3In,btnDPlayer3In,btnLPlayer3In,btnRPlayer3In,btnCPlayer3In,
@@ -32,26 +32,26 @@ module ButtonGate(
     btnUPlayer4,btnDPlayer4,btnLPlayer4,btnRPlayer4,btnCPlayer4
 );
 
-    assign btnUPlayer1 = SWCheck ? btnUPlayer1In : 0; 
-    assign btnDPlayer1 = SWCheck ? btnDPlayer1In : 0; 
-    assign btnLPlayer1 = SWCheck ? btnLPlayer1In : 0; 
-    assign btnRPlayer1 = SWCheck ? btnRPlayer1In : 0; 
-    assign btnCPlayer1 = SWCheck ? btnCPlayer1In : 0; 
-    assign btnUPlayer2 = SWCheck ? btnUPlayer2In : 0; 
-    assign btnDPlayer2 = SWCheck ? btnDPlayer2In : 0; 
-    assign btnLPlayer2 = SWCheck ? btnLPlayer2In : 0; 
-    assign btnRPlayer2 = SWCheck ? btnRPlayer2In : 0; 
-    assign btnCPlayer2 = SWCheck ? btnCPlayer2In : 0; 
-    assign btnUPlayer3 = SWCheck ? btnUPlayer3In : 0; 
-    assign btnDPlayer3 = SWCheck ? btnDPlayer3In : 0; 
-    assign btnLPlayer3 = SWCheck ? btnLPlayer3In : 0; 
-    assign btnRPlayer3 = SWCheck ? btnRPlayer3In : 0; 
-    assign btnCPlayer3 = SWCheck ? btnCPlayer4In : 0; 
-    assign btnUPlayer4 = SWCheck ? btnUPlayer4In : 0; 
-    assign btnDPlayer4 = SWCheck ? btnDPlayer4In : 0; 
-    assign btnLPlayer4 = SWCheck ? btnLPlayer4In : 0; 
-    assign btnRPlayer4 = SWCheck ? btnRPlayer4In : 0; 
-    assign btnCPlayer4 = SWCheck ? btnCPlayer4In : 0; 
+    assign btnUPlayer1 = (SWCheck & ~player_dead[0]) ? btnUPlayer1In : 0; 
+    assign btnDPlayer1 = (SWCheck & ~player_dead[0]) ? btnDPlayer1In : 0; 
+    assign btnLPlayer1 = (SWCheck & ~player_dead[0]) ? btnLPlayer1In : 0; 
+    assign btnRPlayer1 = (SWCheck & ~player_dead[0]) ? btnRPlayer1In : 0; 
+    assign btnCPlayer1 = (SWCheck & ~player_dead[0]) ? btnCPlayer1In : 0; 
+    assign btnUPlayer2 = (SWCheck & ~player_dead[1]) ? btnUPlayer2In : 0; 
+    assign btnDPlayer2 = (SWCheck & ~player_dead[1]) ? btnDPlayer2In : 0; 
+    assign btnLPlayer2 = (SWCheck & ~player_dead[1]) ? btnLPlayer2In : 0; 
+    assign btnRPlayer2 = (SWCheck & ~player_dead[1]) ? btnRPlayer2In : 0; 
+    assign btnCPlayer2 = (SWCheck & ~player_dead[1])? btnCPlayer2In : 0; 
+    assign btnUPlayer3 = (SWCheck & ~player_dead[2]) ? btnUPlayer3In : 0; 
+    assign btnDPlayer3 = (SWCheck & ~player_dead[2]) ? btnDPlayer3In : 0; 
+    assign btnLPlayer3 = (SWCheck & ~player_dead[2]) ? btnLPlayer3In : 0; 
+    assign btnRPlayer3 = (SWCheck & ~player_dead[2]) ? btnRPlayer3In : 0; 
+    assign btnCPlayer3 = (SWCheck & ~player_dead[2]) ? btnCPlayer4In : 0; 
+    assign btnUPlayer4 = (SWCheck & ~player_dead[3]) ? btnUPlayer4In : 0; 
+    assign btnDPlayer4 = (SWCheck & ~player_dead[3]) ? btnDPlayer4In : 0; 
+    assign btnLPlayer4 = (SWCheck & ~player_dead[3]) ? btnLPlayer4In : 0; 
+    assign btnRPlayer4 = (SWCheck & ~player_dead[3]) ? btnRPlayer4In : 0; 
+    assign btnCPlayer4 = (SWCheck & ~player_dead[3]) ? btnCPlayer4In : 0; 
     
           
 endmodule

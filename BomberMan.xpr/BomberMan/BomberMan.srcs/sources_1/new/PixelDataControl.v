@@ -26,10 +26,10 @@ module PixelDataControl(
     input CenterBlock , walls , 
     input player1 , player2 , player3 , player4 , 
     input bomb , 
-    input[5:0] player1_deathcount,player2_deathcount,player3_deathcount,player4_deathcount,
+    input[3:0] player_dead,
     input [15:0] bombPixelData, player1PixelData, player2PixelData, player3PixelData, player4PixelData,
     input ExplosionAnimations,
-    input start_game,
+    input start_game, pause,EndGame,
     output reg[15:0] pixel_data = 16'b0 ,
     output player1_isReviving ,player2_isReviving,player3_isReviving,player4_isReviving
 );
@@ -81,13 +81,43 @@ module PixelDataControl(
         .isReviving(player4_isReviving)
     );
             
-   wire[15:0] ss_pixeldata;
+   wire[15:0] ss_pixeldata , pause_pixeldata , p1_data , p2_data , p3_data , p4_data;
    StartingScreen start(
     .clk6p25m(clk6p25m),
     .pixel_index(pixel_index),
     .pixel_data(ss_pixeldata)
-  );
+   );
+   
+   EndScreen paused(
+       .clk6p25m(clk6p25m),
+       .pixel_index(pixel_index),
+       .pixel_data(pause_pixeldata)
+   );
   
+    p1_win player_one(
+        .clk6p25m(clk6p25m),
+        .pixel_index(pixel_index),
+        .pixel_data(p1_data)
+    );
+    
+    p2_win player_two(
+        .clk6p25m(clk6p25m),
+        .pixel_index(pixel_index),
+        .pixel_data(p2_data)
+    );
+    
+    p3_win player_three(
+        .clk6p25m(clk6p25m),
+        .pixel_index(pixel_index),
+        .pixel_data(p3_data)
+    );
+    
+    p4_win player_four(
+        .clk6p25m(clk6p25m),
+        .pixel_index(pixel_index),
+        .pixel_data(p4_data)
+    );
+    
    always @(posedge clk6p25m)
    begin
        
@@ -95,19 +125,31 @@ module PixelDataControl(
        begin
            pixel_data <= ss_pixeldata;
        end
+       else if(pause)
+       begin
+           pixel_data <= pause_pixeldata;
+       end
+       else if(EndGame)
+       begin
+           case(player_dead)
+               4'b0001 : pixel_data <= p2_data;
+               4'b0010 : pixel_data <= p1_data;
+               default : pixel_data <= WHITE;
+           endcase
+       end
        else if(CenterBlock)
        begin
            pixel_data <= DARK_GREY;
        end
        else if(walls)
            pixel_data <= BROWN;
-       else if(player1_status & (player1_deathcount <= 4))
+       else if(player1_status & ~player_dead[0])
            pixel_data <= player1PixelData;
-       else if(player2_status & (player2_deathcount <= 4))
+       else if(player2_status & ~player_dead[1])
            pixel_data <= player2PixelData;
-       else if(player3_status & (player3_deathcount <= 4))
+       else if(player3_status & ~player_dead[2])
            pixel_data <= GREEN;
-       else if(player4_status & (player4_deathcount <= 4))
+       else if(player4_status & ~player_dead[3])
            pixel_data <= GREEN;
        else if(ExplosionAnimations)
            pixel_data <= ORANGE;

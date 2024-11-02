@@ -38,27 +38,16 @@ module BomberGameTopLevel(
     wire frame_begin ,sending_pixels , sample_pixel;
     wire[12:0] pixel_index;
     wire[15:0] pixel_data;
-    wire start_game, EndGame;
-    wire initiate_reset;
+    wire start_game, EndGame , pause;
+    wire initiate_reset , resetting;
     wire SWCheck;
     wire[5:0] player1_deathcount,player2_deathcount,player3_deathcount,player4_deathcount;
     var_clock clock_6p25MHZ(.clk(clk) , .M(7) , .SLOW_CLOCK(clk6p25m));
     wire clk200hz;
     var_clock twohundredhz(.clk(clk) , .M(249_999) , . SLOW_CLOCK(clk200hz));
-    assign start_game = SWCheck & ~EndGame;
-    //Debouncing area
-    ///////////////////////////////////////////////////////////////////////////
-    wire DebouncedBtnU , DebouncedBtnD , DebouncedBtnL , DebouncedBtnR , DebouncedBtnC;
-    wire initiate_reset_out;
-    ButtonDebouncing DebounceU(.button(btnU) , .clk(clk) , .DebouncedSignal(DebouncedBtnU));
-    ButtonDebouncing DebounceD(.button(btnD) , .clk(clk) , .DebouncedSignal(DebouncedBtnD));
-    ButtonDebouncing DebounceL(.button(btnL) , .clk(clk) , .DebouncedSignal(DebouncedBtnL));
-    ButtonDebouncing DebounceR(.button(btnR) , .clk(clk) , .DebouncedSignal(DebouncedBtnR));
-    ButtonDebouncing DebounceC(.button(btnC) , .clk(clk) , .DebouncedSignal(DebouncedBtnC));
-    ///////////////////////////////////////////////////////////////////////////
+    wire initiate_reset_out , full_reset_out;
+    wire[3:0] player_dead;
     
-    //  pixel data initialised as 0 here
-    //////////////////////////////////////////////////////////////////////////
     wire player1_isReviving,player2_isReviving,player3_isReviving,player4_isReviving;
     PixelControl pixelColourControl(
         .clk100mhz(clk), .clk6p25m(clk6p25m),
@@ -66,7 +55,6 @@ module BomberGameTopLevel(
         .btnU(btnU) , .btnD(btnD) , .btnL(btnL) , .btnR(btnR) , .btnC(btnC) ,
         .SW(SW),
         .pixel_index(pixel_index), .pixel_data(pixel_data) ,
-        .DebouncedBtnC(DebouncedBtnC) ,
         .led(led), 
         .reset(SW[14]), .masterToggle(SW[15]),
         .master_tx(master_tx), .master_rx(master_rx), .slave_rx(slave_rx), .slave_tx(slave_tx),
@@ -75,12 +63,9 @@ module BomberGameTopLevel(
         .player3_isReviving(player3_isReviving),
         .player4_isReviving(player4_isReviving),
         .start_game(start_game), .SWCheck(SWCheck),
-        .player1_deathcount(player1_deathcount),
-        .player2_deathcount(player2_deathcount),
-        .player3_deathcount(player3_deathcount),
-        .player4_deathcount(player4_deathcount),
-        .initiate_reset_out(initiate_reset_out)
-
+        .player_dead(player_dead),
+        .initiate_reset_out(initiate_reset_out),
+        .EndGame(EndGame) , .resetting(resetting) , .pause(pause)
     );
     //////////////////////////////////////////////////////////////////////////
     //current uart siwtch clashes with instant explosions
@@ -99,14 +84,14 @@ module BomberGameTopLevel(
         .an(an),
         .seg(seg),
         .dp(dp) ,
-        .start_game(start_game)
+        .start_game(start_game),.pause(pause)
     );     
     
     GameReset ResetControl(
         .clk6p25m(clk6p25m),
         .SW1(SW[1]),
         .btnU(btnU) , .btnD(btnD) , .btnL(btnL) , .btnR(btnR) ,
-        .initiate_reset(initiate_reset)
+        .initiate_reset(initiate_reset) , .resetting(resetting)
     );
     
     PlayerDeath PlayerDeathControl(
@@ -135,9 +120,13 @@ module BomberGameTopLevel(
         .initiate_reset(initiate_reset_out),
         .player1_isReviving(player4_isReviving),
         .player1_deathcount(player4_deathcount)
-    );    
-    EndGame endGame(.player1_deathcount(player1_deathcount) 
+    );   
+      
+    EndGame endGame(
+        .clk6p25m(clk6p25m),
+        .player1_deathcount(player1_deathcount) 
         ,.player2_deathcount(player2_deathcount),.player3_deathcount(player3_deathcount),
-        .player4_deathcount(player4_deathcount), .EndGame(EndGame));
+        .player4_deathcount(player4_deathcount), .EndGame(EndGame) , .start_game(start_game),.player_dead(player_dead)
+    );
     
 endmodule

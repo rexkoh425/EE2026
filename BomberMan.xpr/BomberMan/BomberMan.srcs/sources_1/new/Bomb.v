@@ -39,7 +39,7 @@ module Bomb(
     wire[6:0] BombMinX , BombMaxX;
     wire[5:0] BombMinY , BombMaxY;
     parameter dimension = 9;
-    parameter[6:0] Maxbombcount = 5; 
+    parameter[6:0] Maxbombcount = 3; 
     //seems like got bug with dropping more than n-2 bombs where
     //it will explode where the player is
     //increasing bomb count significantly increase bitstream gen time
@@ -53,12 +53,11 @@ module Bomb(
     wire[Maxbombcount-1 :0] bombs;
     wire[Maxbombcount-1 :0] explode;
     wire[Maxbombcount-1 : 0] ActiveBombs;
+    wire[Maxbombcount-1 : 0] immediate_explode;
     wire[Maxbombcount-1 : 0] player1_died;
     wire[Maxbombcount-1 : 0] player2_died;
     wire[Maxbombcount-1 : 0] player3_died;
     wire[Maxbombcount-1 : 0] player4_died;
-    wire[Maxbombcount-1 : 0] immediate_explode;
-    wire[(Maxbombcount * 2) - 1 : 0] WhichPlayerBomb;
     wire[7:0] FreeBomb;
     wire edge_registered;
     wire[Maxbombcount-1 : 0] ExplosionAnimation;
@@ -94,8 +93,7 @@ module Bomb(
         .player2_isReviving(player2_isReviving),
         .player3_isReviving(player3_isReviving),
         .player4_isReviving(player4_isReviving),
-        .start_game(start_game),
-        .WhichPlayerBomb(WhichPlayerBomb)
+        .start_game(start_game)
     );
     
     genvar j;
@@ -125,7 +123,7 @@ module Bomb(
         begin : mod_inst1
             BombCounter Bombcounter(
                 .immediate_explode(immediate_explode[j]),
-                .clk6p25m(clk6p25m) , 
+                .clk6p25m(clk6p25m), 
                 .active(ActiveBombs[j]) , .FreeBomb(FreeBomb) , 
                 .MyNumber(j) ,
                 .edge_registered(edge_registered)
@@ -158,7 +156,6 @@ module Bomb(
         begin : mod_inst3
             TriggerExplosion #(Maxbombcount) TriggerForBlockJ(
                 .BombBlock(BombsBlock[j]) ,
-                .WhichPlayerBomb(WhichPlayerBomb[j*2 +1 : j*2]),
                 .Player1SW(SW[15:13]),
                 .active(ActiveBombs[j]),
                 .blocksAffectedByExplosion(blocksAffectedByExplosion),

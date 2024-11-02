@@ -22,22 +22,21 @@
 
 module PixelControl(
     input clk100mhz ,clk6p25m ,
-    input initiate_reset,
+    input initiate_reset, EndGame,resetting,
     input btnU , btnD , btnL , btnR , btnC ,
     input [15:0]SW , 
-    input DebouncedBtnC ,
     input [12:0] pixel_index ,
-    input start_game,
     input reset, masterToggle, 
     input [2:0] master_rx,
     input [3:0] slave_rx,
-    input[5:0] player1_deathcount,player2_deathcount,player3_deathcount,player4_deathcount,
+    input[3:0] player_dead,
     output[15:0] pixel_data ,
     output [2:0] slave_tx, output reg [15:0] led = 0,
     output reg SWCheck = 0,
     output [3:0] master_tx,
     output player1_isReviving,player2_isReviving,player3_isReviving,player4_isReviving,
-    output reg initiate_reset_out = 0
+    output reg initiate_reset_out = 0,
+    output reg start_game = 0 , pause = 0
 );
    parameter dimensions = 9;
    parameter minX = 3 ,maxX = 93;
@@ -62,13 +61,7 @@ module PixelControl(
    reg btnUPlayer1In,btnDPlayer1In,btnLPlayer1In,btnRPlayer1In,btnCPlayer1In;
    wire[6:0] Player1Block;
    wire player1_die;
-   
-   /*assign btnUPlayer1 = SW[5] ? btnU : 0;
-   assign btnDPlayer1 = SW[5] ? btnD : 0;
-   assign btnLPlayer1 = SW[5] ? btnL : 0;
-   assign btnRPlayer1 = SW[5] ? btnR : 0;
-   assign btnCPlayer1 = SW[5] ? btnC : 0;
-   assign Player1DebouncedBtnC = SW[5] ? DebouncedBtnC : 0;*/
+  
    
    wire btnUPlayer2,btnDPlayer2,btnLPlayer2,btnRPlayer2,btnCPlayer2;
    reg btnUPlayer2In,btnDPlayer2In,btnLPlayer2In,btnRPlayer2In,btnCPlayer2In;
@@ -78,12 +71,6 @@ module PixelControl(
    wire[6:0] Player2Block;
    wire player2_die;
    
-   /*assign btnUPlayer2 = SW[6] ? btnU : 0;
-   assign btnDPlayer2 = SW[6] ? btnD : 0;
-   assign btnLPlayer2 = SW[6] ? btnL : 0;
-   assign btnRPlayer2 = SW[6] ? btnR : 0;
-   assign btnCPlayer2 = SW[6] ? btnC : 0;
-   assign Player2DebouncedBtnC = SW[6] ? DebouncedBtnC : 0;*/
       
    wire btnUPlayer3,btnDPlayer3,btnLPlayer3,btnRPlayer3,btnCPlayer3;
    reg btnUPlayer3In,btnDPlayer3In,btnLPlayer3In,btnRPlayer3In,btnCPlayer3In;  
@@ -92,13 +79,7 @@ module PixelControl(
    wire[5:0] Player3MinY , Player3MaxY;
    wire[6:0] Player3Block;
    wire player3_die;
-   
-   /*assign btnUPlayer3 = SW[7] ? btnU : 0;
-   assign btnDPlayer3 = SW[7] ? btnD : 0;
-   assign btnLPlayer3 = SW[7] ? btnL : 0;
-   assign btnRPlayer3 = SW[7] ? btnR : 0;
-   assign btnCPlayer3 = SW[7] ? btnC : 0;
-   assign Player3DebouncedBtnC = SW[7] ? DebouncedBtnC : 0;*/
+
       
    wire btnUPlayer4,btnDPlayer4,btnLPlayer4,btnRPlayer4,btnCPlayer4;
    reg btnUPlayer4In,btnDPlayer4In,btnLPlayer4In,btnRPlayer4In,btnCPlayer4In;
@@ -107,13 +88,35 @@ module PixelControl(
    wire[5:0] Player4MinY , Player4MaxY;
    wire[6:0] Player4Block;
    wire player4_die;
+  
    
-   /*assign btnUPlayer4 = SW[8] ? btnU : 0;
-   assign btnDPlayer4 = SW[8] ? btnD : 0;
-   assign btnLPlayer4 = SW[8] ? btnL : 0;
-   assign btnRPlayer4 = SW[8] ? btnR : 0;
-   assign btnCPlayer4 = SW[8] ? btnC : 0;
-   assign Player4DebouncedBtnC = SW[8] ? DebouncedBtnC : 0;*/
+   /////////////////////////////////////////////////////////////////////////////////////////////
+   always @ (posedge clk6p25m)
+   begin
+        if(btnUPlayer1 & btnUPlayer2 /*& btnCPlayer3 & btnCPlayer4 */& SWCheck)
+        begin
+            start_game <= 1;
+        end
+        if(initiate_reset)
+        begin
+            start_game <= 0;
+        end
+        
+        pause <= (start_game & ~SWCheck) | resetting;
+   end
+   
+   ButtonGate buttonControl(
+     .SWCheck(~pause), 
+     .player_dead(player_dead),
+     .btnUPlayer1In(btnUPlayer1In),.btnDPlayer1In(btnDPlayer1In),.btnLPlayer1In(btnLPlayer1In),.btnRPlayer1In(btnRPlayer1In),.btnCPlayer1In(btnCPlayer1In),
+     .btnUPlayer2In(btnUPlayer2In),.btnDPlayer2In(btnDPlayer2In),.btnLPlayer2In(btnLPlayer2In),.btnRPlayer2In(btnRPlayer2In),.btnCPlayer2In(btnCPlayer2In),
+     .btnUPlayer3In(btnUPlayer3In),.btnDPlayer3In(btnDPlayer3In),.btnLPlayer3In(btnLPlayer3In),.btnRPlayer3In(btnRPlayer3In),.btnCPlayer3In(btnCPlayer3In),
+     .btnUPlayer4In(btnUPlayer4In),.btnDPlayer4In(btnDPlayer4In),.btnLPlayer4In(btnLPlayer4In),.btnRPlayer4In(btnRPlayer4In),.btnCPlayer4In(btnCPlayer4In),
+     .btnUPlayer1(btnUPlayer1),.btnDPlayer1(btnDPlayer1),.btnLPlayer1(btnLPlayer1),.btnRPlayer1(btnRPlayer1),.btnCPlayer1(btnCPlayer1),
+     .btnUPlayer2(btnUPlayer2),.btnDPlayer2(btnDPlayer2),.btnLPlayer2(btnLPlayer2),.btnRPlayer2(btnRPlayer2),.btnCPlayer2(btnCPlayer2),
+     .btnUPlayer3(btnUPlayer3),.btnDPlayer3(btnDPlayer3),.btnLPlayer3(btnLPlayer3),.btnRPlayer3(btnRPlayer3),.btnCPlayer3(btnCPlayer3),
+     .btnUPlayer4(btnUPlayer4),.btnDPlayer4(btnDPlayer4),.btnLPlayer4(btnLPlayer4),.btnRPlayer4(btnRPlayer4),.btnCPlayer4(btnCPlayer4)
+   );   
    /////////////////////////////////////////////////////////////////////////////////////////////
    PlayerMovement 
    #(4,10,2,8,dimensions,minX,maxX,minY,maxY) 
@@ -216,13 +219,10 @@ module PixelControl(
        .ExplosionAnimations(ExplosionAnimations),
        .player1PixelData(player1PixelData), .player2PixelData(player2PixelData), .player3PixelData(player3PixelData), .player4PixelData(player4PixelData),
        .pixel_data(pixel_data) ,
-       .player1_deathcount(player1_deathcount),
-       .player2_deathcount(player2_deathcount),
-       .player3_deathcount(player3_deathcount),
-       .player4_deathcount(player4_deathcount),
+       .player_dead(player_dead),
        .player1_isReviving(player1_isReviving) , .player2_isReviving(player2_isReviving) ,
        .player3_isReviving(player3_isReviving) , .player4_isReviving(player4_isReviving) ,
-       .start_game(start_game), .pixel_index(pixel_index)
+       .start_game(start_game), .pixel_index(pixel_index) , .pause(pause) , .EndGame(EndGame)
    );
    
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   
@@ -328,22 +328,14 @@ module PixelControl(
           .rx(slave_rx[3]), .data(rx_data_slave4), .valid(valid_slave4)
       );
       
-      ButtonGate buttonControl(.SWCheck(SWCheck), 
-          .btnUPlayer1In(btnUPlayer1In),.btnDPlayer1In(btnDPlayer1In),.btnLPlayer1In(btnLPlayer1In),.btnRPlayer1In(btnRPlayer1In),.btnCPlayer1In(btnCPlayer1In),
-          .btnUPlayer2In(btnUPlayer2In),.btnDPlayer2In(btnDPlayer2In),.btnLPlayer2In(btnLPlayer2In),.btnRPlayer2In(btnRPlayer2In),.btnCPlayer2In(btnCPlayer2In),
-          .btnUPlayer3In(btnUPlayer3In),.btnDPlayer3In(btnDPlayer3In),.btnLPlayer3In(btnLPlayer3In),.btnRPlayer3In(btnRPlayer3In),.btnCPlayer3In(btnCPlayer3In),
-          .btnUPlayer4In(btnUPlayer4In),.btnDPlayer4In(btnDPlayer4In),.btnLPlayer4In(btnLPlayer4In),.btnRPlayer4In(btnRPlayer4In),.btnCPlayer4In(btnCPlayer4In),
-          .btnUPlayer1(btnUPlayer1),.btnDPlayer1(btnDPlayer1),.btnLPlayer1(btnLPlayer1),.btnRPlayer1(btnRPlayer1),.btnCPlayer1(btnCPlayer1),
-          .btnUPlayer2(btnUPlayer2),.btnDPlayer2(btnDPlayer2),.btnLPlayer2(btnLPlayer2),.btnRPlayer2(btnRPlayer2),.btnCPlayer2(btnCPlayer2),
-          .btnUPlayer3(btnUPlayer3),.btnDPlayer3(btnDPlayer3),.btnLPlayer3(btnLPlayer3),.btnRPlayer3(btnRPlayer3),.btnCPlayer3(btnCPlayer3),
-          .btnUPlayer4(btnUPlayer4),.btnDPlayer4(btnDPlayer4),.btnLPlayer4(btnLPlayer4),.btnRPlayer4(btnRPlayer4),.btnCPlayer4(btnCPlayer4));              
+                     
       wire clk_40hz;
       var_clock clk40hz2(.clk(clk100mhz), .M(32'd1249999), .SLOW_CLOCK(clk_40hz));
       always @(posedge clk_40hz) begin
            if (masterToggle) begin
                initiate_reset_out <= initiate_reset;
                led[3:0] <= {rx_data_master3[31],rx_data_master2[31],rx_data_master[31],SW[0]};
-               SWCheck <= rx_data_master3[31] & rx_data_master2[31] & rx_data_master[31] & SW[0];
+               SWCheck <= /*rx_data_master3[31] & rx_data_master2[31] & */rx_data_master[31] & SW[0];
                if (SWCheck) begin
                    case (rx_data_master[7:0])
                        8'h01: begin // Move Up   
@@ -504,7 +496,7 @@ module PixelControl(
                        btnLPlayer1In <= 0;
                        btnRPlayer1In <= 1;
                        btnCPlayer1In <= 0;                
-                   end else if (DebouncedBtnC) begin
+                   end else if (/*DebouncedBtnC*/btnC) begin
                        btnUPlayer1In <= 0;
                        btnDPlayer1In <= 0;
                        btnLPlayer1In <= 0;
@@ -541,7 +533,7 @@ module PixelControl(
                btnCPlayer4In <= rx_data_slave4[27];
                led[3:0] <= rx_data_slave[26:23];
                initiate_reset_out <= rx_data_slave[22];
-               SWCheck <= rx_data_slave[26] & rx_data_slave[25] & rx_data_slave[24] & rx_data_slave[23];                        
+               SWCheck <= /*rx_data_slave[26] & rx_data_slave[25] & */rx_data_slave[24] & rx_data_slave[23];                        
            end
       end
  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
