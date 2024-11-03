@@ -49,7 +49,6 @@ module Bomb(
     reg[25:0] Bombs [0:Maxbombcount-1];
     reg[6:0] BombsBlock [0:Maxbombcount-1];
     wire[6:0] ExplosionRadiusBlocks[0 : Maxbombcount-1][0:7];
-    wire[69:0] ExplosionBlocks;
     wire[Maxbombcount-1 :0] bombs;
     wire[Maxbombcount-1 :0] explode;
     wire[Maxbombcount-1 : 0] ActiveBombs;
@@ -101,12 +100,7 @@ module Bomb(
     generate
         for(j = 0 ; j < Maxbombcount ; j = j+1)
         begin : mod_inst
-//            isColourPixel BombDrop(
-//                .min_x(Bombs[j][25:19]) , .max_x(Bombs[j][18:12]) , 
-//                .min_y(Bombs[j][11:6]) , .max_y(Bombs[j][5:0]) , 
-//                .pixel_index(pixel_index) , .isColouredPixel(bombs[j])
-//            );
-              renderBomb(.centreX((Bombs[j][25:19] + Bombs[j][18:12])/2),                              
+              renderBomb renderbomby(.centreX((Bombs[j][25:19] + Bombs[j][18:12])/2),                              
                    .centreY((Bombs[j][11:6] + Bombs[j][5:0])/2), 
                    .pixel_index(pixel_index), .clock(clk6p25m),                              
                    .FreeBomb(FreeBomb),
@@ -150,13 +144,12 @@ module Bomb(
             );
         end
     endgenerate
-    
+    //can look to remove this below
     generate
         for(j = 0 ; j < Maxbombcount ; j = j+1)
         begin : mod_inst3
             TriggerExplosion #(Maxbombcount) TriggerForBlockJ(
                 .BombBlock(BombsBlock[j]) ,
-                .Player1SW(SW[15:13]),
                 .active(ActiveBombs[j]),
                 .blocksAffectedByExplosion(blocksAffectedByExplosion),
                 .immediate_explode(immediate_explode[j])
@@ -165,8 +158,7 @@ module Bomb(
     endgenerate
     
     reg[6:0] PlayerBlock;
-    //////////////////////////////////////////////////////////////////////////////////////////////////////
-    //assign PlayerBlock = SW[5] ? Player1Block : SW[6] ? Player2Block : SW[7] ? Player3Block : Player4Block;
+    
     always @(posedge clk6p25m) begin
         if (Player1DebouncedBtnC) begin
             PlayerBlock <= Player1Block;

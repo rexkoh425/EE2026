@@ -26,11 +26,13 @@ module FreeBomb #(parameter[6:0] Maxbombcount = 5)(
     input Player1DebouncedBtnC , Player2DebouncedBtnC , Player3DebouncedBtnC , Player4DebouncedBtnC , 
     input start_game,
     input player1_isReviving,player2_isReviving,player3_isReviving,player4_isReviving,
-    output reg[7:0] FreeBomb = Maxbombcount - 1,
+    output reg[7:0] FreeBomb = 99,
     output reg edge_registered = 0
 );
 
     integer k;
+    reg next_clock = 0;
+    reg init = 1;
     reg reassign = 1;
     reg[1:0] triggered_player = 0;
     //i think can only assign once every 200ms sia
@@ -57,28 +59,32 @@ module FreeBomb #(parameter[6:0] Maxbombcount = 5)(
             triggered_player <= 3;
         end
         else begin
-            edge_registered <= 0;
+        edge_registered <= 0;
             if(~edge_registered & reassign)
             begin
+                
                 FreeBomb <= 99;
                                             
                 for(k = 0 ; k < Maxbombcount ; k = k+1)
                 begin
-                    if(ActiveBombs[k] == 0)
+                    if(ActiveBombs[k] == 0 & (k != FreeBomb))
                     begin
-                        if(k != FreeBomb)
-                        begin
-                            FreeBomb <= k;
-                            reassign <= 0;
-                        end
+                        FreeBomb <= k;
+                        reassign <= 0;
                     end
                 end
             end
+            next_clock <= 1;
         end
         //maybe last 2 bombs cannot use cause of smt in this logics
-        if(FreeBomb == 99 | ActiveBombs[FreeBomb] == 1)
+        if((~reassign & ~init & next_clock & FreeBomb == 99) | (~reassign & ActiveBombs[FreeBomb] == 1))
         begin
             reassign <= 1;
+            next_clock <= 0;
+        end
+        else if(init)
+        begin
+            init <= 0;
         end
     end
 endmodule

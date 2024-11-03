@@ -25,7 +25,7 @@ module renderBomb(
     input [5:0] centreY, 
     input [12:0] pixel_index, 
     input clock, 
-    input [15:0]FreeBomb,
+    input [7:0]FreeBomb,
     input [31:0] MyNumber,
     input edge_registered,
     output reg [15:0] pixel_data,
@@ -37,7 +37,7 @@ module renderBomb(
    wire stopFlicker;
    wire isRed;
    wire isDefBomb;
-   staticBomb(.centreX(centreX), 
+   staticBomb staticbomb(.centreX(centreX), 
               .centreY(centreY), 
               .pixel_index(pixel_index), .clock(clock), 
               .isBomb(isDefBomb), 

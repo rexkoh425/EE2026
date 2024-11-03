@@ -127,7 +127,6 @@ module PixelControl(
        .pixel_index(pixel_index) ,
        .player_isReviving(player1_isReviving),
        .start_game(start_game), .initiate_reset(initiate_reset),
-       ////output
        .PlayerMinX(Player1MinX) , .PlayerMaxX(Player1MaxX) ,
        .PlayerMinY(Player1MinY) , .PlayerMaxY(Player1MaxY) ,
        .PlayerBlock(Player1Block)

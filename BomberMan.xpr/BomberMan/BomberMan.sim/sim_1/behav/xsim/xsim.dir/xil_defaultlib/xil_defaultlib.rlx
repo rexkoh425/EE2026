@@ -1,0 +1,17 @@
+0.6
+2018.2
+Jun 14 2018
+20:41:02
+C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.sim/sim_1/behav/xsim/glbl.v,1529022455,verilog,,,,glbl,,,,,,,,
+C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sim_1/new/BombSimulation.v,1730548730,verilog,,,,BombSimulation,,,,,,,,
+C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sim_1/new/FreeBombDut.v,1730609490,verilog,,,,FreeBombDut,,,,,,,,
+C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BlockColourPixel.v,1730471358,verilog,,C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BlockIsImmutable.v,,BlockColourPixel,,,,,,,,
+C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BlockIsImmutable.v,1730471358,verilog,,C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BombCounter.v,,BlockIsImmutable,,,,,,,,
+C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/BombCounter.v,1730564021,verilog,,C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/ExplodeBomb.v,,BombCounter,,,,,,,,
+C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/ExplodeBomb.v,1730471358,verilog,,C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/FreeBomb.v,,ExplodeBomb,,,,,,,,
+C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/FreeBomb.v,1730573998,verilog,,C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/TriggerExplosion.v,,FreeBomb,,,,,,,,
+C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/TriggerExplosion.v,1730549245,verilog,,C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/flickerBomb.v,,TriggerExplosion,,,,,,,,
+C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/flickerBomb.v,1730471414,verilog,,C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderBomb.v,,flickerBomb,,,,,,,,
+C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/isColourPixel.v,1730471358,verilog,,C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sim_1/new/BombSimulation.v,,isColourPixel,,,,,,,,
+C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/renderBomb.v,1730560080,verilog,,C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/staticBomb.v,,renderBomb,,,,,,,,
+C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sources_1/new/staticBomb.v,1730543067,verilog,,C:/NUS/EE2026/EE2026/BomberMan.xpr/BomberMan/BomberMan.srcs/sim_1/new/BombSimulation.v,,staticBomb,,,,,,,,

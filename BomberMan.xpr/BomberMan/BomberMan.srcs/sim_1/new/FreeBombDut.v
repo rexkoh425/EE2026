@@ -21,39 +21,74 @@
 
 
 module FreeBombDut();
+    parameter[6:0] Maxbombcount = 3;
+    reg clk6p25m;
+    reg [Maxbombcount-1 : 0]ActiveBombs;
+    reg Player1DebouncedBtnC;
+    reg start_game;
+    reg player1_isReviving;
+    reg [7:0] FreeBomb = 99;
+    reg edge_registered = 0;
 
-        parameter Maxbombcount = 5;
-        wire [Maxbombcount-1 : 0]ActiveBombs;
-        wire[15:0] FreeBomb;
-        wire edge_registered;
-        reg DebouncedBtnC;
-        reg clk6p25m;
-        FreeBomb #(Maxbombcount) FindFreeBomb(.clk6p25m(clk6p25m) , .ActiveBombs(ActiveBombs) , .FreeBomb(FreeBomb) , .DebouncedBtnC(DebouncedBtnC) , .edge_registered(edge_registered));
-        
-        genvar j;
-        generate
-            for(j = 0 ; j < Maxbombcount ; j = j+1)
-            begin : mod_inst1
-                BombCounter Bombcounter(.clk6p25m(clk6p25m) , .active(ActiveBombs[j]) , .FreeBomb(FreeBomb) , .MyNumber(j) , .edge_registered(edge_registered));
+    initial begin
+        clk6p25m = 0;
+        player1_isReviving = 0;
+        start_game = 1;
+        Player1DebouncedBtnC = 0;
+        ActiveBombs = 0;
+        #1000;
+        #1000; Player1DebouncedBtnC = 1; ActiveBombs = 3'b100; #50_000_000; Player1DebouncedBtnC = 0; #1000;
+        #1000; Player1DebouncedBtnC = 1; ActiveBombs = 3'b110;#50_000_000; Player1DebouncedBtnC = 0; #1000;
+        #1000; Player1DebouncedBtnC = 1; ActiveBombs = 3'b111;#50_000_000; Player1DebouncedBtnC = 0; 
+        #1_000_000_000; ActiveBombs = 3'b011; 
+        #1000; Player1DebouncedBtnC = 1; ActiveBombs = 3'b111;#50_000_000; Player1DebouncedBtnC = 0; #1000; 
+    end
+    
+    always begin
+        #80; clk6p25m = ~clk6p25m; 
+    end
+    genvar j;
+    
+    integer k;
+    reg next_clock = 0;
+    reg init = 1;
+    reg reassign = 1;
+    reg[1:0] triggered_player = 0;
+    //i think can only assign once every 200ms sia
+    always @(posedge clk6p25m)
+    begin
+        if(Player1DebouncedBtnC == 1 & ~player1_isReviving & start_game & ~edge_registered)
+        begin
+            edge_registered <= 1;
+            triggered_player <= 0;
+        end
+        else begin
+            edge_registered <= 0;
+            if(~edge_registered & reassign)
+            begin
+                
+                FreeBomb <= 99;
+                                            
+                for(k = 0 ; k < Maxbombcount ; k = k+1)
+                begin
+                    if(ActiveBombs[k] == 0 & (k != FreeBomb))
+                    begin
+                        FreeBomb <= k;
+                        reassign <= 0;
+                    end
+                end
             end
-        endgenerate
-            
-        initial begin
-            clk6p25m = 0;
-            DebouncedBtnC = 0; #1000;
-            DebouncedBtnC = 1; #1000;
-            DebouncedBtnC = 0; #1000;
-            DebouncedBtnC = 1; #1000;
-            DebouncedBtnC = 0; #1000;
-            DebouncedBtnC = 1; #1000;
-            DebouncedBtnC = 0; #1000;
-            DebouncedBtnC = 1; #1000;
-            DebouncedBtnC = 0; #1000;
-            DebouncedBtnC = 1; #1000;
-            DebouncedBtnC = 0; #1000;     
+            next_clock <= 1;
         end
-        
-        always begin
-            clk6p25m = ~clk6p25m; #80;
+        //maybe last 2 bombs cannot use cause of smt in this logics
+        if((~reassign & ~init & next_clock & FreeBomb == 99) | (~reassign & ActiveBombs[FreeBomb] == 1))
+        begin
+            reassign <= 1;
+            next_clock <= 0;
         end
+        else if(init)
+        begin
+            init <= 0;
+        end
+    end
 endmodule

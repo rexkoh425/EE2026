@@ -45,7 +45,8 @@ module BombCounter(
             if(count == 0 | immediate_explode)
             begin
                 active <= 1'b0;
-                count <= 32'd31250000;
+                count <= 32'd31250000; //rmb to change
+                //count <= 32'd625_0000;
             end
         end
     end

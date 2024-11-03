@@ -22,7 +22,6 @@
 
 module TriggerExplosion #(parameter[6:0] Maxbombcount = 5)(
     input[6:0] BombBlock ,
-    input [2:0] Player1SW,
     input active,
     input[69:0] blocksAffectedByExplosion,
     output immediate_explode

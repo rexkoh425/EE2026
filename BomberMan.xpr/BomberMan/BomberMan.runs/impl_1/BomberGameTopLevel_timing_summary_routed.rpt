@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Sat Nov  2 18:32:14 2024
+| Date         : Sun Nov  3 13:00:37 2024
 | Host         : tendra running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file BomberGameTopLevel_timing_summary_routed.rpt -pb BomberGameTopLevel_timing_summary_routed.pb -rpx BomberGameTopLevel_timing_summary_routed.rpx -warn_on_violation
 | Design       : BomberGameTopLevel
@@ -54,7 +54,7 @@ Table of Contents
 --------------------
  There are 31 register/latch pins with no clock driven by root clock pin: SevenSegControl/onehz/SLOW_CLOCK_reg/Q (HIGH)
 
- There are 1620 register/latch pins with no clock driven by root clock pin: clock_6p25MHZ/SLOW_CLOCK_reg/Q (HIGH)
+ There are 1622 register/latch pins with no clock driven by root clock pin: clock_6p25MHZ/SLOW_CLOCK_reg/Q (HIGH)
 
  There are 56 register/latch pins with no clock driven by root clock pin: pixelColourControl/Player1MovementControl/clk40hz/SLOW_CLOCK_reg/Q (HIGH)
 
@@ -81,7 +81,7 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 4657 pins that are not constrained for maximum delay. (HIGH)
+ There are 4659 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
@@ -140,7 +140,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-      4.174        0.000                      0                 1361        0.142        0.000                      0                 1361        4.500        0.000                       0                   753  
+      4.711        0.000                      0                 1361        0.153        0.000                      0                 1361        4.500        0.000                       0                   753  
 
 
 All user specified timing constraints are met.
@@ -163,7 +163,7 @@ sys_clk_pin  {0.000 5.000}      10.000          100.000
 
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-sys_clk_pin         4.174        0.000                      0                 1361        0.142        0.000                      0                 1361        4.500        0.000                       0                   753  
+sys_clk_pin         4.711        0.000                      0                 1361        0.153        0.000                      0                 1361        4.500        0.000                       0                   753  
 
 
 ------------------------------------------------------------------------------------------------
@@ -194,165 +194,27 @@ Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing 
 From Clock:  sys_clk_pin
   To Clock:  sys_clk_pin
 
-Setup :            0  Failing Endpoints,  Worst Slack        4.174ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.142ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        4.711ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.153ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        4.500ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             4.174ns  (required time - arrival time)
-  Source:                 pixelColourControl/master_rx_module/clk_cnt_reg[9]/C
+Slack (MET) :             4.711ns  (required time - arrival time)
+  Source:                 pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt_reg[11]/C
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            pixelColourControl/master_rx_module/FSM_sequential_state_reg[1]/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        5.785ns  (logic 1.386ns (23.960%)  route 4.399ns (76.040%))
-  Logic Levels:           7  (LUT3=2 LUT5=2 LUT6=3)
-  Clock Path Skew:        -0.037ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.848ns = ( 14.848 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.145ns
-    Clock Pessimism Removal (CPR):    0.260ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.967     3.425    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         1.624     5.145    pixelColourControl/master_rx_module/clk_IBUF_BUFG
-    SLICE_X60Y29         FDCE                                         r  pixelColourControl/master_rx_module/clk_cnt_reg[9]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X60Y29         FDCE (Prop_fdce_C_Q)         0.518     5.663 r  pixelColourControl/master_rx_module/clk_cnt_reg[9]/Q
-                         net (fo=5, routed)           1.270     6.933    pixelColourControl/master_rx_module/clk_cnt_reg_n_0_[9]
-    SLICE_X60Y29         LUT5 (Prop_lut5_I0_O)        0.124     7.057 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_8/O
-                         net (fo=1, routed)           0.607     7.664    pixelColourControl/master_rx_module/clk_cnt[13]_i_8_n_0
-    SLICE_X60Y30         LUT5 (Prop_lut5_I0_O)        0.124     7.788 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_5/O
-                         net (fo=1, routed)           0.567     8.356    pixelColourControl/master_rx_module/clk_cnt[13]_i_5_n_0
-    SLICE_X60Y30         LUT6 (Prop_lut6_I0_O)        0.124     8.480 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_3/O
-                         net (fo=17, routed)          0.501     8.980    pixelColourControl/master_rx_module/clk_cnt[13]_i_3_n_0
-    SLICE_X63Y29         LUT3 (Prop_lut3_I0_O)        0.124     9.104 r  pixelColourControl/master_rx_module/bit_idx[4]_i_3/O
-                         net (fo=7, routed)           0.481     9.585    pixelColourControl/master_rx_module/bit_idx[4]_i_3_n_0
-    SLICE_X59Y30         LUT6 (Prop_lut6_I5_O)        0.124     9.709 r  pixelColourControl/master_rx_module/shift_reg[31]_i_2/O
-                         net (fo=2, routed)           0.557    10.266    pixelColourControl/master_rx_module/shift_reg[31]
-    SLICE_X63Y28         LUT6 (Prop_lut6_I4_O)        0.124    10.390 r  pixelColourControl/master_rx_module/FSM_sequential_state[1]_i_2__7/O
-                         net (fo=2, routed)           0.416    10.806    pixelColourControl/master_rx_module/FSM_sequential_state[1]_i_2__7_n_0
-    SLICE_X63Y28         LUT3 (Prop_lut3_I2_O)        0.124    10.930 r  pixelColourControl/master_rx_module/FSM_sequential_state[1]_i_1__2/O
-                         net (fo=1, routed)           0.000    10.930    pixelColourControl/master_rx_module/FSM_sequential_state[1]_i_1__2_n_0
-    SLICE_X63Y28         FDCE                                         r  pixelColourControl/master_rx_module/FSM_sequential_state_reg[1]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    W5                                                0.000    10.000 r  clk (IN)
-                         net (fo=0)                   0.000    10.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.862    13.250    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         1.507    14.848    pixelColourControl/master_rx_module/clk_IBUF_BUFG
-    SLICE_X63Y28         FDCE                                         r  pixelColourControl/master_rx_module/FSM_sequential_state_reg[1]/C
-                         clock pessimism              0.260    15.108    
-                         clock uncertainty           -0.035    15.073    
-    SLICE_X63Y28         FDCE (Setup_fdce_C_D)        0.031    15.104    pixelColourControl/master_rx_module/FSM_sequential_state_reg[1]
-  -------------------------------------------------------------------
-                         required time                         15.104    
-                         arrival time                         -10.930    
-  -------------------------------------------------------------------
-                         slack                                  4.174    
-
-Slack (MET) :             4.176ns  (required time - arrival time)
-  Source:                 pixelColourControl/master_rx_module/clk_cnt_reg[9]/C
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            pixelColourControl/master_rx_module/FSM_sequential_state_reg[0]/D
+  Destination:            pixelColourControl/slave_tx_module3/uart_tx_inst_slave/bit_idx_reg[0]/CE
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        5.781ns  (logic 1.386ns (23.976%)  route 4.395ns (76.024%))
-  Logic Levels:           7  (LUT2=1 LUT3=1 LUT5=2 LUT6=3)
-  Clock Path Skew:        -0.037ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.848ns = ( 14.848 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.145ns
-    Clock Pessimism Removal (CPR):    0.260ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.967     3.425    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         1.624     5.145    pixelColourControl/master_rx_module/clk_IBUF_BUFG
-    SLICE_X60Y29         FDCE                                         r  pixelColourControl/master_rx_module/clk_cnt_reg[9]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X60Y29         FDCE (Prop_fdce_C_Q)         0.518     5.663 r  pixelColourControl/master_rx_module/clk_cnt_reg[9]/Q
-                         net (fo=5, routed)           1.270     6.933    pixelColourControl/master_rx_module/clk_cnt_reg_n_0_[9]
-    SLICE_X60Y29         LUT5 (Prop_lut5_I0_O)        0.124     7.057 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_8/O
-                         net (fo=1, routed)           0.607     7.664    pixelColourControl/master_rx_module/clk_cnt[13]_i_8_n_0
-    SLICE_X60Y30         LUT5 (Prop_lut5_I0_O)        0.124     7.788 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_5/O
-                         net (fo=1, routed)           0.567     8.356    pixelColourControl/master_rx_module/clk_cnt[13]_i_5_n_0
-    SLICE_X60Y30         LUT6 (Prop_lut6_I0_O)        0.124     8.480 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_3/O
-                         net (fo=17, routed)          0.501     8.980    pixelColourControl/master_rx_module/clk_cnt[13]_i_3_n_0
-    SLICE_X63Y29         LUT3 (Prop_lut3_I0_O)        0.124     9.104 r  pixelColourControl/master_rx_module/bit_idx[4]_i_3/O
-                         net (fo=7, routed)           0.481     9.585    pixelColourControl/master_rx_module/bit_idx[4]_i_3_n_0
-    SLICE_X59Y30         LUT6 (Prop_lut6_I5_O)        0.124     9.709 r  pixelColourControl/master_rx_module/shift_reg[31]_i_2/O
-                         net (fo=2, routed)           0.557    10.266    pixelColourControl/master_rx_module/shift_reg[31]
-    SLICE_X63Y28         LUT6 (Prop_lut6_I4_O)        0.124    10.390 r  pixelColourControl/master_rx_module/FSM_sequential_state[1]_i_2__7/O
-                         net (fo=2, routed)           0.412    10.802    pixelColourControl/master_rx_module/FSM_sequential_state[1]_i_2__7_n_0
-    SLICE_X63Y28         LUT2 (Prop_lut2_I1_O)        0.124    10.926 r  pixelColourControl/master_rx_module/FSM_sequential_state[0]_i_1__2/O
-                         net (fo=1, routed)           0.000    10.926    pixelColourControl/master_rx_module/FSM_sequential_state[0]_i_1__2_n_0
-    SLICE_X63Y28         FDCE                                         r  pixelColourControl/master_rx_module/FSM_sequential_state_reg[0]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    W5                                                0.000    10.000 r  clk (IN)
-                         net (fo=0)                   0.000    10.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.862    13.250    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         1.507    14.848    pixelColourControl/master_rx_module/clk_IBUF_BUFG
-    SLICE_X63Y28         FDCE                                         r  pixelColourControl/master_rx_module/FSM_sequential_state_reg[0]/C
-                         clock pessimism              0.260    15.108    
-                         clock uncertainty           -0.035    15.073    
-    SLICE_X63Y28         FDCE (Setup_fdce_C_D)        0.029    15.102    pixelColourControl/master_rx_module/FSM_sequential_state_reg[0]
-  -------------------------------------------------------------------
-                         required time                         15.102    
-                         arrival time                         -10.926    
-  -------------------------------------------------------------------
-                         slack                                  4.176    
-
-Slack (MET) :             4.492ns  (required time - arrival time)
-  Source:                 pixelColourControl/master_rx_module/clk_cnt_reg[9]/C
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            pixelColourControl/master_rx_module/shift_reg_reg[1]/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        5.483ns  (logic 1.262ns (23.017%)  route 4.221ns (76.983%))
-  Logic Levels:           6  (LUT3=2 LUT5=2 LUT6=2)
-  Clock Path Skew:        -0.022ns (DCD - SCD + CPR)
+  Data Path Delay:        5.023ns  (logic 1.397ns (27.809%)  route 3.626ns (72.191%))
+  Logic Levels:           4  (LUT2=1 LUT5=2 LUT6=1)
+  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    4.849ns = ( 14.849 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.145ns
+    Source Clock Delay      (SCD):    5.148ns
     Clock Pessimism Removal (CPR):    0.274ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -369,24 +231,20 @@ Slack (MET) :             4.492ns  (required time - arrival time)
     W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
                          net (fo=1, routed)           1.967     3.425    clk_IBUF
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         1.624     5.145    pixelColourControl/master_rx_module/clk_IBUF_BUFG
-    SLICE_X60Y29         FDCE                                         r  pixelColourControl/master_rx_module/clk_cnt_reg[9]/C
+                         net (fo=752, routed)         1.627     5.148    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_IBUF_BUFG
+    SLICE_X64Y18         FDCE                                         r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt_reg[11]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X60Y29         FDCE (Prop_fdce_C_Q)         0.518     5.663 r  pixelColourControl/master_rx_module/clk_cnt_reg[9]/Q
-                         net (fo=5, routed)           1.270     6.933    pixelColourControl/master_rx_module/clk_cnt_reg_n_0_[9]
-    SLICE_X60Y29         LUT5 (Prop_lut5_I0_O)        0.124     7.057 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_8/O
-                         net (fo=1, routed)           0.607     7.664    pixelColourControl/master_rx_module/clk_cnt[13]_i_8_n_0
-    SLICE_X60Y30         LUT5 (Prop_lut5_I0_O)        0.124     7.788 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_5/O
-                         net (fo=1, routed)           0.567     8.356    pixelColourControl/master_rx_module/clk_cnt[13]_i_5_n_0
-    SLICE_X60Y30         LUT6 (Prop_lut6_I0_O)        0.124     8.480 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_3/O
-                         net (fo=17, routed)          0.501     8.980    pixelColourControl/master_rx_module/clk_cnt[13]_i_3_n_0
-    SLICE_X63Y29         LUT3 (Prop_lut3_I0_O)        0.124     9.104 r  pixelColourControl/master_rx_module/bit_idx[4]_i_3/O
-                         net (fo=7, routed)           0.579     9.683    pixelColourControl/master_rx_module/bit_idx[4]_i_3_n_0
-    SLICE_X59Y29         LUT3 (Prop_lut3_I1_O)        0.124     9.807 r  pixelColourControl/master_rx_module/shift_reg[5]_i_2/O
-                         net (fo=2, routed)           0.697    10.504    pixelColourControl/master_rx_module/shift_reg[5]_i_2_n_0
-    SLICE_X59Y31         LUT6 (Prop_lut6_I1_O)        0.124    10.628 r  pixelColourControl/master_rx_module/shift_reg[1]_i_1/O
-                         net (fo=1, routed)           0.000    10.628    pixelColourControl/master_rx_module/shift_reg[1]_i_1_n_0
-    SLICE_X59Y31         FDCE                                         r  pixelColourControl/master_rx_module/shift_reg_reg[1]/D
+    SLICE_X64Y18         FDCE (Prop_fdce_C_Q)         0.478     5.626 r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt_reg[11]/Q
+                         net (fo=3, routed)           1.224     6.851    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt__0[11]
+    SLICE_X64Y18         LUT2 (Prop_lut2_I0_O)        0.323     7.174 r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_7__1/O
+                         net (fo=1, routed)           0.431     7.605    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_7__1_n_0
+    SLICE_X64Y16         LUT6 (Prop_lut6_I2_O)        0.348     7.953 r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_5__1/O
+                         net (fo=1, routed)           0.813     8.766    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_5__1_n_0
+    SLICE_X64Y18         LUT5 (Prop_lut5_I0_O)        0.124     8.890 r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_4__1/O
+                         net (fo=16, routed)          0.523     9.414    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_4__1_n_0
+    SLICE_X62Y16         LUT5 (Prop_lut5_I4_O)        0.124     9.538 r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/bit_idx[4]_i_1__2/O
+                         net (fo=5, routed)           0.634    10.172    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/bit_idx
+    SLICE_X65Y19         FDCE                                         r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/bit_idx_reg[0]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -396,30 +254,30 @@ Slack (MET) :             4.492ns  (required time - arrival time)
     W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
                          net (fo=1, routed)           1.862    13.250    clk_IBUF
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         1.508    14.849    pixelColourControl/master_rx_module/clk_IBUF_BUFG
-    SLICE_X59Y31         FDCE                                         r  pixelColourControl/master_rx_module/shift_reg_reg[1]/C
+                         net (fo=752, routed)         1.508    14.849    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_IBUF_BUFG
+    SLICE_X65Y19         FDCE                                         r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/bit_idx_reg[0]/C
                          clock pessimism              0.274    15.123    
                          clock uncertainty           -0.035    15.088    
-    SLICE_X59Y31         FDCE (Setup_fdce_C_D)        0.032    15.120    pixelColourControl/master_rx_module/shift_reg_reg[1]
+    SLICE_X65Y19         FDCE (Setup_fdce_C_CE)      -0.205    14.883    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/bit_idx_reg[0]
   -------------------------------------------------------------------
-                         required time                         15.120    
-                         arrival time                         -10.628    
+                         required time                         14.883    
+                         arrival time                         -10.172    
   -------------------------------------------------------------------
-                         slack                                  4.492    
+                         slack                                  4.711    
 
-Slack (MET) :             4.568ns  (required time - arrival time)
-  Source:                 pixelColourControl/master_rx_module/clk_cnt_reg[9]/C
+Slack (MET) :             4.711ns  (required time - arrival time)
+  Source:                 pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt_reg[11]/C
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            pixelColourControl/master_rx_module/shift_reg_reg[7]/D
+  Destination:            pixelColourControl/slave_tx_module3/uart_tx_inst_slave/bit_idx_reg[1]/CE
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        5.406ns  (logic 1.461ns (27.026%)  route 3.945ns (72.974%))
-  Logic Levels:           6  (LUT3=2 LUT5=2 LUT6=2)
-  Clock Path Skew:        -0.023ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.848ns = ( 14.848 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.145ns
+  Data Path Delay:        5.023ns  (logic 1.397ns (27.809%)  route 3.626ns (72.191%))
+  Logic Levels:           4  (LUT2=1 LUT5=2 LUT6=1)
+  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.849ns = ( 14.849 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.148ns
     Clock Pessimism Removal (CPR):    0.274ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -436,24 +294,20 @@ Slack (MET) :             4.568ns  (required time - arrival time)
     W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
                          net (fo=1, routed)           1.967     3.425    clk_IBUF
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         1.624     5.145    pixelColourControl/master_rx_module/clk_IBUF_BUFG
-    SLICE_X60Y29         FDCE                                         r  pixelColourControl/master_rx_module/clk_cnt_reg[9]/C
+                         net (fo=752, routed)         1.627     5.148    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_IBUF_BUFG
+    SLICE_X64Y18         FDCE                                         r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt_reg[11]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X60Y29         FDCE (Prop_fdce_C_Q)         0.518     5.663 r  pixelColourControl/master_rx_module/clk_cnt_reg[9]/Q
-                         net (fo=5, routed)           1.270     6.933    pixelColourControl/master_rx_module/clk_cnt_reg_n_0_[9]
-    SLICE_X60Y29         LUT5 (Prop_lut5_I0_O)        0.124     7.057 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_8/O
-                         net (fo=1, routed)           0.607     7.664    pixelColourControl/master_rx_module/clk_cnt[13]_i_8_n_0
-    SLICE_X60Y30         LUT5 (Prop_lut5_I0_O)        0.124     7.788 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_5/O
-                         net (fo=1, routed)           0.567     8.356    pixelColourControl/master_rx_module/clk_cnt[13]_i_5_n_0
-    SLICE_X60Y30         LUT6 (Prop_lut6_I0_O)        0.124     8.480 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_3/O
-                         net (fo=17, routed)          0.501     8.980    pixelColourControl/master_rx_module/clk_cnt[13]_i_3_n_0
-    SLICE_X63Y29         LUT3 (Prop_lut3_I0_O)        0.124     9.104 r  pixelColourControl/master_rx_module/bit_idx[4]_i_3/O
-                         net (fo=7, routed)           0.579     9.683    pixelColourControl/master_rx_module/bit_idx[4]_i_3_n_0
-    SLICE_X59Y29         LUT3 (Prop_lut3_I1_O)        0.120     9.803 r  pixelColourControl/master_rx_module/shift_reg[7]_i_2/O
-                         net (fo=2, routed)           0.421    10.224    pixelColourControl/master_rx_module/shift_reg[7]_i_2_n_0
-    SLICE_X59Y29         LUT6 (Prop_lut6_I4_O)        0.327    10.551 r  pixelColourControl/master_rx_module/shift_reg[7]_i_1/O
-                         net (fo=1, routed)           0.000    10.551    pixelColourControl/master_rx_module/shift_reg[7]_i_1_n_0
-    SLICE_X59Y29         FDCE                                         r  pixelColourControl/master_rx_module/shift_reg_reg[7]/D
+    SLICE_X64Y18         FDCE (Prop_fdce_C_Q)         0.478     5.626 r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt_reg[11]/Q
+                         net (fo=3, routed)           1.224     6.851    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt__0[11]
+    SLICE_X64Y18         LUT2 (Prop_lut2_I0_O)        0.323     7.174 r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_7__1/O
+                         net (fo=1, routed)           0.431     7.605    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_7__1_n_0
+    SLICE_X64Y16         LUT6 (Prop_lut6_I2_O)        0.348     7.953 r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_5__1/O
+                         net (fo=1, routed)           0.813     8.766    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_5__1_n_0
+    SLICE_X64Y18         LUT5 (Prop_lut5_I0_O)        0.124     8.890 r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_4__1/O
+                         net (fo=16, routed)          0.523     9.414    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_4__1_n_0
+    SLICE_X62Y16         LUT5 (Prop_lut5_I4_O)        0.124     9.538 r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/bit_idx[4]_i_1__2/O
+                         net (fo=5, routed)           0.634    10.172    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/bit_idx
+    SLICE_X65Y19         FDCE                                         r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/bit_idx_reg[1]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -463,292 +317,30 @@ Slack (MET) :             4.568ns  (required time - arrival time)
     W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
                          net (fo=1, routed)           1.862    13.250    clk_IBUF
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         1.507    14.848    pixelColourControl/master_rx_module/clk_IBUF_BUFG
-    SLICE_X59Y29         FDCE                                         r  pixelColourControl/master_rx_module/shift_reg_reg[7]/C
-                         clock pessimism              0.274    15.122    
-                         clock uncertainty           -0.035    15.087    
-    SLICE_X59Y29         FDCE (Setup_fdce_C_D)        0.032    15.119    pixelColourControl/master_rx_module/shift_reg_reg[7]
+                         net (fo=752, routed)         1.508    14.849    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_IBUF_BUFG
+    SLICE_X65Y19         FDCE                                         r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/bit_idx_reg[1]/C
+                         clock pessimism              0.274    15.123    
+                         clock uncertainty           -0.035    15.088    
+    SLICE_X65Y19         FDCE (Setup_fdce_C_CE)      -0.205    14.883    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/bit_idx_reg[1]
   -------------------------------------------------------------------
-                         required time                         15.119    
-                         arrival time                         -10.551    
+                         required time                         14.883    
+                         arrival time                         -10.172    
   -------------------------------------------------------------------
-                         slack                                  4.568    
+                         slack                                  4.711    
 
-Slack (MET) :             4.628ns  (required time - arrival time)
-  Source:                 pixelColourControl/master_rx_module/clk_cnt_reg[9]/C
+Slack (MET) :             4.777ns  (required time - arrival time)
+  Source:                 pixelColourControl/slave_rx_module/clk_cnt_reg[10]/C
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            pixelColourControl/master_rx_module/bit_idx_reg[0]/CE
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        5.109ns  (logic 1.138ns (22.276%)  route 3.971ns (77.724%))
-  Logic Levels:           5  (LUT3=1 LUT4=1 LUT5=2 LUT6=1)
-  Clock Path Skew:        -0.023ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.848ns = ( 14.848 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.145ns
-    Clock Pessimism Removal (CPR):    0.274ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.967     3.425    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         1.624     5.145    pixelColourControl/master_rx_module/clk_IBUF_BUFG
-    SLICE_X60Y29         FDCE                                         r  pixelColourControl/master_rx_module/clk_cnt_reg[9]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X60Y29         FDCE (Prop_fdce_C_Q)         0.518     5.663 r  pixelColourControl/master_rx_module/clk_cnt_reg[9]/Q
-                         net (fo=5, routed)           1.270     6.933    pixelColourControl/master_rx_module/clk_cnt_reg_n_0_[9]
-    SLICE_X60Y29         LUT5 (Prop_lut5_I0_O)        0.124     7.057 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_8/O
-                         net (fo=1, routed)           0.607     7.664    pixelColourControl/master_rx_module/clk_cnt[13]_i_8_n_0
-    SLICE_X60Y30         LUT5 (Prop_lut5_I0_O)        0.124     7.788 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_5/O
-                         net (fo=1, routed)           0.567     8.356    pixelColourControl/master_rx_module/clk_cnt[13]_i_5_n_0
-    SLICE_X60Y30         LUT6 (Prop_lut6_I0_O)        0.124     8.480 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_3/O
-                         net (fo=17, routed)          0.501     8.980    pixelColourControl/master_rx_module/clk_cnt[13]_i_3_n_0
-    SLICE_X63Y29         LUT3 (Prop_lut3_I0_O)        0.124     9.104 r  pixelColourControl/master_rx_module/bit_idx[4]_i_3/O
-                         net (fo=7, routed)           0.487     9.592    pixelColourControl/master_rx_module/bit_idx[4]_i_3_n_0
-    SLICE_X60Y31         LUT4 (Prop_lut4_I3_O)        0.124     9.716 r  pixelColourControl/master_rx_module/bit_idx[4]_i_1__7/O
-                         net (fo=5, routed)           0.538    10.254    pixelColourControl/master_rx_module/bit_idx
-    SLICE_X59Y30         FDCE                                         r  pixelColourControl/master_rx_module/bit_idx_reg[0]/CE
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    W5                                                0.000    10.000 r  clk (IN)
-                         net (fo=0)                   0.000    10.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.862    13.250    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         1.507    14.848    pixelColourControl/master_rx_module/clk_IBUF_BUFG
-    SLICE_X59Y30         FDCE                                         r  pixelColourControl/master_rx_module/bit_idx_reg[0]/C
-                         clock pessimism              0.274    15.122    
-                         clock uncertainty           -0.035    15.087    
-    SLICE_X59Y30         FDCE (Setup_fdce_C_CE)      -0.205    14.882    pixelColourControl/master_rx_module/bit_idx_reg[0]
-  -------------------------------------------------------------------
-                         required time                         14.882    
-                         arrival time                         -10.254    
-  -------------------------------------------------------------------
-                         slack                                  4.628    
-
-Slack (MET) :             4.628ns  (required time - arrival time)
-  Source:                 pixelColourControl/master_rx_module/clk_cnt_reg[9]/C
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            pixelColourControl/master_rx_module/bit_idx_reg[2]/CE
+  Destination:            pixelColourControl/slave_rx_module/shift_reg_reg[26]/D
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        5.109ns  (logic 1.138ns (22.276%)  route 3.971ns (77.724%))
-  Logic Levels:           5  (LUT3=1 LUT4=1 LUT5=2 LUT6=1)
-  Clock Path Skew:        -0.023ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.848ns = ( 14.848 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.145ns
-    Clock Pessimism Removal (CPR):    0.274ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.967     3.425    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         1.624     5.145    pixelColourControl/master_rx_module/clk_IBUF_BUFG
-    SLICE_X60Y29         FDCE                                         r  pixelColourControl/master_rx_module/clk_cnt_reg[9]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X60Y29         FDCE (Prop_fdce_C_Q)         0.518     5.663 r  pixelColourControl/master_rx_module/clk_cnt_reg[9]/Q
-                         net (fo=5, routed)           1.270     6.933    pixelColourControl/master_rx_module/clk_cnt_reg_n_0_[9]
-    SLICE_X60Y29         LUT5 (Prop_lut5_I0_O)        0.124     7.057 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_8/O
-                         net (fo=1, routed)           0.607     7.664    pixelColourControl/master_rx_module/clk_cnt[13]_i_8_n_0
-    SLICE_X60Y30         LUT5 (Prop_lut5_I0_O)        0.124     7.788 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_5/O
-                         net (fo=1, routed)           0.567     8.356    pixelColourControl/master_rx_module/clk_cnt[13]_i_5_n_0
-    SLICE_X60Y30         LUT6 (Prop_lut6_I0_O)        0.124     8.480 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_3/O
-                         net (fo=17, routed)          0.501     8.980    pixelColourControl/master_rx_module/clk_cnt[13]_i_3_n_0
-    SLICE_X63Y29         LUT3 (Prop_lut3_I0_O)        0.124     9.104 r  pixelColourControl/master_rx_module/bit_idx[4]_i_3/O
-                         net (fo=7, routed)           0.487     9.592    pixelColourControl/master_rx_module/bit_idx[4]_i_3_n_0
-    SLICE_X60Y31         LUT4 (Prop_lut4_I3_O)        0.124     9.716 r  pixelColourControl/master_rx_module/bit_idx[4]_i_1__7/O
-                         net (fo=5, routed)           0.538    10.254    pixelColourControl/master_rx_module/bit_idx
-    SLICE_X59Y30         FDCE                                         r  pixelColourControl/master_rx_module/bit_idx_reg[2]/CE
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    W5                                                0.000    10.000 r  clk (IN)
-                         net (fo=0)                   0.000    10.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.862    13.250    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         1.507    14.848    pixelColourControl/master_rx_module/clk_IBUF_BUFG
-    SLICE_X59Y30         FDCE                                         r  pixelColourControl/master_rx_module/bit_idx_reg[2]/C
-                         clock pessimism              0.274    15.122    
-                         clock uncertainty           -0.035    15.087    
-    SLICE_X59Y30         FDCE (Setup_fdce_C_CE)      -0.205    14.882    pixelColourControl/master_rx_module/bit_idx_reg[2]
-  -------------------------------------------------------------------
-                         required time                         14.882    
-                         arrival time                         -10.254    
-  -------------------------------------------------------------------
-                         slack                                  4.628    
-
-Slack (MET) :             4.628ns  (required time - arrival time)
-  Source:                 pixelColourControl/master_rx_module/clk_cnt_reg[9]/C
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            pixelColourControl/master_rx_module/bit_idx_reg[4]/CE
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        5.109ns  (logic 1.138ns (22.276%)  route 3.971ns (77.724%))
-  Logic Levels:           5  (LUT3=1 LUT4=1 LUT5=2 LUT6=1)
-  Clock Path Skew:        -0.023ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.848ns = ( 14.848 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.145ns
-    Clock Pessimism Removal (CPR):    0.274ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.967     3.425    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         1.624     5.145    pixelColourControl/master_rx_module/clk_IBUF_BUFG
-    SLICE_X60Y29         FDCE                                         r  pixelColourControl/master_rx_module/clk_cnt_reg[9]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X60Y29         FDCE (Prop_fdce_C_Q)         0.518     5.663 r  pixelColourControl/master_rx_module/clk_cnt_reg[9]/Q
-                         net (fo=5, routed)           1.270     6.933    pixelColourControl/master_rx_module/clk_cnt_reg_n_0_[9]
-    SLICE_X60Y29         LUT5 (Prop_lut5_I0_O)        0.124     7.057 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_8/O
-                         net (fo=1, routed)           0.607     7.664    pixelColourControl/master_rx_module/clk_cnt[13]_i_8_n_0
-    SLICE_X60Y30         LUT5 (Prop_lut5_I0_O)        0.124     7.788 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_5/O
-                         net (fo=1, routed)           0.567     8.356    pixelColourControl/master_rx_module/clk_cnt[13]_i_5_n_0
-    SLICE_X60Y30         LUT6 (Prop_lut6_I0_O)        0.124     8.480 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_3/O
-                         net (fo=17, routed)          0.501     8.980    pixelColourControl/master_rx_module/clk_cnt[13]_i_3_n_0
-    SLICE_X63Y29         LUT3 (Prop_lut3_I0_O)        0.124     9.104 r  pixelColourControl/master_rx_module/bit_idx[4]_i_3/O
-                         net (fo=7, routed)           0.487     9.592    pixelColourControl/master_rx_module/bit_idx[4]_i_3_n_0
-    SLICE_X60Y31         LUT4 (Prop_lut4_I3_O)        0.124     9.716 r  pixelColourControl/master_rx_module/bit_idx[4]_i_1__7/O
-                         net (fo=5, routed)           0.538    10.254    pixelColourControl/master_rx_module/bit_idx
-    SLICE_X59Y30         FDCE                                         r  pixelColourControl/master_rx_module/bit_idx_reg[4]/CE
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    W5                                                0.000    10.000 r  clk (IN)
-                         net (fo=0)                   0.000    10.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.862    13.250    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         1.507    14.848    pixelColourControl/master_rx_module/clk_IBUF_BUFG
-    SLICE_X59Y30         FDCE                                         r  pixelColourControl/master_rx_module/bit_idx_reg[4]/C
-                         clock pessimism              0.274    15.122    
-                         clock uncertainty           -0.035    15.087    
-    SLICE_X59Y30         FDCE (Setup_fdce_C_CE)      -0.205    14.882    pixelColourControl/master_rx_module/bit_idx_reg[4]
-  -------------------------------------------------------------------
-                         required time                         14.882    
-                         arrival time                         -10.254    
-  -------------------------------------------------------------------
-                         slack                                  4.628    
-
-Slack (MET) :             4.706ns  (required time - arrival time)
-  Source:                 pixelColourControl/master_rx_module/clk_cnt_reg[9]/C
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            pixelColourControl/master_rx_module/shift_reg_reg[3]/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        5.265ns  (logic 1.461ns (27.750%)  route 3.804ns (72.250%))
-  Logic Levels:           6  (LUT3=2 LUT5=2 LUT6=2)
-  Clock Path Skew:        -0.023ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.848ns = ( 14.848 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.145ns
-    Clock Pessimism Removal (CPR):    0.274ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.967     3.425    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         1.624     5.145    pixelColourControl/master_rx_module/clk_IBUF_BUFG
-    SLICE_X60Y29         FDCE                                         r  pixelColourControl/master_rx_module/clk_cnt_reg[9]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X60Y29         FDCE (Prop_fdce_C_Q)         0.518     5.663 r  pixelColourControl/master_rx_module/clk_cnt_reg[9]/Q
-                         net (fo=5, routed)           1.270     6.933    pixelColourControl/master_rx_module/clk_cnt_reg_n_0_[9]
-    SLICE_X60Y29         LUT5 (Prop_lut5_I0_O)        0.124     7.057 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_8/O
-                         net (fo=1, routed)           0.607     7.664    pixelColourControl/master_rx_module/clk_cnt[13]_i_8_n_0
-    SLICE_X60Y30         LUT5 (Prop_lut5_I0_O)        0.124     7.788 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_5/O
-                         net (fo=1, routed)           0.567     8.356    pixelColourControl/master_rx_module/clk_cnt[13]_i_5_n_0
-    SLICE_X60Y30         LUT6 (Prop_lut6_I0_O)        0.124     8.480 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_3/O
-                         net (fo=17, routed)          0.501     8.980    pixelColourControl/master_rx_module/clk_cnt[13]_i_3_n_0
-    SLICE_X63Y29         LUT3 (Prop_lut3_I0_O)        0.124     9.104 r  pixelColourControl/master_rx_module/bit_idx[4]_i_3/O
-                         net (fo=7, routed)           0.579     9.683    pixelColourControl/master_rx_module/bit_idx[4]_i_3_n_0
-    SLICE_X59Y29         LUT3 (Prop_lut3_I1_O)        0.120     9.803 r  pixelColourControl/master_rx_module/shift_reg[7]_i_2/O
-                         net (fo=2, routed)           0.280    10.083    pixelColourControl/master_rx_module/shift_reg[7]_i_2_n_0
-    SLICE_X59Y29         LUT6 (Prop_lut6_I1_O)        0.327    10.410 r  pixelColourControl/master_rx_module/shift_reg[3]_i_1/O
-                         net (fo=1, routed)           0.000    10.410    pixelColourControl/master_rx_module/shift_reg[3]_i_1_n_0
-    SLICE_X59Y29         FDCE                                         r  pixelColourControl/master_rx_module/shift_reg_reg[3]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                     10.000    10.000 r  
-    W5                                                0.000    10.000 r  clk (IN)
-                         net (fo=0)                   0.000    10.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.862    13.250    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         1.507    14.848    pixelColourControl/master_rx_module/clk_IBUF_BUFG
-    SLICE_X59Y29         FDCE                                         r  pixelColourControl/master_rx_module/shift_reg_reg[3]/C
-                         clock pessimism              0.274    15.122    
-                         clock uncertainty           -0.035    15.087    
-    SLICE_X59Y29         FDCE (Setup_fdce_C_D)        0.029    15.116    pixelColourControl/master_rx_module/shift_reg_reg[3]
-  -------------------------------------------------------------------
-                         required time                         15.116    
-                         arrival time                         -10.410    
-  -------------------------------------------------------------------
-                         slack                                  4.706    
-
-Slack (MET) :             4.713ns  (required time - arrival time)
-  Source:                 pixelColourControl/master_rx_module/clk_cnt_reg[9]/C
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            pixelColourControl/master_rx_module/shift_reg_reg[31]/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        5.246ns  (logic 1.262ns (24.058%)  route 3.984ns (75.942%))
-  Logic Levels:           6  (LUT3=2 LUT5=2 LUT6=2)
-  Clock Path Skew:        -0.037ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.848ns = ( 14.848 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.145ns
+  Data Path Delay:        5.175ns  (logic 1.200ns (23.188%)  route 3.975ns (76.812%))
+  Logic Levels:           6  (LUT3=2 LUT5=1 LUT6=3)
+  Clock Path Skew:        -0.042ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.845ns = ( 14.845 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.147ns
     Clock Pessimism Removal (CPR):    0.260ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -765,24 +357,24 @@ Slack (MET) :             4.713ns  (required time - arrival time)
     W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
                          net (fo=1, routed)           1.967     3.425    clk_IBUF
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         1.624     5.145    pixelColourControl/master_rx_module/clk_IBUF_BUFG
-    SLICE_X60Y29         FDCE                                         r  pixelColourControl/master_rx_module/clk_cnt_reg[9]/C
+                         net (fo=752, routed)         1.626     5.147    pixelColourControl/slave_rx_module/clk_IBUF_BUFG
+    SLICE_X65Y30         FDCE                                         r  pixelColourControl/slave_rx_module/clk_cnt_reg[10]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X60Y29         FDCE (Prop_fdce_C_Q)         0.518     5.663 r  pixelColourControl/master_rx_module/clk_cnt_reg[9]/Q
-                         net (fo=5, routed)           1.270     6.933    pixelColourControl/master_rx_module/clk_cnt_reg_n_0_[9]
-    SLICE_X60Y29         LUT5 (Prop_lut5_I0_O)        0.124     7.057 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_8/O
-                         net (fo=1, routed)           0.607     7.664    pixelColourControl/master_rx_module/clk_cnt[13]_i_8_n_0
-    SLICE_X60Y30         LUT5 (Prop_lut5_I0_O)        0.124     7.788 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_5/O
-                         net (fo=1, routed)           0.567     8.356    pixelColourControl/master_rx_module/clk_cnt[13]_i_5_n_0
-    SLICE_X60Y30         LUT6 (Prop_lut6_I0_O)        0.124     8.480 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_3/O
-                         net (fo=17, routed)          0.501     8.980    pixelColourControl/master_rx_module/clk_cnt[13]_i_3_n_0
-    SLICE_X63Y29         LUT3 (Prop_lut3_I0_O)        0.124     9.104 r  pixelColourControl/master_rx_module/bit_idx[4]_i_3/O
-                         net (fo=7, routed)           0.481     9.585    pixelColourControl/master_rx_module/bit_idx[4]_i_3_n_0
-    SLICE_X59Y30         LUT6 (Prop_lut6_I5_O)        0.124     9.709 r  pixelColourControl/master_rx_module/shift_reg[31]_i_2/O
-                         net (fo=2, routed)           0.558    10.267    pixelColourControl/master_rx_module/shift_reg[31]
-    SLICE_X63Y28         LUT3 (Prop_lut3_I1_O)        0.124    10.391 r  pixelColourControl/master_rx_module/shift_reg[31]_i_1/O
-                         net (fo=1, routed)           0.000    10.391    pixelColourControl/master_rx_module/shift_reg[31]_i_1_n_0
-    SLICE_X63Y28         FDCE                                         r  pixelColourControl/master_rx_module/shift_reg_reg[31]/D
+    SLICE_X65Y30         FDCE (Prop_fdce_C_Q)         0.456     5.603 r  pixelColourControl/slave_rx_module/clk_cnt_reg[10]/Q
+                         net (fo=3, routed)           1.007     6.611    pixelColourControl/slave_rx_module/clk_cnt_reg_n_0_[10]
+    SLICE_X65Y31         LUT6 (Prop_lut6_I0_O)        0.124     6.735 r  pixelColourControl/slave_rx_module/clk_cnt[13]_i_9__1/O
+                         net (fo=1, routed)           0.469     7.204    pixelColourControl/slave_rx_module/clk_cnt[13]_i_9__1_n_0
+    SLICE_X65Y31         LUT5 (Prop_lut5_I4_O)        0.124     7.328 r  pixelColourControl/slave_rx_module/clk_cnt[13]_i_6__1/O
+                         net (fo=1, routed)           0.431     7.759    pixelColourControl/slave_rx_module/clk_cnt[13]_i_6__1_n_0
+    SLICE_X65Y29         LUT6 (Prop_lut6_I5_O)        0.124     7.883 f  pixelColourControl/slave_rx_module/clk_cnt[13]_i_3__2/O
+                         net (fo=17, routed)          0.515     8.398    pixelColourControl/slave_rx_module/clk_cnt[13]_i_3__2_n_0
+    SLICE_X61Y28         LUT3 (Prop_lut3_I2_O)        0.124     8.522 r  pixelColourControl/slave_rx_module/bit_idx[4]_i_3__2/O
+                         net (fo=4, routed)           0.831     9.353    pixelColourControl/slave_rx_module/bit_idx[4]_i_3__2_n_0
+    SLICE_X56Y27         LUT3 (Prop_lut3_I0_O)        0.124     9.477 r  pixelColourControl/slave_rx_module/shift_reg[31]_i_2__2/O
+                         net (fo=8, routed)           0.721    10.198    pixelColourControl/slave_rx_module/shift_reg[31]_i_2__2_n_0
+    SLICE_X58Y27         LUT6 (Prop_lut6_I2_O)        0.124    10.322 r  pixelColourControl/slave_rx_module/shift_reg[26]_i_1/O
+                         net (fo=1, routed)           0.000    10.322    pixelColourControl/slave_rx_module/shift_reg[26]_i_1_n_0
+    SLICE_X58Y27         FDCE                                         r  pixelColourControl/slave_rx_module/shift_reg_reg[26]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -792,30 +384,97 @@ Slack (MET) :             4.713ns  (required time - arrival time)
     W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
                          net (fo=1, routed)           1.862    13.250    clk_IBUF
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         1.507    14.848    pixelColourControl/master_rx_module/clk_IBUF_BUFG
-    SLICE_X63Y28         FDCE                                         r  pixelColourControl/master_rx_module/shift_reg_reg[31]/C
-                         clock pessimism              0.260    15.108    
-                         clock uncertainty           -0.035    15.073    
-    SLICE_X63Y28         FDCE (Setup_fdce_C_D)        0.031    15.104    pixelColourControl/master_rx_module/shift_reg_reg[31]
+                         net (fo=752, routed)         1.504    14.845    pixelColourControl/slave_rx_module/clk_IBUF_BUFG
+    SLICE_X58Y27         FDCE                                         r  pixelColourControl/slave_rx_module/shift_reg_reg[26]/C
+                         clock pessimism              0.260    15.105    
+                         clock uncertainty           -0.035    15.070    
+    SLICE_X58Y27         FDCE (Setup_fdce_C_D)        0.029    15.099    pixelColourControl/slave_rx_module/shift_reg_reg[26]
   -------------------------------------------------------------------
-                         required time                         15.104    
-                         arrival time                         -10.391    
+                         required time                         15.099    
+                         arrival time                         -10.322    
   -------------------------------------------------------------------
-                         slack                                  4.713    
+                         slack                                  4.777    
 
-Slack (MET) :             4.733ns  (required time - arrival time)
-  Source:                 pixelColourControl/master_rx_module/clk_cnt_reg[9]/C
+Slack (MET) :             4.782ns  (required time - arrival time)
+  Source:                 pixelColourControl/slave_rx_module/clk_cnt_reg[10]/C
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            pixelColourControl/master_rx_module/shift_reg_reg[2]/D
+  Destination:            pixelColourControl/slave_rx_module/shift_reg_reg[29]/D
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        5.241ns  (logic 1.262ns (24.082%)  route 3.979ns (75.918%))
-  Logic Levels:           6  (LUT3=2 LUT5=2 LUT6=2)
-  Clock Path Skew:        -0.020ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.851ns = ( 14.851 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.145ns
+  Data Path Delay:        5.172ns  (logic 1.200ns (23.202%)  route 3.972ns (76.798%))
+  Logic Levels:           6  (LUT3=2 LUT5=1 LUT6=3)
+  Clock Path Skew:        -0.042ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.845ns = ( 14.845 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.147ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         1.626     5.147    pixelColourControl/slave_rx_module/clk_IBUF_BUFG
+    SLICE_X65Y30         FDCE                                         r  pixelColourControl/slave_rx_module/clk_cnt_reg[10]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X65Y30         FDCE (Prop_fdce_C_Q)         0.456     5.603 r  pixelColourControl/slave_rx_module/clk_cnt_reg[10]/Q
+                         net (fo=3, routed)           1.007     6.611    pixelColourControl/slave_rx_module/clk_cnt_reg_n_0_[10]
+    SLICE_X65Y31         LUT6 (Prop_lut6_I0_O)        0.124     6.735 r  pixelColourControl/slave_rx_module/clk_cnt[13]_i_9__1/O
+                         net (fo=1, routed)           0.469     7.204    pixelColourControl/slave_rx_module/clk_cnt[13]_i_9__1_n_0
+    SLICE_X65Y31         LUT5 (Prop_lut5_I4_O)        0.124     7.328 r  pixelColourControl/slave_rx_module/clk_cnt[13]_i_6__1/O
+                         net (fo=1, routed)           0.431     7.759    pixelColourControl/slave_rx_module/clk_cnt[13]_i_6__1_n_0
+    SLICE_X65Y29         LUT6 (Prop_lut6_I5_O)        0.124     7.883 f  pixelColourControl/slave_rx_module/clk_cnt[13]_i_3__2/O
+                         net (fo=17, routed)          0.515     8.398    pixelColourControl/slave_rx_module/clk_cnt[13]_i_3__2_n_0
+    SLICE_X61Y28         LUT3 (Prop_lut3_I2_O)        0.124     8.522 r  pixelColourControl/slave_rx_module/bit_idx[4]_i_3__2/O
+                         net (fo=4, routed)           0.831     9.353    pixelColourControl/slave_rx_module/bit_idx[4]_i_3__2_n_0
+    SLICE_X56Y27         LUT3 (Prop_lut3_I0_O)        0.124     9.477 r  pixelColourControl/slave_rx_module/shift_reg[31]_i_2__2/O
+                         net (fo=8, routed)           0.718    10.195    pixelColourControl/slave_rx_module/shift_reg[31]_i_2__2_n_0
+    SLICE_X58Y27         LUT6 (Prop_lut6_I4_O)        0.124    10.319 r  pixelColourControl/slave_rx_module/shift_reg[29]_i_1/O
+                         net (fo=1, routed)           0.000    10.319    pixelColourControl/slave_rx_module/shift_reg[29]_i_1_n_0
+    SLICE_X58Y27         FDCE                                         r  pixelColourControl/slave_rx_module/shift_reg_reg[29]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         1.504    14.845    pixelColourControl/slave_rx_module/clk_IBUF_BUFG
+    SLICE_X58Y27         FDCE                                         r  pixelColourControl/slave_rx_module/shift_reg_reg[29]/C
+                         clock pessimism              0.260    15.105    
+                         clock uncertainty           -0.035    15.070    
+    SLICE_X58Y27         FDCE (Setup_fdce_C_D)        0.031    15.101    pixelColourControl/slave_rx_module/shift_reg_reg[29]
+  -------------------------------------------------------------------
+                         required time                         15.101    
+                         arrival time                         -10.319    
+  -------------------------------------------------------------------
+                         slack                                  4.782    
+
+Slack (MET) :             4.812ns  (required time - arrival time)
+  Source:                 pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt_reg[11]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            pixelColourControl/slave_tx_module3/uart_tx_inst_slave/tx_reg/CE
+                            (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.925ns  (logic 1.397ns (28.364%)  route 3.528ns (71.636%))
+  Logic Levels:           4  (LUT2=1 LUT3=1 LUT5=1 LUT6=1)
+  Clock Path Skew:        -0.022ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.852ns = ( 14.852 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.148ns
     Clock Pessimism Removal (CPR):    0.274ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -832,24 +491,20 @@ Slack (MET) :             4.733ns  (required time - arrival time)
     W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
                          net (fo=1, routed)           1.967     3.425    clk_IBUF
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         1.624     5.145    pixelColourControl/master_rx_module/clk_IBUF_BUFG
-    SLICE_X60Y29         FDCE                                         r  pixelColourControl/master_rx_module/clk_cnt_reg[9]/C
+                         net (fo=752, routed)         1.627     5.148    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_IBUF_BUFG
+    SLICE_X64Y18         FDCE                                         r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt_reg[11]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X60Y29         FDCE (Prop_fdce_C_Q)         0.518     5.663 r  pixelColourControl/master_rx_module/clk_cnt_reg[9]/Q
-                         net (fo=5, routed)           1.270     6.933    pixelColourControl/master_rx_module/clk_cnt_reg_n_0_[9]
-    SLICE_X60Y29         LUT5 (Prop_lut5_I0_O)        0.124     7.057 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_8/O
-                         net (fo=1, routed)           0.607     7.664    pixelColourControl/master_rx_module/clk_cnt[13]_i_8_n_0
-    SLICE_X60Y30         LUT5 (Prop_lut5_I0_O)        0.124     7.788 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_5/O
-                         net (fo=1, routed)           0.567     8.356    pixelColourControl/master_rx_module/clk_cnt[13]_i_5_n_0
-    SLICE_X60Y30         LUT6 (Prop_lut6_I0_O)        0.124     8.480 r  pixelColourControl/master_rx_module/clk_cnt[13]_i_3/O
-                         net (fo=17, routed)          0.501     8.980    pixelColourControl/master_rx_module/clk_cnt[13]_i_3_n_0
-    SLICE_X63Y29         LUT3 (Prop_lut3_I0_O)        0.124     9.104 r  pixelColourControl/master_rx_module/bit_idx[4]_i_3/O
-                         net (fo=7, routed)           0.593     9.698    pixelColourControl/master_rx_module/bit_idx[4]_i_3_n_0
-    SLICE_X59Y31         LUT3 (Prop_lut3_I0_O)        0.124     9.822 r  pixelColourControl/master_rx_module/shift_reg[6]_i_2/O
-                         net (fo=2, routed)           0.440    10.262    pixelColourControl/master_rx_module/shift_reg[6]_i_2_n_0
-    SLICE_X59Y32         LUT6 (Prop_lut6_I1_O)        0.124    10.386 r  pixelColourControl/master_rx_module/shift_reg[2]_i_1/O
-                         net (fo=1, routed)           0.000    10.386    pixelColourControl/master_rx_module/shift_reg[2]_i_1_n_0
-    SLICE_X59Y32         FDCE                                         r  pixelColourControl/master_rx_module/shift_reg_reg[2]/D
+    SLICE_X64Y18         FDCE (Prop_fdce_C_Q)         0.478     5.626 r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt_reg[11]/Q
+                         net (fo=3, routed)           1.224     6.851    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt__0[11]
+    SLICE_X64Y18         LUT2 (Prop_lut2_I0_O)        0.323     7.174 r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_7__1/O
+                         net (fo=1, routed)           0.431     7.605    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_7__1_n_0
+    SLICE_X64Y16         LUT6 (Prop_lut6_I2_O)        0.348     7.953 r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_5__1/O
+                         net (fo=1, routed)           0.813     8.766    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_5__1_n_0
+    SLICE_X64Y18         LUT5 (Prop_lut5_I0_O)        0.124     8.890 r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_4__1/O
+                         net (fo=16, routed)          0.469     9.359    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_4__1_n_0
+    SLICE_X63Y17         LUT3 (Prop_lut3_I2_O)        0.124     9.483 r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/tx_i_1__1/O
+                         net (fo=1, routed)           0.591    10.074    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/tx_i_1__1_n_0
+    SLICE_X63Y17         FDPE                                         r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/tx_reg/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -859,16 +514,340 @@ Slack (MET) :             4.733ns  (required time - arrival time)
     W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
                          net (fo=1, routed)           1.862    13.250    clk_IBUF
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         1.510    14.851    pixelColourControl/master_rx_module/clk_IBUF_BUFG
-    SLICE_X59Y32         FDCE                                         r  pixelColourControl/master_rx_module/shift_reg_reg[2]/C
-                         clock pessimism              0.274    15.125    
-                         clock uncertainty           -0.035    15.090    
-    SLICE_X59Y32         FDCE (Setup_fdce_C_D)        0.029    15.119    pixelColourControl/master_rx_module/shift_reg_reg[2]
+                         net (fo=752, routed)         1.511    14.852    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_IBUF_BUFG
+    SLICE_X63Y17         FDPE                                         r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/tx_reg/C
+                         clock pessimism              0.274    15.126    
+                         clock uncertainty           -0.035    15.091    
+    SLICE_X63Y17         FDPE (Setup_fdpe_C_CE)      -0.205    14.886    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/tx_reg
   -------------------------------------------------------------------
-                         required time                         15.119    
-                         arrival time                         -10.386    
+                         required time                         14.886    
+                         arrival time                         -10.074    
   -------------------------------------------------------------------
-                         slack                                  4.733    
+                         slack                                  4.812    
+
+Slack (MET) :             4.815ns  (required time - arrival time)
+  Source:                 pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt_reg[11]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            pixelColourControl/slave_tx_module3/uart_tx_inst_slave/bit_idx_reg[2]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.905ns  (logic 1.397ns (28.479%)  route 3.508ns (71.521%))
+  Logic Levels:           4  (LUT2=1 LUT5=2 LUT6=1)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.849ns = ( 14.849 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.148ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         1.627     5.148    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_IBUF_BUFG
+    SLICE_X64Y18         FDCE                                         r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt_reg[11]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X64Y18         FDCE (Prop_fdce_C_Q)         0.478     5.626 r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt_reg[11]/Q
+                         net (fo=3, routed)           1.224     6.851    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt__0[11]
+    SLICE_X64Y18         LUT2 (Prop_lut2_I0_O)        0.323     7.174 r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_7__1/O
+                         net (fo=1, routed)           0.431     7.605    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_7__1_n_0
+    SLICE_X64Y16         LUT6 (Prop_lut6_I2_O)        0.348     7.953 r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_5__1/O
+                         net (fo=1, routed)           0.813     8.766    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_5__1_n_0
+    SLICE_X64Y18         LUT5 (Prop_lut5_I0_O)        0.124     8.890 r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_4__1/O
+                         net (fo=16, routed)          0.523     9.414    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_4__1_n_0
+    SLICE_X62Y16         LUT5 (Prop_lut5_I4_O)        0.124     9.538 r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/bit_idx[4]_i_1__2/O
+                         net (fo=5, routed)           0.516    10.054    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/bit_idx
+    SLICE_X61Y18         FDCE                                         r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/bit_idx_reg[2]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         1.508    14.849    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_IBUF_BUFG
+    SLICE_X61Y18         FDCE                                         r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/bit_idx_reg[2]/C
+                         clock pessimism              0.260    15.109    
+                         clock uncertainty           -0.035    15.074    
+    SLICE_X61Y18         FDCE (Setup_fdce_C_CE)      -0.205    14.869    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/bit_idx_reg[2]
+  -------------------------------------------------------------------
+                         required time                         14.869    
+                         arrival time                         -10.054    
+  -------------------------------------------------------------------
+                         slack                                  4.815    
+
+Slack (MET) :             4.815ns  (required time - arrival time)
+  Source:                 pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt_reg[11]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            pixelColourControl/slave_tx_module3/uart_tx_inst_slave/bit_idx_reg[3]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.905ns  (logic 1.397ns (28.479%)  route 3.508ns (71.521%))
+  Logic Levels:           4  (LUT2=1 LUT5=2 LUT6=1)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.849ns = ( 14.849 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.148ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         1.627     5.148    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_IBUF_BUFG
+    SLICE_X64Y18         FDCE                                         r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt_reg[11]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X64Y18         FDCE (Prop_fdce_C_Q)         0.478     5.626 r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt_reg[11]/Q
+                         net (fo=3, routed)           1.224     6.851    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt__0[11]
+    SLICE_X64Y18         LUT2 (Prop_lut2_I0_O)        0.323     7.174 r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_7__1/O
+                         net (fo=1, routed)           0.431     7.605    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_7__1_n_0
+    SLICE_X64Y16         LUT6 (Prop_lut6_I2_O)        0.348     7.953 r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_5__1/O
+                         net (fo=1, routed)           0.813     8.766    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_5__1_n_0
+    SLICE_X64Y18         LUT5 (Prop_lut5_I0_O)        0.124     8.890 r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_4__1/O
+                         net (fo=16, routed)          0.523     9.414    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_cnt[11]_i_4__1_n_0
+    SLICE_X62Y16         LUT5 (Prop_lut5_I4_O)        0.124     9.538 r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/bit_idx[4]_i_1__2/O
+                         net (fo=5, routed)           0.516    10.054    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/bit_idx
+    SLICE_X61Y18         FDCE                                         r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/bit_idx_reg[3]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         1.508    14.849    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_IBUF_BUFG
+    SLICE_X61Y18         FDCE                                         r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/bit_idx_reg[3]/C
+                         clock pessimism              0.260    15.109    
+                         clock uncertainty           -0.035    15.074    
+    SLICE_X61Y18         FDCE (Setup_fdce_C_CE)      -0.205    14.869    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/bit_idx_reg[3]
+  -------------------------------------------------------------------
+                         required time                         14.869    
+                         arrival time                         -10.054    
+  -------------------------------------------------------------------
+                         slack                                  4.815    
+
+Slack (MET) :             4.883ns  (required time - arrival time)
+  Source:                 pixelColourControl/clk40hz2/COUNT_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            pixelColourControl/clk40hz2/COUNT_reg[0]/R
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.466ns  (logic 1.439ns (32.219%)  route 3.027ns (67.781%))
+  Logic Levels:           4  (CARRY4=3 LUT3=1)
+  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.848ns = ( 14.848 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.145ns
+    Clock Pessimism Removal (CPR):    0.297ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         1.624     5.145    pixelColourControl/clk40hz2/clk_IBUF_BUFG
+    SLICE_X59Y57         FDRE                                         r  pixelColourControl/clk40hz2/COUNT_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X59Y57         FDRE (Prop_fdre_C_Q)         0.456     5.601 r  pixelColourControl/clk40hz2/COUNT_reg[0]/Q
+                         net (fo=3, routed)           1.602     7.202    pixelColourControl/clk40hz2/COUNT_reg[0]
+    SLICE_X60Y60         LUT3 (Prop_lut3_I2_O)        0.124     7.326 r  pixelColourControl/clk40hz2/COUNT0_carry_i_4/O
+                         net (fo=1, routed)           0.000     7.326    pixelColourControl/clk40hz2/COUNT0_carry_i_4_n_0
+    SLICE_X60Y60         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     7.839 r  pixelColourControl/clk40hz2/COUNT0_carry/CO[3]
+                         net (fo=1, routed)           0.000     7.839    pixelColourControl/clk40hz2/COUNT0_carry_n_0
+    SLICE_X60Y61         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.956 r  pixelColourControl/clk40hz2/COUNT0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.956    pixelColourControl/clk40hz2/COUNT0_carry__0_n_0
+    SLICE_X60Y62         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.229     8.185 r  pixelColourControl/clk40hz2/COUNT0_carry__1/CO[2]
+                         net (fo=32, routed)          1.426     9.611    pixelColourControl/clk40hz2/clear
+    SLICE_X59Y57         FDRE                                         r  pixelColourControl/clk40hz2/COUNT_reg[0]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         1.507    14.848    pixelColourControl/clk40hz2/clk_IBUF_BUFG
+    SLICE_X59Y57         FDRE                                         r  pixelColourControl/clk40hz2/COUNT_reg[0]/C
+                         clock pessimism              0.297    15.145    
+                         clock uncertainty           -0.035    15.110    
+    SLICE_X59Y57         FDRE (Setup_fdre_C_R)       -0.615    14.495    pixelColourControl/clk40hz2/COUNT_reg[0]
+  -------------------------------------------------------------------
+                         required time                         14.495    
+                         arrival time                          -9.611    
+  -------------------------------------------------------------------
+                         slack                                  4.883    
+
+Slack (MET) :             4.883ns  (required time - arrival time)
+  Source:                 pixelColourControl/clk40hz2/COUNT_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            pixelColourControl/clk40hz2/COUNT_reg[1]/R
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.466ns  (logic 1.439ns (32.219%)  route 3.027ns (67.781%))
+  Logic Levels:           4  (CARRY4=3 LUT3=1)
+  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.848ns = ( 14.848 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.145ns
+    Clock Pessimism Removal (CPR):    0.297ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         1.624     5.145    pixelColourControl/clk40hz2/clk_IBUF_BUFG
+    SLICE_X59Y57         FDRE                                         r  pixelColourControl/clk40hz2/COUNT_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X59Y57         FDRE (Prop_fdre_C_Q)         0.456     5.601 r  pixelColourControl/clk40hz2/COUNT_reg[0]/Q
+                         net (fo=3, routed)           1.602     7.202    pixelColourControl/clk40hz2/COUNT_reg[0]
+    SLICE_X60Y60         LUT3 (Prop_lut3_I2_O)        0.124     7.326 r  pixelColourControl/clk40hz2/COUNT0_carry_i_4/O
+                         net (fo=1, routed)           0.000     7.326    pixelColourControl/clk40hz2/COUNT0_carry_i_4_n_0
+    SLICE_X60Y60         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     7.839 r  pixelColourControl/clk40hz2/COUNT0_carry/CO[3]
+                         net (fo=1, routed)           0.000     7.839    pixelColourControl/clk40hz2/COUNT0_carry_n_0
+    SLICE_X60Y61         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.956 r  pixelColourControl/clk40hz2/COUNT0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.956    pixelColourControl/clk40hz2/COUNT0_carry__0_n_0
+    SLICE_X60Y62         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.229     8.185 r  pixelColourControl/clk40hz2/COUNT0_carry__1/CO[2]
+                         net (fo=32, routed)          1.426     9.611    pixelColourControl/clk40hz2/clear
+    SLICE_X59Y57         FDRE                                         r  pixelColourControl/clk40hz2/COUNT_reg[1]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         1.507    14.848    pixelColourControl/clk40hz2/clk_IBUF_BUFG
+    SLICE_X59Y57         FDRE                                         r  pixelColourControl/clk40hz2/COUNT_reg[1]/C
+                         clock pessimism              0.297    15.145    
+                         clock uncertainty           -0.035    15.110    
+    SLICE_X59Y57         FDRE (Setup_fdre_C_R)       -0.615    14.495    pixelColourControl/clk40hz2/COUNT_reg[1]
+  -------------------------------------------------------------------
+                         required time                         14.495    
+                         arrival time                          -9.611    
+  -------------------------------------------------------------------
+                         slack                                  4.883    
+
+Slack (MET) :             4.883ns  (required time - arrival time)
+  Source:                 pixelColourControl/clk40hz2/COUNT_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            pixelColourControl/clk40hz2/COUNT_reg[2]/R
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.466ns  (logic 1.439ns (32.219%)  route 3.027ns (67.781%))
+  Logic Levels:           4  (CARRY4=3 LUT3=1)
+  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.848ns = ( 14.848 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.145ns
+    Clock Pessimism Removal (CPR):    0.297ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         1.624     5.145    pixelColourControl/clk40hz2/clk_IBUF_BUFG
+    SLICE_X59Y57         FDRE                                         r  pixelColourControl/clk40hz2/COUNT_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X59Y57         FDRE (Prop_fdre_C_Q)         0.456     5.601 r  pixelColourControl/clk40hz2/COUNT_reg[0]/Q
+                         net (fo=3, routed)           1.602     7.202    pixelColourControl/clk40hz2/COUNT_reg[0]
+    SLICE_X60Y60         LUT3 (Prop_lut3_I2_O)        0.124     7.326 r  pixelColourControl/clk40hz2/COUNT0_carry_i_4/O
+                         net (fo=1, routed)           0.000     7.326    pixelColourControl/clk40hz2/COUNT0_carry_i_4_n_0
+    SLICE_X60Y60         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     7.839 r  pixelColourControl/clk40hz2/COUNT0_carry/CO[3]
+                         net (fo=1, routed)           0.000     7.839    pixelColourControl/clk40hz2/COUNT0_carry_n_0
+    SLICE_X60Y61         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     7.956 r  pixelColourControl/clk40hz2/COUNT0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.956    pixelColourControl/clk40hz2/COUNT0_carry__0_n_0
+    SLICE_X60Y62         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.229     8.185 r  pixelColourControl/clk40hz2/COUNT0_carry__1/CO[2]
+                         net (fo=32, routed)          1.426     9.611    pixelColourControl/clk40hz2/clear
+    SLICE_X59Y57         FDRE                                         r  pixelColourControl/clk40hz2/COUNT_reg[2]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         1.507    14.848    pixelColourControl/clk40hz2/clk_IBUF_BUFG
+    SLICE_X59Y57         FDRE                                         r  pixelColourControl/clk40hz2/COUNT_reg[2]/C
+                         clock pessimism              0.297    15.145    
+                         clock uncertainty           -0.035    15.110    
+    SLICE_X59Y57         FDRE (Setup_fdre_C_R)       -0.615    14.495    pixelColourControl/clk40hz2/COUNT_reg[2]
+  -------------------------------------------------------------------
+                         required time                         14.495    
+                         arrival time                          -9.611    
+  -------------------------------------------------------------------
+                         slack                                  4.883    
 
 
 
@@ -876,413 +855,19 @@ Slack (MET) :             4.733ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.142ns  (arrival time - required time)
-  Source:                 pixelColourControl/master_tx_module1/FSM_onehot_state_reg[0]/C
-                            (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            pixelColourControl/master_tx_module1/FSM_onehot_state_reg[1]/D
+Slack (MET) :             0.153ns  (arrival time - required time)
+  Source:                 pixelColourControl/master_rx_module2/shift_reg_reg[3]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            pixelColourControl/master_rx_module2/data_reg[3]/D
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.217ns  (logic 0.141ns (64.847%)  route 0.076ns (35.153%))
+  Data Path Delay:        0.213ns  (logic 0.141ns (66.296%)  route 0.072ns (33.704%))
   Logic Levels:           0  
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.980ns
-    Source Clock Delay      (SCD):    1.468ns
-    Clock Pessimism Removal (CPR):    0.512ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.631     0.858    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         0.585     1.468    pixelColourControl/master_tx_module1/clk_IBUF_BUFG
-    SLICE_X62Y27         FDPE                                         r  pixelColourControl/master_tx_module1/FSM_onehot_state_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X62Y27         FDPE (Prop_fdpe_C_Q)         0.141     1.609 r  pixelColourControl/master_tx_module1/FSM_onehot_state_reg[0]/Q
-                         net (fo=4, routed)           0.076     1.686    pixelColourControl/master_tx_module1/tx_data
-    SLICE_X62Y27         FDCE                                         r  pixelColourControl/master_tx_module1/FSM_onehot_state_reg[1]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.685     1.099    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         0.853     1.980    pixelColourControl/master_tx_module1/clk_IBUF_BUFG
-    SLICE_X62Y27         FDCE                                         r  pixelColourControl/master_tx_module1/FSM_onehot_state_reg[1]/C
-                         clock pessimism             -0.512     1.468    
-    SLICE_X62Y27         FDCE (Hold_fdce_C_D)         0.075     1.543    pixelColourControl/master_tx_module1/FSM_onehot_state_reg[1]
-  -------------------------------------------------------------------
-                         required time                         -1.543    
-                         arrival time                           1.686    
-  -------------------------------------------------------------------
-                         slack                                  0.142    
-
-Slack (MET) :             0.145ns  (arrival time - required time)
-  Source:                 pixelColourControl/master_tx_module4/FSM_onehot_state_reg[0]/C
-                            (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            pixelColourControl/master_tx_module4/FSM_onehot_state_reg[1]/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.220ns  (logic 0.141ns (64.033%)  route 0.079ns (35.967%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.959ns
-    Source Clock Delay      (SCD):    1.445ns
-    Clock Pessimism Removal (CPR):    0.514ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.631     0.858    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         0.562     1.445    pixelColourControl/master_tx_module4/clk_IBUF_BUFG
-    SLICE_X53Y36         FDPE                                         r  pixelColourControl/master_tx_module4/FSM_onehot_state_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X53Y36         FDPE (Prop_fdpe_C_Q)         0.141     1.586 r  pixelColourControl/master_tx_module4/FSM_onehot_state_reg[0]/Q
-                         net (fo=5, routed)           0.079     1.665    pixelColourControl/master_tx_module4/tx_data
-    SLICE_X53Y36         FDCE                                         r  pixelColourControl/master_tx_module4/FSM_onehot_state_reg[1]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.685     1.099    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         0.832     1.959    pixelColourControl/master_tx_module4/clk_IBUF_BUFG
-    SLICE_X53Y36         FDCE                                         r  pixelColourControl/master_tx_module4/FSM_onehot_state_reg[1]/C
-                         clock pessimism             -0.514     1.445    
-    SLICE_X53Y36         FDCE (Hold_fdce_C_D)         0.075     1.520    pixelColourControl/master_tx_module4/FSM_onehot_state_reg[1]
-  -------------------------------------------------------------------
-                         required time                         -1.520    
-                         arrival time                           1.665    
-  -------------------------------------------------------------------
-                         slack                                  0.145    
-
-Slack (MET) :             0.158ns  (arrival time - required time)
-  Source:                 pixelColourControl/master_tx_module1/tx_data_reg[26]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            pixelColourControl/master_tx_module1/uart_tx_inst/shift_reg_reg[26]/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.259ns  (logic 0.141ns (54.426%)  route 0.118ns (45.574%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.035ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.980ns
-    Source Clock Delay      (SCD):    1.467ns
-    Clock Pessimism Removal (CPR):    0.478ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.631     0.858    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         0.584     1.467    pixelColourControl/master_tx_module1/clk_IBUF_BUFG
-    SLICE_X58Y27         FDRE                                         r  pixelColourControl/master_tx_module1/tx_data_reg[26]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X58Y27         FDRE (Prop_fdre_C_Q)         0.141     1.608 r  pixelColourControl/master_tx_module1/tx_data_reg[26]/Q
-                         net (fo=1, routed)           0.118     1.726    pixelColourControl/master_tx_module1/uart_tx_inst/Q[4]
-    SLICE_X63Y27         FDCE                                         r  pixelColourControl/master_tx_module1/uart_tx_inst/shift_reg_reg[26]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.685     1.099    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         0.853     1.980    pixelColourControl/master_tx_module1/uart_tx_inst/clk_IBUF_BUFG
-    SLICE_X63Y27         FDCE                                         r  pixelColourControl/master_tx_module1/uart_tx_inst/shift_reg_reg[26]/C
-                         clock pessimism             -0.478     1.502    
-    SLICE_X63Y27         FDCE (Hold_fdce_C_D)         0.066     1.568    pixelColourControl/master_tx_module1/uart_tx_inst/shift_reg_reg[26]
-  -------------------------------------------------------------------
-                         required time                         -1.568    
-                         arrival time                           1.726    
-  -------------------------------------------------------------------
-                         slack                                  0.158    
-
-Slack (MET) :             0.158ns  (arrival time - required time)
-  Source:                 pixelColourControl/slave_tx_module/tx_data_reg[1]/C
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            pixelColourControl/slave_tx_module/uart_tx_inst_slave/shift_reg_reg[1]/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.259ns  (logic 0.141ns (54.399%)  route 0.118ns (45.601%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.035ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.960ns
-    Source Clock Delay      (SCD):    1.447ns
-    Clock Pessimism Removal (CPR):    0.478ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.631     0.858    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         0.564     1.447    pixelColourControl/slave_tx_module/clk_IBUF_BUFG
-    SLICE_X44Y3          FDCE                                         r  pixelColourControl/slave_tx_module/tx_data_reg[1]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X44Y3          FDCE (Prop_fdce_C_Q)         0.141     1.588 r  pixelColourControl/slave_tx_module/tx_data_reg[1]/Q
-                         net (fo=1, routed)           0.118     1.706    pixelColourControl/slave_tx_module/uart_tx_inst_slave/Q[1]
-    SLICE_X43Y3          FDCE                                         r  pixelColourControl/slave_tx_module/uart_tx_inst_slave/shift_reg_reg[1]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.685     1.099    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         0.833     1.960    pixelColourControl/slave_tx_module/uart_tx_inst_slave/clk_IBUF_BUFG
-    SLICE_X43Y3          FDCE                                         r  pixelColourControl/slave_tx_module/uart_tx_inst_slave/shift_reg_reg[1]/C
-                         clock pessimism             -0.478     1.482    
-    SLICE_X43Y3          FDCE (Hold_fdce_C_D)         0.066     1.548    pixelColourControl/slave_tx_module/uart_tx_inst_slave/shift_reg_reg[1]
-  -------------------------------------------------------------------
-                         required time                         -1.548    
-                         arrival time                           1.706    
-  -------------------------------------------------------------------
-                         slack                                  0.158    
-
-Slack (MET) :             0.160ns  (arrival time - required time)
-  Source:                 pixelColourControl/master_tx_module2/FSM_onehot_state_reg[0]/C
-                            (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            pixelColourControl/master_tx_module2/FSM_onehot_state_reg[1]/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.220ns  (logic 0.164ns (74.580%)  route 0.056ns (25.420%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.960ns
-    Source Clock Delay      (SCD):    1.446ns
-    Clock Pessimism Removal (CPR):    0.514ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.631     0.858    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         0.563     1.446    pixelColourControl/master_tx_module2/clk_IBUF_BUFG
-    SLICE_X42Y44         FDPE                                         r  pixelColourControl/master_tx_module2/FSM_onehot_state_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X42Y44         FDPE (Prop_fdpe_C_Q)         0.164     1.610 r  pixelColourControl/master_tx_module2/FSM_onehot_state_reg[0]/Q
-                         net (fo=4, routed)           0.056     1.666    pixelColourControl/master_tx_module2/tx_data
-    SLICE_X42Y44         FDCE                                         r  pixelColourControl/master_tx_module2/FSM_onehot_state_reg[1]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.685     1.099    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         0.833     1.960    pixelColourControl/master_tx_module2/clk_IBUF_BUFG
-    SLICE_X42Y44         FDCE                                         r  pixelColourControl/master_tx_module2/FSM_onehot_state_reg[1]/C
-                         clock pessimism             -0.514     1.446    
-    SLICE_X42Y44         FDCE (Hold_fdce_C_D)         0.060     1.506    pixelColourControl/master_tx_module2/FSM_onehot_state_reg[1]
-  -------------------------------------------------------------------
-                         required time                         -1.506    
-                         arrival time                           1.666    
-  -------------------------------------------------------------------
-                         slack                                  0.160    
-
-Slack (MET) :             0.167ns  (arrival time - required time)
-  Source:                 pixelColourControl/master_tx_module2/tx_data_reg[25]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            pixelColourControl/master_tx_module2/uart_tx_inst/shift_reg_reg[25]/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.253ns  (logic 0.141ns (55.730%)  route 0.112ns (44.270%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.958ns
-    Source Clock Delay      (SCD):    1.444ns
-    Clock Pessimism Removal (CPR):    0.498ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.631     0.858    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         0.561     1.444    pixelColourControl/master_tx_module2/clk_IBUF_BUFG
-    SLICE_X43Y38         FDRE                                         r  pixelColourControl/master_tx_module2/tx_data_reg[25]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X43Y38         FDRE (Prop_fdre_C_Q)         0.141     1.585 r  pixelColourControl/master_tx_module2/tx_data_reg[25]/Q
-                         net (fo=1, routed)           0.112     1.697    pixelColourControl/master_tx_module2/uart_tx_inst/Q[3]
-    SLICE_X43Y39         FDCE                                         r  pixelColourControl/master_tx_module2/uart_tx_inst/shift_reg_reg[25]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.685     1.099    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         0.831     1.958    pixelColourControl/master_tx_module2/uart_tx_inst/clk_IBUF_BUFG
-    SLICE_X43Y39         FDCE                                         r  pixelColourControl/master_tx_module2/uart_tx_inst/shift_reg_reg[25]/C
-                         clock pessimism             -0.498     1.460    
-    SLICE_X43Y39         FDCE (Hold_fdce_C_D)         0.070     1.530    pixelColourControl/master_tx_module2/uart_tx_inst/shift_reg_reg[25]
-  -------------------------------------------------------------------
-                         required time                         -1.530    
-                         arrival time                           1.697    
-  -------------------------------------------------------------------
-                         slack                                  0.167    
-
-Slack (MET) :             0.174ns  (arrival time - required time)
-  Source:                 pixelColourControl/slave_rx_module/shift_reg_reg[24]/C
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            pixelColourControl/slave_rx_module/data_reg[24]/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.262ns  (logic 0.141ns (53.760%)  route 0.121ns (46.240%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.012ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.975ns
-    Source Clock Delay      (SCD):    1.465ns
-    Clock Pessimism Removal (CPR):    0.498ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.631     0.858    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         0.582     1.465    pixelColourControl/slave_rx_module/clk_IBUF_BUFG
-    SLICE_X61Y26         FDCE                                         r  pixelColourControl/slave_rx_module/shift_reg_reg[24]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X61Y26         FDCE (Prop_fdce_C_Q)         0.141     1.606 r  pixelColourControl/slave_rx_module/shift_reg_reg[24]/Q
-                         net (fo=2, routed)           0.121     1.727    pixelColourControl/slave_rx_module/shift_reg_reg_n_0_[24]
-    SLICE_X60Y25         FDCE                                         r  pixelColourControl/slave_rx_module/data_reg[24]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.685     1.099    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         0.848     1.975    pixelColourControl/slave_rx_module/clk_IBUF_BUFG
-    SLICE_X60Y25         FDCE                                         r  pixelColourControl/slave_rx_module/data_reg[24]/C
-                         clock pessimism             -0.498     1.477    
-    SLICE_X60Y25         FDCE (Hold_fdce_C_D)         0.076     1.553    pixelColourControl/slave_rx_module/data_reg[24]
-  -------------------------------------------------------------------
-                         required time                         -1.553    
-                         arrival time                           1.727    
-  -------------------------------------------------------------------
-                         slack                                  0.174    
-
-Slack (MET) :             0.175ns  (arrival time - required time)
-  Source:                 pixelColourControl/master_rx_module2/FSM_sequential_state_reg[1]/C
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            pixelColourControl/master_rx_module2/bit_idx_reg[4]/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.309ns  (logic 0.186ns (60.275%)  route 0.123ns (39.725%))
-  Logic Levels:           1  (LUT6=1)
   Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.987ns
-    Source Clock Delay      (SCD):    1.474ns
-    Clock Pessimism Removal (CPR):    0.500ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.631     0.858    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         0.591     1.474    pixelColourControl/master_rx_module2/clk_IBUF_BUFG
-    SLICE_X65Y34         FDCE                                         r  pixelColourControl/master_rx_module2/FSM_sequential_state_reg[1]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X65Y34         FDCE (Prop_fdce_C_Q)         0.141     1.615 r  pixelColourControl/master_rx_module2/FSM_sequential_state_reg[1]/Q
-                         net (fo=25, routed)          0.123     1.738    pixelColourControl/master_rx_module2/state__0[1]
-    SLICE_X64Y34         LUT6 (Prop_lut6_I0_O)        0.045     1.783 r  pixelColourControl/master_rx_module2/bit_idx[4]_i_2__0/O
-                         net (fo=1, routed)           0.000     1.783    pixelColourControl/master_rx_module2/bit_idx[4]_i_2__0_n_0
-    SLICE_X64Y34         FDCE                                         r  pixelColourControl/master_rx_module2/bit_idx_reg[4]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.685     1.099    clk_IBUF
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         0.860     1.987    pixelColourControl/master_rx_module2/clk_IBUF_BUFG
-    SLICE_X64Y34         FDCE                                         r  pixelColourControl/master_rx_module2/bit_idx_reg[4]/C
-                         clock pessimism             -0.500     1.487    
-    SLICE_X64Y34         FDCE (Hold_fdce_C_D)         0.121     1.608    pixelColourControl/master_rx_module2/bit_idx_reg[4]
-  -------------------------------------------------------------------
-                         required time                         -1.608    
-                         arrival time                           1.783    
-  -------------------------------------------------------------------
-                         slack                                  0.175    
-
-Slack (MET) :             0.176ns  (arrival time - required time)
-  Source:                 pixelColourControl/master_tx_module4/tx_data_reg[28]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            pixelColourControl/master_tx_module4/uart_tx_inst/shift_reg_reg[28]/D
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.254ns  (logic 0.141ns (55.511%)  route 0.113ns (44.489%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.015ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.959ns
-    Source Clock Delay      (SCD):    1.445ns
+    Destination Clock Delay (DCD):    1.947ns
+    Source Clock Delay      (SCD):    1.435ns
     Clock Pessimism Removal (CPR):    0.499ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -1294,12 +879,12 @@ Slack (MET) :             0.176ns  (arrival time - required time)
     W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.631     0.858    clk_IBUF
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         0.562     1.445    pixelColourControl/master_tx_module4/clk_IBUF_BUFG
-    SLICE_X51Y36         FDRE                                         r  pixelColourControl/master_tx_module4/tx_data_reg[28]/C
+                         net (fo=752, routed)         0.552     1.435    pixelColourControl/master_rx_module2/clk_IBUF_BUFG
+    SLICE_X41Y70         FDCE                                         r  pixelColourControl/master_rx_module2/shift_reg_reg[3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X51Y36         FDRE (Prop_fdre_C_Q)         0.141     1.586 r  pixelColourControl/master_tx_module4/tx_data_reg[28]/Q
-                         net (fo=1, routed)           0.113     1.699    pixelColourControl/master_tx_module4/uart_tx_inst/tx_data_reg[31][6]
-    SLICE_X50Y35         FDCE                                         r  pixelColourControl/master_tx_module4/uart_tx_inst/shift_reg_reg[28]/D
+    SLICE_X41Y70         FDCE (Prop_fdce_C_Q)         0.141     1.576 r  pixelColourControl/master_rx_module2/shift_reg_reg[3]/Q
+                         net (fo=2, routed)           0.072     1.648    pixelColourControl/master_rx_module2/shift_reg_reg_n_0_[3]
+    SLICE_X40Y70         FDCE                                         r  pixelColourControl/master_rx_module2/data_reg[3]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1309,29 +894,78 @@ Slack (MET) :             0.176ns  (arrival time - required time)
     W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.685     1.099    clk_IBUF
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         0.832     1.959    pixelColourControl/master_tx_module4/uart_tx_inst/clk_IBUF_BUFG
-    SLICE_X50Y35         FDCE                                         r  pixelColourControl/master_tx_module4/uart_tx_inst/shift_reg_reg[28]/C
-                         clock pessimism             -0.499     1.460    
-    SLICE_X50Y35         FDCE (Hold_fdce_C_D)         0.063     1.523    pixelColourControl/master_tx_module4/uart_tx_inst/shift_reg_reg[28]
+                         net (fo=752, routed)         0.820     1.947    pixelColourControl/master_rx_module2/clk_IBUF_BUFG
+    SLICE_X40Y70         FDCE                                         r  pixelColourControl/master_rx_module2/data_reg[3]/C
+                         clock pessimism             -0.499     1.448    
+    SLICE_X40Y70         FDCE (Hold_fdce_C_D)         0.047     1.495    pixelColourControl/master_rx_module2/data_reg[3]
   -------------------------------------------------------------------
-                         required time                         -1.523    
-                         arrival time                           1.699    
+                         required time                         -1.495    
+                         arrival time                           1.648    
   -------------------------------------------------------------------
-                         slack                                  0.176    
+                         slack                                  0.153    
 
-Slack (MET) :             0.177ns  (arrival time - required time)
-  Source:                 pixelColourControl/master_rx_module/shift_reg_reg[4]/C
-                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            pixelColourControl/master_rx_module/data_reg[4]/D
+Slack (MET) :             0.155ns  (arrival time - required time)
+  Source:                 pixelColourControl/master_tx_module2/FSM_onehot_state_reg[0]/C
+                            (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            pixelColourControl/master_tx_module2/FSM_onehot_state_reg[1]/D
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.253ns  (logic 0.141ns (55.707%)  route 0.112ns (44.293%))
+  Data Path Delay:        0.230ns  (logic 0.141ns (61.419%)  route 0.089ns (38.581%))
   Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.950ns
+    Source Clock Delay      (SCD):    1.438ns
+    Clock Pessimism Removal (CPR):    0.512ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         0.555     1.438    pixelColourControl/master_tx_module2/clk_IBUF_BUFG
+    SLICE_X40Y67         FDPE                                         r  pixelColourControl/master_tx_module2/FSM_onehot_state_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y67         FDPE (Prop_fdpe_C_Q)         0.141     1.579 r  pixelColourControl/master_tx_module2/FSM_onehot_state_reg[0]/Q
+                         net (fo=4, routed)           0.089     1.668    pixelColourControl/master_tx_module2/tx_data
+    SLICE_X40Y67         FDCE                                         r  pixelColourControl/master_tx_module2/FSM_onehot_state_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         0.822     1.950    pixelColourControl/master_tx_module2/clk_IBUF_BUFG
+    SLICE_X40Y67         FDCE                                         r  pixelColourControl/master_tx_module2/FSM_onehot_state_reg[1]/C
+                         clock pessimism             -0.512     1.438    
+    SLICE_X40Y67         FDCE (Hold_fdce_C_D)         0.075     1.513    pixelColourControl/master_tx_module2/FSM_onehot_state_reg[1]
+  -------------------------------------------------------------------
+                         required time                         -1.513    
+                         arrival time                           1.668    
+  -------------------------------------------------------------------
+                         slack                                  0.155    
+
+Slack (MET) :             0.158ns  (arrival time - required time)
+  Source:                 pixelColourControl/master_tx_module3/uart_tx_inst/bit_idx_reg[3]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            pixelColourControl/master_tx_module3/uart_tx_inst/tx_reg/D
+                            (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.262ns  (logic 0.186ns (71.004%)  route 0.076ns (28.996%))
+  Logic Levels:           1  (LUT6=1)
   Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.981ns
-    Source Clock Delay      (SCD):    1.470ns
+    Destination Clock Delay (DCD):    1.946ns
+    Source Clock Delay      (SCD):    1.435ns
     Clock Pessimism Removal (CPR):    0.498ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -1343,12 +977,14 @@ Slack (MET) :             0.177ns  (arrival time - required time)
     W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.631     0.858    clk_IBUF
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         0.587     1.470    pixelColourControl/master_rx_module/clk_IBUF_BUFG
-    SLICE_X59Y31         FDCE                                         r  pixelColourControl/master_rx_module/shift_reg_reg[4]/C
+                         net (fo=752, routed)         0.552     1.435    pixelColourControl/master_tx_module3/uart_tx_inst/clk_IBUF_BUFG
+    SLICE_X36Y70         FDCE                                         r  pixelColourControl/master_tx_module3/uart_tx_inst/bit_idx_reg[3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X59Y31         FDCE (Prop_fdce_C_Q)         0.141     1.611 r  pixelColourControl/master_rx_module/shift_reg_reg[4]/Q
-                         net (fo=2, routed)           0.112     1.723    pixelColourControl/master_rx_module/shift_reg_reg_n_0_[4]
-    SLICE_X60Y30         FDCE                                         r  pixelColourControl/master_rx_module/data_reg[4]/D
+    SLICE_X36Y70         FDCE (Prop_fdce_C_Q)         0.141     1.576 r  pixelColourControl/master_tx_module3/uart_tx_inst/bit_idx_reg[3]/Q
+                         net (fo=4, routed)           0.076     1.652    pixelColourControl/master_tx_module3/uart_tx_inst/bit_idx_reg_n_0_[3]
+    SLICE_X37Y70         LUT6 (Prop_lut6_I2_O)        0.045     1.697 r  pixelColourControl/master_tx_module3/uart_tx_inst/tx_i_2__3/O
+                         net (fo=1, routed)           0.000     1.697    pixelColourControl/master_tx_module3/uart_tx_inst/tx_i_2__3_n_0
+    SLICE_X37Y70         FDPE                                         r  pixelColourControl/master_tx_module3/uart_tx_inst/tx_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1358,15 +994,362 @@ Slack (MET) :             0.177ns  (arrival time - required time)
     W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
                          net (fo=1, routed)           0.685     1.099    clk_IBUF
     BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
-                         net (fo=752, routed)         0.854     1.981    pixelColourControl/master_rx_module/clk_IBUF_BUFG
-    SLICE_X60Y30         FDCE                                         r  pixelColourControl/master_rx_module/data_reg[4]/C
-                         clock pessimism             -0.498     1.483    
-    SLICE_X60Y30         FDCE (Hold_fdce_C_D)         0.063     1.546    pixelColourControl/master_rx_module/data_reg[4]
+                         net (fo=752, routed)         0.818     1.946    pixelColourControl/master_tx_module3/uart_tx_inst/clk_IBUF_BUFG
+    SLICE_X37Y70         FDPE                                         r  pixelColourControl/master_tx_module3/uart_tx_inst/tx_reg/C
+                         clock pessimism             -0.498     1.448    
+    SLICE_X37Y70         FDPE (Hold_fdpe_C_D)         0.091     1.539    pixelColourControl/master_tx_module3/uart_tx_inst/tx_reg
   -------------------------------------------------------------------
-                         required time                         -1.546    
-                         arrival time                           1.723    
+                         required time                         -1.539    
+                         arrival time                           1.697    
   -------------------------------------------------------------------
-                         slack                                  0.177    
+                         slack                                  0.158    
+
+Slack (MET) :             0.160ns  (arrival time - required time)
+  Source:                 pixelColourControl/slave_tx_module/tx_data_reg[31]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            pixelColourControl/slave_tx_module/uart_tx_inst_slave/shift_reg_reg[31]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.192ns  (logic 0.128ns (66.728%)  route 0.064ns (33.272%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.983ns
+    Source Clock Delay      (SCD):    1.471ns
+    Clock Pessimism Removal (CPR):    0.499ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         0.588     1.471    pixelColourControl/slave_tx_module/clk_IBUF_BUFG
+    SLICE_X58Y17         FDCE                                         r  pixelColourControl/slave_tx_module/tx_data_reg[31]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X58Y17         FDCE (Prop_fdce_C_Q)         0.128     1.599 r  pixelColourControl/slave_tx_module/tx_data_reg[31]/Q
+                         net (fo=1, routed)           0.064     1.663    pixelColourControl/slave_tx_module/uart_tx_inst_slave/Q[3]
+    SLICE_X59Y17         FDCE                                         r  pixelColourControl/slave_tx_module/uart_tx_inst_slave/shift_reg_reg[31]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         0.856     1.983    pixelColourControl/slave_tx_module/uart_tx_inst_slave/clk_IBUF_BUFG
+    SLICE_X59Y17         FDCE                                         r  pixelColourControl/slave_tx_module/uart_tx_inst_slave/shift_reg_reg[31]/C
+                         clock pessimism             -0.499     1.484    
+    SLICE_X59Y17         FDCE (Hold_fdce_C_D)         0.019     1.503    pixelColourControl/slave_tx_module/uart_tx_inst_slave/shift_reg_reg[31]
+  -------------------------------------------------------------------
+                         required time                         -1.503    
+                         arrival time                           1.663    
+  -------------------------------------------------------------------
+                         slack                                  0.160    
+
+Slack (MET) :             0.164ns  (arrival time - required time)
+  Source:                 pixelColourControl/master_rx_module2/bit_idx_reg[2]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            pixelColourControl/master_rx_module2/bit_idx_reg[4]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.298ns  (logic 0.186ns (62.469%)  route 0.112ns (37.531%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.948ns
+    Source Clock Delay      (SCD):    1.436ns
+    Clock Pessimism Removal (CPR):    0.499ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         0.553     1.436    pixelColourControl/master_rx_module2/clk_IBUF_BUFG
+    SLICE_X43Y69         FDCE                                         r  pixelColourControl/master_rx_module2/bit_idx_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y69         FDCE (Prop_fdce_C_Q)         0.141     1.577 r  pixelColourControl/master_rx_module2/bit_idx_reg[2]/Q
+                         net (fo=12, routed)          0.112     1.689    pixelColourControl/master_rx_module2/bit_idx_reg_n_0_[2]
+    SLICE_X42Y69         LUT6 (Prop_lut6_I1_O)        0.045     1.734 r  pixelColourControl/master_rx_module2/bit_idx[4]_i_2__0/O
+                         net (fo=1, routed)           0.000     1.734    pixelColourControl/master_rx_module2/bit_idx[4]_i_2__0_n_0
+    SLICE_X42Y69         FDCE                                         r  pixelColourControl/master_rx_module2/bit_idx_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         0.821     1.948    pixelColourControl/master_rx_module2/clk_IBUF_BUFG
+    SLICE_X42Y69         FDCE                                         r  pixelColourControl/master_rx_module2/bit_idx_reg[4]/C
+                         clock pessimism             -0.499     1.449    
+    SLICE_X42Y69         FDCE (Hold_fdce_C_D)         0.121     1.570    pixelColourControl/master_rx_module2/bit_idx_reg[4]
+  -------------------------------------------------------------------
+                         required time                         -1.570    
+                         arrival time                           1.734    
+  -------------------------------------------------------------------
+                         slack                                  0.164    
+
+Slack (MET) :             0.167ns  (arrival time - required time)
+  Source:                 pixelColourControl/master_rx_module2/bit_idx_reg[2]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            pixelColourControl/master_rx_module2/bit_idx_reg[3]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.300ns  (logic 0.186ns (62.052%)  route 0.114ns (37.948%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.948ns
+    Source Clock Delay      (SCD):    1.436ns
+    Clock Pessimism Removal (CPR):    0.499ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         0.553     1.436    pixelColourControl/master_rx_module2/clk_IBUF_BUFG
+    SLICE_X43Y69         FDCE                                         r  pixelColourControl/master_rx_module2/bit_idx_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y69         FDCE (Prop_fdce_C_Q)         0.141     1.577 r  pixelColourControl/master_rx_module2/bit_idx_reg[2]/Q
+                         net (fo=12, routed)          0.114     1.691    pixelColourControl/master_rx_module2/bit_idx_reg_n_0_[2]
+    SLICE_X42Y69         LUT5 (Prop_lut5_I3_O)        0.045     1.736 r  pixelColourControl/master_rx_module2/bit_idx[3]_i_1__0/O
+                         net (fo=1, routed)           0.000     1.736    pixelColourControl/master_rx_module2/bit_idx[3]_i_1__0_n_0
+    SLICE_X42Y69         FDCE                                         r  pixelColourControl/master_rx_module2/bit_idx_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         0.821     1.948    pixelColourControl/master_rx_module2/clk_IBUF_BUFG
+    SLICE_X42Y69         FDCE                                         r  pixelColourControl/master_rx_module2/bit_idx_reg[3]/C
+                         clock pessimism             -0.499     1.449    
+    SLICE_X42Y69         FDCE (Hold_fdce_C_D)         0.120     1.569    pixelColourControl/master_rx_module2/bit_idx_reg[3]
+  -------------------------------------------------------------------
+                         required time                         -1.569    
+                         arrival time                           1.736    
+  -------------------------------------------------------------------
+                         slack                                  0.167    
+
+Slack (MET) :             0.168ns  (arrival time - required time)
+  Source:                 pixelColourControl/master_tx_module4/tx_data_reg[25]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            pixelColourControl/master_tx_module4/uart_tx_inst/shift_reg_reg[25]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.253ns  (logic 0.141ns (55.730%)  route 0.112ns (44.270%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.952ns
+    Source Clock Delay      (SCD):    1.440ns
+    Clock Pessimism Removal (CPR):    0.499ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         0.557     1.440    pixelColourControl/master_tx_module4/clk_IBUF_BUFG
+    SLICE_X51Y68         FDRE                                         r  pixelColourControl/master_tx_module4/tx_data_reg[25]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X51Y68         FDRE (Prop_fdre_C_Q)         0.141     1.581 r  pixelColourControl/master_tx_module4/tx_data_reg[25]/Q
+                         net (fo=1, routed)           0.112     1.693    pixelColourControl/master_tx_module4/uart_tx_inst/tx_data_reg[31][3]
+    SLICE_X51Y69         FDCE                                         r  pixelColourControl/master_tx_module4/uart_tx_inst/shift_reg_reg[25]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         0.824     1.952    pixelColourControl/master_tx_module4/uart_tx_inst/clk_IBUF_BUFG
+    SLICE_X51Y69         FDCE                                         r  pixelColourControl/master_tx_module4/uart_tx_inst/shift_reg_reg[25]/C
+                         clock pessimism             -0.499     1.453    
+    SLICE_X51Y69         FDCE (Hold_fdce_C_D)         0.072     1.525    pixelColourControl/master_tx_module4/uart_tx_inst/shift_reg_reg[25]
+  -------------------------------------------------------------------
+                         required time                         -1.525    
+                         arrival time                           1.693    
+  -------------------------------------------------------------------
+                         slack                                  0.168    
+
+Slack (MET) :             0.168ns  (arrival time - required time)
+  Source:                 pixelColourControl/slave_tx_module3/tx_data_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            pixelColourControl/slave_tx_module3/uart_tx_inst_slave/shift_reg_reg[0]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.251ns  (logic 0.141ns (56.174%)  route 0.110ns (43.826%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.984ns
+    Source Clock Delay      (SCD):    1.473ns
+    Clock Pessimism Removal (CPR):    0.498ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         0.590     1.473    pixelColourControl/slave_tx_module3/clk_IBUF_BUFG
+    SLICE_X61Y15         FDCE                                         r  pixelColourControl/slave_tx_module3/tx_data_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X61Y15         FDCE (Prop_fdce_C_Q)         0.141     1.614 r  pixelColourControl/slave_tx_module3/tx_data_reg[0]/Q
+                         net (fo=1, routed)           0.110     1.724    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/Q[0]
+    SLICE_X61Y16         FDCE                                         r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/shift_reg_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         0.857     1.984    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_IBUF_BUFG
+    SLICE_X61Y16         FDCE                                         r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/shift_reg_reg[0]/C
+                         clock pessimism             -0.498     1.486    
+    SLICE_X61Y16         FDCE (Hold_fdce_C_D)         0.070     1.556    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/shift_reg_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -1.556    
+                         arrival time                           1.724    
+  -------------------------------------------------------------------
+                         slack                                  0.168    
+
+Slack (MET) :             0.168ns  (arrival time - required time)
+  Source:                 pixelColourControl/slave_tx_module3/tx_data_reg[2]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            pixelColourControl/slave_tx_module3/uart_tx_inst_slave/shift_reg_reg[2]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.251ns  (logic 0.141ns (56.174%)  route 0.110ns (43.826%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.984ns
+    Source Clock Delay      (SCD):    1.473ns
+    Clock Pessimism Removal (CPR):    0.498ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         0.590     1.473    pixelColourControl/slave_tx_module3/clk_IBUF_BUFG
+    SLICE_X61Y15         FDCE                                         r  pixelColourControl/slave_tx_module3/tx_data_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X61Y15         FDCE (Prop_fdce_C_Q)         0.141     1.614 r  pixelColourControl/slave_tx_module3/tx_data_reg[2]/Q
+                         net (fo=1, routed)           0.110     1.724    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/Q[2]
+    SLICE_X61Y16         FDCE                                         r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/shift_reg_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         0.857     1.984    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/clk_IBUF_BUFG
+    SLICE_X61Y16         FDCE                                         r  pixelColourControl/slave_tx_module3/uart_tx_inst_slave/shift_reg_reg[2]/C
+                         clock pessimism             -0.498     1.486    
+    SLICE_X61Y16         FDCE (Hold_fdce_C_D)         0.070     1.556    pixelColourControl/slave_tx_module3/uart_tx_inst_slave/shift_reg_reg[2]
+  -------------------------------------------------------------------
+                         required time                         -1.556    
+                         arrival time                           1.724    
+  -------------------------------------------------------------------
+                         slack                                  0.168    
+
+Slack (MET) :             0.170ns  (arrival time - required time)
+  Source:                 pixelColourControl/master_tx_module4/tx_data_reg[24]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            pixelColourControl/master_tx_module4/uart_tx_inst/shift_reg_reg[24]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.253ns  (logic 0.141ns (55.730%)  route 0.112ns (44.270%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.952ns
+    Source Clock Delay      (SCD):    1.440ns
+    Clock Pessimism Removal (CPR):    0.499ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         0.557     1.440    pixelColourControl/master_tx_module4/clk_IBUF_BUFG
+    SLICE_X51Y68         FDRE                                         r  pixelColourControl/master_tx_module4/tx_data_reg[24]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X51Y68         FDRE (Prop_fdre_C_Q)         0.141     1.581 r  pixelColourControl/master_tx_module4/tx_data_reg[24]/Q
+                         net (fo=1, routed)           0.112     1.693    pixelColourControl/master_tx_module4/uart_tx_inst/tx_data_reg[31][2]
+    SLICE_X51Y69         FDCE                                         r  pixelColourControl/master_tx_module4/uart_tx_inst/shift_reg_reg[24]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=752, routed)         0.824     1.952    pixelColourControl/master_tx_module4/uart_tx_inst/clk_IBUF_BUFG
+    SLICE_X51Y69         FDCE                                         r  pixelColourControl/master_tx_module4/uart_tx_inst/shift_reg_reg[24]/C
+                         clock pessimism             -0.499     1.453    
+    SLICE_X51Y69         FDCE (Hold_fdce_C_D)         0.070     1.523    pixelColourControl/master_tx_module4/uart_tx_inst/shift_reg_reg[24]
+  -------------------------------------------------------------------
+                         required time                         -1.523    
+                         arrival time                           1.693    
+  -------------------------------------------------------------------
+                         slack                                  0.170    
 
 
 
@@ -1381,35 +1364,35 @@ Sources:            { clk }
 
 Check Type        Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location       Pin
 Min Period        n/a     BUFG/I   n/a            2.155         10.000      7.845      BUFGCTRL_X0Y1  clk_IBUF_BUFG_inst/I
-Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X60Y26   pixelColourControl/master_tx_module1/tx_data_reg[22]/C
-Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X58Y27   pixelColourControl/master_tx_module1/tx_data_reg[23]/C
-Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X60Y26   pixelColourControl/master_tx_module1/tx_data_reg[24]/C
-Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X60Y26   pixelColourControl/master_tx_module1/tx_data_reg[25]/C
-Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X58Y27   pixelColourControl/master_tx_module1/tx_data_reg[26]/C
-Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X60Y26   pixelColourControl/master_tx_module1/tx_data_reg[27]/C
-Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X60Y26   pixelColourControl/master_tx_module1/tx_data_reg[28]/C
-Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X60Y26   pixelColourControl/master_tx_module1/tx_data_reg[29]/C
-Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X60Y26   pixelColourControl/master_tx_module1/tx_data_reg[30]/C
-Low Pulse Width   Slow    FDPE/C   n/a            0.500         5.000       4.500      SLICE_X42Y44   pixelColourControl/master_tx_module2/FSM_onehot_state_reg[0]/C
-Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X42Y44   pixelColourControl/master_tx_module2/FSM_onehot_state_reg[1]/C
-Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X42Y44   pixelColourControl/master_tx_module2/FSM_onehot_state_reg[2]/C
-Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X42Y43   pixelColourControl/master_tx_module2/start_reg/C
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X46Y40   pixelColourControl/master_tx_module2/tx_data_reg[22]/C
-Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X45Y40   pixelColourControl/master_tx_module2/uart_tx_inst/shift_reg_reg[22]/C
-Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X45Y39   pixelColourControl/master_tx_module2/uart_tx_inst/shift_reg_reg[26]/C
-Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X45Y39   pixelColourControl/master_tx_module2/uart_tx_inst/shift_reg_reg[29]/C
-Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X45Y39   pixelColourControl/master_tx_module2/uart_tx_inst/shift_reg_reg[30]/C
-Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X45Y39   pixelColourControl/master_tx_module2/uart_tx_inst/shift_reg_reg[31]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X60Y26   pixelColourControl/master_tx_module1/tx_data_reg[22]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X58Y27   pixelColourControl/master_tx_module1/tx_data_reg[23]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X60Y26   pixelColourControl/master_tx_module1/tx_data_reg[24]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X60Y26   pixelColourControl/master_tx_module1/tx_data_reg[25]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X58Y27   pixelColourControl/master_tx_module1/tx_data_reg[26]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X60Y26   pixelColourControl/master_tx_module1/tx_data_reg[27]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X60Y26   pixelColourControl/master_tx_module1/tx_data_reg[28]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X60Y26   pixelColourControl/master_tx_module1/tx_data_reg[29]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X60Y26   pixelColourControl/master_tx_module1/tx_data_reg[30]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X60Y26   pixelColourControl/master_tx_module1/tx_data_reg[31]/C
+Min Period        n/a     FDCE/C   n/a            1.000         10.000      9.000      SLICE_X54Y18   pixelColourControl/master_tx_module1/start_reg/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X62Y18   pixelColourControl/master_tx_module1/tx_data_reg[22]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X55Y18   pixelColourControl/master_tx_module1/tx_data_reg[23]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X55Y18   pixelColourControl/master_tx_module1/tx_data_reg[24]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X55Y18   pixelColourControl/master_tx_module1/tx_data_reg[25]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X60Y18   pixelColourControl/master_tx_module1/tx_data_reg[26]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X55Y18   pixelColourControl/master_tx_module1/tx_data_reg[27]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X60Y18   pixelColourControl/master_tx_module1/tx_data_reg[28]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X62Y18   pixelColourControl/master_tx_module1/tx_data_reg[29]/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X58Y20   pixelColourControl/master_tx_module1/uart_tx_inst/FSM_sequential_state_reg[0]/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X58Y20   pixelColourControl/master_tx_module1/uart_tx_inst/FSM_sequential_state_reg[1]/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X58Y19   pixelColourControl/master_tx_module1/uart_tx_inst/bit_idx_reg[0]/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X58Y19   pixelColourControl/master_tx_module1/uart_tx_inst/bit_idx_reg[1]/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X58Y19   pixelColourControl/master_tx_module1/uart_tx_inst/bit_idx_reg[2]/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X58Y19   pixelColourControl/master_tx_module1/uart_tx_inst/bit_idx_reg[3]/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X59Y20   pixelColourControl/master_tx_module1/uart_tx_inst/bit_idx_reg[4]/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X61Y19   pixelColourControl/master_tx_module1/uart_tx_inst/shift_reg_reg[23]/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X61Y19   pixelColourControl/master_tx_module1/uart_tx_inst/shift_reg_reg[24]/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X60Y19   pixelColourControl/master_tx_module1/uart_tx_inst/shift_reg_reg[25]/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X53Y21   pixelColourControl/master_tx_module1/uart_tx_inst/clk_cnt_reg[0]/C
+High Pulse Width  Fast    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X53Y22   pixelColourControl/master_tx_module1/uart_tx_inst/clk_cnt_reg[10]/C
+High Pulse Width  Fast    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X53Y22   pixelColourControl/master_tx_module1/uart_tx_inst/clk_cnt_reg[11]/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X53Y21   pixelColourControl/master_tx_module1/uart_tx_inst/clk_cnt_reg[1]/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X54Y20   pixelColourControl/master_tx_module1/uart_tx_inst/clk_cnt_reg[2]/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X54Y20   pixelColourControl/master_tx_module1/uart_tx_inst/clk_cnt_reg[3]/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X54Y20   pixelColourControl/master_tx_module1/uart_tx_inst/clk_cnt_reg[4]/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X54Y20   pixelColourControl/master_tx_module1/uart_tx_inst/clk_cnt_reg[5]/C
+High Pulse Width  Fast    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X53Y22   pixelColourControl/master_tx_module1/uart_tx_inst/clk_cnt_reg[6]/C
+High Pulse Width  Fast    FDCE/C   n/a            0.500         5.000       4.500      SLICE_X53Y22   pixelColourControl/master_tx_module1/uart_tx_inst/clk_cnt_reg[7]/C
 
 
 
