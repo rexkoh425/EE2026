@@ -22,7 +22,7 @@
 
 module SevenSegDisplay(
     input clk6p25m, clk200hz,
-    input start_game , pause,
+    input start_game , pause,resetting,
     output reg[3:0] an = 4'b1111,
     output reg[6:0] seg = 7'b111_1111,
     output reg dp = 1'b1
@@ -37,7 +37,7 @@ module SevenSegDisplay(
     
     always @ (posedge clk1hz)
     begin
-        if(start_game & ~pause)
+        if(start_game & ~pause & ~resetting)
         begin
             total_seconds <= total_seconds - 1;
         end

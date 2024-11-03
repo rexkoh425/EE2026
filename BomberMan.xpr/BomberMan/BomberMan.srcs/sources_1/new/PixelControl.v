@@ -97,17 +97,19 @@ module PixelControl(
         begin
             start_game <= 1;
         end
-        if(initiate_reset)
+        if(initiate_reset_out)
         begin
             start_game <= 0;
         end
         
-        pause <= (start_game & ~SWCheck) | resetting;
+        pause <= (start_game & ~SWCheck);
    end
    
+   wire[3:0] playerHitLimit;
    ButtonGate buttonControl(
-     .SWCheck(~pause), 
-     .player_dead(player_dead),
+     .SWCheck(~pause & ~resetting), 
+     .playerHitLimit(playerHitLimit),
+     .player_dead(player_dead), .player1_isReviving(player1_isReviving), .player2_isReviving(player2_isReviving), .player3_isReviving(player3_isReviving), .player4_isReviving(player4_isReviving),
      .btnUPlayer1In(btnUPlayer1In),.btnDPlayer1In(btnDPlayer1In),.btnLPlayer1In(btnLPlayer1In),.btnRPlayer1In(btnRPlayer1In),.btnCPlayer1In(btnCPlayer1In),
      .btnUPlayer2In(btnUPlayer2In),.btnDPlayer2In(btnDPlayer2In),.btnLPlayer2In(btnLPlayer2In),.btnRPlayer2In(btnRPlayer2In),.btnCPlayer2In(btnCPlayer2In),
      .btnUPlayer3In(btnUPlayer3In),.btnDPlayer3In(btnDPlayer3In),.btnLPlayer3In(btnLPlayer3In),.btnRPlayer3In(btnRPlayer3In),.btnCPlayer3In(btnCPlayer3In),
@@ -177,9 +179,9 @@ module PixelControl(
    wire bomb;
    wire ExplosionAnimations;
    wire [15:0] bombPixelData;
-
+   
    Bomb BombControl(
-       .clk6p25m(clk6p25m),
+       .clk6p25m(clk6p25m), .clk(clk100mhz),
        .pixel_index(pixel_index) ,
        .bomb(bomb),.SW(SW),
        
@@ -205,7 +207,9 @@ module PixelControl(
        
        .ExplosionAnimations(ExplosionAnimations),
        .start_game(start_game),
-       .pixel_data(bombPixelData)
+       .pixel_data(bombPixelData),
+       
+       .playerHitLimit(playerHitLimit)
    );
    
    wire [15:0] player1PixelData, player2PixelData, player3PixelData, player4PixelData;    
@@ -221,7 +225,7 @@ module PixelControl(
        .player_dead(player_dead),
        .player1_isReviving(player1_isReviving) , .player2_isReviving(player2_isReviving) ,
        .player3_isReviving(player3_isReviving) , .player4_isReviving(player4_isReviving) ,
-       .start_game(start_game), .pixel_index(pixel_index) , .pause(pause) , .EndGame(EndGame)
+       .start_game(start_game), .pixel_index(pixel_index) , .pause(pause) , .EndGame(EndGame) ,.resetting(resetting)
    );
    
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   

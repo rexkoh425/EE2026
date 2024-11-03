@@ -21,7 +21,7 @@
 
 
 module Bomb(
-    input clk6p25m,
+    input clk6p25m, clk,
     input[12:0] pixel_index ,
     input[6:0] Player1Block , Player2Block,Player3Block,Player4Block,
     input Player1DebouncedBtnC , Player2DebouncedBtnC, Player3DebouncedBtnC, Player4DebouncedBtnC, 
@@ -31,6 +31,7 @@ module Bomb(
     output reg bomb = 1'b0 ,
     output ExplosionAnimations ,
     output player1_die , player2_die ,player3_die,player4_die,
+    output reg[3:0] playerHitLimit,
     output reg [15:0] pixel_data
 );  
 
@@ -59,6 +60,8 @@ module Bomb(
     wire[Maxbombcount-1 : 0] player4_died;
     wire[7:0] FreeBomb;
     wire edge_registered;
+    wire[(Maxbombcount * 3) - 1 : 0] WhichPlayerBomb;
+    
     wire[Maxbombcount-1 : 0] ExplosionAnimation;
     reg[69:0] blocksAffectedByExplosion;
     
@@ -72,6 +75,7 @@ module Bomb(
     integer k;
    
     initial begin
+        playerHitLimit = 4'b0;
         for(k =0 ; k < Maxbombcount ; k = k+1)
         begin
             Bombs[k] = 26'b0;
@@ -92,7 +96,8 @@ module Bomb(
         .player2_isReviving(player2_isReviving),
         .player3_isReviving(player3_isReviving),
         .player4_isReviving(player4_isReviving),
-        .start_game(start_game)
+        .start_game(start_game),
+        .WhichPlayerBomb(WhichPlayerBomb)
     );
     
     genvar j;
@@ -219,6 +224,42 @@ module Bomb(
                     end
                 end
             end
+        end
+    end
+    
+    reg check = 0;
+    reg[7:0] v = 0;
+    reg[1:0] player_bombcount[0:3];
+    parameter[2:0] maxplayerbomb = 2; 
+    always @ (posedge clk)
+    begin   
+        if(check)
+        begin
+            case(v)
+                0: player_bombcount[WhichPlayerBomb[2:0]-1] <= player_bombcount[WhichPlayerBomb[2:0]-1] + 1;
+                1: player_bombcount[WhichPlayerBomb[5:3]-1] <= player_bombcount[WhichPlayerBomb[5:3]-1] + 1;
+                2: player_bombcount[WhichPlayerBomb[8:6]-1] <= player_bombcount[WhichPlayerBomb[8:6]-1] + 1;
+            endcase
+            
+            if(v == Maxbombcount)
+            begin
+              v <= 0;
+              check <= 0;
+              playerHitLimit[0] <= (player_bombcount[0] >= maxplayerbomb);
+              playerHitLimit[1] <= (player_bombcount[1] >= maxplayerbomb);
+              playerHitLimit[2] <= (player_bombcount[2] >= maxplayerbomb);
+              playerHitLimit[3] <= (player_bombcount[3] >= maxplayerbomb);
+            end  
+            else begin
+                 v <= v + 1;
+            end
+        end
+        else begin
+            player_bombcount[0] <= 0;
+            player_bombcount[1] <= 0;
+            player_bombcount[2] <= 0;
+            player_bombcount[3] <= 0;
+            check <= 1;
         end
     end
 endmodule

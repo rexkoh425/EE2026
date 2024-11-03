@@ -28,6 +28,7 @@ module EndGame(
 );
     
     parameter[2:0] deathcount = 4;
+    wire draw;
     assign player_dead[0] = (player1_deathcount >= deathcount);
     assign player_dead[1] = (player2_deathcount >= deathcount);
     assign player_dead[2] = (player3_deathcount >= deathcount);
@@ -40,5 +41,5 @@ module EndGame(
         num_player_dead <= player_dead[0] + player_dead[1] + player_dead[2] + player_dead[3];
     end
     
-    assign EndGame = (num_player_dead == 1) & start_game;
+    assign EndGame = (num_player_dead >= 1) & start_game;
 endmodule

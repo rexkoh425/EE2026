@@ -29,7 +29,7 @@ module PixelDataControl(
     input[3:0] player_dead,
     input [15:0] bombPixelData, player1PixelData, player2PixelData, player3PixelData, player4PixelData,
     input ExplosionAnimations,
-    input start_game, pause,EndGame,
+    input start_game, pause,EndGame,resetting,
     output reg[15:0] pixel_data = 16'b0 ,
     output player1_isReviving ,player2_isReviving,player3_isReviving,player4_isReviving
 );
@@ -81,7 +81,7 @@ module PixelDataControl(
         .isReviving(player4_isReviving)
     );
             
-   wire[15:0] ss_pixeldata , pause_pixeldata , p1_data , p2_data , p3_data , p4_data;
+   wire[15:0] ss_pixeldata , pause_pixeldata , p1_data , p2_data , p3_data , p4_data , draw_data;
    StartingScreen start(
     .clk6p25m(clk6p25m),
     .pixel_index(pixel_index),
@@ -118,12 +118,22 @@ module PixelDataControl(
         .pixel_data(p4_data)
     );
     
+    DrawScreen draw(
+            .clk6p25m(clk6p25m),
+            .pixel_index(pixel_index),
+            .pixel_data(draw_data)
+    );
+    
    always @(posedge clk6p25m)
    begin
        
        if(~start_game)
        begin
            pixel_data <= ss_pixeldata;
+       end
+       else if(resetting)
+       begin
+           pixel_data <= WHITE; //resetting data pixel
        end
        else if(pause)
        begin
@@ -134,7 +144,7 @@ module PixelDataControl(
            case(player_dead)
                4'b0001 : pixel_data <= p2_data;
                4'b0010 : pixel_data <= p1_data;
-               default : pixel_data <= WHITE;
+               default : pixel_data <= draw_data;
            endcase
        end
        else if(CenterBlock)

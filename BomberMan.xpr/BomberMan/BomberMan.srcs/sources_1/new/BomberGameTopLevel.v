@@ -84,7 +84,7 @@ module BomberGameTopLevel(
         .an(an),
         .seg(seg),
         .dp(dp) ,
-        .start_game(start_game),.pause(pause)
+        .start_game(start_game),.pause(pause),.resetting(resetting)
     );     
     
     GameReset ResetControl(
